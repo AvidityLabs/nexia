@@ -32,15 +32,15 @@ SECRET_KEY = "django-insecure-tx0(q!lqq4qja4z#)608n=%n5yuu!qs8)6rzvza@kx@kilw9gi
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split()
 
 # Enable HTTPS-only communication for a specified amount of time, with subdomains included
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_SECONDS = 31536000  # 1 year in seconds
 # Redirect all non-HTTPS requests to HTTPS
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_PRELOAD = True
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_HSTS_PRELOAD = True
 
-CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev'] 
+# CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev'] 
 
 # Application definition
 
