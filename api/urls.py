@@ -3,7 +3,8 @@ from django.urls import include, path
 from rest_framework.authtoken.views import obtain_auth_token
 from .views import (
     DeveloperRegisterView,
-    PromptListCreateView,
+    PromptCreateView,
+    PromptSearchView,
     PromptDetailView,
     UseCaseListCreateView,
     ToneListCreateView,
@@ -24,7 +25,8 @@ urlpatterns = [
     path('tones/', ToneListCreateView.as_view(), name='tone-list-create'),
     path('tones/<int:pk>/', ToneDetailView.as_view(), name='tone-detail'),
     path('prompt_categories/', PromptCategoryListCreateView.as_view(), name='prompt-categories-list-create'),
-    path('prompts/', PromptListCreateView.as_view(), name='prompt-list-create'),
+    path('create_prompt/', PromptCreateView.as_view(), name='create-prompt'),
+    path('prompts/', PromptSearchView.as_view(), name='prompts'),
     path('prompts/<int:pk>/', PromptDetailView.as_view(), name='prompt-detail'),
     path('models/', AIModelsAPIView.as_view(), name='models'),
     path('create_edit/', CreateEditAPIView.as_view(), name='create-edits'),

@@ -1,4 +1,5 @@
 import uuid
+from rest_framework import generics, filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -54,9 +55,23 @@ class DeveloperRegisterView(generics.CreateAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UseCaseListCreateView(generics.ListCreateAPIView):
-    queryset = UseCase.objects.all()
-    serializer_class = UseCaseSerializer
+
+class UseCaseListCreateView(APIView):
+    def get(self, request, format=None):
+        search_query = request.query_params.get('search', None)
+        if search_query:
+            use_cases = UseCase.objects.filter(name__icontains=search_query)
+        else:
+            use_cases = UseCase.objects.all()
+        serializer = UseCaseSerializer(use_cases, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = UseCaseSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UseCaseDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -89,6 +104,8 @@ class ToneDetailView(generics.RetrieveUpdateDestroyAPIView):
 class PromptCategoryListCreateView(generics.ListCreateAPIView):
     queryset = PromptCategory.objects.all()
     serializer_class = PromptCategorySerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
 
 
 class PromptCategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -96,10 +113,39 @@ class PromptCategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PromptCategorySerializer
 
 
-class PromptListCreateView(generics.ListCreateAPIView):
+class PromptCreateView(generics.CreateAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
 
+"""
+To use this view, you can send a GET request to the API with any of the following query parameters:
+
+tone: The name of a tone to search for.
+category: The name of a category to search for.
+usecase: The name of a use case to search for.
+For example, to search for prompts with the tone "happy", you would send a request to /prompts/?tone=happy.
+If you want to search by multiple criteria, you can include multiple query parameters in the request, like this: /prompts/?tone=happy&category=food&usecase=conversation.
+"""
+class PromptSearchView(generics.ListAPIView):
+    queryset = Prompt.objects.all()
+    serializer_class = PromptSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['tone__name', 'category__name', 'usecase__name']
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        tone = self.request.query_params.get('tone', None)
+        category = self.request.query_params.get('category', None)
+        usecase = self.request.query_params.get('usecase', None)
+        
+        if tone:
+            queryset = queryset.filter(tone__name=tone)
+        if category:
+            queryset = queryset.filter(category__name=category)
+        if usecase:
+            queryset = queryset.filter(usecase__name=usecase)
+        
+        return queryset
 
 class PromptDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Prompt.objects.all()
@@ -109,7 +155,6 @@ class PromptDetailView(generics.RetrieveUpdateDestroyAPIView):
 class AIModelsAPIView(APIView):
     serializer_class = AIModelSerializer
     def get(self, request):
-        print(request.user.id)
         response = get_models()
         if response:
             for r in response.get('data'):
