@@ -1,10 +1,12 @@
 import uuid
+from api.middlewares.authentication import RapidAPIAuthentication
 from rest_framework import generics, filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny
+from rest_framework.decorators import authentication_classes
 
 # views.py
 from rest_framework import generics
@@ -55,7 +57,7 @@ class DeveloperRegisterView(generics.CreateAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
+@authentication_classes([RapidAPIAuthentication])
 class UseCaseListCreateView(APIView):
     def get(self, request, format=None):
         search_query = request.query_params.get('search', None)
@@ -73,12 +75,12 @@ class UseCaseListCreateView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+@authentication_classes([RapidAPIAuthentication])
 class UseCaseDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = UseCase.objects.all()
     serializer_class = UseCaseSerializer
 
-
+@authentication_classes([RapidAPIAuthentication])
 class ToneListCreateView(generics.ListCreateAPIView):
     def get(self, request, format=None):
         search_query = request.query_params.get('search', None)
@@ -95,24 +97,23 @@ class ToneListCreateView(generics.ListCreateAPIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+@authentication_classes([RapidAPIAuthentication])
 class ToneDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Tone.objects.all()
     serializer_class = ToneSerializer
-
-
+@authentication_classes([RapidAPIAuthentication])
 class PromptCategoryListCreateView(generics.ListCreateAPIView):
     queryset = PromptCategory.objects.all()
     serializer_class = PromptCategorySerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['name']
 
-
+@authentication_classes([RapidAPIAuthentication])
 class PromptCategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = PromptCategory.objects.all()
     serializer_class = PromptCategorySerializer
 
-
+@authentication_classes([RapidAPIAuthentication])
 class PromptCreateView(generics.CreateAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
@@ -126,6 +127,7 @@ usecase: The name of a use case to search for.
 For example, to search for prompts with the tone "happy", you would send a request to /prompts/?tone=happy.
 If you want to search by multiple criteria, you can include multiple query parameters in the request, like this: /prompts/?tone=happy&category=food&usecase=conversation.
 """
+@authentication_classes([RapidAPIAuthentication])
 class PromptSearchView(generics.ListAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
@@ -146,12 +148,12 @@ class PromptSearchView(generics.ListAPIView):
             queryset = queryset.filter(usecase__name=usecase)
         
         return queryset
-
+@authentication_classes([RapidAPIAuthentication])
 class PromptDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
 
-
+@authentication_classes([RapidAPIAuthentication])
 class AIModelsAPIView(APIView):
     serializer_class = AIModelSerializer
     def get(self, request):
@@ -165,7 +167,7 @@ class AIModelsAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-
+@authentication_classes([RapidAPIAuthentication])
 class CreateEditAPIView(APIView):
     serializer_class =  CreateEditSerializer
     def post(self, request):
@@ -200,7 +202,7 @@ class CreateEditAPIView(APIView):
         except Exception as e:
             return Response({'error': f'{str(e)}'}, status=status.HTTP_404_NOT_FOUND)
 
-
+@authentication_classes([RapidAPIAuthentication])
 class CompletionAPIView(APIView):
     serializer_class =  CompletionSerializer
     def post(self, request):
