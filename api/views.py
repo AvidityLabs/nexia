@@ -90,7 +90,8 @@ class ToneListCreateView(generics.ListCreateAPIView):
         else:
             tones = Tone.objects.all()
         serializer = ToneSerializer(tones, many=True)
-        return Response(serializer.data)
+
+        return Response(str(request.META))
 
     def post(self, request, format=None):
         serializer = ToneSerializer(data=request.data)
