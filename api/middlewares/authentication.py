@@ -1,11 +1,9 @@
 import requests
-from rest_framework.authentication import TokenAuthentication
+from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
 from api.models import User
 
-class RapidAPIAuthentication(TokenAuthentication):
-    keyword = 'Bearer'
-
+class RapidAPIAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
         # Get the user's RapidAPI key from the request header
         rapid_api_key = request.META.get('X-RapidAPI-Key', None)
