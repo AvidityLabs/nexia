@@ -80,8 +80,9 @@ class UseCaseDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = UseCase.objects.all()
     serializer_class = UseCaseSerializer
 
-@authentication_classes([RapidAPIAuthentication])
+
 class ToneListCreateView(generics.ListCreateAPIView):
+    authentication_classes = (RapidAPIAuthentication,) 
     def get(self, request, format=None):
         search_query = request.query_params.get('search', None)
         if search_query:
