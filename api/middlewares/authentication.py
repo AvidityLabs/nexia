@@ -7,7 +7,7 @@ class RapidAPIAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
         # Get the user's RapidAPI key from the request header
         rapid_api_key = request.META.get('X-RapidAPI-Key', None)
-        print(rapid_api_key)
+        print(request.__dict__)
         if not rapid_api_key:
             raise AuthenticationFailed('RapidAPI key not found in request headers')
 
