@@ -19,7 +19,7 @@ def get_subscription(request):
 
 class RapidAPIAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
-        if request.path == '/register/' or request.path== '/get_token/':
+        if request.META.get('PATH_INFO') == '/api/register/' or request.META.get('PATH_INFO') == '/api/get_token/':
             # Skip authentication for registration endpoint
             return None
         else:
