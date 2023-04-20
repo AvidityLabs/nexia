@@ -1,4 +1,6 @@
 import uuid
+from django.views.decorators.csrf import csrf_exempt
+
 from api.middlewares.authentication import RapidAPIAuthentication
 from rest_framework import generics, filters
 from rest_framework.views import APIView
@@ -29,10 +31,12 @@ from .models import User
 from .utilities.openai import *
 
 # view for registering developers
+from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 
+@csrf_exempt
 class ObtainEmailAuthToken(ObtainAuthToken):
     serializer_class = EmailAuthTokenSerializer
-
+    
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(
             data=request.data, context={'request': request}

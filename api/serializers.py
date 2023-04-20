@@ -1,34 +1,45 @@
-# serializers.py
-from rest_framework import serializers
+
 from rest_framework.authtoken.views import ObtainAuthToken
+from django.contrib.auth import authenticate, get_user_model
 from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate
+from django.utils.translation import gettext_lazy as _
+from rest_framework import serializers, exceptions
 from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
 from .models import User, Prompt, UseCase, Tone, AIModel, TokenUsage, PromptCategory
 
 
-
 class EmailAuthTokenSerializer(serializers.Serializer):
-    email = serializers.CharField()
+
+    email = serializers.EmailField()
     password = serializers.CharField(style={'input_type': 'password'})
 
-    def validate(self, attrs):
-        email = attrs.get('email')
-        password = attrs.get('password')
+    def validate(self, data):
+        email = data.get('email')
+        password = data.get('password')
 
         if email and password:
-            user = authenticate(request=self.context.get('request'),
-                                email=email, password=password)
-            if not user:
-                raise serializers.ValidationError(_('Invalid email or password'))
-            if not user.is_active:
-                raise serializers.ValidationError(_('User account is disabled.'))
-            attrs['user'] = user
-            return attrs
+            user = authenticate(email=email, password=password)
+
+            if user:
+                if not user.is_active:
+                    msg = _('User account is disabled.')
+                    raise exceptions.ValidationError(msg)
+            else:
+                msg = _('Unable to log in with provided credentials.')
+                raise exceptions.ValidationError(msg)
         else:
-            raise serializers.ValidationError(_('Must include "email" and "password".'))
+            msg = _('Must include "email" and "password".')
+            raise exceptions.ValidationError(msg)
+
+        data['user'] = user
+        return data
+
+
 class ObtainEmailAuthToken(ObtainAuthToken):
     serializer_class = EmailAuthTokenSerializer
+
 
 class AIModelSerializer(serializers.ModelSerializer):
     class Meta:
@@ -43,9 +54,11 @@ class DeveloperRegisterSerializer(serializers.Serializer):
 
 class UseCaseSerializer(serializers.ModelSerializer):
     id = serializers.CharField(read_only=True)
+
     class Meta:
         model = UseCase
         fields = ['id', 'name', 'description']
+
 
 class ToneSerializer(serializers.ModelSerializer):
     id = serializers.CharField(read_only=True)
@@ -63,10 +76,12 @@ class PromptSerializer(serializers.ModelSerializer):
         model = Prompt
         fields = ['id', 'description', 'usecase', 'nov', 'tone', 'prompt']
 
+
 class TokenUsageSerializer(serializers.ModelSerializer):
     class Meta:
         model = TokenUsage
-        fields = ['id', 'user', 'timestamp', 'prompt_tokens_used', 'completion_tokens_used', 'total_tokens_used']
+        fields = ['id', 'user', 'timestamp', 'prompt_tokens_used',
+                  'completion_tokens_used', 'total_tokens_used']
         read_only_fields = ['id', 'user', 'timestamp']
 
 
@@ -74,7 +89,8 @@ class CreateEditSerializer(serializers.Serializer):
     input = serializers.CharField(required=False, allow_blank=True)
     usecase = serializers.IntegerField()
     model = serializers.CharField()
-    
+
+
 class CompletionSerializer(serializers.Serializer):
     model = serializers.CharField()
     prompt = serializers.CharField(required=False, allow_blank=True)

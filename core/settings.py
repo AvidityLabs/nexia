@@ -90,6 +90,7 @@ CORS_ALLOW_METHODS = [
 CORS_ALLOW_HEADERS = ['*']
 
 
+
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [

@@ -4,6 +4,7 @@ from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
 from api.models import User, PricingPlan, Subscription
 
+
 HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
 APP_URL = 'https://rapidapi.com/AvidityLabs/api/nexia2'
 
