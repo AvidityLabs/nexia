@@ -56,7 +56,7 @@ class DeveloperRegisterView(generics.CreateAPIView):
                 user.set_password(password)
 
                 token = Token.objects.create(user=user)
-                user.developer_id = token.key
+                user.api_key = token.key
                 user.save()
 
                 return Response({'api_key': token.key}, status=status.HTTP_201_CREATED)
