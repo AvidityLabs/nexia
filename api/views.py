@@ -163,7 +163,7 @@ If you want to search by multiple criteria, you can include multiple query param
 class PromptSearchView(generics.ListAPIView):
     serializer_class = PromptSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['tone__name', 'usecase__category__name', 'usecase__name']
+    search_fields = ['tone__name', 'usecase__category__name', 'usecase__description']
 
     def get_queryset(self):
         queryset = Prompt.objects.all()
