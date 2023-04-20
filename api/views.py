@@ -86,8 +86,19 @@ class UseCaseListCreateView(ListCreateAPIView):
     filter_backends = [SearchFilter]
     search_fields = ['name']
 
+    def create(self, request, *args, **kwargs):
+        cat_name = request.data.get('category')
+        cat, created = PromptCategory.objects.get_or_create(name=cat_name)
+        description = request.data.get('instruction')
+        UseCase.objects.create(
+            category=cat,
+            description=description,
+        )
+        return Response({'status': 'Use case created successfully'}, status=status.HTTP_201_CREATED)
+
     def perform_create(self, serializer):
         serializer.save()
+
 
 
 class UseCaseDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -151,7 +162,7 @@ If you want to search by multiple criteria, you can include multiple query param
 class PromptSearchView(generics.ListAPIView):
     serializer_class = PromptSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['tone__name', 'category__name', 'usecase__name']
+    search_fields = ['tone__name', 'usecase__category__name', 'usecase__name']
 
     def get_queryset(self):
         queryset = Prompt.objects.all()

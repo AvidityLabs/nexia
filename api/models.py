@@ -73,14 +73,6 @@ class TokenUsage(models.Model):
         return f"{self.user.email} Token Usage for {self.month.strftime('%B %Y')}"
 
 
-class UseCase(BaseModel):
-    name = models.CharField(max_length=100, blank=True, null=True)
-    description = models.TextField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
 class Tone(BaseModel):
     name = models.CharField(max_length=100, blank=True, null=True)
 
@@ -93,6 +85,16 @@ class PromptCategory(BaseModel):
 
     def __str__(self):
         return self.name
+    
+
+class UseCase(BaseModel):
+    description = models.TextField(null=True, blank=True)
+    category = models.ForeignKey(PromptCategory, null=True, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
 
 
 class Prompt(BaseModel):
@@ -102,8 +104,6 @@ class Prompt(BaseModel):
     nov = models.IntegerField(null=True, blank=True)
     tone = models.ForeignKey(
         Tone, null=True, blank=True, on_delete=models.CASCADE)
-    category = models.ForeignKey(
-        PromptCategory, null=True, blank=True, on_delete=models.CASCADE)
 
     @property
     def prompt(self):

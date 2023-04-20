@@ -51,7 +51,7 @@ class UseCaseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UseCase
-        fields = ['id', 'name', 'description']
+        fields = ['id', 'description']
 
 
 class ToneSerializer(serializers.ModelSerializer):
