@@ -1,4 +1,3 @@
-from django.shortcuts import get_object_or_404
 import requests
 from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
@@ -11,7 +10,7 @@ class RapidAPIAuthentication(authentication.BaseAuthentication):
         # Get the user's RapidAPI key from the request header
         rapid_api_key = request.META.get('X_RAPID_API_KEY', None)
         if not rapid_api_key:
-            raise get_object_or_404(AuthenticationFailed('RapidAPI key not found in request headers'))
+            raise AuthenticationFailed('RapidAPI key not found in request headers')
 
         # Retrieve the user object
         try:
