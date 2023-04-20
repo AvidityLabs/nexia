@@ -25,7 +25,7 @@ class RapidAPIAuthentication(authentication.BaseAuthentication):
         rapid_api_proxy_secret = request.META.get('HTTP_X_RAPIDAPI_PROXY_SECRET', None)
 
         if not authorization_key:
-            raise AuthenticationFailed('Authorization key not found in request headers')
+            raise AuthenticationFailed('Authorization key not found in request headers. Go to /register endpoint to get access key.')
         if rapid_api_host:
             raise AuthenticationFailed('RapidAPI Host not found in request headers')
         if rapid_api_proxy_secret != HTTP_X_RAPIDAPI_PROXY_SECRET:
