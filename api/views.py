@@ -174,9 +174,9 @@ class PromptSearchView(generics.ListAPIView):
         if tone:
             queryset = queryset.filter(tone__name=tone)
         if category:
-            queryset = queryset.filter(category__name=category)
+            queryset = queryset.filter(usecase__category__name=category)
         if usecase:
-            queryset = queryset.filter(usecase__name=usecase)
+            queryset = queryset.filter(usecase__description=usecase)
 
         return queryset
 
