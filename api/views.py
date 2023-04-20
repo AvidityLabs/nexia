@@ -88,9 +88,9 @@ class UseCaseListCreateView(ListCreateAPIView):
 
     def create(self, request, *args, **kwargs):
         cat_name = request.data.get('category')
-        cat, created = PromptCategory.objects.get_or_create(name=cat_name)
+        cat, _  = PromptCategory.objects.get_or_create(name=cat_name)
         description = request.data.get('instruction')
-        UseCase.objects.create(
+        usecase, _ = UseCase.objects.get_or_create(
             category=cat,
             description=description,
         )
