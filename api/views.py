@@ -1,4 +1,5 @@
 import datetime
+import requests
 from rest_framework import generics, filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -19,6 +20,7 @@ from api.serializers import (
     DeveloperRegisterSerializer,
     EmailAuthTokenSerializer,
     PromptSerializer,
+    TextSerializer,
     UseCaseSerializer,
     ToneSerializer,
     AIModelSerializer,
@@ -27,6 +29,7 @@ from api.serializers import (
     CreateEditSerializer)
 
 from api.utilities.openai import *
+from api.tone_analyzer.prompt import analyze_text
 from api.middlewares.authentication import RapidAPIAuthentication
 
 
@@ -359,3 +362,42 @@ class CompletionAPIView(APIView):
 
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_400)
+
+
+class TextAnalysisView(APIView):
+    def post(self, request, format=None):
+        serializer = TextSerializer(data=request.data)
+        if serializer.is_valid():
+            text = serializer.validated_data['text']
+            # Call your text analysis function with the validated text input
+            try:
+                analysis = analyze_text(text)
+                
+                # # Track token usage
+                # user = User.objects.get(id=request.user.id)
+                # pricing_plan = user.subscription.pricing_plan
+                # prompt_tokens_used = response_data['usage'].get('prompt_tokens', 0)
+                # completion_tokens_used = response_data['usage'].get(
+                #     'completion_tokens', 0)
+                # total_tokens_used = response_data['usage'].get('total_tokens', 0)
+                # token_usage, created = TokenUsage.objects.get_or_create(
+                #     user=user,
+                #     pricing_plan=pricing_plan,
+                #     model=obj_model,
+                #     defaults={
+                #         'prompt_tokens_used': prompt_tokens_used,
+                #         'completion_tokens_used': completion_tokens_used,
+                #         'total_tokens_used': total_tokens_used,
+                #     }
+                # )
+
+                # if not created:
+                #     token_usage.prompt_tokens_used += prompt_tokens_used
+                #     token_usage.completion_tokens_used += completion_tokens_used
+                #     token_usage.total_tokens_used += total_tokens_used
+                #     token_usage.save()
+            except requests.exceptions.RequestException:
+                return Response({'error': 'Unable to communicate with OpenAI API.'}, status=500)
+            return Response(analysis)
+        else:
+            return Response(serializer.errors, status=400)

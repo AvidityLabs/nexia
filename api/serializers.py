@@ -105,3 +105,6 @@ class PromptCategorySerializer(serializers.ModelSerializer):
 
         fields = ['id', 'name']
         read_only_fields = ['id']
+
+class TextSerializer(serializers.Serializer):
+    text = serializers.CharField(min_length=10, max_length=500)

@@ -13,7 +13,8 @@ from api.views import (
     CreateEditAPIView,
     CompletionAPIView,
     PromptCategoryListCreateView,
-    ObtainEmailAuthToken
+    ObtainEmailAuthToken,
+    TextAnalysisView
     )
 
 urlpatterns = [
@@ -31,6 +32,7 @@ urlpatterns = [
     path('models/', AIModelsAPIView.as_view(), name='models'),
     path('create_edit/', CreateEditAPIView.as_view(), name='create-edits'),
     path('create_completion/', CompletionAPIView.as_view(), name='create-completion'),
+    path('analyze_text/', TextAnalysisView.as_view(), name='anylyze_text'),
 
 
 ]
