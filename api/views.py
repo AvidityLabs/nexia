@@ -237,7 +237,7 @@ class CompletionAPIView(APIView):
             logprobs = data.get('logprobs')
             stop = request.data.get('stop')
 
-            obj_model, _ = AIModel.objects.get_or_create(id=model)
+            obj_model, _ = AIModel.objects.get_or_create(id=model_id)
 
             promptInfo = None
             if useSavedPrompt:
@@ -280,7 +280,7 @@ class CompletionAPIView(APIView):
                 token_usage.total_tokens_used += response_data['usage'].get('total_tokens')
                 token_usage.save()
     
-            return Response({'data': res}, status=status.HTTP_200_OK)
+            return Response({'data': response_data}, status=status.HTTP_200_OK)
 
         except Exception as e:
             return Response({'error': f'{str(e)}'}, status=status.HTTP_400_BAD_REQUEST)
