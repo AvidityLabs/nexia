@@ -1,13 +1,9 @@
-
-from rest_framework.authtoken.views import ObtainAuthToken
-from django.contrib.auth import authenticate, get_user_model
-from rest_framework.authtoken.models import Token
-from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers, exceptions
-from django.contrib.auth import authenticate
-from django.utils.translation import gettext_lazy as _
+
 from .models import User, Prompt, UseCase, Tone, AIModel, TokenUsage, PromptCategory
+
+from api.utilities.authenticate import get_user
 
 
 class EmailAuthTokenSerializer(serializers.Serializer):
@@ -20,7 +16,8 @@ class EmailAuthTokenSerializer(serializers.Serializer):
         password = data.get('password')
 
         if email and password:
-            user = authenticate(email=email, password=password)
+
+            user = get_user(email=email, password=password)
 
             if user:
                 if not user.is_active:
@@ -29,16 +26,13 @@ class EmailAuthTokenSerializer(serializers.Serializer):
             else:
                 msg = _('Unable to log in with provided credentials.')
                 raise exceptions.ValidationError(msg)
+
         else:
             msg = _('Must include "email" and "password".')
             raise exceptions.ValidationError(msg)
 
         data['user'] = user
         return data
-
-
-class ObtainEmailAuthToken(ObtainAuthToken):
-    serializer_class = EmailAuthTokenSerializer
 
 
 class AIModelSerializer(serializers.ModelSerializer):

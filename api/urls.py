@@ -1,5 +1,6 @@
 
 from django.urls import include, path
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.views import obtain_auth_token
 from .views import (
     DeveloperRegisterView,
@@ -19,7 +20,7 @@ from .views import (
 
 urlpatterns = [
     path('auth/', include('rest_framework.urls')),
-    path('get_token/',  ObtainEmailAuthToken, name='api_token_auth'),
+    path('get_token/',  ObtainEmailAuthToken.as_view(), name='api_token_auth'),
     path('register/', DeveloperRegisterView.as_view(), name="register"),
     path('use_cases/', UseCaseListCreateView.as_view(), name='use-case-list-create'),
     path('use_cases/<int:pk>/', UseCaseDetailView.as_view(), name='use-case-detail'),

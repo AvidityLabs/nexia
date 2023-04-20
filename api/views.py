@@ -1,21 +1,14 @@
-import uuid
-from django.views.decorators.csrf import csrf_exempt
-
-from api.middlewares.authentication import RapidAPIAuthentication
 from rest_framework import generics, filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny, IsAuthenticated
-
-'rest_framework.permissions.IsAuthenticated',
-
-# views.py
 from rest_framework import generics
 from rest_framework.authtoken.views import ObtainAuthToken
-from .models import Prompt, UseCase, Tone, AIModel,   TokenUsage, PromptCategory
-from .serializers import (
+
+from api.models import Prompt, User, UseCase, Tone, AIModel,   TokenUsage, PromptCategory
+from api.serializers import (
     DeveloperRegisterSerializer,
     EmailAuthTokenSerializer,
     PromptSerializer,
@@ -26,26 +19,23 @@ from .serializers import (
     PromptCategorySerializer,
     CreateEditSerializer)
 
+from api.utilities.openai import *
+from api.middlewares.authentication import RapidAPIAuthentication
 
-from .models import User
-from .utilities.openai import *
 
-# view for registering developers
-from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
-
-@csrf_exempt
 class ObtainEmailAuthToken(ObtainAuthToken):
     serializer_class = EmailAuthTokenSerializer
-    
+
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(
             data=request.data, context={'request': request}
         )
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
-        token, created = Token.objects.get_or_create(user=user)
+        token, _ = Token.objects.get_or_create(user=user)
 
         return Response({'token': token.key})
+
 
 class DeveloperRegisterView(generics.CreateAPIView):
     serializer_class = DeveloperRegisterSerializer
@@ -101,9 +91,10 @@ class UseCaseDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ToneListCreateView(generics.ListCreateAPIView):
-    authentication_classes = (RapidAPIAuthentication,) 
+    authentication_classes = (RapidAPIAuthentication,)
     permission_classes = [IsAuthenticated]
     # permission_classes = [IsAuthenticated,]
+
     def get(self, request, format=None):
         search_query = request.query_params.get('search', None)
         if search_query:
@@ -120,9 +111,11 @@ class ToneListCreateView(generics.ListCreateAPIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class ToneDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Tone.objects.all()
     serializer_class = ToneSerializer
+
 
 class PromptCategoryListCreateView(generics.ListCreateAPIView):
     queryset = PromptCategory.objects.all()
@@ -140,6 +133,7 @@ class PromptCreateView(generics.CreateAPIView):
     queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
 
+
 """
 To use this view, you can send a GET request to the API with any of the following query parameters:
 
@@ -149,6 +143,7 @@ usecase: The name of a use case to search for.
 For example, to search for prompts with the tone "happy", you would send a request to /prompts/?tone=happy.
 If you want to search by multiple criteria, you can include multiple query parameters in the request, like this: /prompts/?tone=happy&category=food&usecase=conversation.
 """
+
 
 class PromptSearchView(generics.ListAPIView):
     queryset = Prompt.objects.all()
@@ -161,15 +156,16 @@ class PromptSearchView(generics.ListAPIView):
         tone = self.request.query_params.get('tone', None)
         category = self.request.query_params.get('category', None)
         usecase = self.request.query_params.get('usecase', None)
-        
+
         if tone:
             queryset = queryset.filter(tone__name=tone)
         if category:
             queryset = queryset.filter(category__name=category)
         if usecase:
             queryset = queryset.filter(usecase__name=usecase)
-        
+
         return queryset
+
 
 class PromptDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Prompt.objects.all()
@@ -178,6 +174,7 @@ class PromptDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class AIModelsAPIView(APIView):
     serializer_class = AIModelSerializer
+
     def get(self, request):
         response = get_models()
         if response:
@@ -191,7 +188,8 @@ class AIModelsAPIView(APIView):
 
 
 class CreateEditAPIView(APIView):
-    serializer_class =  CreateEditSerializer
+    serializer_class = CreateEditSerializer
+
     def post(self, request):
         # Retrieve input, instruction, and parameters from request data
         input_text = request.data.get('input', '')
@@ -222,11 +220,14 @@ class CreateEditAPIView(APIView):
             )
             if not created:
                 # Only update the token usage if a TokenUsage object already exists for this month
-                token_usage.prompt_tokens_used += response_data['usage'].get('prompt_tokens')
-                token_usage.completion_tokens_used += response_data['usage'].get('completion_tokens')
-                token_usage.total_tokens_used += response_data['usage'].get('total_tokens')
+                token_usage.prompt_tokens_used += response_data['usage'].get(
+                    'prompt_tokens')
+                token_usage.completion_tokens_used += response_data['usage'].get(
+                    'completion_tokens')
+                token_usage.total_tokens_used += response_data['usage'].get(
+                    'total_tokens')
                 token_usage.save()
-    
+
             # Return the generated text in a JSON response
             return Response({'data': response_data}, status=status.HTTP_201_CREATED)
 
@@ -235,7 +236,8 @@ class CreateEditAPIView(APIView):
 
 
 class CompletionAPIView(APIView):
-    serializer_class =  CompletionSerializer
+    serializer_class = CompletionSerializer
+
     def post(self, request):
         serializer = CompletionSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -293,11 +295,14 @@ class CompletionAPIView(APIView):
             )
             if not created:
                 # Only update the token usage if a TokenUsage object already exists for this month
-                token_usage.prompt_tokens_used += response_data['usage'].get('prompt_tokens')
-                token_usage.completion_tokens_used += response_data['usage'].get('completion_tokens')
-                token_usage.total_tokens_used += response_data['usage'].get('total_tokens')
+                token_usage.prompt_tokens_used += response_data['usage'].get(
+                    'prompt_tokens')
+                token_usage.completion_tokens_used += response_data['usage'].get(
+                    'completion_tokens')
+                token_usage.total_tokens_used += response_data['usage'].get(
+                    'total_tokens')
                 token_usage.save()
-    
+
             return Response({'data': response_data}, status=status.HTTP_200_OK)
 
         except Exception as e:
