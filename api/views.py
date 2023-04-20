@@ -84,7 +84,7 @@ class UseCaseListCreateView(ListCreateAPIView):
     queryset = UseCase.objects.all()
     serializer_class = UseCaseSerializer
     filter_backends = [SearchFilter]
-    search_fields = ['name']
+    search_fields = ['category__name']
 
     def create(self, request, *args, **kwargs):
         cat_name = request.data.get('category')
