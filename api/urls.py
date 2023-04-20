@@ -1,8 +1,6 @@
 
 from django.urls import include, path
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.authtoken.views import obtain_auth_token
-from .views import (
+from api.views import (
     DeveloperRegisterView,
     PromptCreateView,
     PromptSearchView,

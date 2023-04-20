@@ -1,3 +1,4 @@
+import datetime
 from rest_framework import generics, filters
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -6,6 +7,10 @@ from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework import generics
 from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.filters import SearchFilter
+from rest_framework.generics import ListCreateAPIView
+from rest_framework.exceptions import ValidationError
+
 
 from api.models import Prompt, User, UseCase, Tone, AIModel,   TokenUsage, PromptCategory
 from api.serializers import (
@@ -44,18 +49,21 @@ class DeveloperRegisterView(generics.CreateAPIView):
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            email = serializer.validated_data.get('email')
-            password = serializer.validated_data.get('password')
-
             try:
                 user = User.objects.create(
-                    email=email,
-                    first_name=email,
-                    username=email,
-                    is_developer=True)
-                user.set_password(password)
+                    email=serializer.validated_data['email'],
+                    first_name=serializer.validated_data['email'],
+                    username=serializer.validated_data['email'],
+                    is_developer=True
+                )
+                user.set_password(serializer.validated_data['password'])
 
-                token = Token.objects.create(user=user)
+                token, created = Token.objects.get_or_create(user=user)
+                if not created:
+                    # Token already exists, delete the old one
+                    token.delete()
+                    # Create a new token
+                    token = Token.objects.create(user=user)
                 user.api_key = token.key
                 user.save()
 
@@ -66,23 +74,18 @@ class DeveloperRegisterView(generics.CreateAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UseCaseListCreateView(APIView):
+class UseCaseListCreateView(ListCreateAPIView):
+    """
+    For example, if you want to search for all UseCase objects with the name "authentication",
+    you can make a GET request to /use-cases/?search=authentication.
+    """
+    queryset = UseCase.objects.all()
+    serializer_class = UseCaseSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['name']
 
-    def get(self, request, format=None):
-        search_query = request.query_params.get('search', None)
-        if search_query:
-            use_cases = UseCase.objects.filter(name__icontains=search_query)
-        else:
-            use_cases = UseCase.objects.all()
-        serializer = UseCaseSerializer(use_cases, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, format=None):
-        serializer = UseCaseSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def perform_create(self, serializer):
+        serializer.save()
 
 
 class UseCaseDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -91,9 +94,7 @@ class UseCaseDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ToneListCreateView(generics.ListCreateAPIView):
-    authentication_classes = (RapidAPIAuthentication,)
     permission_classes = [IsAuthenticated]
-    # permission_classes = [IsAuthenticated,]
 
     def get(self, request, format=None):
         search_query = request.query_params.get('search', None)
@@ -146,16 +147,15 @@ If you want to search by multiple criteria, you can include multiple query param
 
 
 class PromptSearchView(generics.ListAPIView):
-    queryset = Prompt.objects.all()
     serializer_class = PromptSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['tone__name', 'category__name', 'usecase__name']
 
     def get_queryset(self):
-        queryset = super().get_queryset()
-        tone = self.request.query_params.get('tone', None)
-        category = self.request.query_params.get('category', None)
-        usecase = self.request.query_params.get('usecase', None)
+        queryset = Prompt.objects.all()
+        tone = self.request.query_params.get('tone')
+        category = self.request.query_params.get('category')
+        usecase = self.request.query_params.get('usecase')
 
         if tone:
             queryset = queryset.filter(tone__name=tone)
@@ -191,45 +191,58 @@ class CreateEditAPIView(APIView):
     serializer_class = CreateEditSerializer
 
     def post(self, request):
-        # Retrieve input, instruction, and parameters from request data
         input_text = request.data.get('input', '')
         instruction_text = request.data.get('use_case', '')
         model = request.data.get('model', '')
 
-        # Validate above must not be null
-        if not all([input_text, instruction_text, model]):
-            return Response({'error': 'Missing required fields.'}, status=status.HTTP_400_BAD_REQUEST)
-
         try:
-            user = User.objects.get(id=request.user.id)
+            user = User.objects.select_related(
+                'subscription__pricing_plan').get(id=request.user.id)
+
+            if not all([input_text, instruction_text, model]):
+                return Response({'error': 'Missing required fields.'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Check if user has reached token limit
+            token_usage = TokenUsage.objects.filter(
+                user=user,
+                pricing_plan=user.subscription.pricing_plan,
+                created_at__month=datetime.datetime.now().month,
+                created_at__year=datetime.datetime.now().year
+            ).first()
+
+            if token_usage is not None and token_usage.total_tokens_used >= user.subscription.pricing_plan.token_limit:
+                return Response({'error': 'Token limit reached. Please upgrade your plan.'}, status=status.HTTP_403_FORBIDDEN)
 
             response_data = create_edit(model, input_text, instruction_text)
-            if response_data.get('usage', None) is None:
-                return Response(status=status.HTTP_200_OK, data=response_data)
+
+            if response_data.get('usage') is None:
+                return Response({'data': response_data}, status=status.HTTP_200_OK)
+
             obj_model, _ = AIModel.objects.get_or_create(id=model)
-            # Track token usage
-            pricing_plan = user.subscription.pricing_plan
-            token_usage, created = TokenUsage.objects.get_or_create(
+            token_usage, created = TokenUsage.objects.update_or_create(
                 user=user,
-                pricing_plan=pricing_plan,
+                pricing_plan=user.subscription.pricing_plan,
                 model=obj_model,
-                prompt_tokens_used=response_data['usage'].get('prompt_tokens'),
-                completion_tokens_used=response_data['usage'].get(
-                    'completion_tokens'),
-                total_tokens_used=response_data['usage'].get('total_tokens')
+                defaults={
+                    'prompt_tokens_used': response_data['usage'].get('prompt_tokens', 0),
+                    'completion_tokens_used': response_data['usage'].get('completion_tokens', 0),
+                    'total_tokens_used': response_data['usage'].get('total_tokens', 0)
+                }
             )
+
             if not created:
-                # Only update the token usage if a TokenUsage object already exists for this month
                 token_usage.prompt_tokens_used += response_data['usage'].get(
-                    'prompt_tokens')
+                    'prompt_tokens', 0)
                 token_usage.completion_tokens_used += response_data['usage'].get(
-                    'completion_tokens')
+                    'completion_tokens', 0)
                 token_usage.total_tokens_used += response_data['usage'].get(
-                    'total_tokens')
+                    'total_tokens', 0)
                 token_usage.save()
 
-            # Return the generated text in a JSON response
             return Response({'data': response_data}, status=status.HTTP_201_CREATED)
+
+        except User.DoesNotExist:
+            return Response({'error': 'User does not exist.'}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as e:
             return Response({'error': f'{str(e)}'}, status=status.HTTP_404_NOT_FOUND)
@@ -238,72 +251,91 @@ class CreateEditAPIView(APIView):
 class CompletionAPIView(APIView):
     serializer_class = CompletionSerializer
 
+    def create_model(self, request, model_id):
+        user = User.objects.get(id=request.user.id)
+        obj_model, _ = AIModel.objects.get_or_create(id=model_id)
+
+        # Check if user has exceeded their token limit
+        pricing_plan = user.subscription.pricing_plan
+        token_usage = TokenUsage.objects.filter(
+            user=user,
+            pricing_plan=pricing_plan,
+            model=obj_model,
+        ).first()
+        if token_usage and token_usage.total_tokens_used >= pricing_plan.token_limit:
+            raise ValidationError('Token limit exceeded.')
+
+        return obj_model
+
     def post(self, request):
         serializer = CompletionSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         data = serializer.validated_data
 
         try:
-            user = User.objects.get(id=request.user.id)
-            model_id = data['model']
+            obj_model = self.create_model(request, data['model'])
             prompt_text = data['prompt']
-            prompt_id = data['promptId']
-            useSavedPrompt = data['useSavedPrompt']
+            use_saved_prompt = data['useSavedPrompt']
+            prompt_id = data.get('promptId')
             max_tokens = data.get('max_tokens')
             temperature = data.get('temperature')
             top_p = data.get('top_p')
             n = data.get('n')
             stream = data.get('stream')
             logprobs = data.get('logprobs')
-            stop = request.data.get('stop')
+            stop = request.data.get('stop', '')
 
-            obj_model, _ = AIModel.objects.get_or_create(id=model_id)
-
-            promptInfo = None
-            if useSavedPrompt:
+            prompt_info = None
+            if use_saved_prompt:
                 prompt_obj = Prompt.objects.get(id=prompt_id)
-                promptInfo = prompt_obj.prompt
-                print(promptInfo)
+                prompt_info = prompt_obj.prompt
             else:
-                promptInfo = prompt_text
+                prompt_info = prompt_text
 
-            # # Return the generated text in a JSON response
+            # Generate completion
             response_data = create_completion(
-                model_id,
-                promptInfo,
+                data['model'],
+                prompt_info,
                 max_tokens,
                 temperature,
                 top_p,
                 n,
                 stream,
                 logprobs,
-                stop)
-
-            if response_data .get('usage', None) is None:
-                return Response(status=status.HTTP_404_NOT_FOUND, data=res)
+                stop,
+            )
 
             # Track token usage
+            user = User.objects.get(id=request.user.id)
             pricing_plan = user.subscription.pricing_plan
+            prompt_tokens_used = response_data['usage'].get('prompt_tokens', 0)
+            completion_tokens_used = response_data['usage'].get(
+                'completion_tokens', 0)
+            total_tokens_used = response_data['usage'].get('total_tokens', 0)
             token_usage, created = TokenUsage.objects.get_or_create(
                 user=user,
                 pricing_plan=pricing_plan,
                 model=obj_model,
-                prompt_tokens_used=response_data['usage'].get('prompt_tokens'),
-                completion_tokens_used=response_data['usage'].get(
-                    'completion_tokens'),
-                total_tokens_used=response_data['usage'].get('total_tokens')
+                defaults={
+                    'prompt_tokens_used': prompt_tokens_used,
+                    'completion_tokens_used': completion_tokens_used,
+                    'total_tokens_used': total_tokens_used,
+                }
             )
+
             if not created:
-                # Only update the token usage if a TokenUsage object already exists for this month
-                token_usage.prompt_tokens_used += response_data['usage'].get(
-                    'prompt_tokens')
-                token_usage.completion_tokens_used += response_data['usage'].get(
-                    'completion_tokens')
-                token_usage.total_tokens_used += response_data['usage'].get(
-                    'total_tokens')
+                token_usage.prompt_tokens_used += prompt_tokens_used
+                token_usage.completion_tokens_used += completion_tokens_used
+                token_usage.total_tokens_used += total_tokens_used
                 token_usage.save()
 
             return Response({'data': response_data}, status=status.HTTP_200_OK)
 
+        except TokenUsage.DoesNotExist:
+            return Response({'error': 'Token usage not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        except ValidationError as e:
+            return Response({'error': str(e)}, status=status.HTTP_403_FORBIDDEN)
+
         except Exception as e:
-            return Response({'error': f'{str(e)}'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': str(e)}, status=status.HTTP_400)
