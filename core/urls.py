@@ -18,8 +18,12 @@ from django.urls import include, path
 from rest_framework.authtoken.views import obtain_auth_token
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+    
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sentry-debug/', trigger_error),
     path('api/', include(('api.urls', 'api'), namespace='api')),
     # OpenAPI 3 documentation with Swagger UI
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
