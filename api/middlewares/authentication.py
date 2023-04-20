@@ -39,7 +39,7 @@ class RapidAPIAuthentication(authentication.BaseAuthentication):
 
             # Retrieve the user object
             try:
-                user = User.objects.get(developer_id=authorization_key)
+                user = User.objects.get(api_key=authorization_key)
                 # Add subscription
                 subscription = get_subscription(request)
                 if user.subscription != subscription:
