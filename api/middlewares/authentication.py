@@ -8,7 +8,8 @@ from api.models import User
 class RapidAPIAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
         # Get the user's RapidAPI key from the request header
-        rapid_api_key = request.META.get('X_RAPID_API_KEY', None)
+        rapid_api_key = request.META.get('X-RapidAPI-Key', None)
+        print(request.META.get('X-RapidAPI-User'))
         if not rapid_api_key:
             raise AuthenticationFailed('RapidAPI key not found in request headers')
 
