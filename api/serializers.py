@@ -1,8 +1,16 @@
 # serializers.py
 from rest_framework import serializers
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.serializers import AuthTokenSerializer
 from .models import Prompt, UseCase, Tone, AIModel, TokenUsage, PromptCategory
 
 
+
+class EmailAuthTokenSerializer(AuthTokenSerializer):
+    username_field = 'email'
+
+class ObtainEmailAuthToken(ObtainAuthToken):
+    serializer_class = EmailAuthTokenSerializer
 
 class AIModelSerializer(serializers.ModelSerializer):
     class Meta:

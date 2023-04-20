@@ -11,16 +11,18 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 
 # views.py
 from rest_framework import generics
+from rest_framework.authtoken.views import ObtainAuthToken
 from .models import Prompt, UseCase, Tone, AIModel,   TokenUsage, PromptCategory
 from .serializers import (
     DeveloperRegisterSerializer,
+    EmailAuthTokenSerializer,
     PromptSerializer,
     UseCaseSerializer,
     ToneSerializer,
     AIModelSerializer,
     CompletionSerializer,
     PromptCategorySerializer,
-     CreateEditSerializer)
+    CreateEditSerializer)
 
 
 from .models import User
@@ -28,6 +30,8 @@ from .utilities.openai import *
 
 # view for registering developers
 
+class ObtainEmailAuthToken(ObtainAuthToken):
+    serializer_class = EmailAuthTokenSerializer
 
 class DeveloperRegisterView(generics.CreateAPIView):
     serializer_class = DeveloperRegisterSerializer
