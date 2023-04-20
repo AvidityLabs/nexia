@@ -192,14 +192,23 @@ class CreateEditAPIView(APIView):
                 return Response(status=status.HTTP_200_OK, data=response_data)
             obj_model, _ = AIModel.objects.get_or_create(id=model)
             # Track token usage
-            TokenUsage.objects.create(
+            pricing_plan = user.subscription.pricing_plan
+            token_usage, created = TokenUsage.objects.get_or_create(
                 user=user,
+                pricing_plan=pricing_plan,
                 model=obj_model,
                 prompt_tokens_used=response_data['usage'].get('prompt_tokens'),
                 completion_tokens_used=response_data['usage'].get(
                     'completion_tokens'),
                 total_tokens_used=response_data['usage'].get('total_tokens')
             )
+            if not created:
+                # Only update the token usage if a TokenUsage object already exists for this month
+                token_usage.prompt_tokens_used += response_data['usage'].get('prompt_tokens')
+                token_usage.completion_tokens_used += response_data['usage'].get('completion_tokens')
+                token_usage.total_tokens_used += response_data['usage'].get('total_tokens')
+                token_usage.save()
+    
             # Return the generated text in a JSON response
             return Response({'data': response_data}, status=status.HTTP_201_CREATED)
 
@@ -228,6 +237,8 @@ class CompletionAPIView(APIView):
             logprobs = data.get('logprobs')
             stop = request.data.get('stop')
 
+            obj_model, _ = AIModel.objects.get_or_create(id=model)
+
             promptInfo = None
             if useSavedPrompt:
                 prompt_obj = Prompt.objects.get(id=prompt_id)
@@ -237,7 +248,7 @@ class CompletionAPIView(APIView):
                 promptInfo = prompt_text
 
             # # Return the generated text in a JSON response
-            res = create_completion(
+            response_data = create_completion(
                 model_id,
                 promptInfo,
                 max_tokens,
@@ -248,16 +259,27 @@ class CompletionAPIView(APIView):
                 logprobs,
                 stop)
 
-            if res.get('usage', None) is None:
+            if response_data .get('usage', None) is None:
                 return Response(status=status.HTTP_404_NOT_FOUND, data=res)
+
             # Track token usage
-            TokenUsage.objects.create(
+            pricing_plan = user.subscription.pricing_plan
+            token_usage, created = TokenUsage.objects.get_or_create(
                 user=user,
-                model=model_id,
-                prompt_tokens_used=res['usage'].get('prompt_tokens'),
-                completion_tokens_used=res['usage'].get('completion_tokens'),
-                total_tokens_used=res['usage'].get('total_tokens')
+                pricing_plan=pricing_plan,
+                model=obj_model,
+                prompt_tokens_used=response_data['usage'].get('prompt_tokens'),
+                completion_tokens_used=response_data['usage'].get(
+                    'completion_tokens'),
+                total_tokens_used=response_data['usage'].get('total_tokens')
             )
+            if not created:
+                # Only update the token usage if a TokenUsage object already exists for this month
+                token_usage.prompt_tokens_used += response_data['usage'].get('prompt_tokens')
+                token_usage.completion_tokens_used += response_data['usage'].get('completion_tokens')
+                token_usage.total_tokens_used += response_data['usage'].get('total_tokens')
+                token_usage.save()
+    
             return Response({'data': res}, status=status.HTTP_200_OK)
 
         except Exception as e:
