@@ -1,14 +1,32 @@
 # serializers.py
 from rest_framework import serializers
 from rest_framework.authtoken.views import ObtainAuthToken
-from rest_framework.authtoken.serializers import AuthTokenSerializer
-from .models import Prompt, UseCase, Tone, AIModel, TokenUsage, PromptCategory
+from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate
+from django.utils.translation import gettext_lazy as _
+from .models import User, Prompt, UseCase, Tone, AIModel, TokenUsage, PromptCategory
 
 
 
-class EmailAuthTokenSerializer(AuthTokenSerializer):
-    username_field = 'email'
+class EmailAuthTokenSerializer(serializers.Serializer):
+    email = serializers.CharField()
+    password = serializers.CharField(style={'input_type': 'password'})
 
+    def validate(self, attrs):
+        email = attrs.get('email')
+        password = attrs.get('password')
+
+        if email and password:
+            user = authenticate(request=self.context.get('request'),
+                                email=email, password=password)
+            if not user:
+                raise serializers.ValidationError(_('Invalid email or password'))
+            if not user.is_active:
+                raise serializers.ValidationError(_('User account is disabled.'))
+            attrs['user'] = user
+            return attrs
+        else:
+            raise serializers.ValidationError(_('Must include "email" and "password".'))
 class ObtainEmailAuthToken(ObtainAuthToken):
     serializer_class = EmailAuthTokenSerializer
 
