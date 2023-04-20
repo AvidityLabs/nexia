@@ -32,7 +32,7 @@ class RapidAPIAuthentication(authentication.BaseAuthentication):
 
             if not authorization_key:
                 raise AuthenticationFailed('Authorization key not found in request headers. Go to /register endpoint to get access key.')
-            if rapid_api_host:
+            if not rapid_api_host:
                 raise AuthenticationFailed('RapidAPI Host not found in request headers')
             if rapid_api_proxy_secret != HTTP_X_RAPIDAPI_PROXY_SECRET:
                 raise AuthenticationFailed(f'Invalid RapidAPI Proxy Secret. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI and use their platform to access this API.{APP_URL}')
