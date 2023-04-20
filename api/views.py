@@ -11,6 +11,8 @@ from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListCreateAPIView
 from rest_framework.exceptions import ValidationError
 
+# Validate prompt text length
+MAX_PROMPT_LENGTH = 1000  # Maximum allowed length for prompt text
 
 from api.models import Prompt, User, UseCase, Tone, AIModel,   TokenUsage, PromptCategory
 from api.serializers import (
@@ -196,6 +198,9 @@ class CreateEditAPIView(APIView):
         model = request.data.get('model', '')
 
         try:
+
+            if len(input_text) > MAX_PROMPT_LENGTH:
+                    raise ValidationError('Prompt text is too long.')
             user = User.objects.select_related(
                 'subscription__pricing_plan').get(id=request.user.id)
 
@@ -291,6 +296,9 @@ class CompletionAPIView(APIView):
                 prompt_info = prompt_obj.prompt
             else:
                 prompt_info = prompt_text
+
+            if len(prompt_info) > MAX_PROMPT_LENGTH:
+                    raise ValidationError('Prompt text is too long.')
 
             # Generate completion
             response_data = create_completion(
