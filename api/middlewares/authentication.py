@@ -1,28 +1,29 @@
+from django.shortcuts import get_object_or_404
 import requests
 from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
 from api.models import User
 
+
+
 class RapidAPIAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
         # Get the user's RapidAPI key from the request header
-        rapid_api_key = request.META.get('X-RapidAPI-Key', None)
-        print(request.__dict__)
+        rapid_api_key = request.META.get('X_RAPID_API_KEY', None)
         if not rapid_api_key:
-            raise AuthenticationFailed('RapidAPI key not found in request headers')
+            raise get_object_or_404(AuthenticationFailed('RapidAPI key not found in request headers'))
 
-        # Make a request to RapidAPI to obtain the user's information
-        url = 'https://rapidapi.com/user'
-        headers = {'X-RapidAPI-Key': rapid_api_key}
-        response = requests.get(url, headers=headers)
+        # Retrieve the user object
+        try:
+            user = User.objects.get(username=rapid_api_key)
+        except User.DoesNotExist:
+            # Create a new user if the user does not exist
+            user = User.objects.create_user(
+                username=rapid_api_key,
+                email=f'{rapid_api_key}@nexia.user',
+                is_developer=True,
+                api_key=rapid_api_key
+            )
+        return (user, None)
 
-        # Extract the user's information from the response
-        if response.status_code == 200:
-            user_info = response.json()
-            username = user_info.get('username', '')
-            email = user_info.get('email', '')
-            user = User.objects.get_or_create(username=username, email=email)
-            return (user, None)
-        else:
-            raise AuthenticationFailed('Invalid RapidAPI key')
         
