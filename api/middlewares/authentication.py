@@ -1,26 +1,20 @@
 import os
+from django.db import IntegrityError
 import requests
 from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
-from api.models import User, PricingPlan, Subscription
+from api.models import User
+from api.utilities.subscription import get_subscription
 
 
 HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
-APP_URL = 'https://rapidapi.com/AvidityLabs/api/nexia2'
-
-def get_subscription(request):
-    plan = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
-    pricing_plan, created = PricingPlan.objects.get_or_create(name=plan)
-    if created:
-        subscription = Subscription.objects.create(pricing_plan=pricing_plan)
-    else:
-        subscription = Subscription.objects.get(pricing_plan=pricing_plan)
-    return subscription
+RAPID_API_APP_URL = 'https://rapidapi.com/AvidityLabs/api/nexia2'
 
 
 class RapidAPIAuthentication(authentication.BaseAuthentication):
+    
     def authenticate(self, request):
-        print(request.META)
+        # print(request.META)
         if request.META.get('PATH_INFO') == '/api/register/' or request.META.get('PATH_INFO') == '/api/get_token/':
             # Skip authentication for registration endpoint
             return None
@@ -35,16 +29,10 @@ class RapidAPIAuthentication(authentication.BaseAuthentication):
             if not rapid_api_host:
                 raise AuthenticationFailed('RapidAPI Host not found in request headers')
             if rapid_api_proxy_secret != HTTP_X_RAPIDAPI_PROXY_SECRET:
-                raise AuthenticationFailed(f'Invalid RapidAPI Proxy Secret. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI and use their platform to access this API.{APP_URL}')
+                raise AuthenticationFailed(f'Invalid RapidAPI Proxy Secret. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI and use their platform to access this API.{RAPID_API_APP_URL}')
 
-            # Retrieve the user object
             try:
                 user = User.objects.get(api_key=authorization_key)
-                # Add subscription
-                subscription = get_subscription(request)
-                if user.subscription != subscription:
-                    user.subscription = subscription
-                    user.save()
                 return (user, None)
             except User.DoesNotExist:
                 raise AuthenticationFailed('User not registered with this API. Please sign up for RapidAPI and use their platform to access this API.')

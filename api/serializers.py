@@ -5,6 +5,11 @@ from .models import TokenUsage
 
 from api.utilities.authenticate import get_user
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 
 class EmailAuthTokenSerializer(serializers.Serializer):
 
@@ -21,7 +26,7 @@ class EmailAuthTokenSerializer(serializers.Serializer):
 
             if user:
                 if not user.is_active:
-                    msg = _('User account is disabled.')
+                    msg = _('User account is disabled. Contact administrator.')
                     raise exceptions.ValidationError(msg)
             else:
                 msg = _('Unable to log in with provided credentials.')

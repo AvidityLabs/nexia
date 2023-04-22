@@ -1,0 +1,904 @@
+[2023-04-22 06:09:30] INFO Watching for file changes with StatReloader
+[2023-04-22 06:09:42] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:09:44] INFO Watching for file changes with StatReloader
+[2023-04-22 06:10:25] WARNING Bad Request: /api/register/
+[2023-04-22 06:10:25] WARNING "POST /api/register/ HTTP/1.1" 400 45
+[2023-04-22 06:13:44] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:13:47] INFO Watching for file changes with StatReloader
+[2023-04-22 06:13:54] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:13:57] INFO Watching for file changes with StatReloader
+[2023-04-22 06:14:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:14:05] INFO Watching for file changes with StatReloader
+[2023-04-22 06:14:12] WARNING Bad Request: /api/register/
+[2023-04-22 06:14:12] WARNING "POST /api/register/ HTTP/1.1" 400 45
+[2023-04-22 06:20:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:20:14] INFO Watching for file changes with StatReloader
+[2023-04-22 06:20:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:20:21] INFO Watching for file changes with StatReloader
+[2023-04-22 06:20:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:20:38] INFO Watching for file changes with StatReloader
+[2023-04-22 06:20:42] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:20:44] INFO Watching for file changes with StatReloader
+[2023-04-22 06:20:49] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:20:51] INFO Watching for file changes with StatReloader
+[2023-04-22 06:20:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:20:58] INFO Watching for file changes with StatReloader
+[2023-04-22 06:21:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:21:07] INFO Watching for file changes with StatReloader
+[2023-04-22 06:21:14] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:21:16] INFO Watching for file changes with StatReloader
+[2023-04-22 06:21:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:21:23] INFO Watching for file changes with StatReloader
+[2023-04-22 06:21:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:21:37] INFO Watching for file changes with StatReloader
+[2023-04-22 06:22:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:22:21] INFO Watching for file changes with StatReloader
+[2023-04-22 06:22:24] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 06:22:26] INFO Watching for file changes with StatReloader
+[2023-04-22 06:57:50] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:01:21] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:04:48] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:07:46] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:08:11] INFO Watching for file changes with StatReloader
+[2023-04-22 07:08:15] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:08:15] WARNING "POST /api/get_token/ HTTP/1.1" 400 51
+[2023-04-22 07:08:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 07:08:41] INFO Watching for file changes with StatReloader
+[2023-04-22 07:08:45] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:08:45] WARNING "POST /api/get_token/ HTTP/1.1" 400 92
+[2023-04-22 07:11:47] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:12:06] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:12:23] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:12:49] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:13:11] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:14:19] WARNING Bad Request: /api/get_token/
+[2023-04-22 07:18:16] WARNING Bad Request: /api/register/
+[2023-04-22 07:24:13] WARNING Bad Request: /api/register/
+[2023-04-22 07:24:13] WARNING Bad Request: /api/register/
+[2023-04-22 07:31:03] WARNING Bad Request: /api/register/
+[2023-04-22 07:31:03] WARNING Bad Request: /api/register/
+[2023-04-22 07:32:02] WARNING Bad Request: /api/register/
+[2023-04-22 07:32:03] WARNING Bad Request: /api/register/
+[2023-04-22 07:35:35] WARNING Bad Request: /api/register/
+[2023-04-22 07:35:35] WARNING Bad Request: /api/register/
+[2023-04-22 07:36:30] WARNING Bad Request: /api/register/
+[2023-04-22 07:36:30] WARNING Bad Request: /api/register/
+[2023-04-22 07:38:45] WARNING Bad Request: /api/register/
+[2023-04-22 07:38:45] WARNING Bad Request: /api/register/
+[2023-04-22 07:39:07] WARNING Bad Request: /api/register/
+[2023-04-22 07:39:08] WARNING Bad Request: /api/register/
+[2023-04-22 07:39:25] WARNING Bad Request: /api/register/
+[2023-04-22 07:41:27] WARNING Bad Request: /api/register/
+[2023-04-22 07:41:49] WARNING Bad Request: /api/register/
+[2023-04-22 07:45:00] WARNING Bad Request: /api/register/
+[2023-04-22 07:45:39] WARNING Bad Request: /api/register/
+[2023-04-22 08:33:01] WARNING Bad Request: /api/register/
+[2023-04-22 08:35:02] WARNING Bad Request: /api/register/
+[2023-04-22 08:41:08] WARNING Bad Request: /api/register/
+[2023-04-22 08:42:26] WARNING Bad Request: /api/register/
+[2023-04-22 08:49:02] WARNING Bad Request: /api/register/
+[2023-04-22 08:49:43] WARNING Bad Request: /api/register/
+[2023-04-22 08:51:02] WARNING Bad Request: /api/register/
+[2023-04-22 08:51:24] WARNING Bad Request: /api/register/
+[2023-04-22 08:55:19] INFO Watching for file changes with StatReloader
+[2023-04-22 08:55:24] WARNING Bad Request: /api/register/
+[2023-04-22 08:55:24] WARNING "POST /api/register/ HTTP/1.1" 400 45
+[2023-04-22 08:56:21] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:56:23] INFO Watching for file changes with StatReloader
+[2023-04-22 08:56:48] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:56:51] INFO Watching for file changes with StatReloader
+[2023-04-22 08:56:54] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:56:57] INFO Watching for file changes with StatReloader
+[2023-04-22 08:57:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:57:13] INFO Watching for file changes with StatReloader
+[2023-04-22 08:57:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:57:19] INFO Watching for file changes with StatReloader
+[2023-04-22 08:57:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:57:24] INFO Watching for file changes with StatReloader
+[2023-04-22 08:57:34] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:57:37] INFO Watching for file changes with StatReloader
+[2023-04-22 08:57:40] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:57:42] INFO Watching for file changes with StatReloader
+[2023-04-22 08:57:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 08:57:48] INFO Watching for file changes with StatReloader
+[2023-04-22 08:57:56] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:57:58] INFO Watching for file changes with StatReloader
+[2023-04-22 08:58:06] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:58:09] INFO Watching for file changes with StatReloader
+[2023-04-22 08:58:12] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-22 08:58:14] INFO Watching for file changes with StatReloader
+[2023-04-22 08:58:21] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-22 08:58:23] INFO Watching for file changes with StatReloader
+[2023-04-22 08:58:27] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-22 08:58:29] INFO Watching for file changes with StatReloader
+[2023-04-22 08:58:32] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-22 08:58:34] INFO Watching for file changes with StatReloader
+[2023-04-22 08:58:50] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:58:52] INFO Watching for file changes with StatReloader
+[2023-04-22 08:59:02] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:59:04] INFO Watching for file changes with StatReloader
+[2023-04-22 08:59:07] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:59:09] INFO Watching for file changes with StatReloader
+[2023-04-22 08:59:12] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:59:14] INFO Watching for file changes with StatReloader
+[2023-04-22 08:59:17] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 08:59:19] INFO Watching for file changes with StatReloader
+[2023-04-22 09:00:07] WARNING Bad Request: /api/register/
+[2023-04-22 09:02:03] WARNING Bad Request: /api/register/
+[2023-04-22 09:02:23] WARNING Bad Request: /api/register/
+[2023-04-22 09:03:01] WARNING Bad Request: /api/register/
+[2023-04-22 09:03:12] WARNING Bad Request: /api/register/
+[2023-04-22 09:03:30] WARNING Bad Request: /api/register/
+[2023-04-22 09:03:59] WARNING Bad Request: /api/register/
+[2023-04-22 09:04:30] WARNING Bad Request: /api/register/
+[2023-04-22 09:07:45] WARNING Bad Request: /api/register/
+[2023-04-22 09:08:51] INFO Watching for file changes with StatReloader
+[2023-04-22 09:10:01] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:10:04] INFO Watching for file changes with StatReloader
+[2023-04-22 09:10:14] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:10:17] INFO Watching for file changes with StatReloader
+[2023-04-22 09:10:20] WARNING Forbidden: /api/emotion_analysis/
+[2023-04-22 09:10:20] WARNING "POST /api/emotion_analysis/ HTTP/1.1" 403 104
+[2023-04-22 09:11:45] INFO "POST /api/register/ HTTP/1.1" 200 54
+[2023-04-22 09:14:57] WARNING Forbidden: /api/emotion_analysis/
+[2023-04-22 09:14:57] WARNING "POST /api/emotion_analysis/ HTTP/1.1" 403 104
+[2023-04-22 09:15:09] WARNING Forbidden: /api/emotion_analysis/
+[2023-04-22 09:15:09] WARNING "POST /api/emotion_analysis/ HTTP/1.1" 403 104
+[2023-04-22 09:15:34] WARNING Forbidden: /api/emotion_analysis/
+[2023-04-22 09:15:34] WARNING "POST /api/emotion_analysis/ HTTP/1.1" 403 55
+[2023-04-22 09:16:55] ERROR Internal Server Error: /api/emotion_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 581, in get_or_create
+    return self.get(**kwargs), False
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 437, in get
+    self.model._meta.object_name
+api.models.PricingPlan.DoesNotExist: PricingPlan matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: api_pricingplan.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 281, in sentry_patched_drf_initial
+    return old_drf_initial(self, request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\middlewares\authentication.py", line 38, in authenticate
+    subscription = get_subscription(request)
+  File "C:\Projects\chatgptapi\core\api\utilities\subscription.py", line 11, in get_subscription
+    pricing_plan, created = PricingPlan.objects.get_or_create(name=plan)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 588, in get_or_create
+    return self.create(**params), True
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 778, in save_base
+    force_update, using, update_fields,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: api_pricingplan.name
+[2023-04-22 09:16:55] ERROR "POST /api/emotion_analysis/ HTTP/1.1" 500 235340
+[2023-04-22 09:19:18] ERROR Internal Server Error: /api/emotion_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 581, in get_or_create
+    return self.get(**kwargs), False
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 437, in get
+    self.model._meta.object_name
+api.models.PricingPlan.DoesNotExist: PricingPlan matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: api_pricingplan.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 281, in sentry_patched_drf_initial
+    return old_drf_initial(self, request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\middlewares\authentication.py", line 38, in authenticate
+    subscription = get_subscription(request)
+  File "C:\Projects\chatgptapi\core\api\utilities\subscription.py", line 11, in get_subscription
+    pricing_plan, created = PricingPlan.objects.get_or_create(name=plan)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 588, in get_or_create
+    return self.create(**params), True
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 778, in save_base
+    force_update, using, update_fields,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: api_pricingplan.name
+[2023-04-22 09:19:18] ERROR "POST /api/emotion_analysis/ HTTP/1.1" 500 235340
+[2023-04-22 09:21:03] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-22 09:21:06] INFO Watching for file changes with StatReloader
+[2023-04-22 09:21:13] ERROR Internal Server Error: /api/emotion_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 581, in get_or_create
+    return self.get(**kwargs), False
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 437, in get
+    self.model._meta.object_name
+api.models.PricingPlan.DoesNotExist: PricingPlan matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: api_pricingplan.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 281, in sentry_patched_drf_initial
+    return old_drf_initial(self, request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\middlewares\authentication.py", line 38, in authenticate
+    subscription = get_subscription(request)
+  File "C:\Projects\chatgptapi\core\api\utilities\subscription.py", line 12, in get_subscription
+    pricing_plan, created = PricingPlan.objects.get_or_create(name=plan)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 588, in get_or_create
+    return self.create(**params), True
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 778, in save_base
+    force_update, using, update_fields,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: api_pricingplan.name
+[2023-04-22 09:21:13] ERROR "POST /api/emotion_analysis/ HTTP/1.1" 500 235294
+[2023-04-22 09:22:56] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-22 09:22:58] INFO Watching for file changes with StatReloader
+[2023-04-22 09:23:13] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-22 09:23:15] INFO Watching for file changes with StatReloader
+[2023-04-22 09:23:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:23:31] INFO Watching for file changes with StatReloader
+[2023-04-22 09:23:39] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:23:42] INFO Watching for file changes with StatReloader
+[2023-04-22 09:23:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:23:48] INFO Watching for file changes with StatReloader
+[2023-04-22 09:24:43] INFO "POST /api/register/ HTTP/1.1" 200 54
+[2023-04-22 09:25:22] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 09:25:24] INFO Watching for file changes with StatReloader
+[2023-04-22 09:25:52] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 09:25:54] INFO Watching for file changes with StatReloader
+[2023-04-22 09:25:58] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 09:26:00] INFO Watching for file changes with StatReloader
+[2023-04-22 09:26:03] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 09:26:05] INFO Watching for file changes with StatReloader
+[2023-04-22 09:27:21] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:27:23] INFO Watching for file changes with StatReloader
+[2023-04-22 09:27:30] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:27:32] INFO Watching for file changes with StatReloader
+[2023-04-22 09:27:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:27:58] INFO Watching for file changes with StatReloader
+[2023-04-22 09:28:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:28:10] INFO Watching for file changes with StatReloader
+[2023-04-22 09:28:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:28:21] INFO Watching for file changes with StatReloader
+[2023-04-22 09:28:26] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:28:28] INFO Watching for file changes with StatReloader
+[2023-04-22 09:28:30] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:28:33] INFO Watching for file changes with StatReloader
+[2023-04-22 09:28:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:28:41] INFO Watching for file changes with StatReloader
+[2023-04-22 09:28:53] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:28:55] INFO Watching for file changes with StatReloader
+[2023-04-22 09:29:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:29:05] INFO Watching for file changes with StatReloader
+[2023-04-22 09:29:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:29:22] INFO Watching for file changes with StatReloader
+[2023-04-22 09:29:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:29:30] INFO Watching for file changes with StatReloader
+[2023-04-22 09:29:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:29:35] INFO Watching for file changes with StatReloader
+[2023-04-22 09:29:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:29:40] INFO Watching for file changes with StatReloader
+[2023-04-22 09:30:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:30:03] INFO Watching for file changes with StatReloader
+[2023-04-22 09:30:14] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:30:16] INFO Watching for file changes with StatReloader
+[2023-04-22 09:30:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:30:22] INFO Watching for file changes with StatReloader
+[2023-04-22 09:30:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:30:34] INFO Watching for file changes with StatReloader
+[2023-04-22 09:30:43] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:30:45] INFO Watching for file changes with StatReloader
+[2023-04-22 09:30:54] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:30:56] INFO Watching for file changes with StatReloader
+[2023-04-22 09:31:06] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:31:09] INFO Watching for file changes with StatReloader
+[2023-04-22 09:31:16] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:31:18] INFO Watching for file changes with StatReloader
+[2023-04-22 09:31:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:31:34] INFO Watching for file changes with StatReloader
+[2023-04-22 09:31:42] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:31:44] INFO Watching for file changes with StatReloader
+[2023-04-22 09:31:55] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:31:58] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:01] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:04] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:10] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:19] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:26] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:28] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:34] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:36] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:43] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:53] INFO Watching for file changes with StatReloader
+[2023-04-22 09:32:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:32:58] INFO Watching for file changes with StatReloader
+[2023-04-22 09:33:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:33:06] INFO Watching for file changes with StatReloader
+[2023-04-22 09:33:10] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:33:13] INFO Watching for file changes with StatReloader
+[2023-04-22 09:33:21] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:33:23] INFO Watching for file changes with StatReloader
+[2023-04-22 09:33:34] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:33:36] INFO Watching for file changes with StatReloader
+[2023-04-22 09:33:57] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:33:59] INFO Watching for file changes with StatReloader
+[2023-04-22 09:34:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:34:07] INFO Watching for file changes with StatReloader
+[2023-04-22 09:34:24] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:34:26] INFO Watching for file changes with StatReloader
+[2023-04-22 09:34:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:34:34] INFO Watching for file changes with StatReloader
+[2023-04-22 09:34:53] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:34:55] INFO Watching for file changes with StatReloader
+[2023-04-22 09:35:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:35:20] INFO Watching for file changes with StatReloader
+[2023-04-22 09:35:24] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:35:26] INFO Watching for file changes with StatReloader
+[2023-04-22 09:36:20] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 09:36:23] INFO Watching for file changes with StatReloader
+[2023-04-22 09:36:27] INFO C:\Projects\chatgptapi\core\api\middlewares\authentication.py changed, reloading.
+[2023-04-22 09:36:29] INFO Watching for file changes with StatReloader
+[2023-04-22 09:36:40] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 09:48:59] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:49:01] INFO Watching for file changes with StatReloader
+[2023-04-22 09:49:06] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:49:09] INFO Watching for file changes with StatReloader
+[2023-04-22 09:51:37] INFO C:\Projects\chatgptapi\core\api\utilities\sentiment_labels.py changed, reloading.
+[2023-04-22 09:51:40] INFO Watching for file changes with StatReloader
+[2023-04-22 09:51:49] INFO C:\Projects\chatgptapi\core\api\utilities\sentiment_labels.py changed, reloading.
+[2023-04-22 09:51:51] INFO Watching for file changes with StatReloader
+[2023-04-22 09:52:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:52:30] INFO Watching for file changes with StatReloader
+[2023-04-22 09:52:34] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:52:36] INFO Watching for file changes with StatReloader
+[2023-04-22 09:52:39] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:52:42] INFO Watching for file changes with StatReloader
+[2023-04-22 09:52:49] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:52:51] INFO Watching for file changes with StatReloader
+[2023-04-22 09:53:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:53:05] INFO Watching for file changes with StatReloader
+[2023-04-22 09:53:13] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:53:16] INFO Watching for file changes with StatReloader
+[2023-04-22 09:54:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:54:10] INFO Watching for file changes with StatReloader
+[2023-04-22 09:54:16] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 09:54:19] INFO Watching for file changes with StatReloader
+[2023-04-22 09:54:33] WARNING Bad Request: /api/emotion_analysis/
+[2023-04-22 09:54:33] WARNING "POST /api/emotion_analysis/ HTTP/1.1" 400 84
+[2023-04-22 17:36:20] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 17:37:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:37:25] INFO Watching for file changes with StatReloader
+[2023-04-22 17:38:01] WARNING Not Found: /api/sentiment_analysis/
+[2023-04-22 17:38:01] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 404 3416
+[2023-04-22 17:38:14] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-22 17:38:16] INFO Watching for file changes with StatReloader
+[2023-04-22 17:38:22] WARNING Not Found: /api/sentiment_analysis/
+[2023-04-22 17:38:22] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 404 3416
+[2023-04-22 17:38:51] INFO Watching for file changes with StatReloader
+[2023-04-22 17:38:57] WARNING Not Found: /api/sentiment_analysis/
+[2023-04-22 17:38:57] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 404 3416
+[2023-04-22 17:39:21] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:39:25] INFO Watching for file changes with StatReloader
+[2023-04-22 17:39:31] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-22 17:39:33] INFO Watching for file changes with StatReloader
+[2023-04-22 17:39:38] WARNING Forbidden: /api/sentiment_analysis/
+[2023-04-22 17:39:38] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 403 104
+[2023-04-22 17:40:19] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 17:40:19] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 84
+[2023-04-22 17:41:36] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 17:41:39] INFO Watching for file changes with StatReloader
+[2023-04-22 17:41:45] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 17:41:47] INFO Watching for file changes with StatReloader
+[2023-04-22 17:41:51] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 17:41:54] INFO Watching for file changes with StatReloader
+[2023-04-22 17:41:58] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 17:42:01] INFO Watching for file changes with StatReloader
+[2023-04-22 17:42:06] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 17:42:06] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 84
+[2023-04-22 17:42:58] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:43:01] INFO Watching for file changes with StatReloader
+[2023-04-22 17:43:08] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 17:43:08] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 84
+[2023-04-22 17:43:31] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:43:33] INFO Watching for file changes with StatReloader
+[2023-04-22 17:43:42] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 17:43:42] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 84
+[2023-04-22 17:43:58] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:44:01] INFO Watching for file changes with StatReloader
+[2023-04-22 17:44:04] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 17:46:42] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 17:51:44] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:51:46] INFO Watching for file changes with StatReloader
+[2023-04-22 17:51:52] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:51:54] INFO Watching for file changes with StatReloader
+[2023-04-22 17:51:58] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:52:00] INFO Watching for file changes with StatReloader
+[2023-04-22 17:52:12] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 17:55:01] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:55:03] INFO Watching for file changes with StatReloader
+[2023-04-22 17:56:03] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 17:56:53] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 17:57:38] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 17:59:22] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 17:59:47] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 17:59:50] INFO Watching for file changes with StatReloader
+[2023-04-22 17:59:58] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 18:01:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:01:15] INFO Watching for file changes with StatReloader
+[2023-04-22 18:01:18] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:01:20] INFO Watching for file changes with StatReloader
+[2023-04-22 18:02:33] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 18:03:53] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:03:55] INFO Watching for file changes with StatReloader
+[2023-04-22 18:04:17] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 18:04:31] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 18:09:20] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:09:22] INFO Watching for file changes with StatReloader
+[2023-04-22 18:11:12] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 18:17:43] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 18:18:01] ERROR Internal Server Error: /api/emotion_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 146, in post
+    logger.error(f"An error occurred @api/emotion_analysis/: {e}")
+UnboundLocalError: local variable 'e' referenced before assignment
+[2023-04-22 18:18:01] ERROR "POST /api/emotion_analysis/ HTTP/1.1" 500 102174
+[2023-04-22 18:18:02] ERROR Internal Server Error: /api/emotion_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 146, in post
+    logger.error(f"An error occurred @api/emotion_analysis/: {e}")
+UnboundLocalError: local variable 'e' referenced before assignment
+[2023-04-22 18:18:02] ERROR "POST /api/emotion_analysis/ HTTP/1.1" 500 102174
+[2023-04-22 18:22:13] ERROR Internal Server Error: /api/emotion_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 146, in post
+    logger.error(f"An error occurred @api/emotion_analysis/: {e}")
+UnboundLocalError: local variable 'e' referenced before assignment
+[2023-04-22 18:22:13] ERROR "POST /api/emotion_analysis/ HTTP/1.1" 500 100410
+[2023-04-22 18:22:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:22:44] INFO Watching for file changes with StatReloader
+[2023-04-22 18:22:51] WARNING Bad Request: /api/emotion_analysis/
+[2023-04-22 18:22:51] WARNING "POST /api/emotion_analysis/ HTTP/1.1" 400 127
+[2023-04-22 18:23:40] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 18:24:36] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 147
+[2023-04-22 18:24:46] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 18:25:11] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 102
+[2023-04-22 18:26:31] INFO Watching for file changes with StatReloader
+[2023-04-22 18:27:08] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:27:11] INFO Watching for file changes with StatReloader
+[2023-04-22 18:27:59] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:28:02] INFO Watching for file changes with StatReloader
+[2023-04-22 18:28:08] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:28:10] INFO Watching for file changes with StatReloader
+[2023-04-22 18:28:18] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:28:21] INFO Watching for file changes with StatReloader
+[2023-04-22 18:28:32] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:28:34] INFO Watching for file changes with StatReloader
+[2023-04-22 18:29:57] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:30:00] INFO Watching for file changes with StatReloader
+[2023-04-22 18:30:04] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:30:06] INFO Watching for file changes with StatReloader
+[2023-04-22 18:30:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:30:19] INFO Watching for file changes with StatReloader
+[2023-04-22 18:30:43] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:30:46] INFO Watching for file changes with StatReloader
+[2023-04-22 18:30:58] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:30:58] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 7
+[2023-04-22 18:31:26] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:31:26] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 7
+[2023-04-22 18:32:04] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:32:06] INFO Watching for file changes with StatReloader
+[2023-04-22 18:32:11] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:32:11] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 7
+[2023-04-22 18:32:23] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:32:26] INFO Watching for file changes with StatReloader
+[2023-04-22 18:32:31] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:32:34] INFO Watching for file changes with StatReloader
+[2023-04-22 18:32:39] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:32:39] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 84
+[2023-04-22 18:33:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:33:03] INFO Watching for file changes with StatReloader
+[2023-04-22 18:33:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:33:10] INFO Watching for file changes with StatReloader
+[2023-04-22 18:33:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:33:18] INFO Watching for file changes with StatReloader
+[2023-04-22 18:33:21] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:33:21] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 84
+[2023-04-22 18:33:25] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:33:25] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 84
+[2023-04-22 18:33:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:33:41] INFO Watching for file changes with StatReloader
+[2023-04-22 18:33:48] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:33:51] INFO Watching for file changes with StatReloader
+[2023-04-22 18:33:55] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:33:55] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 155
+[2023-04-22 18:34:43] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:34:43] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 155
+[2023-04-22 18:35:04] INFO C:\Projects\chatgptapi\core\api\utilities\hugging_face.py changed, reloading.
+[2023-04-22 18:35:07] INFO Watching for file changes with StatReloader
+[2023-04-22 18:35:10] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:35:10] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 155
+[2023-04-22 18:36:58] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:36:58] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 155
+[2023-04-22 18:37:00] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:37:00] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 155
+[2023-04-22 18:37:11] INFO Watching for file changes with StatReloader
+[2023-04-22 18:37:22] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 147
+[2023-04-22 18:37:53] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:37:57] INFO Watching for file changes with StatReloader
+[2023-04-22 18:38:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:38:05] INFO Watching for file changes with StatReloader
+[2023-04-22 18:38:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:38:14] INFO Watching for file changes with StatReloader
+[2023-04-22 18:38:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:38:22] INFO Watching for file changes with StatReloader
+[2023-04-22 18:38:30] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 204
+[2023-04-22 18:40:51] ERROR Internal Server Error: /api/sentiment_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 188, in post
+    logger.exception(f"An error occurred @api/sentiment_analysis/: {e}")
+UnboundLocalError: local variable 'e' referenced before assignment
+[2023-04-22 18:40:51] ERROR "POST /api/sentiment_analysis/ HTTP/1.1" 500 100019
+[2023-04-22 18:41:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:41:37] INFO Watching for file changes with StatReloader
+[2023-04-22 18:42:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:42:03] INFO Watching for file changes with StatReloader
+[2023-04-22 18:42:06] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:42:08] INFO Watching for file changes with StatReloader
+[2023-04-22 18:42:14] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:42:16] INFO Watching for file changes with StatReloader
+[2023-04-22 18:42:31] ERROR Internal Server Error: /api/sentiment_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 188, in post
+    logger.exception(f"An error occurred @api/sentiment_analysis/{serializer.errors}")
+AttributeError: module 'rest_framework.serializers' has no attribute 'errors'
+[2023-04-22 18:42:31] ERROR "POST /api/sentiment_analysis/ HTTP/1.1" 500 100167
+[2023-04-22 18:43:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:43:32] INFO Watching for file changes with StatReloader
+[2023-04-22 18:43:37] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:43:40] INFO Watching for file changes with StatReloader
+[2023-04-22 18:43:44] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:43:46] INFO Watching for file changes with StatReloader
+[2023-04-22 18:43:53] ERROR Internal Server Error: /api/sentiment_analysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 189, in post
+    return Response({'error': error_message, 'details': text_serializer.errors}, status=400)
+NameError: name 'serializer' is not defined
+[2023-04-22 18:43:53] ERROR "POST /api/sentiment_analysis/ HTTP/1.1" 500 99677
+[2023-04-22 18:44:31] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:44:34] INFO Watching for file changes with StatReloader
+[2023-04-22 18:44:43] INFO "POST /api/sentiment_analysis/ HTTP/1.1" 200 204
+[2023-04-22 18:44:49] WARNING Bad Request: /api/sentiment_analysis/
+[2023-04-22 18:44:49] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 400 132
+[2023-04-22 18:46:51] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 341
+[2023-04-22 18:48:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:48:07] INFO Watching for file changes with StatReloader
+[2023-04-22 18:48:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:48:15] INFO Watching for file changes with StatReloader
+[2023-04-22 18:48:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:48:25] INFO Watching for file changes with StatReloader
+[2023-04-22 18:48:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:48:44] INFO Watching for file changes with StatReloader
+[2023-04-22 18:48:48] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:48:51] INFO Watching for file changes with StatReloader
+[2023-04-22 18:48:55] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:48:57] INFO Watching for file changes with StatReloader
+[2023-04-22 18:49:17] WARNING Bad Request: /api/emotion_analysis/
+[2023-04-22 18:49:17] WARNING "POST /api/emotion_analysis/ HTTP/1.1" 400 132
+[2023-04-22 18:51:09] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:51:12] INFO Watching for file changes with StatReloader
+[2023-04-22 18:51:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:51:22] INFO Watching for file changes with StatReloader
+[2023-04-22 18:51:26] INFO C:\Projects\chatgptapi\core\api\utilities\sentiment_labels.py changed, reloading.
+[2023-04-22 18:51:28] INFO Watching for file changes with StatReloader
+[2023-04-22 18:54:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:54:10] INFO Watching for file changes with StatReloader
+[2023-04-22 18:54:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:54:20] INFO Watching for file changes with StatReloader
+[2023-04-22 18:54:26] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:54:29] INFO Watching for file changes with StatReloader
+[2023-04-22 18:54:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:54:37] INFO Watching for file changes with StatReloader
+[2023-04-22 18:54:47] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:54:49] INFO Watching for file changes with StatReloader
+[2023-04-22 18:54:53] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-22 18:54:55] INFO Watching for file changes with StatReloader
+[2023-04-22 18:55:12] INFO "POST /api/emotion_analysis/ HTTP/1.1" 200 467

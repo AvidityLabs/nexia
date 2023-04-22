@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from pathlib import Path
 import os
-import dj_database_url
+import logging
 from dotenv import load_dotenv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -93,9 +93,9 @@ CORS_ALLOW_HEADERS = ['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #    'api.middlewares.authentication.RapidAPIAuthentication',
-    # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+       'api.middlewares.authentication.RapidAPIAuthentication',
+    ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
@@ -143,7 +143,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase', # This is where you put the name of the db file. 
+        'NAME': 'nexiadb', # This is where you put the name of the db file. 
                  # If one doesn't exist, it will be created at migration time.
     }
 }
@@ -221,3 +221,35 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'human_readable': {
+            'format': '[%(asctime)s] %(levelname)s %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'human_readable',
+            'level': 'DEBUG',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'nexia.log',
+            'formatter': 'human_readable',
+            'level': 'INFO',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+    },
+}
+
