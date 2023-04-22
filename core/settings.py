@@ -93,11 +93,11 @@ CORS_ALLOW_HEADERS = ['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-       'api.middlewares.authentication.RapidAPIAuthentication',
-    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #    'api.middlewares.authentication.RapidAPIAuthentication',
+    # ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
@@ -138,15 +138,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 
-DATABASES = {}
-DATABASES["default"] = dj_database_url.config(conn_max_age=600)
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'mydatabase', # This is where you put the name of the db file. 
-#                  # If one doesn't exist, it will be created at migration time.
-#     }
-# }
+# DATABASES = {}
+# DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase', # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
+    }
+}
 
 
 # Password validation
