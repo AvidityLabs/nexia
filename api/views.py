@@ -137,7 +137,7 @@ class TextEmotionAnalysisView(APIView):
                 #     "completion_tokens": completion_tokens,
                 #     "total_tokens_used": total_tokens,
                 # }
-                return Response(data=data, status=200)
+                return Response(data={"analysis":data}, status=200)
             except Exception as e:
                 logger.exception(f"An error occurred @api/emotion_analysis/: {e}")
                 return Response({'error': f'An error occurred while processing your request. Please try again later.{str(e)}'}, status=400)

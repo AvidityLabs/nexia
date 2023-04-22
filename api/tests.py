@@ -8,9 +8,9 @@ from rest_framework.authtoken.models import Token
 from api.models import (PricingPlan, User, Subscription)
 
 
-HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
-HTTP_X_RAPIDAPI_HOST = os.environ.get('HTTP_X_RAPIDAPI_HOST')
-TEST_HTTP_AUTHORIZATION = os.environ.get('TEST_HTTP_AUTHORIZATION')
+HTTP_X_RAPIDAPI_PROXY_SECRET = 'c7b970d0-dc8a-11ed-ba4c-f5094ac89edd'
+HTTP_X_RAPIDAPI_HOST = 'test'
+TEST_HTTP_AUTHORIZATION = 'test'
 HTTP_X_RAPIDAPI_SUBSCRIPTION = 'BASIC'
 SENTIMENT_RESPONSE_DATA = [
     [
@@ -32,45 +32,48 @@ SENTIMENT_RESPONSE_DATA = [
     ]
 ]
 
-EMOTION_RESPONSE_DATA=[
-    [
-        {
-            "label": "joy",
-            "score": 0.9837275743484497,
-            "percentage": 98.37
-        },
-        {
-            "label": "surprise",
-            "score": 0.0065237125381827354,
-            "percentage": 0.65
-        },
-        {
-            "label": "neutral",
-            "score": 0.0061690774746239185,
-            "percentage": 0.62
-        },
-        {
-            "label": "disgust",
-            "score": 0.0010919542983174324,
-            "percentage": 0.11
-        },
-        {
-            "label": "sadness",
-            "score": 0.0010498764459043741,
-            "percentage": 0.1
-        },
-        {
-            "label": "anger",
-            "score": 0.000743839715141803,
-            "percentage": 0.07
-        },
-        {
-            "label": "fear",
-            "score": 0.0006939407321624458,
-            "percentage": 0.07
-        }
+EMOTION_RESPONSE_DATA = {
+    "analysis": [
+        [
+            {
+                "label": "joy",
+                "score": 0.9837275743484497,
+                "percentage": 98.37
+            },
+            {
+                "label": "surprise",
+                "score": 0.0065237125381827354,
+                "percentage": 0.65
+            },
+            {
+                "label": "neutral",
+                "score": 0.0061690774746239185,
+                "percentage": 0.62
+            },
+            {
+                "label": "disgust",
+                "score": 0.0010919542983174324,
+                "percentage": 0.11
+            },
+            {
+                "label": "sadness",
+                "score": 0.0010498764459043741,
+                "percentage": 0.1
+            },
+            {
+                "label": "anger",
+                "score": 0.000743839715141803,
+                "percentage": 0.07
+            },
+            {
+                "label": "fear",
+                "score": 0.0006939407321624458,
+                "percentage": 0.07
+            }
+        ]
     ]
-]
+}
+
 
 class ObtainEmailAuthTokenTest(TestCase):
     def setUp(self):
@@ -83,25 +86,25 @@ class ObtainEmailAuthTokenTest(TestCase):
         )
         Token.objects.create(user=self.user)
 
-        # self.user = User.objects.create_user(
-        #     email='test@test.com',
-        #     password='testpass'
-        # )
+        self.user = User.objects.create_user(
+            email='test@test.com',
+            password='testpass'
+        )
 
-    # def test_get_token_valid_credentials(self):
-    #     response = self.client.post(
-    #         reverse('api:get_token'),
-    #         {'email': 'test@test.com', 'password': 'testpass'}
-    #     )
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-    #     self.assertTrue('token' in response.data)
+    def test_get_token_valid_credentials(self):
+        response = self.client.post(
+            reverse('api:get_token'),
+            {'email': 'test@test.com', 'password': 'testpass'}
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue('token' in response.data)
 
-    # def test_get_token_invalid_credentials(self):
-    #     response = self.client.post(
-    #         reverse('api:get_token'),
-    #         {'email': 'test@test.com', 'password': 'wrongpass'}
-    #     )
-    #     self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+    def test_get_token_invalid_credentials(self):
+        response = self.client.post(
+            reverse('api:get_token'),
+            {'email': 'test@test.com', 'password': 'wrongpass'}
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
 class DeveloperRegisterViewTest(TestCase):
@@ -141,52 +144,72 @@ class DeveloperRegisterViewTest(TestCase):
 
 class TextEmotionAnalysisViewTest(TestCase):
     def setUp(self):
-        self.client = APIClient()
-        self.user = User.objects.create_user(
+        self.user = get_user_model().objects.create_user(
+            username='testuser',
             email='test@test.com',
-            password='testpass'
+            password='testpass',
+            api_key='testapikey'
         )
-        token, _ = Token.objects.get_or_create(user=self.user)
-        self.client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+        self.token = Token.objects.create(user=self.user)
+        self.user.api_key = self.token.key
+        self.user.save()
+        self.client = APIClient()
+        self.headers = {
+            'HTTP_AUTHORIZATION': f'{self.token.key}',
+            'HTTP_X_RAPIDAPI_HOST': HTTP_X_RAPIDAPI_HOST,
+            'HTTP_X_RAPIDAPI_PROXY_SECRET': HTTP_X_RAPIDAPI_PROXY_SECRET,
+            'HTTP_X_RAPIDAPI_SUBSCRIPTION': HTTP_X_RAPIDAPI_SUBSCRIPTION
+        }
+        self.client.credentials(**self.headers)
 
     def test_emotion_analysis_valid_text(self):
         response = self.client.post(
-            reverse('text-emotion-analysis'),
+            reverse('api:text-emotion-analysis'),
             {'text': 'This is a happy text.'}
         )
+        print(response.json())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertTrue('emotions' in response.data)
+        self.assertTrue('analysis' in response.data)
 
     def test_emotion_analysis_invalid_text(self):
         response = self.client.post(
-            reverse('text-emotion-analysis'),
+            reverse('api:text-emotion-analysis'),
             {'text': ''}
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertTrue('text' in response.data)
+        self.assertTrue('error' in response.data)
+class TextSentimentAnalysisViewTest(TestCase):
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+            username='testuser',
+            email='test@test.com',
+            password='testpass',
+            api_key='testapikey'
+        )
+        self.token = Token.objects.create(user=self.user)
+        self.user.api_key = self.token.key
+        self.user.save()
+        self.client = APIClient()
+        self.headers = {
+            'HTTP_AUTHORIZATION': f'{self.token.key}',
+            'HTTP_X_RAPIDAPI_HOST': HTTP_X_RAPIDAPI_HOST,
+            'HTTP_X_RAPIDAPI_PROXY_SECRET': HTTP_X_RAPIDAPI_PROXY_SECRET,
+            'HTTP_X_RAPIDAPI_SUBSCRIPTION': HTTP_X_RAPIDAPI_SUBSCRIPTION
+        }
+        self.client.credentials(**self.headers)
 
-# class TextSentimentAnalysisViewTest(TestCase):
-#     def setUp(self):
-#         self.client = APIClient()
-#         self.user = User.objects.create_user(
-#             email='test@test.com',
-#             password='testpass'
-#         )
-#         token, _ = Token.objects.get_or_create(user=self.user)
-#         self.client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+    def test_sentiment_analysis_valid_text(self):
+        response = self.client.post(
+            reverse('api:text-sentiment-analysis'),
+            {'text': 'This is a positive text.'}
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue('analysis' in response.data)
 
-#     def test_sentiment_analysis_valid_text(self):
-#         response = self.client.post(
-#             reverse('text-sentiment-analysis'),
-#             {'text': 'This is a positive text.'}
-#         )
-#         self.assertEqual(response.status_code, status.HTTP_200_OK)
-#         self.assertTrue('score' in response.data)
-
-#     def test_sentiment_analysis_invalid_text(self):
-#         response = self.client.post(
-#             reverse('text-sentiment-analysis'),
-#             {'text': ''}
-#         )
-#         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-#         self.assertTrue('text' in response.data)
+    def test_sentiment_analysis_invalid_text(self):
+        response = self.client.post(
+            reverse('api:text-sentiment-analysis'),
+            {'text': ''}
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertTrue('error' in response.data)
