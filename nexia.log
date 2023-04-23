@@ -3291,3 +3291,830 @@ AttributeError: 'str' object has no attribute 'decode'
 [2023-04-23 10:56:25] INFO Watching for file changes with StatReloader
 [2023-04-23 10:57:54] WARNING Unauthorized: /api/emotion/analysis/
 [2023-04-23 10:57:54] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 11:01:24] INFO Watching for file changes with StatReloader
+[2023-04-23 11:01:32] INFO "GET /admin/users/log/ HTTP/1.1" 302 0
+[2023-04-23 11:01:32] INFO "GET /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2231
+[2023-04-23 11:01:32] INFO "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+[2023-04-23 11:01:33] INFO "GET /static/admin/css/login.css HTTP/1.1" 200 939
+[2023-04-23 11:01:33] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+[2023-04-23 11:01:33] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+[2023-04-23 11:01:33] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+[2023-04-23 11:01:33] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[2023-04-23 11:01:33] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[2023-04-23 11:01:33] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[2023-04-23 11:01:36] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2395
+[2023-04-23 11:01:36] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[2023-04-23 11:01:44] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2395
+[2023-04-23 11:01:45] INFO - Broken pipe from ('127.0.0.1', 61078)
+
+[2023-04-23 11:01:46] INFO - Broken pipe from ('127.0.0.1', 61079)
+
+[2023-04-23 11:01:46] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2395
+[2023-04-23 11:01:47] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2395
+[2023-04-23 11:01:59] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2395
+[2023-04-23 11:02:03] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2395
+[2023-04-23 11:05:03] INFO Watching for file changes with StatReloader
+[2023-04-23 11:05:12] ERROR Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\contrib\admin\sites.py", line 414, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\debug.py", line 89, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\forms\forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\forms\forms.py", line 170, in errors
+    self.full_clean()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\forms\forms.py", line 373, in full_clean
+    self._clean_form()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\forms\forms.py", line 400, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\contrib\auth\forms.py", line 206, in clean
+    self.confirm_login_allowed(self.user_cache)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\contrib\admin\forms.py", line 21, in confirm_login_allowed
+    if not user.is_staff:
+AttributeError: 'User' object has no attribute 'is_staff'
+[2023-04-23 11:05:12] ERROR "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 500 153581
+[2023-04-23 11:05:28] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 11:05:31] INFO Watching for file changes with StatReloader
+[2023-04-23 11:05:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 11:05:51] INFO Watching for file changes with StatReloader
+[2023-04-23 11:07:04] INFO Watching for file changes with StatReloader
+[2023-04-23 11:07:10] INFO "GET /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2231
+[2023-04-23 11:07:17] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 302 0
+[2023-04-23 11:07:17] WARNING Not Found: /admin/users/log/
+[2023-04-23 11:07:17] WARNING "GET /admin/users/log/ HTTP/1.1" 404 5365
+[2023-04-23 11:07:21] INFO "GET /admin HTTP/1.1" 301 0
+[2023-04-23 11:07:21] INFO "GET /admin/ HTTP/1.1" 200 6469
+[2023-04-23 11:07:21] INFO "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+[2023-04-23 11:07:21] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[2023-04-23 11:07:21] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[2023-04-23 11:07:26] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 6786
+[2023-04-23 11:07:26] INFO "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+[2023-04-23 11:07:26] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[2023-04-23 11:07:26] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[2023-04-23 11:07:26] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 200 6874
+[2023-04-23 11:07:26] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+[2023-04-23 11:07:26] INFO "GET /static/admin/js/actions.js HTTP/1.1" 200 7867
+[2023-04-23 11:07:27] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+[2023-04-23 11:07:27] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[2023-04-23 11:07:27] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[2023-04-23 11:07:27] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:07:27] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[2023-04-23 11:07:29] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 7686
+[2023-04-23 11:07:29] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:07:29] INFO "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[2023-04-23 11:07:31] INFO "GET /admin/api/emotionanalysis/ HTTP/1.1" 200 6812
+[2023-04-23 11:07:31] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:07:34] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 6786
+[2023-04-23 11:07:34] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:07:35] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 6777
+[2023-04-23 11:07:35] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:07:36] INFO "GET /admin/api/user/ HTTP/1.1" 200 16072
+[2023-04-23 11:07:36] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[2023-04-23 11:07:36] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:07:36] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[2023-04-23 11:08:10] INFO "POST /api/get_token/ HTTP/1.1" 200 233
+[2023-04-23 11:08:16] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 6786
+[2023-04-23 11:08:16] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:08:52] INFO "POST /api/get_token/ HTTP/1.1" 200 233
+[2023-04-23 11:09:03] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 6786
+[2023-04-23 11:09:03] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:09:04] INFO "GET /admin/api/sentimentanalysis/ HTTP/1.1" 200 6826
+[2023-04-23 11:09:04] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:09:05] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 6786
+[2023-04-23 11:09:05] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-23 11:09:34] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 11:09:37] INFO Watching for file changes with StatReloader
+[2023-04-23 11:09:40] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 11:09:43] INFO Watching for file changes with StatReloader
+[2023-04-23 11:09:48] INFO "POST /api/get_token/ HTTP/1.1" 200 233
+[2023-04-23 11:10:12] INFO "POST /api/get_token/ HTTP/1.1" 200 233
+[2023-04-23 11:10:46] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 11:10:48] INFO Watching for file changes with StatReloader
+[2023-04-23 11:10:51] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 11:10:54] INFO Watching for file changes with StatReloader
+[2023-04-23 11:10:59] INFO "POST /api/get_token/ HTTP/1.1" 200 233
+[2023-04-23 11:11:27] INFO "POST /api/get_token/ HTTP/1.1" 200 233
+[2023-04-23 11:12:02] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 11:12:04] INFO Watching for file changes with StatReloader
+[2023-04-23 11:12:08] INFO "POST /api/get_token/ HTTP/1.1" 200 233
+[2023-04-23 11:12:17] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 11:12:21] INFO Watching for file changes with StatReloader
+[2023-04-23 11:12:41] WARNING Unauthorized: /api/emotion/analysis/
+[2023-04-23 11:12:41] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 11:13:14] WARNING Unauthorized: /api/emotion/analysis/
+[2023-04-23 11:13:14] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 11:13:17] WARNING Unauthorized: /api/emotion/analysis/
+[2023-04-23 11:13:17] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 11:13:44] WARNING Unauthorized: /api/emotion/analysis/
+[2023-04-23 11:13:44] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 11:15:52] WARNING Unauthorized: /api/emotion/analysis/
+[2023-04-23 11:15:52] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 11:18:57] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 11:18:59] INFO Watching for file changes with StatReloader
+[2023-04-23 11:19:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 11:19:10] INFO Watching for file changes with StatReloader
+[2023-04-23 11:19:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 11:19:35] INFO Watching for file changes with StatReloader
+[2023-04-23 11:20:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 11:20:29] INFO Watching for file changes with StatReloader
+[2023-04-23 11:20:33] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 11:20:36] INFO Watching for file changes with StatReloader
+[2023-04-23 11:20:39] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 11:20:41] INFO Watching for file changes with StatReloader
+[2023-04-23 11:20:43] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 11:20:45] INFO Watching for file changes with StatReloader
+[2023-04-23 11:20:51] INFO "POST /api/register/ HTTP/1.1" 201 250
+[2023-04-23 11:22:44] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 11:22:46] INFO Watching for file changes with StatReloader
+[2023-04-23 11:22:52] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 11:22:55] INFO Watching for file changes with StatReloader
+[2023-04-23 11:23:04] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 11:23:06] INFO Watching for file changes with StatReloader
+[2023-04-23 19:41:33] WARNING Unauthorized: /api/emotion/analysis/
+[2023-04-23 19:41:33] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 19:41:54] WARNING Unauthorized: /api/emotion/analysis/
+[2023-04-23 19:41:54] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 401 58
+[2023-04-23 19:44:02] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:44:05] INFO Watching for file changes with StatReloader
+[2023-04-23 19:44:13] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:44:16] INFO Watching for file changes with StatReloader
+[2023-04-23 19:44:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:44:34] INFO Watching for file changes with StatReloader
+[2023-04-23 19:45:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:45:03] INFO Watching for file changes with StatReloader
+[2023-04-23 19:45:11] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 19:45:11] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 19:45:23] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:45:25] INFO Watching for file changes with StatReloader
+[2023-04-23 19:52:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:52:31] INFO Watching for file changes with StatReloader
+[2023-04-23 19:52:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:52:43] INFO Watching for file changes with StatReloader
+[2023-04-23 19:53:52] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:53:54] INFO Watching for file changes with StatReloader
+[2023-04-23 19:54:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:54:05] INFO Watching for file changes with StatReloader
+[2023-04-23 19:54:09] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:54:11] INFO Watching for file changes with StatReloader
+[2023-04-23 19:54:16] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:54:19] INFO Watching for file changes with StatReloader
+[2023-04-23 19:54:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:54:38] INFO Watching for file changes with StatReloader
+[2023-04-23 19:54:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:54:46] INFO Watching for file changes with StatReloader
+[2023-04-23 19:54:52] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 19:54:52] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 19:54:56] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 19:54:56] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 19:55:11] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 19:55:11] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 19:55:14] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 19:55:14] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 19:55:15] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 19:55:15] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 19:55:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:55:34] INFO Watching for file changes with StatReloader
+[2023-04-23 19:58:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:58:50] INFO Watching for file changes with StatReloader
+[2023-04-23 19:58:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:58:58] INFO Watching for file changes with StatReloader
+[2023-04-23 19:59:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 19:59:07] INFO Watching for file changes with StatReloader
+[2023-04-23 20:01:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 20:01:07] INFO Watching for file changes with StatReloader
+[2023-04-23 20:01:12] WARNING Not Found: /api/user/
+[2023-04-23 20:01:12] WARNING "POST /api/user/ HTTP/1.1" 404 3373
+[2023-04-23 20:01:31] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-23 20:01:34] INFO Watching for file changes with StatReloader
+[2023-04-23 20:01:40] WARNING Forbidden: /api/user/
+[2023-04-23 20:01:40] WARNING "POST /api/user/ HTTP/1.1" 403 69
+[2023-04-23 20:05:29] INFO Watching for file changes with StatReloader
+[2023-04-23 20:06:29] INFO Watching for file changes with StatReloader
+[2023-04-23 20:10:14] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:10:14] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:10:16] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:10:16] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:12:53] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:12:55] INFO Watching for file changes with StatReloader
+[2023-04-23 20:14:38] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:14:42] INFO Watching for file changes with StatReloader
+[2023-04-23 20:14:52] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:14:54] INFO Watching for file changes with StatReloader
+[2023-04-23 20:15:00] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:15:00] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:15:16] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:15:19] INFO Watching for file changes with StatReloader
+[2023-04-23 20:15:29] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:15:31] INFO Watching for file changes with StatReloader
+[2023-04-23 20:15:36] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:15:38] INFO Watching for file changes with StatReloader
+[2023-04-23 20:15:42] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:15:45] INFO Watching for file changes with StatReloader
+[2023-04-23 20:15:51] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:15:51] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:16:03] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:16:06] INFO Watching for file changes with StatReloader
+[2023-04-23 20:16:13] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:16:15] INFO Watching for file changes with StatReloader
+[2023-04-23 20:16:19] ERROR Internal Server Error: /api/emotion/analysis/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 281, in sentry_patched_drf_initial
+    return old_drf_initial(self, request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\authentication\backends.py", line 60, in authenticate
+    print(f'\033[32m' + auth_header + '\033[0m')
+TypeError: can only concatenate str (not "list") to str
+[2023-04-23 20:16:19] ERROR "POST /api/emotion/analysis/ HTTP/1.1" 500 122483
+[2023-04-23 20:16:39] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:16:41] INFO Watching for file changes with StatReloader
+[2023-04-23 20:16:46] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:16:48] INFO Watching for file changes with StatReloader
+[2023-04-23 20:16:52] ERROR Internal Server Error: /api/emotion/analysis/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 281, in sentry_patched_drf_initial
+    return old_drf_initial(self, request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\authentication\backends.py", line 60, in authenticate
+    print(f'\033[32m' + {auth_header} + '\033[0m')
+TypeError: unhashable type: 'list'
+[2023-04-23 20:16:53] ERROR "POST /api/emotion/analysis/ HTTP/1.1" 500 122361
+[2023-04-23 20:17:17] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:17:19] INFO Watching for file changes with StatReloader
+[2023-04-23 20:17:29] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:17:31] INFO Watching for file changes with StatReloader
+[2023-04-23 20:17:56] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:17:58] INFO Watching for file changes with StatReloader
+[2023-04-23 20:18:43] ERROR Internal Server Error: /api/emotion/analysis/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 281, in sentry_patched_drf_initial
+    return old_drf_initial(self, request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\authentication\backends.py", line 60, in authenticate
+    print(f'\033[32m' + {auth_header[0].decode('utf-8')} + '\033[0m')
+TypeError: can only concatenate str (not "set") to str
+[2023-04-23 20:18:43] ERROR "POST /api/emotion/analysis/ HTTP/1.1" 500 122539
+[2023-04-23 20:19:14] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:19:16] INFO Watching for file changes with StatReloader
+[2023-04-23 20:19:26] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:19:28] INFO Watching for file changes with StatReloader
+[2023-04-23 20:19:30] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:19:32] INFO Watching for file changes with StatReloader
+[2023-04-23 20:19:37] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:19:39] INFO Watching for file changes with StatReloader
+[2023-04-23 20:19:44] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:19:46] INFO Watching for file changes with StatReloader
+[2023-04-23 20:19:49] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:19:51] INFO Watching for file changes with StatReloader
+[2023-04-23 20:19:56] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:19:56] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:20:11] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:20:13] INFO Watching for file changes with StatReloader
+[2023-04-23 20:20:17] ERROR Internal Server Error: /api/emotion/analysis/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\authentication\backends.py", line 60, in authenticate
+    print(auth_header.decode('utf-8'))
+AttributeError: 'list' object has no attribute 'decode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 281, in sentry_patched_drf_initial
+    return old_drf_initial(self, request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python37\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 74, in wrap_attributeerrors
+    yield
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Projects\chatgptapi\core\api\authentication\backends.py", line 60, in authenticate
+    print(auth_header.decode('utf-8'))
+rest_framework.request.WrappedAttributeError: 'list' object has no attribute 'decode'
+[2023-04-23 20:20:17] ERROR "POST /api/emotion/analysis/ HTTP/1.1" 500 156345
+[2023-04-23 20:20:27] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:20:29] INFO Watching for file changes with StatReloader
+[2023-04-23 20:20:36] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:20:36] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:20:55] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:20:58] INFO Watching for file changes with StatReloader
+[2023-04-23 20:21:49] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:21:51] INFO Watching for file changes with StatReloader
+[2023-04-23 20:22:54] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:22:56] INFO Watching for file changes with StatReloader
+[2023-04-23 20:23:01] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:23:03] INFO Watching for file changes with StatReloader
+[2023-04-23 20:23:20] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:23:23] INFO Watching for file changes with StatReloader
+[2023-04-23 20:23:28] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:23:28] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:24:25] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:24:28] INFO Watching for file changes with StatReloader
+[2023-04-23 20:24:32] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:24:34] INFO Watching for file changes with StatReloader
+[2023-04-23 20:24:47] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:24:47] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:25:11] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:25:14] INFO Watching for file changes with StatReloader
+[2023-04-23 20:25:31] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:25:33] INFO Watching for file changes with StatReloader
+[2023-04-23 20:25:41] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:25:44] INFO Watching for file changes with StatReloader
+[2023-04-23 20:25:49] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:25:51] INFO Watching for file changes with StatReloader
+[2023-04-23 20:26:01] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:26:03] INFO Watching for file changes with StatReloader
+[2023-04-23 20:26:09] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:26:09] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:26:15] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:26:15] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:26:27] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:26:29] INFO Watching for file changes with StatReloader
+[2023-04-23 20:26:34] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:26:36] INFO Watching for file changes with StatReloader
+[2023-04-23 20:26:43] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:26:46] INFO Watching for file changes with StatReloader
+[2023-04-23 20:26:48] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:26:48] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:27:10] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:27:14] INFO Watching for file changes with StatReloader
+[2023-04-23 20:27:18] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:27:21] INFO Watching for file changes with StatReloader
+[2023-04-23 20:27:24] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:27:24] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:27:50] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:27:53] INFO Watching for file changes with StatReloader
+[2023-04-23 20:27:57] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:28:00] INFO Watching for file changes with StatReloader
+[2023-04-23 20:28:06] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:28:08] INFO Watching for file changes with StatReloader
+[2023-04-23 20:28:14] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:28:17] INFO Watching for file changes with StatReloader
+[2023-04-23 20:28:27] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:28:29] INFO Watching for file changes with StatReloader
+[2023-04-23 20:28:35] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:28:37] INFO Watching for file changes with StatReloader
+[2023-04-23 20:28:43] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:28:45] INFO Watching for file changes with StatReloader
+[2023-04-23 20:28:50] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:28:52] INFO Watching for file changes with StatReloader
+[2023-04-23 20:29:01] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:29:01] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:29:13] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:29:13] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:29:25] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:29:28] INFO Watching for file changes with StatReloader
+[2023-04-23 20:29:35] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:29:35] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-23 20:30:45] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-23 20:30:47] INFO Watching for file changes with StatReloader
+[2023-04-23 20:30:49] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 20:30:49] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-23 22:28:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 22:28:53] INFO Watching for file changes with StatReloader
+[2023-04-23 22:29:16] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 22:29:30] INFO Watching for file changes with StatReloader
+[2023-04-23 22:29:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-23 22:29:55] INFO Watching for file changes with StatReloader
+[2023-04-23 22:44:06] ERROR Internal Server Error: /api/get_token/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 85, in post
+    response=connect_with_chatgpt(text)
+  File "C:\Projects\chatgptapi\core\api\utilities\openai.py", line 10, in connect_with_chatgpt
+    {"role": "user", "content": "text"}
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_resources\chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_resources\abstract\engine_api_resource.py", line 160, in create
+    request_timeout=request_timeout,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_requestor.py", line 624, in _interpret_response
+    stream=False,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_requestor.py", line 684, in _interpret_response_line
+    rbody, rcode, resp.data, rheaders, stream_error=stream_error
+openai.error.AuthenticationError: No such organization: org.
+[2023-04-23 22:44:06] ERROR "POST /api/get_token/ HTTP/1.1" 500 129330
+[2023-04-23 22:45:47] INFO C:\Projects\chatgptapi\core\api\utilities\openai.py changed, reloading.
+[2023-04-23 22:45:57] INFO Watching for file changes with StatReloader
+[2023-04-23 22:46:08] ERROR Internal Server Error: /api/get_token/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 85, in post
+    response=connect_with_chatgpt(text)
+  File "C:\Projects\chatgptapi\core\api\utilities\openai.py", line 10, in connect_with_chatgpt
+    {"role": "user", "content": "text"}
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_resources\chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_resources\abstract\engine_api_resource.py", line 160, in create
+    request_timeout=request_timeout,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_requestor.py", line 624, in _interpret_response
+    stream=False,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\openai\api_requestor.py", line 684, in _interpret_response_line
+    rbody, rcode, resp.data, rheaders, stream_error=stream_error
+openai.error.RateLimitError: You exceeded your current quota, please check your plan and billing details.
+[2023-04-23 22:46:08] ERROR "POST /api/get_token/ HTTP/1.1" 500 129702
+[2023-04-23 23:29:06] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 23:29:06] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-23 23:29:42] WARNING Forbidden: /api/user/
+[2023-04-23 23:29:42] WARNING "POST /api/user/ HTTP/1.1" 403 69
+[2023-04-23 23:30:16] WARNING Forbidden: /api/user/
+[2023-04-23 23:30:16] WARNING "POST /api/user/ HTTP/1.1" 403 69
+[2023-04-23 23:30:42] INFO "POST /api/register/ HTTP/1.1" 201 230
+[2023-04-23 23:31:03] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 23:31:03] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-23 23:31:07] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 23:31:07] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-23 23:32:59] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-23 23:33:02] INFO Watching for file changes with StatReloader
+[2023-04-23 23:35:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:35:05] INFO Watching for file changes with StatReloader
+[2023-04-23 23:35:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:35:11] INFO Watching for file changes with StatReloader
+[2023-04-23 23:35:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:35:25] INFO Watching for file changes with StatReloader
+[2023-04-23 23:35:31] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:35:33] INFO Watching for file changes with StatReloader
+[2023-04-23 23:35:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:35:59] INFO Watching for file changes with StatReloader
+[2023-04-23 23:37:00] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:37:03] INFO Watching for file changes with StatReloader
+[2023-04-23 23:37:06] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:37:08] INFO Watching for file changes with StatReloader
+[2023-04-23 23:39:46] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:39:50] INFO Watching for file changes with StatReloader
+[2023-04-23 23:54:42] INFO Watching for file changes with StatReloader
+[2023-04-23 23:55:42] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 108, in post
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 166, in token
+    return self._generate_jwt_token()
+  File "C:\Projects\chatgptapi\core\api\models.py", line 195, in _generate_jwt_token
+    }, settings.SECRET_KEY, algorithm='HS256')
+  File "C:\Projects\chatgptapi\env\lib\site-packages\jwt\api_jwt.py", line 64, in encode
+    payload, separators=(",", ":"), cls=json_encoder
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type UUID is not JSON serializable
+[2023-04-23 23:55:42] ERROR "POST /api/register/ HTTP/1.1" 500 152759
+[2023-04-23 23:56:25] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:56:31] INFO Watching for file changes with StatReloader
+[2023-04-23 23:56:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-23 23:56:36] INFO Watching for file changes with StatReloader
+[2023-04-23 23:56:41] WARNING Bad Request: /api/register/
+[2023-04-23 23:56:41] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-23 23:56:54] INFO "POST /api/register/ HTTP/1.1" 201 233
+[2023-04-23 23:57:15] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 23:57:15] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-23 23:57:18] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 23:57:18] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-23 23:59:33] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 23:59:33] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-23 23:59:45] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-23 23:59:45] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:00:49] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:00:52] INFO Watching for file changes with StatReloader
+[2023-04-24 00:01:06] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:01:08] INFO Watching for file changes with StatReloader
+[2023-04-24 00:01:14] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:01:16] INFO Watching for file changes with StatReloader
+[2023-04-24 00:01:22] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:01:22] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:01:33] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:01:38] INFO Watching for file changes with StatReloader
+[2023-04-24 00:01:50] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:01:50] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:01:51] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:01:51] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:02:47] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 00:04:13] INFO Watching for file changes with StatReloader
+[2023-04-24 00:04:46] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 00:04:57] INFO Watching for file changes with StatReloader
+[2023-04-24 00:05:35] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 00:05:38] INFO Watching for file changes with StatReloader
+[2023-04-24 00:05:44] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 00:05:47] INFO Watching for file changes with StatReloader
+[2023-04-24 00:05:54] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:05:54] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:05:56] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:05:56] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:06:15] INFO "POST /api/register/ HTTP/1.1" 201 228
+[2023-04-24 00:06:39] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:06:39] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:06:42] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:06:42] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:07:47] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:07:56] INFO Watching for file changes with StatReloader
+[2023-04-24 00:20:10] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 00:20:15] INFO Watching for file changes with StatReloader
+[2023-04-24 00:20:34] INFO "POST /api/register/ HTTP/1.1" 201 230
+[2023-04-24 00:20:57] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:20:57] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:20:59] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:20:59] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:21:01] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:21:01] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:21:02] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:21:02] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:23:04] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:23:07] INFO Watching for file changes with StatReloader
+[2023-04-24 00:23:10] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:23:12] INFO Watching for file changes with StatReloader
+[2023-04-24 00:23:15] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:23:17] INFO Watching for file changes with StatReloader
+[2023-04-24 00:24:16] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:24:20] INFO Watching for file changes with StatReloader
+[2023-04-24 00:24:28] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:24:28] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:24:30] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:24:30] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:24:55] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:25:05] INFO Watching for file changes with StatReloader
+[2023-04-24 00:25:21] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:25:34] INFO Watching for file changes with StatReloader
+[2023-04-24 00:25:46] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:25:53] INFO Watching for file changes with StatReloader
+[2023-04-24 00:26:02] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:26:09] INFO Watching for file changes with StatReloader
+[2023-04-24 00:26:19] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:26:19] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 107
+[2023-04-24 00:28:23] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:28:30] INFO Watching for file changes with StatReloader
+[2023-04-24 00:28:52] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:28:52] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 42
+[2023-04-24 00:31:49] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:31:51] INFO Watching for file changes with StatReloader
+[2023-04-24 00:31:59] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:31:59] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:32:02] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:32:02] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 60
+[2023-04-24 00:32:05] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:32:08] INFO Watching for file changes with StatReloader
+[2023-04-24 00:32:28] INFO "POST /api/register/ HTTP/1.1" 201 232
+[2023-04-24 00:32:44] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:32:44] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 50
+[2023-04-24 00:32:47] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:32:47] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 50
+[2023-04-24 00:33:06] INFO "POST /api/register/ HTTP/1.1" 201 234
+[2023-04-24 00:33:41] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:33:43] INFO Watching for file changes with StatReloader
+[2023-04-24 00:34:01] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:34:02] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-24 00:34:06] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:34:06] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-24 00:34:07] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:34:07] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-24 00:34:43] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-24 00:34:43] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 58
+[2023-04-24 00:34:52] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:34:56] INFO Watching for file changes with StatReloader
+[2023-04-24 00:35:00] WARNING Bad Request: /api/emotion/analysis/
+[2023-04-24 00:35:00] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 400 130
+[2023-04-24 00:35:50] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 00:35:52] INFO Watching for file changes with StatReloader
+[2023-04-24 00:36:06] INFO "GET /admin/api/subscription/ HTTP/1.1" 302 0
+[2023-04-24 00:36:06] INFO "GET /admin/login/?next=/admin/api/subscription/ HTTP/1.1" 200 2245
+[2023-04-24 00:36:06] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2023-04-24 00:36:06] INFO "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[2023-04-24 00:36:06] INFO "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2023-04-24 00:36:06] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2023-04-24 00:36:06] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2023-04-24 00:36:06] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[2023-04-24 00:36:06] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[2023-04-24 00:36:06] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[2023-04-24 00:36:08] INFO "POST /admin/login/?next=/admin/api/subscription/ HTTP/1.1" 200 2409
+[2023-04-24 00:36:08] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[2023-04-24 00:36:19] INFO "POST /admin/login/?next=/admin/api/subscription/ HTTP/1.1" 302 0
+[2023-04-24 00:36:19] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 6228
+[2023-04-24 00:36:19] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2023-04-24 00:36:19] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/actions.js HTTP/1.1" 200 7867
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[2023-04-24 00:36:19] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[2023-04-24 00:36:19] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2023-04-24 00:36:19] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[2023-04-24 00:36:23] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 7128
+[2023-04-24 00:36:23] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 00:36:23] INFO "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[2023-04-24 00:36:29] INFO "GET /admin/api/emotionanalysis/ HTTP/1.1" 200 6254
+[2023-04-24 00:36:30] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 00:36:32] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 7128
+[2023-04-24 00:36:32] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 00:36:35] INFO "GET /admin/api/user/ HTTP/1.1" 200 21419
+[2023-04-24 00:36:35] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 00:36:35] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[2023-04-24 00:36:35] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[2023-04-24 01:24:35] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 01:24:39] INFO Watching for file changes with StatReloader
+[2023-04-24 01:24:42] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 01:24:45] INFO Watching for file changes with StatReloader

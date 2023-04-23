@@ -11,9 +11,10 @@ from api.utilities.subscription import create_subscription
 
 RAPID_API_APP_URL = 'https://rapidapi.com/AvidityLabs/api/nexia2'
 HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class JWTAuthentication(authentication.BaseAuthentication):
-    authentication_header_prefix = 'Token'
+    authentication_header_prefix = 'Bearer'
 
     def authenticate(self, request):
         """
@@ -37,7 +38,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
                             handle the rest.
         """
         request.user = None
-
+        # print('\033[32m' + 'start' + '\033[0m')
         # `auth_header` should be an array with two elements: 1) the name of
         # the authentication header (in this case, "Token") and 2) the JWT 
         # that we should authenticate against.
@@ -58,13 +59,14 @@ class JWTAuthentication(authentication.BaseAuthentication):
         if rapidapi_proxy_secret != HTTP_X_RAPIDAPI_PROXY_SECRET:
             raise AuthenticationFailed(f'Invalid RapidAPI Proxy Secret. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI and use their platform to access this API.{RAPID_API_APP_URL}')
 
+
         if not auth_header:
             return None
         
-
+        
         if len(auth_header) == 1:
-            # Invalid token header. No credentials provided. Do not attempt to
-            # authenticate.
+            # Invalid token header. No credentials provided. Do not attempt to authenticate.
+
             return None
 
         elif len(auth_header) > 2:
@@ -79,6 +81,8 @@ class JWTAuthentication(authentication.BaseAuthentication):
         # if we didn't decode these values.
         prefix = auth_header[0].decode('utf-8')
         token = auth_header[1].decode('utf-8')
+        prefix = auth_header[0].decode('utf-8') if isinstance(auth_header[0], bytes) else auth_header[0]
+        token = auth_header[1].decode('utf-8') if isinstance(auth_header[1], bytes) else auth_header[1]
 
         if prefix.lower() != auth_header_prefix:
             # The auth header prefix is not what we expected. Do not attempt to
@@ -95,14 +99,17 @@ class JWTAuthentication(authentication.BaseAuthentication):
         Try to authenticate the given credentials. If authentication is
         successful, return the user and token. If not, throw an error.
         """
+        print('lol.................................')
         try:
-            payload = jwt.decode(token, settings.SECRET_KEY)
-        except:
+            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
+
+        except Exception as e:
             msg = 'Invalid authentication. Could not decode token.'
-            raise exceptions.AuthenticationFailed(msg)
+            raise exceptions.AuthenticationFailed()
 
         try:
             user = User.objects.get(pk=payload['id'])
+            print('test')
         except User.DoesNotExist:
             msg = 'No user matching this token was found.'
             raise exceptions.AuthenticationFailed(msg)
@@ -124,5 +131,5 @@ class JWTAuthentication(authentication.BaseAuthentication):
                 plan, _ = PricingPlan.objects.get_or_create(subscription_plan)
                 user.subscription.plan=plan
                 user.save()
-
+        
         return (user, token)

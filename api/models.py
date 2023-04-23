@@ -18,8 +18,11 @@ class BaseModel(models.Model):
     deleted_at = models.DateTimeField(null=True, blank=True)
     created_by = models.CharField(max_length=100, blank=True, null=True)
 
+    
+
     class Meta:
         abstract = True
+        ordering = ['-created_at', '-updated_at']
 
 
 class PricingPlan(BaseModel):
@@ -86,6 +89,20 @@ class UserManager(BaseUserManager):
         user.set_password(password)
         user.save()
         return user
+    
+    def create_superuser(self, username, email, password):
+        """
+        Create and return a `User` with superuser (admin) permissions.
+        """
+        if password is None:
+            raise TypeError('Superusers must have a password.')
+
+        user = self.create_user(username, email, password)
+        user.is_superuser = True
+        user.is_staff = True
+        user.save()
+
+        return user
 
     def create_user_subscription(self, user_id, request):
         """
@@ -108,10 +125,6 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-
-        
-            
-
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.CharField(max_length=100, unique=True,
                           default=uuid.uuid4, primary_key=True)
@@ -120,6 +133,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_developer = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     api_key = models.CharField(max_length=100, null=True, blank=True)
     subscription = models.ForeignKey(
         Subscription, on_delete=models.CASCADE, null=True, blank=True)
@@ -128,12 +142,18 @@ class User(AbstractBaseUser, PermissionsMixin):
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.
     USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
 
     objects = UserManager()
 
     def __str__(self):
+        """
+        Returns a string representation of this `User`.
+
+        This string is used when a `User` is printed in the console.
+        """
         return self.email
-    
+
     @property
     def token(self):
         """
@@ -144,15 +164,36 @@ class User(AbstractBaseUser, PermissionsMixin):
         a "dynamic property".
         """
         return self._generate_jwt_token()
+
+    def get_full_name(self):
+        """
+        This method is required by Django for things like handling emails.
+        Typically this would be the user's first and last name. Since we do
+        not store the user's real name, we return their username instead.
+        """
+        return self.username
+
+    def get_short_name(self):
+        """
+        This method is required by Django for things like handling emails.
+        Typically, this would be the user's first name. Since we do not store
+        the user's real name, we return their username instead.
+        """
+        return self.username
     
     def _generate_jwt_token(self):
+        """
+        Generates a JSON Web Token that stores this user's ID and has an expiry
+        date set to 60 days into the future.
+        """
         dt = datetime.now() + timedelta(days=60)
+        exp_timestamp = int(dt.timestamp())
+
         token = jwt.encode({
             'id': str(self.pk),
-            'exp': int(dt.timestamp())
+            'exp': exp_timestamp
         }, settings.SECRET_KEY, algorithm='HS256')
         return token
-
 
 class TokenUsage(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

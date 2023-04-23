@@ -22,17 +22,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 envpath = os.path.join(BASE_DIR, ".env")
 load_dotenv(dotenv_path=envpath)
 
-ENVIRONMENT = os.getenv("ENVIRONMENT", "DEV")
-DEBUG = os.getenv("DEBUG", False)
+
+DEBUG = os.environ.get('DEBUG')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-tx0(q!lqq4qja4z#)608n=%n5yuu!qs8)6rzvza@kx@kilw9gi"
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split()
+ALLOWED_HOSTS = ['*']
 
 # Enable HTTPS-only communication for a specified amount of time, with subdomains included
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -59,14 +59,12 @@ INSTALLED_APPS = [
     # Third party libraries
     "whitenoise.runserver_nostatic",
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
     'drf_spectacular',
     'django_filters',
 ]
 
 MIDDLEWARE = [
-    'api.middlewares.rapidapi.RapidAPIAuthentication',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -100,16 +98,16 @@ REST_FRAMEWORK = {
        'api.authentication.backends.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # Use JWT tokens that never expire (for demonstration purposes only!)
-SIMPJEWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=36500),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=36500),
-}
+# SIMPJEWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(days=36500),
+#     'REFRESH_TOKEN_LIFETIME': timedelta(days=36500),
+# }
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Nexia API',
