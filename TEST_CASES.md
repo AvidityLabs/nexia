@@ -1,6 +1,6 @@
-# Test cases for DeveloperRegisterView:
+# Test cases for DeveloperRegisterView
 
-1. Test for successful registration:
+- [x] Test for successful registration:
 
     - Input: {'email': '<test@test.com>', 'password': 'test1234'}
 
@@ -8,7 +8,7 @@
 
     - Status Code: 201
 
-2. Test for missing email field:
+- [x] Test for missing email field:
 
     - Input: {'password': 'test1234'}
 
@@ -16,7 +16,7 @@
 
     - Status Code: 400
 
-3. Test for invalid email format:
+- [x] Test for invalid email format:
 
     - Input: {'email': 'test', 'password': 'test1234'}
 
@@ -24,7 +24,7 @@
 
     - Status Code: 400
 
-4. Test for missing password field:
+- [x] Test for missing password field:
 
     - Input: {'email': '<test@test.com>'}
 
@@ -32,7 +32,7 @@
 
     - Status Code: 400
 
-5. Test for short password:
+- [x] Test for short password:
 
     - Input: {'email': '<test@test.com>', 'password': 'test'}
 
@@ -40,7 +40,7 @@
 
     - Status Code: 400
 
-6. Test for duplicate email:
+- [x] Test for duplicate email:
 
     - Input: {'email': '<test@test.com>', 'password': 'test1234'}
 
@@ -48,33 +48,21 @@
 
     - Status Code: 400
 
-# Other 
+- [x] Test with invalid input data (missing 'text' field)
 
-1.  Test with valid input data
+- [x] Test with empty 'text' field
 
-2.  Test with invalid input data (missing 'text' field)
+- [x] Test with text containing only spaces
 
-3.  Test with empty 'text' field
+- [x] Test with text containing only special characters
 
-4.  Test with text containing only spaces
+- [x] Test with text containing only digits
 
-5.  Test with text containing only special characters
+- [x] Test with text containing non-ASCII characters
 
-6.  Test with text containing only digits
+- [x] Test with text longer than the maximum allowed length
 
-7.  Test with text containing only uppercase letters
-
-8.  Test with text containing only lowercase letters
-
-9.  Test with text containing a mixture of uppercase and lowercase letters
-
-10. Test with text containing special characters, digits, and letters
-
-11. Test with text containing non-ASCII characters
-
-12. Test with text longer than the maximum allowed length
-
-13. Test with text shorter than the minimum allowed length
+- [x] Test with text shorter than the minimum allowed length
 
 14. Test with a connection error when querying the sentiment model
 

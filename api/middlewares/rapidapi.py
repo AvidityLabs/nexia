@@ -1,6 +1,5 @@
 import os
-from django.db import IntegrityError
-import requests
+
 from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
 from api.models import User
@@ -12,6 +11,14 @@ RAPID_API_APP_URL = 'https://rapidapi.com/AvidityLabs/api/nexia2'
 
 
 class RapidAPIAuthentication(authentication.BaseAuthentication):
+    def __init__(self, get_response):
+        self.get_response = get_response
+    
+    def __call__(self, request):
+        # Code to be executed for each request before the view (and later middleware) are called.
+        response = self.get_response(request)
+        # Code to be executed for each request/response after the view is called.
+        return response
     
     def authenticate(self, request):
         # print(request.META)
@@ -36,8 +43,3 @@ class RapidAPIAuthentication(authentication.BaseAuthentication):
                 return (user, None)
             except User.DoesNotExist:
                 raise AuthenticationFailed('User not registered with this API. Please sign up for RapidAPI and use their platform to access this API.')
-
-
-        
-
-        

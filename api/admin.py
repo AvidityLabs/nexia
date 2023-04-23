@@ -3,7 +3,18 @@ from .models import PricingPlan, Subscription, User, TokenUsage, SentimentAnalys
 
 @admin.register(PricingPlan)
 class PricingPlanAdmin(admin.ModelAdmin):
-    list_display = ('name', 'api_request_limit', 'rate_limit', 'token_limit', 'storage_limit')
+    list_display = ('name', 'monthly_price', 'monthly_character_limit', 'rate_limit', 'data_storage_limit')
+    list_filter = ('name',)
+    search_fields = ('name',)
+    ordering = ('name',)
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'description', 'features')
+        }),
+        ('Pricing Details', {
+            'fields': ('monthly_price', 'currency', 'monthly_character_limit', 'rate_limit', 'data_storage_limit', 'additional_character_charge'),
+        }),
+    )
 
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from pathlib import Path
 import os
+from datetime import timedelta
 import logging
 from dotenv import load_dotenv
 import sentry_sdk
@@ -65,6 +66,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'api.middlewares.rapidapi.RapidAPIAuthentication',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -90,16 +92,23 @@ CORS_ALLOW_METHODS = [
 CORS_ALLOW_HEADERS = ['*']
 
 
-
 REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'api.exceptions.responses.core_exception_handler',
+    'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-       'api.middlewares.authentication.RapidAPIAuthentication',
+       'api.authentication.backends.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# Use JWT tokens that never expire (for demonstration purposes only!)
+SIMPJEWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=36500),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=36500),
 }
 
 SPECTACULAR_SETTINGS = {
