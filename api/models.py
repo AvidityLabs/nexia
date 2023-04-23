@@ -208,7 +208,7 @@ class TokenUsage(models.Model):
 
 
 class SentimentAnalysis(models.Model):
-    text = models.TextField()
+    text = models.TextField(null=True, blank=True)
     positive = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
 
@@ -216,7 +216,7 @@ class SentimentAnalysis(models.Model):
         return self.text
 
 class EmotionAnalysis(models.Model):
-    text = models.TextField()
+    text = models.TextField(null=True, blank=True)
     anger_score = models.FloatField(null=True, blank=True)
     disgust_score = models.FloatField(null=True, blank=True)
     fear_score = models.FloatField(null=True, blank=True)
