@@ -9,15 +9,12 @@ from api.models import PricingPlan,Subscription, TokenUsage, User
 def create_related_subscription(sender, instance, created, *args, **kwargs):
     today = date.today()
     if created:
-        pricing_plan, _ = PricingPlan.objects.get_or_create(name='PENDING')
         token_usage, _ = TokenUsage.objects.get_or_create(
             user=instance,
-            pricing_plan=pricing_plan,
             month=today.month,
             year=today.year,
         )
         subscription, _ = Subscription.objects.get_or_create(
-            pricing_plan=pricing_plan,
             user=instance
         )
         instance.subscription = subscription
