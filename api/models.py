@@ -91,6 +91,13 @@ class UserManager(BaseUserManager):
 
         if email is None:
             raise TypeError('Users must have an email address.')
+        
+        user = self.model.objects.filter(email=email)
+        if len(user) !=0:
+            raise TypeError('User email already exists.')
+        
+        if len(self.model.objects.filter(username=username))!=0:
+            raise TypeError('Username already exists.')
 
         user = self.model(username=username, email=self.normalize_email(email))
         user.set_password(password)
