@@ -12,6 +12,7 @@ def update_subscription(user, request):
         if pricing_plan in valid_plans:
             pricing_plan_obj, _ = PricingPlan.objects.get_or_create(name=pricing_plan)
             user.subscription.pricing_plan = pricing_plan_obj
+            user.subscription.username=rapid_api_user
             user.subscription.save()
             user.first_name = rapid_api_user
             user.save()

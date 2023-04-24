@@ -69,6 +69,8 @@ class Subscription(BaseModel):
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    username = models.CharField(max_length=100, null=True, blank=True)
+    user_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return f"{self.pricing_plan.name}"
@@ -199,8 +201,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return token
 
 class TokenUsage(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pricing_plan = models.ForeignKey(PricingPlan, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,blank=True)
+    pricing_plan = models.ForeignKey(PricingPlan, on_delete=models.CASCADE, null=True,blank=True)
     prompt_tokens_used = models.IntegerField(default=0)
     completion_tokens_used = models.IntegerField(default=0)
     total_tokens_used = models.IntegerField(default=0)

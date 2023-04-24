@@ -10,7 +10,8 @@ def create_related_subscription(sender, instance, created, *args, **kwargs):
     today = date.today()
     if created:
         subscription, _ = Subscription.objects.get_or_create(
-            user=instance
+            user_id=instance.id,
+
         )
         instance.subscription = subscription
         instance.save()
