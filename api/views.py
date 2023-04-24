@@ -227,3 +227,41 @@ class ChatGPTCompletionView(APIView):
             print(text_serializer.errors)
             logger.exception(f"An error occurred @api/prompt/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
+        
+
+class GenerateViewImage(APIView):
+    permission_classes = [IsAuthenticated,]
+    def post(self, request, format=None):
+        text_serializer = TextSerializer(data=request.data)
+
+        if text_serializer.is_valid():
+            text = text_serializer.validated_data['text']
+            try:
+                response_data = query_sentiment_model(text)
+                if response_data is None:
+                    return Response('error', status=400)
+
+                response = get_chatgpt_completion(text)
+                prompt_tokens = response.completion.usage.prompt_tokens
+                completion_tokens = response.completion.usage.completion_tokens
+                total_tokens = response.completion.usage.total_tokens
+
+                # # # Track token usage
+                user = request.user
+                # Assuming user and num_tokens are defined update token usage 
+                update_token_usage(user, prompt_tokens, completion_tokens, total_tokens,img_count=1)
+                result = {
+                    "result": response.imgUrl,
+                    "prompt_tokens": prompt_tokens,
+                    "completion_tokens": completion_tokens,
+                    "total_tokens_used": total_tokens,
+                }
+                return Response(data=result, status=200)
+            except Exception as e:
+                print(e)
+                logger.error(f"An error occurred @api/generate/img: {e}")
+                return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            print(text_serializer.errors)
+            logger.exception(f"An error occurred @api/generate/img{text_serializer.errors}")
+            return Response({'error': text_serializer.errors}, status=400)

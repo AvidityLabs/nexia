@@ -1,8 +1,12 @@
+import os
 import openai
-openai.api_key = "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"
-openai.organization = "org-M3s4CIjWGwvBbMzjsII5OAcB"
+
+openai.api_key = os.environ.get('OPENAI_API_KEY')
+
+openai.organization = os.environ.get('OPENAI_ORGANIZATION')
 
 
+# general 
 def get_chatgpt_completion(topic):
     try:
         completion = openai.ChatCompletion.create(
