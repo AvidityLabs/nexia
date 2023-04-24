@@ -5830,3 +5830,5 @@ AttributeError: 'NoneType' object has no attribute 'get'
 [2023-04-24 18:32:52] INFO Watching for file changes with StatReloader
 [2023-04-24 18:33:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
 [2023-04-24 18:33:03] INFO Watching for file changes with StatReloader
+[2023-04-24 18:48:47] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 18:48:51] INFO Watching for file changes with StatReloader

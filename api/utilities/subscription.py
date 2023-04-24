@@ -11,6 +11,5 @@ def update_subscription(user, request):
         if pricing_plan in valid_plans:
             plan_obj, _ = PricingPlan.objects.get_or_create(name=pricing_plan)
             user.subscription.pricing_plan = plan_obj
-            user.subscription.save()
 
 
