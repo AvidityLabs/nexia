@@ -6,8 +6,9 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin
+    AbstractBaseUser, BaseUserManager, Group,  PermissionsMixin
 )
+
 from django.db import models
 import jwt
 
@@ -79,7 +80,7 @@ class UserManager(BaseUserManager):
     to create `User` objects.
     """
 
-    def create_user(self, username, email, password=None, request=None):
+    def create_user(self, username, email, password=None):
         """Create and return a `User` with an email, username and password."""
         if username is None:
             raise TypeError('Users must have a username.')
@@ -106,26 +107,6 @@ class UserManager(BaseUserManager):
 
         return user
 
-    def create_user_subscription(self, user_id, request):
-        """
-        Create a subscription for the user with the given user_id and return the user object.
-        """
-        if request is None:
-            raise TypeError('A valid request object is required to create a subscription.')
-            
-        user = self.model.objects.filter(id=user_id).first()
-        if user is None:
-            raise ValueError('User with id={} does not exist.'.format(user_id))
-        
-        plan = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
-        if plan not in ('BASIC', 'PRO', 'ULTRA', 'MEGA', 'CUSTOM'):
-            raise ValueError('Invalid subscription plan: {}'.format(plan))
-        
-        plan_obj, _ = PricingPlan.objects.get_or_create(name=plan)
-        subscription = Subscription.objects.create(pricing_plan=plan_obj)
-        user.subscription = subscription
-        user.save()
-        return user
 
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.CharField(max_length=100, unique=True,
@@ -212,6 +193,8 @@ class TokenUsage(models.Model):
     prompt_tokens_used = models.IntegerField(default=0)
     completion_tokens_used = models.IntegerField(default=0)
     total_tokens_used = models.IntegerField(default=0)
+    month = models.IntegerField(null=True, blank=True)
+    year = models.IntegerField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

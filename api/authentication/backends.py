@@ -9,7 +9,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from api.models import User
 from api.utilities.subscription import update_subscription
 
-RAPID_API_APP_URL =  os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
+RAPID_API_APP_URL =  os.environ.get('RAPID_API_APP_URL')
 HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -44,16 +44,12 @@ class JWTAuthentication(authentication.BaseAuthentication):
         # that we should authenticate against.
         auth_header = authentication.get_authorization_header(request).split()
         auth_header_prefix = self.authentication_header_prefix.lower()
-        rapidapi_proxy_secret = request.META.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
         rapidapi_host = request.META.get('X_RAPID_API_HOST')
        
 
         if not rapidapi_host:
             raise AuthenticationFailed('X-RapidAPI-Host not found in request headers')
         
-        if rapidapi_proxy_secret != HTTP_X_RAPIDAPI_PROXY_SECRET:
-            raise AuthenticationFailed(f'Invalid RapidAPI Proxy Secret. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI and use their platform to access this API.{RAPID_API_APP_URL}')
-
 
         if not auth_header:
             return None

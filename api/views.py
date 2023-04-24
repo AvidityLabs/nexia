@@ -111,7 +111,6 @@ class TextEmotionAnalysisView(APIView):
     permission_classes = [IsAuthenticated,]
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
-        print(request.META)
         if text_serializer.is_valid():
             text = text_serializer.validated_data['text']
             try:
