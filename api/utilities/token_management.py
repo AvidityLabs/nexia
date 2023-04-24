@@ -17,8 +17,8 @@ def update_token_usage(user, prompt_tokens, completion_tokens, total_tokens, img
     # Get the token usage object for the current month and user, or create a new one if it doesn't exist
     token_usage, created = TokenUsage.objects.get_or_create(
         user=user,
-        timestamp__month=month,
-        timestamp__year=year,
+        month=month,
+        year=year,
         defaults={
             'pricing_plan': user.subscription.pricing_plan,
             'prompt_tokens_used': prompt_tokens,

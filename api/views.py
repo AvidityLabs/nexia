@@ -117,7 +117,7 @@ class TextEmotionAnalysisView(APIView):
             try:
                 response_data = query_emotions_model(text)
                 if response_data is None:
-                    return Response({"error": "Failed to query AI model"}, status=400)
+                    return Response({'error': f'{ERROR_MSG}'}, status=400)
 
                 data = add_emotion_percentages(response_data)
                 #prepare_to_cal_token
@@ -145,7 +145,7 @@ class TextEmotionAnalysisView(APIView):
                 return Response(data=result, status=200)
             except Exception as e:
                 logger.exception(f"An error occurred @api/emotion_analysis/: {e}")
-                return Response({'error': ERROR_MSG}, status=400)
+                return Response({'error': f'{ERROR_MSG}'}, status=400)
         else:
             logger.error(f"An error occurred @api/emotion_analysis/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
@@ -160,7 +160,7 @@ class TextSentimentAnalysisView(APIView):
             try:
                 response_data = query_sentiment_model(text)
                 if response_data is None:
-                    return Response('error', status=400)
+                    return Response({"error":ERROR_MSG}, status=400)
 
                 fixed_labels = rename_sentiment_labels(response_data)
                 fixed_labels_str=''
@@ -201,7 +201,7 @@ class ChatGPTCompletionView(APIView):
             try:
                 response_data = query_sentiment_model(text)
                 if response_data is None:
-                    return Response('error', status=400)
+                    return Response({'error': f'{ERROR_MSG}'}, status=400)
 
                 response = get_chatgpt_completion(text)
                 prompt_tokens = response.usage.prompt_tokens
@@ -239,7 +239,7 @@ class GenerateViewImage(APIView):
             try:
                 response_data = query_sentiment_model(text)
                 if response_data is None:
-                    return Response('error', status=400)
+                    return Response({'error': f'{ERROR_MSG}'}, status=400)
 
                 response = get_chatgpt_completion(text)
                 prompt_tokens = response.completion.usage.prompt_tokens
