@@ -7,6 +7,7 @@ from api.models import PricingPlan,Subscription, TokenUsage, User
 
 @receiver(post_save, sender=User)
 def create_related_subscription(sender, instance, created, *args, **kwargs):
+    print(kwargs)
     today = date.today()
     if created:
         subscription, _ = Subscription.objects.get_or_create(
