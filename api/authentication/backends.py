@@ -6,10 +6,10 @@ from django.conf import settings
 from rest_framework import authentication, exceptions
 from rest_framework.exceptions import AuthenticationFailed
 
-from api.models import PricingPlan,User
-from api.utilities.subscription import create_subscription
+from api.models import User
+from api.utilities.subscription import update_subscription
 
-RAPID_API_APP_URL = 'https://rapidapi.com/AvidityLabs/api/nexia2'
+RAPID_API_APP_URL =  os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
 HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -45,11 +45,6 @@ class JWTAuthentication(authentication.BaseAuthentication):
         auth_header = authentication.get_authorization_header(request).split()
         auth_header_prefix = self.authentication_header_prefix.lower()
         rapidapi_proxy_secret = request.META.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
-        rapidapi_user = request.META.get('X-RapidAPI-User'.upper())
-        rapidapi_subscription = request.META.get('X-RapidAPI-Subscription'.upper())
-        rapidapi_version = request.META.get('X-RapidAPI-Version'.upper())
-        rapidapi_forwardedfro = request.META.get('X-Forwarded-For'.upper())
-        rapidapi_forwadedhost = request.META.get('X-Forwarded-Host'.upper())
         rapidapi_host = request.META.get('X_RAPID_API_HOST')
        
 
@@ -99,7 +94,6 @@ class JWTAuthentication(authentication.BaseAuthentication):
         Try to authenticate the given credentials. If authentication is
         successful, return the user and token. If not, throw an error.
         """
-        print('lol.................................')
         try:
             payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
 
@@ -109,7 +103,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
 
         try:
             user = User.objects.get(pk=payload['id'])
-            print('test')
+            update_subscription(user, request)
         except User.DoesNotExist:
             msg = 'No user matching this token was found.'
             raise exceptions.AuthenticationFailed(msg)
@@ -118,18 +112,5 @@ class JWTAuthentication(authentication.BaseAuthentication):
             msg = 'This user has been deactivated.'
             raise exceptions.AuthenticationFailed(msg)
         
-        # Check subscription 
-        if not user.subscription:
-            subscription = create_subscription(request)
-            if subscription:
-                user.subscription = subscription
-                user.save()
-        # update subscription if changed
-        subscription_plan = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
-        if subscription_plan:
-            if user.subscription.plan != subscription_plan:
-                plan, _ = PricingPlan.objects.get_or_create(subscription_plan)
-                user.subscription.plan=plan
-                user.save()
-        
         return (user, token)
+    
