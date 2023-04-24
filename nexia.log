@@ -5935,3 +5935,5 @@ AttributeError: 'NoneType' object has no attribute 'get'
 [2023-04-24 20:15:57] WARNING "POST /api/register/ HTTP/1.1" 400 130
 [2023-04-24 20:20:17] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
 [2023-04-24 20:20:20] INFO Watching for file changes with StatReloader
+[2023-04-24 20:38:38] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 20:38:41] INFO Watching for file changes with StatReloader

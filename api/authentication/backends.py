@@ -46,7 +46,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
         auth_header_prefix = self.authentication_header_prefix.lower()
         rapidapi_host = request.META.get('X-RAPID-API-HOST')
        
-
+        print(request.META)
         if not rapidapi_host:
             raise AuthenticationFailed('X-RapidAPI-Host not found in request headers')
         
