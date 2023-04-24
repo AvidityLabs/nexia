@@ -16,7 +16,7 @@ import logging
 from dotenv import load_dotenv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 envpath = os.path.join(BASE_DIR, ".env")
@@ -54,8 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Signal Configs
     # Applications
-    'api',
+    'api.APIConfig',
     # Third party libraries
     "whitenoise.runserver_nostatic",
     'rest_framework',
@@ -145,7 +146,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 
-# DATABASES = {}
+DATABASES = {}
 # DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 DATABASES = {
     'default': {

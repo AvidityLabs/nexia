@@ -4119,3 +4119,1102 @@ TypeError: Object of type UUID is not JSON serializable
 [2023-04-24 01:24:42] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
 [2023-04-24 01:24:45] INFO Watching for file changes with StatReloader
 [2023-04-24 02:37:26] INFO Watching for file changes with StatReloader
+[2023-04-24 03:20:49] INFO Watching for file changes with StatReloader
+[2023-04-24 03:22:04] INFO Watching for file changes with StatReloader
+[2023-04-24 03:22:47] ERROR Internal Server Error: /api/get_token/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 78, in post
+    from api.utilities.openai import connect_with_chatgpt
+  File "C:\Projects\chatgptapi\core\api\utilities\openai.py", line 1, in <module>
+    import openai
+ModuleNotFoundError: No module named 'openai'
+[2023-04-24 03:22:47] ERROR "POST /api/get_token/ HTTP/1.1" 500 110064
+[2023-04-24 03:23:57] INFO Watching for file changes with StatReloader
+[2023-04-24 03:24:31] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-24 03:24:34] INFO Watching for file changes with StatReloader
+[2023-04-24 03:24:44] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-24 03:24:47] INFO Watching for file changes with StatReloader
+[2023-04-24 03:24:51] INFO "POST /api/get_token/ HTTP/1.1" 200 223
+[2023-04-24 03:25:06] INFO "POST /api/get_token/ HTTP/1.1" 200 223
+[2023-04-24 03:25:08] INFO "POST /api/get_token/ HTTP/1.1" 200 223
+[2023-04-24 03:29:31] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:29:34] INFO Watching for file changes with StatReloader
+[2023-04-24 03:29:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:29:44] INFO Watching for file changes with StatReloader
+[2023-04-24 03:29:50] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:29:52] INFO Watching for file changes with StatReloader
+[2023-04-24 03:33:31] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:33:33] INFO Watching for file changes with StatReloader
+[2023-04-24 03:33:39] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:33:41] INFO Watching for file changes with StatReloader
+[2023-04-24 03:33:44] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:33:46] INFO Watching for file changes with StatReloader
+[2023-04-24 03:33:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:33:56] INFO Watching for file changes with StatReloader
+[2023-04-24 03:34:01] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:34:03] INFO Watching for file changes with StatReloader
+[2023-04-24 03:34:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:34:12] INFO Watching for file changes with StatReloader
+[2023-04-24 03:35:28] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:35:30] INFO Watching for file changes with StatReloader
+[2023-04-24 03:35:49] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:35:52] INFO Watching for file changes with StatReloader
+[2023-04-24 03:36:34] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 03:36:36] INFO Watching for file changes with StatReloader
+[2023-04-24 03:40:47] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:40:49] INFO Watching for file changes with StatReloader
+[2023-04-24 03:40:56] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:40:58] INFO Watching for file changes with StatReloader
+[2023-04-24 03:43:31] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:43:33] INFO Watching for file changes with StatReloader
+[2023-04-24 03:43:52] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:43:54] INFO Watching for file changes with StatReloader
+[2023-04-24 03:43:56] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:43:58] INFO Watching for file changes with StatReloader
+[2023-04-24 03:44:06] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:44:07] INFO Watching for file changes with StatReloader
+[2023-04-24 03:44:12] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:44:14] INFO Watching for file changes with StatReloader
+[2023-04-24 03:44:17] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:44:19] INFO Watching for file changes with StatReloader
+[2023-04-24 03:44:22] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:44:24] INFO Watching for file changes with StatReloader
+[2023-04-24 03:44:31] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:44:33] INFO Watching for file changes with StatReloader
+[2023-04-24 03:44:36] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:44:38] INFO Watching for file changes with StatReloader
+[2023-04-24 03:45:17] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:45:19] INFO Watching for file changes with StatReloader
+[2023-04-24 03:45:28] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:45:30] INFO Watching for file changes with StatReloader
+[2023-04-24 03:45:34] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:45:36] INFO Watching for file changes with StatReloader
+[2023-04-24 03:46:45] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:46:47] INFO Watching for file changes with StatReloader
+[2023-04-24 03:47:01] INFO C:\Projects\chatgptapi\core\api\authentication\__init__.py changed, reloading.
+[2023-04-24 03:47:03] INFO Watching for file changes with StatReloader
+[2023-04-24 03:57:34] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:57:36] INFO Watching for file changes with StatReloader
+[2023-04-24 03:57:41] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:57:42] INFO Watching for file changes with StatReloader
+[2023-04-24 03:57:44] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:57:46] INFO Watching for file changes with StatReloader
+[2023-04-24 03:57:49] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:57:50] INFO Watching for file changes with StatReloader
+[2023-04-24 03:57:55] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:57:57] INFO Watching for file changes with StatReloader
+[2023-04-24 03:58:06] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:58:08] INFO Watching for file changes with StatReloader
+[2023-04-24 03:58:14] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 03:58:16] INFO Watching for file changes with StatReloader
+[2023-04-24 03:58:36] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 03:58:38] INFO Watching for file changes with StatReloader
+[2023-04-24 03:58:43] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 03:58:45] INFO Watching for file changes with StatReloader
+[2023-04-24 03:59:20] INFO Watching for file changes with StatReloader
+[2023-04-24 03:59:29] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 03:59:31] INFO Watching for file changes with StatReloader
+[2023-04-24 03:59:46] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 03:59:48] INFO Watching for file changes with StatReloader
+[2023-04-24 04:00:09] INFO C:\Projects\chatgptapi\core\api\__init__.py changed, reloading.
+[2023-04-24 04:00:11] INFO Watching for file changes with StatReloader
+[2023-04-24 04:00:20] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-24 04:00:22] INFO Watching for file changes with StatReloader
+[2023-04-24 04:00:29] INFO Watching for file changes with StatReloader
+[2023-04-24 04:01:15] INFO Watching for file changes with StatReloader
+[2023-04-24 04:16:45] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:16:47] INFO Watching for file changes with StatReloader
+[2023-04-24 04:16:59] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:17:02] INFO Watching for file changes with StatReloader
+[2023-04-24 04:17:14] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:17:16] INFO Watching for file changes with StatReloader
+[2023-04-24 04:21:50] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:21:52] INFO Watching for file changes with StatReloader
+[2023-04-24 04:21:57] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:22:00] INFO Watching for file changes with StatReloader
+[2023-04-24 04:22:34] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:22:36] INFO Watching for file changes with StatReloader
+[2023-04-24 04:23:08] ERROR "POST /api/register/ HTTP/1.1" 500 59
+[2023-04-24 04:24:56] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:24:58] INFO Watching for file changes with StatReloader
+[2023-04-24 04:25:16] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:25:18] INFO Watching for file changes with StatReloader
+[2023-04-24 04:26:20] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:26:22] INFO Watching for file changes with StatReloader
+[2023-04-24 04:28:20] ERROR "POST /api/register/ HTTP/1.1" 500 59
+[2023-04-24 04:29:44] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:29:47] INFO Watching for file changes with StatReloader
+[2023-04-24 04:29:53] WARNING Bad Request: /api/register/
+[2023-04-24 04:29:53] WARNING "POST /api/register/ HTTP/1.1" 400 65
+[2023-04-24 04:30:07] WARNING Bad Request: /api/register/
+[2023-04-24 04:30:07] WARNING "POST /api/register/ HTTP/1.1" 400 65
+[2023-04-24 04:30:17] WARNING Bad Request: /api/register/
+[2023-04-24 04:30:17] WARNING "POST /api/register/ HTTP/1.1" 400 65
+[2023-04-24 04:30:30] WARNING Bad Request: /api/register/
+[2023-04-24 04:30:30] WARNING "POST /api/register/ HTTP/1.1" 400 65
+[2023-04-24 04:30:39] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 105, in post
+    serializer.save()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 90, in create_user
+    user.save()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\auth\base_user.py", line 67, in save
+    super().save(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 789, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\dispatch\dispatcher.py", line 182, in send
+    for receiver in self._live_receivers(sender)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\dispatch\dispatcher.py", line 182, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\signals_handlers.py", line 66, in wrapper
+    return receiver(*args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\authentication\signals.py", line 14, in create_related_subscription
+    if 'HTTP_X_RAPIDAPI_SUBSCRIPTION' in instance.request.META:
+AttributeError: 'User' object has no attribute 'request'
+[2023-04-24 04:30:39] ERROR "POST /api/register/ HTTP/1.1" 500 146935
+[2023-04-24 04:30:52] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:30:55] INFO Watching for file changes with StatReloader
+[2023-04-24 04:35:58] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:36:00] INFO Watching for file changes with StatReloader
+[2023-04-24 04:36:40] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:36:43] INFO Watching for file changes with StatReloader
+[2023-04-24 04:36:49] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:36:51] INFO Watching for file changes with StatReloader
+[2023-04-24 04:36:58] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:37:00] INFO Watching for file changes with StatReloader
+[2023-04-24 04:37:03] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:37:05] INFO Watching for file changes with StatReloader
+[2023-04-24 04:37:09] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:37:11] INFO Watching for file changes with StatReloader
+[2023-04-24 04:37:15] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:37:17] INFO Watching for file changes with StatReloader
+[2023-04-24 04:37:22] WARNING Bad Request: /api/register/
+[2023-04-24 04:37:22] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-24 04:37:28] WARNING Bad Request: /api/register/
+[2023-04-24 04:37:28] WARNING "POST /api/register/ HTTP/1.1" 400 79
+[2023-04-24 04:37:34] WARNING Bad Request: /api/register/
+[2023-04-24 04:37:34] WARNING "POST /api/register/ HTTP/1.1" 400 79
+[2023-04-24 04:37:53] INFO "POST /api/register/ HTTP/1.1" 201 235
+[2023-04-24 04:43:58] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:44:01] INFO Watching for file changes with StatReloader
+[2023-04-24 04:44:04] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:44:07] INFO Watching for file changes with StatReloader
+[2023-04-24 04:44:21] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:44:24] INFO Watching for file changes with StatReloader
+[2023-04-24 04:44:40] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:44:43] INFO Watching for file changes with StatReloader
+[2023-04-24 04:44:51] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:44:53] INFO Watching for file changes with StatReloader
+[2023-04-24 04:45:01] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:45:03] INFO Watching for file changes with StatReloader
+[2023-04-24 04:45:32] ERROR "POST /api/register/ HTTP/1.1" 500 59
+[2023-04-24 04:45:52] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:45:54] INFO Watching for file changes with StatReloader
+[2023-04-24 04:45:58] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:46:00] INFO Watching for file changes with StatReloader
+[2023-04-24 04:46:04] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:46:07] INFO Watching for file changes with StatReloader
+[2023-04-24 04:46:16] INFO "POST /api/register/ HTTP/1.1" 201 230
+[2023-04-24 04:48:17] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:48:21] INFO Watching for file changes with StatReloader
+[2023-04-24 04:48:26] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:48:28] INFO Watching for file changes with StatReloader
+[2023-04-24 04:48:33] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:48:36] INFO Watching for file changes with StatReloader
+[2023-04-24 04:48:47] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:48:49] INFO Watching for file changes with StatReloader
+[2023-04-24 04:48:59] INFO "POST /api/register/ HTTP/1.1" 201 232
+[2023-04-24 04:52:52] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:52:55] INFO Watching for file changes with StatReloader
+[2023-04-24 04:53:07] INFO "POST /api/register/ HTTP/1.1" 201 234
+[2023-04-24 04:54:44] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:54:46] INFO Watching for file changes with StatReloader
+[2023-04-24 04:54:48] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:54:51] INFO Watching for file changes with StatReloader
+[2023-04-24 04:55:04] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:55:07] INFO Watching for file changes with StatReloader
+[2023-04-24 04:55:44] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:55:46] INFO Watching for file changes with StatReloader
+[2023-04-24 04:55:49] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:55:52] INFO Watching for file changes with StatReloader
+[2023-04-24 04:56:18] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:56:20] INFO Watching for file changes with StatReloader
+[2023-04-24 04:56:26] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:56:28] INFO Watching for file changes with StatReloader
+[2023-04-24 04:56:47] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:56:49] INFO Watching for file changes with StatReloader
+[2023-04-24 04:57:07] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:57:09] INFO Watching for file changes with StatReloader
+[2023-04-24 04:57:13] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:57:15] INFO Watching for file changes with StatReloader
+[2023-04-24 04:57:25] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:57:27] INFO Watching for file changes with StatReloader
+[2023-04-24 04:58:12] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:58:14] INFO Watching for file changes with StatReloader
+[2023-04-24 04:58:19] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:58:21] INFO Watching for file changes with StatReloader
+[2023-04-24 04:58:25] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:58:27] INFO Watching for file changes with StatReloader
+[2023-04-24 04:58:31] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 04:58:33] INFO Watching for file changes with StatReloader
+[2023-04-24 04:59:59] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:00:01] INFO Watching for file changes with StatReloader
+[2023-04-24 05:00:30] INFO Watching for file changes with StatReloader
+[2023-04-24 05:00:44] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 105, in post
+    serializer.save()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 90, in create_user
+    user.save()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\auth\base_user.py", line 67, in save
+    super().save(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 789, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\dispatch\dispatcher.py", line 182, in send
+    for receiver in self._live_receivers(sender)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\dispatch\dispatcher.py", line 182, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\signals_handlers.py", line 66, in wrapper
+    return receiver(*args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\authentication\signals.py", line 10, in create_related_subscription
+    pricing_plan = PricingPlan.objects.get(name='PENDING')
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 437, in get
+    self.model._meta.object_name
+api.models.PricingPlan.DoesNotExist: PricingPlan matching query does not exist.
+[2023-04-24 05:00:44] ERROR "POST /api/register/ HTTP/1.1" 500 155365
+[2023-04-24 05:00:46] WARNING Bad Request: /api/register/
+[2023-04-24 05:00:46] WARNING "POST /api/register/ HTTP/1.1" 400 154
+[2023-04-24 05:00:46] WARNING Bad Request: /api/register/
+[2023-04-24 05:00:46] WARNING "POST /api/register/ HTTP/1.1" 400 154
+[2023-04-24 05:01:01] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:01:04] INFO Watching for file changes with StatReloader
+[2023-04-24 05:01:32] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 105, in post
+    serializer.save()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 90, in create_user
+    user.save()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\auth\base_user.py", line 67, in save
+    super().save(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\base.py", line 789, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\dispatch\dispatcher.py", line 182, in send
+    for receiver in self._live_receivers(sender)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\dispatch\dispatcher.py", line 182, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\signals_handlers.py", line 66, in wrapper
+    return receiver(*args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\authentication\signals.py", line 10, in create_related_subscription
+    pricing_plan, _ = PricingPlan.objects.get_or_create(name='PENDING')
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 437, in get
+    self.model._meta.object_name
+api.models.PricingPlan.DoesNotExist: PricingPlan matching query does not exist.
+[2023-04-24 05:01:32] ERROR "POST /api/register/ HTTP/1.1" 500 155383
+[2023-04-24 05:01:40] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:01:43] INFO Watching for file changes with StatReloader
+[2023-04-24 05:01:54] INFO "POST /api/register/ HTTP/1.1" 201 236
+[2023-04-24 05:02:02] INFO "GET /admin/users/log/ HTTP/1.1" 302 0
+[2023-04-24 05:02:03] INFO "GET /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2231
+[2023-04-24 05:02:03] INFO "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2023-04-24 05:02:03] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2023-04-24 05:02:03] INFO "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[2023-04-24 05:02:03] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2023-04-24 05:02:03] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2023-04-24 05:02:03] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[2023-04-24 05:02:03] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[2023-04-24 05:02:03] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[2023-04-24 05:02:05] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2399
+[2023-04-24 05:02:05] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[2023-04-24 05:02:09] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2395
+[2023-04-24 05:02:13] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 200 2398
+[2023-04-24 05:02:20] INFO "POST /admin/login/?next=/admin/users/log/ HTTP/1.1" 302 0
+[2023-04-24 05:02:20] WARNING Not Found: /admin/users/log/
+[2023-04-24 05:02:20] WARNING "GET /admin/users/log/ HTTP/1.1" 404 5181
+[2023-04-24 05:02:24] INFO "GET /admin HTTP/1.1" 301 0
+[2023-04-24 05:02:24] INFO "GET /admin/ HTTP/1.1" 200 5773
+[2023-04-24 05:02:24] INFO "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+[2023-04-24 05:02:24] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2023-04-24 05:02:24] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[2023-04-24 05:02:28] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8365
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[2023-04-24 05:02:28] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2023-04-24 05:02:32] ERROR Internal Server Error: /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1660, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1540, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1632, in _changeform_view
+    'subtitle': str(obj) if obj else None,
+  File "C:\Projects\chatgptapi\core\api\models.py", line 67, in __str__
+    return f"{self.user.email}'s Subscription to {self.pricing_plan.name}"
+AttributeError: 'Subscription' object has no attribute 'user'
+[2023-04-24 05:02:32] ERROR Internal Server Error: /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1660, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1540, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1632, in _changeform_view
+    'subtitle': str(obj) if obj else None,
+  File "C:\Projects\chatgptapi\core\api\models.py", line 67, in __str__
+    return f"{self.user.email}'s Subscription to {self.pricing_plan.name}"
+AttributeError: 'Subscription' object has no attribute 'user'
+[2023-04-24 05:02:32] INFO - Broken pipe from ('127.0.0.1', 63026)
+
+[2023-04-24 05:02:32] ERROR "GET /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/ HTTP/1.1" 500 122167
+[2023-04-24 05:02:32] ERROR Internal Server Error: /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1660, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1540, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1632, in _changeform_view
+    'subtitle': str(obj) if obj else None,
+  File "C:\Projects\chatgptapi\core\api\models.py", line 67, in __str__
+    return f"{self.user.email}'s Subscription to {self.pricing_plan.name}"
+AttributeError: 'Subscription' object has no attribute 'user'
+[2023-04-24 05:02:32] ERROR "GET /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/ HTTP/1.1" 500 122167
+[2023-04-24 05:03:13] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:03:14] INFO Watching for file changes with StatReloader
+[2023-04-24 05:03:22] INFO "GET /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/ HTTP/1.1" 200 10118
+[2023-04-24 05:03:22] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:03:22] INFO "GET /static/admin/css/forms.css HTTP/1.1" 200 8804
+[2023-04-24 05:03:22] INFO "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+[2023-04-24 05:03:22] INFO "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19634
+[2023-04-24 05:03:22] INFO "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+[2023-04-24 05:03:22] INFO "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+[2023-04-24 05:03:22] INFO "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[2023-04-24 05:03:22] INFO "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[2023-04-24 05:03:22] INFO "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[2023-04-24 05:03:35] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9382
+[2023-04-24 05:03:35] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:03:35] INFO "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2023-04-24 05:03:35] INFO "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[2023-04-24 05:04:11] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:04:14] INFO Watching for file changes with StatReloader
+[2023-04-24 05:04:21] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:04:23] INFO Watching for file changes with StatReloader
+[2023-04-24 05:04:27] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:04:29] INFO Watching for file changes with StatReloader
+[2023-04-24 05:04:32] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:04:34] INFO Watching for file changes with StatReloader
+[2023-04-24 05:04:43] INFO "POST /api/register/ HTTP/1.1" 201 238
+[2023-04-24 05:04:47] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9459
+[2023-04-24 05:04:47] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:05:18] INFO "GET /admin/api/sentimentanalysis/ HTTP/1.1" 200 6267
+[2023-04-24 05:05:18] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:05:20] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9459
+[2023-04-24 05:05:20] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:05:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:05:57] INFO Watching for file changes with StatReloader
+[2023-04-24 05:05:59] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:01] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:06] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:08] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:15] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:17] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:21] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:23] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:28] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:30] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:35] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:39] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:41] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:47] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:49] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:54] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:06:56] INFO Watching for file changes with StatReloader
+[2023-04-24 05:06:59] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:07:02] INFO Watching for file changes with StatReloader
+[2023-04-24 05:07:12] INFO "POST /api/register/ HTTP/1.1" 201 240
+[2023-04-24 05:07:17] INFO "GET /admin/api/sentimentanalysis/ HTTP/1.1" 200 6267
+[2023-04-24 05:07:17] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:07:19] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9466
+[2023-04-24 05:07:19] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:07:36] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8365
+[2023-04-24 05:07:36] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:08:13] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:08:16] INFO Watching for file changes with StatReloader
+[2023-04-24 05:08:20] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:08:22] INFO Watching for file changes with StatReloader
+[2023-04-24 05:08:29] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:08:32] INFO Watching for file changes with StatReloader
+[2023-04-24 05:08:37] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:08:40] INFO Watching for file changes with StatReloader
+[2023-04-24 05:08:46] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:08:50] INFO Watching for file changes with StatReloader
+[2023-04-24 05:08:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:08:57] INFO Watching for file changes with StatReloader
+[2023-04-24 05:09:01] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:09:03] INFO Watching for file changes with StatReloader
+[2023-04-24 05:09:14] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:09:16] INFO Watching for file changes with StatReloader
+[2023-04-24 05:09:22] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:09:25] INFO Watching for file changes with StatReloader
+[2023-04-24 05:09:28] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:09:30] INFO Watching for file changes with StatReloader
+[2023-04-24 05:09:34] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:09:36] INFO Watching for file changes with StatReloader
+[2023-04-24 05:09:40] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:09:42] INFO Watching for file changes with StatReloader
+[2023-04-24 05:09:48] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8365
+[2023-04-24 05:09:48] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:09:55] INFO "GET /admin/api/user/ HTTP/1.1" 200 15324
+[2023-04-24 05:09:55] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[2023-04-24 05:09:55] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:11:03] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:11:05] INFO Watching for file changes with StatReloader
+[2023-04-24 05:11:21] INFO "POST /api/register/ HTTP/1.1" 201 233
+[2023-04-24 05:11:27] INFO "GET /admin/api/user/ HTTP/1.1" 200 15987
+[2023-04-24 05:11:27] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:11:39] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9466
+[2023-04-24 05:11:39] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:11:51] ERROR Internal Server Error: /admin/api/tokenusage/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 38, in sentry_patched_render
+    return old_render(self)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\templates.py", line 74, in rendered_content
+    return real_rendered_content.fget(self)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 308, in result_list
+    'results': list(results(cl)),
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 284, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 275, in __init__
+    super().__init__(*items)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 250, in items_for_result
+    result_repr)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 115, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 104, in conditional_escape
+    return escape(text)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\functional.py", line 228, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 43, in escape
+    return mark_safe(html.escape(str(text)))
+  File "C:\Projects\chatgptapi\core\api\models.py", line 157, in __str__
+    return f'{self.email} - Subscription Plan= {self.subscription.pricing_plan} - Tokens Used = {self.total_tokens_used}'
+AttributeError: 'NoneType' object has no attribute 'pricing_plan'
+[2023-04-24 05:11:51] ERROR "GET /admin/api/tokenusage/ HTTP/1.1" 500 342689
+[2023-04-24 05:12:26] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9466
+[2023-04-24 05:12:29] INFO "GET /admin/api/user/ HTTP/1.1" 200 15987
+[2023-04-24 05:12:29] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:12:48] ERROR Internal Server Error: /admin/api/user/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1723, in changelist_view
+    response = self.response_action(request, queryset=cl.get_queryset(request))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1408, in response_action
+    response = func(self, request, queryset)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\actions.py", line 33, in delete_selected
+    deletable_objects, model_count, perms_needed, protected = modeladmin.get_deleted_objects(queryset, request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1846, in get_deleted_objects
+    return get_deleted_objects(objs, request, self.admin_site)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\utils.py", line 152, in get_deleted_objects
+    to_delete = collector.nested(format_callback)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\utils.py", line 214, in nested
+    roots.extend(self._nested(root, seen, format_callback))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\utils.py", line 200, in _nested
+    ret = [format_callback(obj)]
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\utils.py", line 127, in format_callback
+    no_edit_link = '%s: %s' % (capfirst(opts.verbose_name), obj)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 157, in __str__
+    return f'{self.email} - Subscription Plan= {self.subscription.pricing_plan} - Tokens Used = {self.total_tokens_used}'
+AttributeError: 'NoneType' object has no attribute 'pricing_plan'
+[2023-04-24 05:12:48] ERROR "POST /admin/api/user/ HTTP/1.1" 500 145057
+[2023-04-24 05:12:52] INFO "GET /admin/api/user/ HTTP/1.1" 200 15987
+[2023-04-24 05:14:38] INFO Watching for file changes with StatReloader
+[2023-04-24 05:14:41] ERROR Internal Server Error: /admin/api/tokenusage/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 38, in sentry_patched_render
+    return old_render(self)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\templates.py", line 74, in rendered_content
+    return real_rendered_content.fget(self)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 308, in result_list
+    'results': list(results(cl)),
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 284, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 275, in __init__
+    super().__init__(*items)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 250, in items_for_result
+    result_repr)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 115, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 104, in conditional_escape
+    return escape(text)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\functional.py", line 228, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 43, in escape
+    return mark_safe(html.escape(str(text)))
+  File "C:\Projects\chatgptapi\core\api\models.py", line 157, in __str__
+    return f'{self.email} - Subscription Plan= {self.subscription.pricing_plan} - Tokens Used = {self.total_tokens_used}'
+AttributeError: 'NoneType' object has no attribute 'pricing_plan'
+[2023-04-24 05:14:41] ERROR "GET /admin/api/tokenusage/ HTTP/1.1" 500 342688
+[2023-04-24 05:15:14] INFO "GET /admin/api/user/ HTTP/1.1" 200 15324
+[2023-04-24 05:15:15] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9466
+[2023-04-24 05:15:15] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:15:17] INFO "GET /admin/api/sentimentanalysis/ HTTP/1.1" 200 6267
+[2023-04-24 05:15:18] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:15:19] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8365
+[2023-04-24 05:15:19] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:15:22] INFO "GET /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/ HTTP/1.1" 200 10118
+[2023-04-24 05:15:22] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:15:28] ERROR Internal Server Error: /admin/api/tokenusage/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 38, in sentry_patched_render
+    return old_render(self)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\templates.py", line 74, in rendered_content
+    return real_rendered_content.fget(self)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 170, in render
+    return self._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\base.py", line 905, in render_annotated
+    return self.render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 308, in result_list
+    'results': list(results(cl)),
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 284, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 275, in __init__
+    super().__init__(*items)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 250, in items_for_result
+    result_repr)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 115, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 104, in conditional_escape
+    return escape(text)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\functional.py", line 228, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\html.py", line 43, in escape
+    return mark_safe(html.escape(str(text)))
+  File "C:\Projects\chatgptapi\core\api\models.py", line 157, in __str__
+    return f'{self.email} - Subscription Plan= {self.subscription.pricing_plan} - Tokens Used = {self.total_tokens_used}'
+AttributeError: 'NoneType' object has no attribute 'pricing_plan'
+[2023-04-24 05:15:28] ERROR "GET /admin/api/tokenusage/ HTTP/1.1" 500 342734
+[2023-04-24 05:15:30] INFO "GET /admin/api/subscription/9baecc21-2602-45b4-a3ef-b1faa52c0f49/change/ HTTP/1.1" 200 10118
+[2023-04-24 05:17:03] INFO Watching for file changes with StatReloader
+[2023-04-24 05:17:07] INFO "GET /admin/api/user/ HTTP/1.1" 200 15324
+[2023-04-24 05:17:08] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:18:35] INFO Watching for file changes with StatReloader
+[2023-04-24 05:18:40] INFO "GET /admin/api/user/ HTTP/1.1" 200 15324
+[2023-04-24 05:18:40] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:18:45] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9466
+[2023-04-24 05:18:45] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:18:47] INFO "GET /admin/api/user/ HTTP/1.1" 200 15324
+[2023-04-24 05:18:47] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:21:09] INFO Watching for file changes with StatReloader
+[2023-04-24 05:21:17] INFO "POST /api/register/ HTTP/1.1" 201 233
+[2023-04-24 05:21:22] INFO "GET /admin/api/user/ HTTP/1.1" 302 0
+[2023-04-24 05:21:22] INFO "GET /admin/login/?next=/admin/api/user/ HTTP/1.1" 200 2229
+[2023-04-24 05:21:27] INFO "POST /admin/login/?next=/admin/api/user/ HTTP/1.1" 200 2385
+[2023-04-24 05:21:34] INFO "POST /admin/login/?next=/admin/api/user/ HTTP/1.1" 200 2385
+[2023-04-24 05:21:42] INFO "POST /admin/login/?next=/admin/api/user/ HTTP/1.1" 200 2387
+[2023-04-24 05:22:33] INFO Watching for file changes with StatReloader
+[2023-04-24 05:22:39] INFO "POST /admin/login/?next=/admin/api/user/ HTTP/1.1" 302 0
+[2023-04-24 05:22:39] INFO "GET /admin/api/user/ HTTP/1.1" 200 10095
+[2023-04-24 05:22:39] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:22:54] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 9576
+[2023-04-24 05:22:54] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:22:56] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8366
+[2023-04-24 05:22:56] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:22:58] INFO "GET /admin/api/sentimentanalysis/ HTTP/1.1" 200 6268
+[2023-04-24 05:22:59] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:00] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8366
+[2023-04-24 05:23:01] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:02] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 9576
+[2023-04-24 05:23:02] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:08] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8366
+[2023-04-24 05:23:08] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:12] INFO "GET /admin/api/subscription/f166ba8e-b777-41b4-a175-0d58347c30d0/change/ HTTP/1.1" 200 10119
+[2023-04-24 05:23:12] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:15] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8366
+[2023-04-24 05:23:17] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 9576
+[2023-04-24 05:23:17] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:21] INFO "GET /admin/api/user/ HTTP/1.1" 200 10095
+[2023-04-24 05:23:21] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:24] INFO "GET /admin/api/user/d591469f-ffb4-4638-a749-75e9c74ea451/change/ HTTP/1.1" 200 18536
+[2023-04-24 05:23:24] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:38] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 9576
+[2023-04-24 05:23:38] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:41] INFO "GET /admin/api/tokenusage/5/change/ HTTP/1.1" 200 11026
+[2023-04-24 05:23:41] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:44] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 9576
+[2023-04-24 05:23:48] INFO "GET /admin/api/tokenusage/7/change/ HTTP/1.1" 200 11029
+[2023-04-24 05:23:48] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:51] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 9576
+[2023-04-24 05:23:52] INFO "GET /admin/api/tokenusage/6/change/ HTTP/1.1" 200 11014
+[2023-04-24 05:23:52] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:23:58] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8366
+[2023-04-24 05:23:58] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:24:07] INFO "GET /admin/api/subscription/f166ba8e-b777-41b4-a175-0d58347c30d0/change/ HTTP/1.1" 200 10119
+[2023-04-24 05:24:07] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:25:26] INFO "POST /api/register/ HTTP/1.1" 201 245
+[2023-04-24 05:25:30] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8366
+[2023-04-24 05:25:31] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:25:34] INFO "GET /admin/api/sentimentanalysis/ HTTP/1.1" 200 6268
+[2023-04-24 05:25:34] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:25:35] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8366
+[2023-04-24 05:25:35] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:26:03] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:26:05] INFO Watching for file changes with StatReloader
+[2023-04-24 05:26:12] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:26:14] INFO Watching for file changes with StatReloader
+[2023-04-24 05:26:17] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:26:19] INFO Watching for file changes with StatReloader
+[2023-04-24 05:26:23] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:26:25] INFO Watching for file changes with StatReloader
+[2023-04-24 05:26:28] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:26:30] INFO Watching for file changes with StatReloader
+[2023-04-24 05:26:37] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 10094
+[2023-04-24 05:26:37] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:26:44] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:26:46] INFO Watching for file changes with StatReloader
+[2023-04-24 05:27:04] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:27:06] INFO Watching for file changes with StatReloader
+[2023-04-24 05:27:15] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:27:16] INFO Watching for file changes with StatReloader
+[2023-04-24 05:27:25] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:27:27] INFO Watching for file changes with StatReloader
+[2023-04-24 05:27:37] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:27:40] INFO Watching for file changes with StatReloader
+[2023-04-24 05:27:46] INFO "GET /admin/api/tokenusage/8/change/ HTTP/1.1" 200 11164
+[2023-04-24 05:27:46] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:27:48] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 10094
+[2023-04-24 05:27:58] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:28:01] INFO Watching for file changes with StatReloader
+[2023-04-24 05:28:07] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:28:09] INFO Watching for file changes with StatReloader
+[2023-04-24 05:28:18] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:28:21] INFO Watching for file changes with StatReloader
+[2023-04-24 05:28:24] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:28:26] INFO Watching for file changes with StatReloader
+[2023-04-24 05:28:32] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:28:33] INFO Watching for file changes with StatReloader
+[2023-04-24 05:28:37] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:28:39] INFO Watching for file changes with StatReloader
+[2023-04-24 05:28:49] INFO "POST /api/register/ HTTP/1.1" 201 233
+[2023-04-24 05:28:53] INFO "GET /admin/api/user/ HTTP/1.1" 200 11427
+[2023-04-24 05:28:53] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:28:57] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 10606
+[2023-04-24 05:28:57] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:29:01] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8913
+[2023-04-24 05:29:01] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:29:03] INFO "GET /admin/api/subscription/f166ba8e-b777-41b4-a175-0d58347c30d0/change/ HTTP/1.1" 200 10119
+[2023-04-24 05:29:04] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:29:06] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8913
+[2023-04-24 05:29:08] INFO "GET /admin/api/subscription/d88d732b-ddd1-4ec1-9010-41ced44b3c3a/change/ HTTP/1.1" 200 10119
+[2023-04-24 05:29:08] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:29:17] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8913
+[2023-04-24 05:29:26] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 10606
+[2023-04-24 05:29:26] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:29:32] INFO "GET /admin/api/user/ HTTP/1.1" 200 11427
+[2023-04-24 05:29:32] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:29:38] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8913
+[2023-04-24 05:29:39] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:30:23] INFO "POST /api/get_token/ HTTP/1.1" 200 218
+[2023-04-24 05:30:31] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8913
+[2023-04-24 05:30:31] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:30:32] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 10606
+[2023-04-24 05:30:32] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:30:34] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8913
+[2023-04-24 05:30:34] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:30:37] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 10606
+[2023-04-24 05:30:37] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:31:54] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 05:31:56] INFO Watching for file changes with StatReloader
+[2023-04-24 05:32:06] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 05:32:08] INFO Watching for file changes with StatReloader
+[2023-04-24 05:32:11] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 05:32:14] INFO Watching for file changes with StatReloader
+[2023-04-24 05:33:01] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:33:03] INFO Watching for file changes with StatReloader
+[2023-04-24 05:33:14] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:33:17] INFO Watching for file changes with StatReloader
+[2023-04-24 05:33:23] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:33:24] INFO Watching for file changes with StatReloader
+[2023-04-24 05:33:50] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:33:52] INFO Watching for file changes with StatReloader
+[2023-04-24 05:33:59] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:34:01] INFO Watching for file changes with StatReloader
+[2023-04-24 05:34:07] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:34:10] INFO Watching for file changes with StatReloader
+[2023-04-24 05:34:14] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:34:17] INFO Watching for file changes with StatReloader
+[2023-04-24 05:34:28] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:34:31] INFO Watching for file changes with StatReloader
+[2023-04-24 05:34:35] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:34:37] INFO Watching for file changes with StatReloader
+[2023-04-24 05:34:40] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:34:42] INFO Watching for file changes with StatReloader
+[2023-04-24 05:34:48] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:34:50] INFO Watching for file changes with StatReloader
+[2023-04-24 05:36:06] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:36:10] INFO Watching for file changes with StatReloader
+[2023-04-24 05:36:15] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:36:17] INFO Watching for file changes with StatReloader
+[2023-04-24 05:36:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:36:35] INFO Watching for file changes with StatReloader
+[2023-04-24 05:36:37] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:36:40] INFO Watching for file changes with StatReloader
+[2023-04-24 05:36:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:36:44] INFO Watching for file changes with StatReloader
+[2023-04-24 05:36:49] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:36:52] INFO Watching for file changes with StatReloader
+[2023-04-24 05:37:01] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:37:03] INFO Watching for file changes with StatReloader
+[2023-04-24 05:37:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:37:11] INFO Watching for file changes with StatReloader
+[2023-04-24 05:37:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:37:18] INFO Watching for file changes with StatReloader
+[2023-04-24 05:37:20] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:37:22] INFO Watching for file changes with StatReloader
+[2023-04-24 05:37:25] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:37:27] INFO Watching for file changes with StatReloader
+[2023-04-24 05:37:39] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:37:41] INFO Watching for file changes with StatReloader
+[2023-04-24 05:37:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 05:37:50] INFO Watching for file changes with StatReloader
+[2023-04-24 05:38:03] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:38:06] INFO Watching for file changes with StatReloader
+[2023-04-24 05:38:14] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:38:16] INFO Watching for file changes with StatReloader
+[2023-04-24 05:38:20] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:38:22] INFO Watching for file changes with StatReloader
+[2023-04-24 05:39:12] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:39:14] INFO Watching for file changes with StatReloader
+[2023-04-24 05:39:19] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:39:21] INFO Watching for file changes with StatReloader
+[2023-04-24 05:39:23] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:39:25] INFO Watching for file changes with StatReloader
+[2023-04-24 05:39:37] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:39:39] INFO Watching for file changes with StatReloader
+[2023-04-24 05:39:53] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:39:55] INFO Watching for file changes with StatReloader
+[2023-04-24 05:40:06] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:40:08] INFO Watching for file changes with StatReloader
+[2023-04-24 05:40:15] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:40:18] INFO Watching for file changes with StatReloader
+[2023-04-24 05:40:20] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:40:22] INFO Watching for file changes with StatReloader
+[2023-04-24 05:41:02] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 05:41:04] INFO Watching for file changes with StatReloader

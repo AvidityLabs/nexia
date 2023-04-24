@@ -26,7 +26,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         """Performs an update on a User."""
-        print(validated_data)
+
         password = validated_data.pop('password', None)
 
         for (key, value) in validated_data.items():

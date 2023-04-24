@@ -70,20 +70,19 @@ class LoginAPIView(APIView):
     serializer_class = LoginSerializer
 
     def post(self, request):
-        # user = {
-        #     "email": request.data.get('email'),
-        #     "password": request.data.get('password')
-        # }
-        text=request.data.get('text')
-        from api.utilities.openai import connect_with_chatgpt
+        user = {
+            "email": request.data.get('email'),
+            "password": request.data.get('password')
+        }
+
         # Notice here that we do not call `serializer.save()` like we did for
         # the registration endpoint. This is because we don't  have
         # anything to save. Instead, the `validate` method on our serializer
         # handles everything we need.
-        # serializer = self.serializer_class(data=user)
-        # serializer.is_valid(raise_exception=True)
-        response=connect_with_chatgpt(text)
-        return Response(response, status=status.HTTP_200_OK)
+        serializer = self.serializer_class(data=user)
+        serializer.is_valid(raise_exception=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
 class DeveloperRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
@@ -92,6 +91,7 @@ class DeveloperRegisterView(generics.CreateAPIView):
     serializer_class = DeveloperRegisterSerializer
 
     def post(self, request):
+
         user = {
             "email": request.data.get('email'),
             "username": request.data.get('username'),
