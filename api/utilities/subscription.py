@@ -18,13 +18,14 @@ def update_subscription(user, request):
 
             # Get token usage for the month 
             today = date.today()
-            token_usage, _ = TokenUsage.objects.get(
+            token_usage, _ = TokenUsage.objects.filter(
                 user=user,
                 month=today.month,
                 year=today.year,
             )
-            token_usage.pricing_plan = pricing_plan_obj
-            token_usage.save()
+            if(len(token_usage==1)):
+                token_usage.pricing_plan = pricing_plan_obj
+                token_usage.save()
                  
             
 
