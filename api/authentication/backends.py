@@ -44,7 +44,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
         # that we should authenticate against.
         auth_header = authentication.get_authorization_header(request).split()
         auth_header_prefix = self.authentication_header_prefix.lower()
-        rapidapi_host = request.META.get('HTTP_X_RAPIDAPI_HOST')
+        rapidapi_host = request.META.get('HTTP-X-RAPIDAPI-HOST')
         rapidapi_proxy_secret = request.META.get('HTTP-X-RAPIDAPI-PROXY-SECRET')
 
         if not rapidapi_host:
