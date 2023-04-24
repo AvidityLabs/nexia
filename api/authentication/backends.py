@@ -8,6 +8,7 @@ from rest_framework.exceptions import AuthenticationFailed
 
 from api.models import User
 from api.utilities.subscription import update_subscription
+from api.utilities.token_management import validate_token_usage
 
 RAPID_API_APP_URL =  os.environ.get('RAPID_API_APP_URL')
 HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
@@ -102,7 +103,10 @@ class JWTAuthentication(authentication.BaseAuthentication):
 
         try:
             user = User.objects.get(pk=payload['id'])
+            # update subscription from rapid api info
             update_subscription(user, request)
+            # validate token usage 
+            validate_token_usage(user)
         except User.DoesNotExist:
             msg = 'No user matching this token was found.'
             raise exceptions.AuthenticationFailed(msg)

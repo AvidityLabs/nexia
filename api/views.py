@@ -22,7 +22,7 @@ from api.utilities.hugging_face import (
 
 from api.utilities.data_cleaning import rename_sentiment_labels, add_emotion_percentages
 from api.utilities.validations import check_duplicate_email
-from api.utilities.token_management import update_token_usage
+from api.utilities.token_management import update_token_usage, validate_token_usage
 from api.utilities.openai import get_chatgpt_completion
 from api.serializers import (
     DeveloperRegisterSerializer,

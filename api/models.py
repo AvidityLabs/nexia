@@ -51,8 +51,9 @@ class PricingPlan(BaseModel):
     monthly_image_limit = models.IntegerField(default=0)
     monthly_audio_limit = models.IntegerField(default=0)
     monthly_video_limit = models.IntegerField(default=0)
-    rate_limit = models.IntegerField(default=0)
-    data_storage_limit = models.IntegerField(default=0)
+    monthly_rate_limit = models.IntegerField(default=0)
+    monthly_data_storage_limit = models.IntegerField(default=0)
+    monthly_token_limit = models.IntegerField(default=0)
     additional_character_charge = models.DecimalField(max_digits=8, decimal_places=4, default="0.00")
     currency = models.CharField(max_length=3, default='USD')
 
