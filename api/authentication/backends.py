@@ -44,11 +44,14 @@ class JWTAuthentication(authentication.BaseAuthentication):
         # that we should authenticate against.
         auth_header = authentication.get_authorization_header(request).split()
         auth_header_prefix = self.authentication_header_prefix.lower()
-        rapidapi_host = request.META.get('X-RAPID-API-HOST')
-       
-        print(request.META)
+        rapidapi_host = request.META.get('HTTP_X_RAPIDAPI_HOST')
+        rapidapi_proxy_secret = request.META.get('HTTP-X-RAPIDAPI-PROXY-SECRET')
+
         if not rapidapi_host:
             raise AuthenticationFailed('X-RapidAPI-Host not found in request headers')
+        
+        if HTTP_X_RAPIDAPI_PROXY_SECRET != rapidapi_proxy_secret:
+            raise AuthenticationFailed(f'Request not from the RapidAPI infrastructure. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI and use their platform to access this API.{RAPID_API_APP_URL}')
         
 
         if not auth_header:

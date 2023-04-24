@@ -5937,3 +5937,75 @@ AttributeError: 'NoneType' object has no attribute 'get'
 [2023-04-24 20:20:20] INFO Watching for file changes with StatReloader
 [2023-04-24 20:38:38] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
 [2023-04-24 20:38:41] INFO Watching for file changes with StatReloader
+[2023-04-24 20:45:05] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 20:45:07] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:00] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:03] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:07] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:10] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:20] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:22] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:27] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:28] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:31] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:33] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:43] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:45] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:49] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:51] INFO Watching for file changes with StatReloader
+[2023-04-24 20:47:55] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:47:58] INFO Watching for file changes with StatReloader
+[2023-04-24 20:48:07] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:48:09] INFO Watching for file changes with StatReloader
+[2023-04-24 20:48:27] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:48:29] INFO Watching for file changes with StatReloader
+[2023-04-24 20:48:38] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:48:40] INFO Watching for file changes with StatReloader
+[2023-04-24 20:48:42] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:48:44] INFO Watching for file changes with StatReloader
+[2023-04-24 20:49:13] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:49:16] INFO Watching for file changes with StatReloader
+[2023-04-24 20:51:18] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:51:20] INFO Watching for file changes with StatReloader
+[2023-04-24 20:51:32] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:51:34] INFO Watching for file changes with StatReloader
+[2023-04-24 20:51:40] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:51:42] INFO Watching for file changes with StatReloader
+[2023-04-24 20:51:48] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:51:51] INFO Watching for file changes with StatReloader
+[2023-04-24 20:52:07] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:52:09] INFO Watching for file changes with StatReloader
+[2023-04-24 20:52:23] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:52:25] INFO Watching for file changes with StatReloader
+[2023-04-24 20:54:26] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:54:28] INFO Watching for file changes with StatReloader
+[2023-04-24 20:54:30] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:54:33] INFO Watching for file changes with StatReloader
+[2023-04-24 20:54:36] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:54:38] INFO Watching for file changes with StatReloader
+[2023-04-24 20:55:13] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:55:15] INFO Watching for file changes with StatReloader
+[2023-04-24 20:55:50] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 20:55:52] INFO Watching for file changes with StatReloader
+[2023-04-24 21:00:47] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:00:50] INFO Watching for file changes with StatReloader
+[2023-04-24 21:00:56] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:00:58] INFO Watching for file changes with StatReloader
+[2023-04-24 21:01:06] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:01:08] INFO Watching for file changes with StatReloader
+[2023-04-24 21:01:16] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:01:18] INFO Watching for file changes with StatReloader
+[2023-04-24 21:01:31] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:01:34] INFO Watching for file changes with StatReloader
+[2023-04-24 21:01:49] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:01:51] INFO Watching for file changes with StatReloader
+[2023-04-24 21:01:55] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:01:57] INFO Watching for file changes with StatReloader
+[2023-04-24 21:02:06] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:02:08] INFO Watching for file changes with StatReloader
+[2023-04-24 21:02:30] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:02:32] INFO Watching for file changes with StatReloader
+[2023-04-24 21:02:37] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:02:39] INFO Watching for file changes with StatReloader
+[2023-04-24 21:02:45] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:02:48] INFO Watching for file changes with StatReloader
