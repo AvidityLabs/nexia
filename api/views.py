@@ -151,7 +151,6 @@ class TextEmotionAnalysisView(APIView):
             return Response({'error': text_serializer.errors}, status=400)
 
 class TextSentimentAnalysisView(APIView):
-    authentication_classes = [TokenAuthentication,]
     permission_classes = [IsAuthenticated,]
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
@@ -193,7 +192,6 @@ class TextSentimentAnalysisView(APIView):
         
 
 class ChatGPTCompletionView(APIView):
-    authentication_classes = [TokenAuthentication,]
     permission_classes = [IsAuthenticated,]
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)

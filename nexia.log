@@ -5902,3 +5902,30 @@ AttributeError: 'NoneType' object has no attribute 'get'
 [2023-04-24 19:40:25] INFO Watching for file changes with StatReloader
 [2023-04-24 19:40:35] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
 [2023-04-24 19:40:39] INFO Watching for file changes with StatReloader
+[2023-04-24 19:42:01] INFO C:\Projects\chatgptapi\core\api\utilities\openai.py changed, reloading.
+[2023-04-24 19:42:06] INFO Watching for file changes with StatReloader
+[2023-04-24 19:42:10] INFO C:\Projects\chatgptapi\core\api\utilities\openai.py changed, reloading.
+[2023-04-24 19:42:13] INFO Watching for file changes with StatReloader
+[2023-04-24 19:42:17] INFO C:\Projects\chatgptapi\core\api\utilities\openai.py changed, reloading.
+[2023-04-24 19:42:19] INFO Watching for file changes with StatReloader
+[2023-04-24 19:42:23] INFO C:\Projects\chatgptapi\core\api\utilities\openai.py changed, reloading.
+[2023-04-24 19:42:25] INFO Watching for file changes with StatReloader
+[2023-04-24 19:42:29] INFO C:\Projects\chatgptapi\core\api\utilities\openai.py changed, reloading.
+[2023-04-24 19:42:32] INFO Watching for file changes with StatReloader
+[2023-04-24 19:42:36] INFO C:\Projects\chatgptapi\core\api\utilities\openai.py changed, reloading.
+[2023-04-24 19:42:38] INFO Watching for file changes with StatReloader
+[2023-04-24 19:44:24] WARNING Unauthorized: /api/gpt/completion/
+[2023-04-24 19:44:24] WARNING "POST /api/gpt/completion/ HTTP/1.1" 401 58
+[2023-04-24 19:44:39] INFO "POST /api/get_token/ HTTP/1.1" 200 218
+[2023-04-24 19:44:54] WARNING Unauthorized: /api/gpt/completion/
+[2023-04-24 19:44:54] WARNING "POST /api/gpt/completion/ HTTP/1.1" 401 58
+[2023-04-24 19:44:58] WARNING Unauthorized: /api/gpt/completion/
+[2023-04-24 19:44:58] WARNING "POST /api/gpt/completion/ HTTP/1.1" 401 58
+[2023-04-24 19:45:20] WARNING Unauthorized: /api/gpt/completion/
+[2023-04-24 19:45:20] WARNING "POST /api/gpt/completion/ HTTP/1.1" 401 58
+[2023-04-24 19:46:22] INFO "POST /api/get_token/ HTTP/1.1" 200 218
+[2023-04-24 19:47:27] WARNING Unauthorized: /api/gpt/completion/
+[2023-04-24 19:47:27] WARNING "POST /api/gpt/completion/ HTTP/1.1" 401 58
+[2023-04-24 19:48:00] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 19:48:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-24 19:48:32] INFO Watching for file changes with StatReloader

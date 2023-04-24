@@ -4,9 +4,12 @@ openai.organization = "org-M3s4CIjWGwvBbMzjsII5OAcB"
 
 
 def get_chatgpt_completion(topic):
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": "text"}
-        ])
-    return completion
+    try:
+        completion = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": "text"}
+            ])
+        return completion
+    except Exception as e:
+        return None
