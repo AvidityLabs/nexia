@@ -15,7 +15,7 @@ def create_related_subscription(sender, instance, created, *args, **kwargs):
         )
         instance.subscription = subscription
         instance.save()
-        token_usage, _ = TokenUsage.objects.create(
+        token_usage, _ = TokenUsage.objects.get_or_create(
             user=instance,
             month=today.month,
             year=today.year
