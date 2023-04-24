@@ -5,6 +5,7 @@ from api.models import Subscription,PricingPlan
 
 def update_subscription(user, request):
     pricing_plan = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
+
     current_subscription = user.get_subscription()
     if pricing_plan and current_subscription:
         if pricing_plan in ('BASIC', 'PRO', 'ULTRA', 'MEGA', 'CUSTOM'):

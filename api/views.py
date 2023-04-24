@@ -19,7 +19,7 @@ from api.authentication.renderers import UserJSONRenderer
 from api.utilities.transformers_tokenizer import calculate_tokens
 from api.utilities.hugging_face import (
     query_emotions_model, query_sentiment_model)
-from api.utilities.subscription import create_subscription
+
 from api.utilities.data_cleaning import rename_sentiment_labels, add_emotion_percentages
 from api.utilities.validations import check_duplicate_email
 from api.utilities.token_management import update_token_usage
@@ -111,7 +111,7 @@ class TextEmotionAnalysisView(APIView):
     permission_classes = [IsAuthenticated,]
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
-
+        print(request.META)
         if text_serializer.is_valid():
             text = text_serializer.validated_data['text']
             try:

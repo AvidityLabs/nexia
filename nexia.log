@@ -5218,3 +5218,132 @@ AttributeError: 'NoneType' object has no attribute 'pricing_plan'
 [2023-04-24 05:40:22] INFO Watching for file changes with StatReloader
 [2023-04-24 05:41:02] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
 [2023-04-24 05:41:04] INFO Watching for file changes with StatReloader
+[2023-04-24 05:52:54] INFO Watching for file changes with StatReloader
+[2023-04-24 05:53:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-24 05:53:10] INFO Watching for file changes with StatReloader
+[2023-04-24 05:53:57] INFO C:\Projects\chatgptapi\core\api\utilities\token_management.py changed, reloading.
+[2023-04-24 05:54:00] INFO Watching for file changes with StatReloader
+[2023-04-24 05:54:08] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 05:54:43] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 05:54:48] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 8913
+[2023-04-24 05:54:48] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:54:54] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 9467
+[2023-04-24 05:54:54] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-24 05:57:07] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:57:09] INFO Watching for file changes with StatReloader
+[2023-04-24 05:57:17] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:57:19] INFO Watching for file changes with StatReloader
+[2023-04-24 05:57:31] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:57:34] INFO Watching for file changes with StatReloader
+[2023-04-24 05:57:39] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:57:41] INFO Watching for file changes with StatReloader
+[2023-04-24 05:57:46] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:57:48] INFO Watching for file changes with StatReloader
+[2023-04-24 05:58:03] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 05:58:06] INFO Watching for file changes with StatReloader
+[2023-04-24 05:58:14] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 05:58:39] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:02:14] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:02:16] INFO Watching for file changes with StatReloader
+[2023-04-24 06:02:19] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:02:22] INFO Watching for file changes with StatReloader
+[2023-04-24 06:02:50] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:02:52] INFO Watching for file changes with StatReloader
+[2023-04-24 06:02:57] ERROR "POST /api/emotion/analysis/ HTTP/1.1" 500 59
+[2023-04-24 06:03:08] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:03:11] INFO Watching for file changes with StatReloader
+[2023-04-24 06:03:17] ERROR "POST /api/emotion/analysis/ HTTP/1.1" 500 59
+[2023-04-24 06:03:22] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:03:25] INFO Watching for file changes with StatReloader
+[2023-04-24 06:03:31] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:03:45] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:03:47] INFO Watching for file changes with StatReloader
+[2023-04-24 06:03:57] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:05:55] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 06:05:58] INFO Watching for file changes with StatReloader
+[2023-04-24 06:06:05] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 06:06:08] INFO Watching for file changes with StatReloader
+[2023-04-24 06:06:25] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 06:06:27] INFO Watching for file changes with StatReloader
+[2023-04-24 06:06:31] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 06:06:33] INFO Watching for file changes with StatReloader
+[2023-04-24 06:06:41] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:06:49] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:06:52] INFO Watching for file changes with StatReloader
+[2023-04-24 06:06:59] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:07:31] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 06:07:34] INFO Watching for file changes with StatReloader
+[2023-04-24 06:07:41] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:08:03] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 06:08:06] INFO Watching for file changes with StatReloader
+[2023-04-24 06:08:11] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:09:55] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 06:09:58] INFO Watching for file changes with StatReloader
+[2023-04-24 06:10:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-24 06:10:18] INFO Watching for file changes with StatReloader
+[2023-04-24 06:10:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-24 06:10:24] INFO Watching for file changes with StatReloader
+[2023-04-24 06:10:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-24 06:10:30] INFO Watching for file changes with StatReloader
+[2023-04-24 06:10:51] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:12:53] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-24 06:14:25] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:14:27] INFO Watching for file changes with StatReloader
+[2023-04-24 06:14:31] INFO C:\Projects\chatgptapi\core\api\authentication\signals.py changed, reloading.
+[2023-04-24 06:14:34] INFO Watching for file changes with StatReloader
+[2023-04-24 06:14:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:14:48] INFO Watching for file changes with StatReloader
+[2023-04-24 06:14:52] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:14:54] INFO Watching for file changes with StatReloader
+[2023-04-24 06:15:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:15:35] INFO Watching for file changes with StatReloader
+[2023-04-24 06:15:40] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:15:42] INFO Watching for file changes with StatReloader
+[2023-04-24 06:15:47] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:15:49] INFO Watching for file changes with StatReloader
+[2023-04-24 06:15:54] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:15:56] INFO Watching for file changes with StatReloader
+[2023-04-24 06:16:01] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:16:03] INFO Watching for file changes with StatReloader
+[2023-04-24 06:16:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:16:12] INFO Watching for file changes with StatReloader
+[2023-04-24 06:16:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:16:20] INFO Watching for file changes with StatReloader
+[2023-04-24 06:17:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:17:57] INFO Watching for file changes with StatReloader
+[2023-04-24 06:18:41] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:18:43] INFO Watching for file changes with StatReloader
+[2023-04-24 06:18:52] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:18:54] INFO Watching for file changes with StatReloader
+[2023-04-24 06:18:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:18:58] INFO Watching for file changes with StatReloader
+[2023-04-24 06:19:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:19:05] INFO Watching for file changes with StatReloader
+[2023-04-24 06:19:07] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:19:10] INFO Watching for file changes with StatReloader
+[2023-04-24 06:21:27] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:21:29] INFO Watching for file changes with StatReloader
+[2023-04-24 06:21:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:21:38] INFO Watching for file changes with StatReloader
+[2023-04-24 06:23:28] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:23:31] INFO Watching for file changes with StatReloader
+[2023-04-24 06:23:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:23:58] INFO Watching for file changes with StatReloader
+[2023-04-24 06:25:28] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:25:33] INFO Watching for file changes with StatReloader
+[2023-04-24 06:25:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:25:48] INFO Watching for file changes with StatReloader
+[2023-04-24 06:25:50] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:25:53] INFO Watching for file changes with StatReloader
+[2023-04-24 06:26:02] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:26:04] INFO Watching for file changes with StatReloader
+[2023-04-24 06:26:22] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:26:25] INFO Watching for file changes with StatReloader
+[2023-04-24 06:26:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:26:45] INFO Watching for file changes with StatReloader
+[2023-04-24 06:26:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:26:58] INFO Watching for file changes with StatReloader
+[2023-04-24 06:27:24] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-24 06:27:26] INFO Watching for file changes with StatReloader
+[2023-04-24 06:27:53] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-24 06:27:55] INFO Watching for file changes with StatReloader
