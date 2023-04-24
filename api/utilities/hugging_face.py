@@ -10,7 +10,7 @@ SENTIMENT_MODEL_TOKEN=os.environ.get('SENTIMENT_MODEL_TOKEN')
 
 # https://huggingface.co/j-hartmann/emotion-english-distilroberta-base
 def query_emotions_model(payload):
-	# headers = {"Authorization": f"Bearer {EMOTION_MODEL_TOKEN}"}
+	headers = {"Authorization": f"Bearer {EMOTION_MODEL_TOKEN}"}
 	try:
 		response = requests.post(EMOTION_MODEL_URL, headers=headers, json=payload)
 		return response.json()

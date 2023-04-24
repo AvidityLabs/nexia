@@ -1,3 +1,4 @@
+from datetime import date
 from django.utils import timezone
 from datetime import datetime
 from rest_framework.exceptions import AuthenticationFailed
@@ -10,7 +11,7 @@ def check_count_value(val):
 
 def update_token_usage(user, prompt_tokens, completion_tokens, total_tokens, img_count=None, audio_count=None, video_count=None):
     # Get the current month and year
-    today = timezone.now().date()
+    today = date.today()
     month = today.month
     year = today.year
 
