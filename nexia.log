@@ -6011,3 +6011,19 @@ AttributeError: 'NoneType' object has no attribute 'get'
 [2023-04-24 21:02:48] INFO Watching for file changes with StatReloader
 [2023-04-24 21:05:13] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
 [2023-04-24 21:05:15] INFO Watching for file changes with StatReloader
+[2023-04-24 21:07:18] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:07:20] INFO Watching for file changes with StatReloader
+[2023-04-24 21:07:25] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:07:27] INFO Watching for file changes with StatReloader
+[2023-04-24 21:07:44] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:07:47] INFO Watching for file changes with StatReloader
+[2023-04-24 21:08:36] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:08:39] INFO Watching for file changes with StatReloader
+[2023-04-24 21:09:07] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:09:09] INFO Watching for file changes with StatReloader
+[2023-04-24 21:09:19] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:09:21] INFO Watching for file changes with StatReloader
+[2023-04-24 21:09:28] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:09:30] INFO Watching for file changes with StatReloader
+[2023-04-24 21:09:38] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 21:09:40] INFO Watching for file changes with StatReloader
