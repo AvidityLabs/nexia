@@ -5929,3 +5929,9 @@ AttributeError: 'NoneType' object has no attribute 'get'
 [2023-04-24 19:48:00] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
 [2023-04-24 19:48:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
 [2023-04-24 19:48:32] INFO Watching for file changes with StatReloader
+[2023-04-24 19:48:55] WARNING Bad Request: /api/gpt/completion/
+[2023-04-24 19:48:55] WARNING "POST /api/gpt/completion/ HTTP/1.1" 400 130
+[2023-04-24 20:15:57] WARNING Bad Request: /api/register/
+[2023-04-24 20:15:57] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-24 20:20:17] INFO C:\Projects\chatgptapi\core\api\authentication\backends.py changed, reloading.
+[2023-04-24 20:20:20] INFO Watching for file changes with StatReloader
