@@ -23,6 +23,7 @@ from api.utilities.hugging_face import (
 from api.utilities.data_cleaning import rename_sentiment_labels, add_emotion_percentages
 from api.utilities.validations import check_duplicate_email
 from api.utilities.token_management import update_token_usage
+from api.utilities.openai import get_chatgpt_completion
 from api.serializers import (
     DeveloperRegisterSerializer,
     TextSerializer,)
@@ -188,4 +189,43 @@ class TextSentimentAnalysisView(APIView):
         else:
             print(text_serializer.errors)
             logger.exception(f"An error occurred @api/sentiment_analysis/{text_serializer.errors}")
+            return Response({'error': text_serializer.errors}, status=400)
+        
+
+class ChatGPTCompletionView(APIView):
+    authentication_classes = [TokenAuthentication,]
+    permission_classes = [IsAuthenticated,]
+    def post(self, request, format=None):
+        text_serializer = TextSerializer(data=request.data)
+
+        if text_serializer.is_valid():
+            text = text_serializer.validated_data['text']
+            try:
+                response_data = query_sentiment_model(text)
+                if response_data is None:
+                    return Response('error', status=400)
+
+                response = get_chatgpt_completion(text)
+                prompt_tokens = response.usage.prompt_tokens
+                completion_tokens = response.usage.completion_tokens
+                total_tokens = response.usage.total_tokens
+
+                # # # Track token usage
+                user = request.user
+                # Assuming user and num_tokens are defined update token usage 
+                update_token_usage(user, prompt_tokens, completion_tokens, total_tokens)
+                result = {
+                    "result": response.choices[0].message,
+                    "prompt_tokens": prompt_tokens,
+                    "completion_tokens": completion_tokens,
+                    "total_tokens_used": total_tokens,
+                }
+                return Response(data=result, status=200)
+            except Exception as e:
+                print(e)
+                logger.error(f"An error occurred @api/prompt/: {e}")
+                return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            print(text_serializer.errors)
+            logger.exception(f"An error occurred @api/prompt/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)

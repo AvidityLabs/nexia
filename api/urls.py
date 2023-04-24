@@ -5,7 +5,8 @@ from api.views import (
     LoginAPIView,
     DeveloperRegisterView,
     TextEmotionAnalysisView,
-    TextSentimentAnalysisView
+    TextSentimentAnalysisView,
+    ChatGPTCompletionView
     )
 
 
@@ -17,4 +18,6 @@ urlpatterns = [
     path('register/', DeveloperRegisterView.as_view(), name="register"),
     path('emotion/analysis/', TextEmotionAnalysisView.as_view(), name='text-emotion-analysis'),
     path('sentiment/analysis/', TextSentimentAnalysisView.as_view(), name='text-sentiment-analysis'),
+    path('gpt/completion/', ChatGPTCompletionView.as_view(), name='gpt/completion'),
+    
 ]
