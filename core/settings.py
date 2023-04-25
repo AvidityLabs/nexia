@@ -15,6 +15,9 @@ from datetime import timedelta
 import logging
 from dotenv import load_dotenv
 import sentry_sdk
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from sentry_sdk.integrations.django import DjangoIntegration
 import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -63,6 +66,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_spectacular',
     'django_filters',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -117,6 +121,8 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
     # OTHER SETTINGS
 }
+
+
 
 
 
@@ -200,6 +206,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 DISABLE_COLLECTSTATIC = 0
 
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -212,6 +219,13 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+)
+
 
 
 sentry_sdk.init(

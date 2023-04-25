@@ -1,5 +1,5 @@
 
-# Test case 1: Test UserRetrieveUpdateAPIView
+# Test case 1: Test UserRetrieveUpdateAPIView (feature not requred at the moment)
 
 - [x]  Test if the user can retrieve their own information successfully using a GET request
 - []  Test if the user can update their own information successfully using a PATCH request with valid data
@@ -7,16 +7,18 @@
 
 # Test case 2: Test LoginAPIView
 
-- []  Test if a user can log in successfully using a POST request with valid credentials
-2.  Test if a user cannot log in using a POST request with an invalid email
-3.  Test if a user cannot log in using a POST request with an invalid password
+- [x]  Test if a user can log in successfully using a POST request with valid credentials
+- [x]  Test if a user cannot log in using a POST request with an invalid email
+- [x]  Test if a user cannot log in using a POST request with an invalid password
+- [x]  Test if a user subscription, pricing plan and token usage have been updated.
 
 Test case 3: Test DeveloperRegisterView
 
-1.  Test if a user can register successfully using a POST request with valid data
-2.  Test if a user cannot register using a POST request with an invalid email
-3.  Test if a user cannot register using a POST request with an invalid username
-4.  Test if a user cannot register using a POST request with an invalid password
+- [x]  Test if a user can register successfully using a POST request with valid data
+- [x]  Test if a user can register successfully and objects Subscription, TokenUsage created for the user.(plan=NOTSET)
+- [x]  Test if a user cannot register using a POST request with an invalid email
+- [x] Test if a user cannot register using a POST request with an invalid username
+- [x]  Test if a user cannot register using a POST request with an invalid password
 
 Test case 4: Test TextEmotionAnalysisView
 

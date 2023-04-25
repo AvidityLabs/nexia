@@ -12,6 +12,7 @@ from django.contrib.auth.models import (
 from django.db import models
 import jwt
 
+from cloudinary.models import CloudinaryField
 
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -246,3 +247,6 @@ class EmotionAnalysis(models.Model):
     def __str__(self):
         return self.text
 
+
+class Image(BaseModel):
+    url = CloudinaryField('image')
