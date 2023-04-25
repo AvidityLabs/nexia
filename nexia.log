@@ -9961,3 +9961,27 @@ NameError: name 'role' is not defined
 [2023-04-25 11:29:13] WARNING "POST /api/gpt/completion/ HTTP/1.1" 404 3812
 [2023-04-25 11:31:15] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
 [2023-04-25 11:31:17] INFO Watching for file changes with StatReloader
+[2023-04-25 11:35:59] INFO Watching for file changes with StatReloader
+[2023-04-25 11:36:25] WARNING Bad Request: /api/register/
+[2023-04-25 11:36:25] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 11:36:26] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:36:26] WARNING "POST /api/get_token/ HTTP/1.1" 400 75
+[2023-04-25 11:37:01] INFO "POST /api/register/ HTTP/1.1" 201 237
+[2023-04-25 11:39:31] WARNING Bad Request: /api/register/
+[2023-04-25 11:39:31] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 11:40:26] WARNING Bad Request: /api/register/
+[2023-04-25 11:40:26] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 11:41:11] WARNING Forbidden: /api/register/
+[2023-04-25 11:41:11] WARNING "POST /api/register/ HTTP/1.1" 403 61
+[2023-04-25 11:42:25] WARNING Forbidden: /api/register/
+[2023-04-25 11:42:25] WARNING "POST /api/register/ HTTP/1.1" 403 61
+[2023-04-25 11:43:21] WARNING Forbidden: /api/register/
+[2023-04-25 11:43:21] WARNING "POST /api/register/ HTTP/1.1" 403 61
+[2023-04-25 11:43:37] WARNING Forbidden: /api/register/
+[2023-04-25 11:43:37] WARNING "POST /api/register/ HTTP/1.1" 403 61
+[2023-04-25 11:46:24] WARNING Forbidden: /api/register/
+[2023-04-25 11:46:24] WARNING "POST /api/register/ HTTP/1.1" 403 61
+[2023-04-25 11:46:31] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:46:31] WARNING "POST /api/get_token/ HTTP/1.1" 400 75
+[2023-04-25 11:47:32] WARNING Forbidden: /api/register/
+[2023-04-25 11:47:32] WARNING "POST /api/register/ HTTP/1.1" 403 61
