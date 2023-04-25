@@ -24,6 +24,7 @@ from api.utilities.hugging_face.utils  import rename_sentiment_labels, add_emoti
 from api.utilities.tokens import update_token_usage
 from api.utilities.openai.utils import completion
 from api.utilities.hugging_face.tokenizer import calculate_tokens
+from api.utilities.jwt_helper import decode_jwt_token
 
 from api.serializers import (
     DeveloperRegisterSerializer,
@@ -98,7 +99,8 @@ class DeveloperRegisterView(generics.CreateAPIView):
         user = {
             "email": request.data.get('email'),
             "username": request.data.get('username'),
-            "password": request.data.get('password')
+            "password": request.data.get('password'),
+            "groups": ['developer']
         }
 
         # The create serializer, validate serializer, save serializer pattern
@@ -109,6 +111,32 @@ class DeveloperRegisterView(generics.CreateAPIView):
         serializer.save()
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+
+class AppUserRegisterView(generics.CreateAPIView):
+    # Allow any user (authenticated or not) to hit this endpoint.
+    permission_classes = (IsAuthenticated,)
+    # renderer_classes = (UserJSONRenderer,)
+    serializer_class = DeveloperRegisterSerializer
+
+    def post(self, request):
+        decoded_user_id = decode_jwt_token(request)
+        if request.user.id == decoded_user_id:
+            user = {
+            "email": request.data.get('email'),
+            "username": request.data.get('username'),
+            "password": request.data.get('password'),
+            "groups": request.data.get('groups'),
+            "app_owner_id": request.user.id
+            }
+
+            serializer = self.serializer_class(data=user)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return Response(str(request.user.id), status=status.HTTP_201_CREATED)
+            # The user in the request is not the same as the user in the token
+        return Response({'error': 'Invalid token for this user'}, status=401)
 
 class TextEmotionAnalysisView(APIView):
     permission_classes = [IsAuthenticated,]

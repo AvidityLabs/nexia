@@ -8,14 +8,16 @@ from api.views import (
     TextSentimentAnalysisView,
     ChatGPTCompletionView,
     TextToImageView,
-    TextToVideoView
+    TextToVideoView,
+    AppUserRegisterView
     )
 
 
 app_name = 'api'
 
 urlpatterns = [
-    path('users/', UserRetrieveUpdateAPIView.as_view()),
+    # path('users/', UserRetrieveUpdateAPIView.as_view(), name='users'),
+    # path('app/users/register/', AppUserRegisterView.as_view(), name='app-users-register'),
     path('get_token/', LoginAPIView.as_view(), name='get_token'),
     path('register/', DeveloperRegisterView.as_view(), name="register"),
     path('emotion/analysis/', TextEmotionAnalysisView.as_view(), name='text-emotion-analysis'),

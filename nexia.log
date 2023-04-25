@@ -8222,3 +8222,494 @@ django.db.utils.OperationalError: no such column: api_sentimentanalysis.user_id
 [2023-04-25 08:50:54] INFO Watching for file changes with StatReloader
 [2023-04-25 08:51:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
 [2023-04-25 08:51:09] INFO Watching for file changes with StatReloader
+[2023-04-25 08:52:20] INFO Watching for file changes with StatReloader
+[2023-04-25 08:53:35] INFO "POST /api/register/ HTTP/1.1" 201 260
+[2023-04-25 08:53:51] INFO "POST /api/get_token/ HTTP/1.1" 200 225
+[2023-04-25 08:54:25] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-25 08:54:26] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 08:54:26] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 124
+[2023-04-25 08:55:12] INFO Watching for file changes with StatReloader
+[2023-04-25 08:55:28] INFO "POST /api/register/ HTTP/1.1" 201 252
+[2023-04-25 08:55:31] INFO "POST /api/get_token/ HTTP/1.1" 200 225
+[2023-04-25 08:55:31] WARNING Forbidden: /api/users/
+[2023-04-25 08:55:31] WARNING "GET /api/users/ HTTP/1.1" 403 69
+[2023-04-25 08:56:14] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 08:56:14] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 08:56:15] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 08:56:15] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 124
+[2023-04-25 08:58:46] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 08:58:46] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 08:58:47] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 08:58:47] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 124
+[2023-04-25 08:59:19] INFO "POST /api/get_token/ HTTP/1.1" 200 225
+[2023-04-25 08:59:41] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 08:59:41] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 08:59:41] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 08:59:41] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:00:30] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 09:00:30] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:00:31] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 09:00:31] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:00:45] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 09:00:45] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:02:45] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 09:02:45] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:03:02] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 09:03:02] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:03:03] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 09:03:03] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:04:16] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 09:04:16] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 09:05:47] INFO "GET /admin/api/tokenusage/1/change/ HTTP/1.1" 200 14692
+[2023-04-25 09:05:47] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[2023-04-25 09:05:47] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2023-04-25 09:05:47] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2023-04-25 09:05:47] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2023-04-25 09:05:47] INFO "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2023-04-25 09:05:47] INFO "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[2023-04-25 09:05:47] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[2023-04-25 09:05:48] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[2023-04-25 09:05:50] INFO "GET /admin/api/user/ HTTP/1.1" 200 16109
+[2023-04-25 09:05:50] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:05:50] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[2023-04-25 09:06:03] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 14745
+[2023-04-25 09:06:03] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:06:14] INFO "GET /admin/api/user/ HTTP/1.1" 200 16109
+[2023-04-25 09:06:15] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:06:26] INFO "GET /admin/api/user/ HTTP/1.1" 200 16109
+[2023-04-25 09:06:26] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:06:28] ERROR Internal Server Error: /admin/api/emotionanalysis/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: api_emotionanalysis.user_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\contrib\admin\options.py", line 1815, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: api_emotionanalysis.user_id
+[2023-04-25 09:06:28] ERROR "GET /admin/api/emotionanalysis/ HTTP/1.1" 500 176789
+[2023-04-25 09:06:31] INFO "GET /admin/api/user/ HTTP/1.1" 200 16109
+[2023-04-25 09:06:34] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 14745
+[2023-04-25 09:06:34] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:07:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:07:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:07:22] INFO Watching for file changes with StatReloader
+[2023-04-25 09:07:23] INFO Watching for file changes with StatReloader
+[2023-04-25 09:07:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:07:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:07:32] INFO Watching for file changes with StatReloader
+[2023-04-25 09:07:32] INFO Watching for file changes with StatReloader
+[2023-04-25 09:07:41] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:07:42] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:07:45] INFO Watching for file changes with StatReloader
+[2023-04-25 09:07:45] INFO Watching for file changes with StatReloader
+[2023-04-25 09:07:50] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:07:50] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:07:53] INFO Watching for file changes with StatReloader
+[2023-04-25 09:07:53] INFO Watching for file changes with StatReloader
+[2023-04-25 09:08:42] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:08:42] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:08:46] INFO Watching for file changes with StatReloader
+[2023-04-25 09:08:46] INFO Watching for file changes with StatReloader
+[2023-04-25 09:08:50] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:08:50] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:08:53] INFO Watching for file changes with StatReloader
+[2023-04-25 09:08:53] INFO Watching for file changes with StatReloader
+[2023-04-25 09:08:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:08:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:08:59] INFO Watching for file changes with StatReloader
+[2023-04-25 09:08:59] INFO Watching for file changes with StatReloader
+[2023-04-25 09:09:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:09:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:09:21] INFO Watching for file changes with StatReloader
+[2023-04-25 09:09:22] INFO Watching for file changes with StatReloader
+[2023-04-25 09:12:48] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:12:48] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:12:51] INFO Watching for file changes with StatReloader
+[2023-04-25 09:12:51] INFO Watching for file changes with StatReloader
+[2023-04-25 09:12:57] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:12:58] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:13:02] INFO Watching for file changes with StatReloader
+[2023-04-25 09:13:02] INFO Watching for file changes with StatReloader
+[2023-04-25 09:13:12] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:13:12] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:13:15] INFO Watching for file changes with StatReloader
+[2023-04-25 09:13:15] INFO Watching for file changes with StatReloader
+[2023-04-25 09:13:25] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:13:25] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:13:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:13:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:14:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:14:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:14:22] INFO Watching for file changes with StatReloader
+[2023-04-25 09:14:22] INFO Watching for file changes with StatReloader
+[2023-04-25 09:14:25] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:14:25] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:14:28] INFO Watching for file changes with StatReloader
+[2023-04-25 09:14:28] INFO Watching for file changes with StatReloader
+[2023-04-25 09:14:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:14:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:14:36] INFO Watching for file changes with StatReloader
+[2023-04-25 09:14:36] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:12] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:12] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:16] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:17] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:22] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:25] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:25] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:30] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:30] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:32] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:32] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:37] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:37] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:40] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:40] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:43] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:43] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:15:46] INFO Watching for file changes with StatReloader
+[2023-04-25 09:15:46] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:00] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:00] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:04] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:04] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:06] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:06] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:08] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:08] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:12] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:12] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:15] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:15] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:19] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:19] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:22] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:22] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:27] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:27] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:30] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:30] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:37] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:37] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:49] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:49] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:16:59] INFO Watching for file changes with StatReloader
+[2023-04-25 09:16:59] INFO Watching for file changes with StatReloader
+[2023-04-25 09:17:20] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:17:20] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:17:25] INFO Watching for file changes with StatReloader
+[2023-04-25 09:17:25] INFO Watching for file changes with StatReloader
+[2023-04-25 09:17:29] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:17:29] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:17:34] INFO Watching for file changes with StatReloader
+[2023-04-25 09:17:34] INFO Watching for file changes with StatReloader
+[2023-04-25 09:17:40] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:17:40] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:17:43] INFO Watching for file changes with StatReloader
+[2023-04-25 09:17:43] INFO Watching for file changes with StatReloader
+[2023-04-25 09:25:49] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:01] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:26:04] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:07] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:26:09] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:18] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:26:20] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:27] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:26:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:40] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:26:43] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:45] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:26:47] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:50] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:26:52] INFO Watching for file changes with StatReloader
+[2023-04-25 09:26:58] WARNING Not Found: /api/app/users/
+[2023-04-25 09:26:58] WARNING "POST /api/app/users/ HTTP/1.1" 404 4174
+[2023-04-25 09:27:19] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:27:21] INFO Watching for file changes with StatReloader
+[2023-04-25 09:27:26] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 09:27:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:27:33] WARNING Not Found: /api/app/user/register/
+[2023-04-25 09:27:33] WARNING "POST /api/app/user/register/ HTTP/1.1" 404 4199
+[2023-04-25 09:27:41] ERROR Internal Server Error: /api/app/users/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 128, in post
+    request.META.get(HTTP_AUTHORIZATION)
+NameError: name 'HTTP_AUTHORIZATION' is not defined
+[2023-04-25 09:27:41] ERROR "POST /api/app/users/register/ HTTP/1.1" 500 100424
+[2023-04-25 09:27:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:27:59] INFO Watching for file changes with StatReloader
+[2023-04-25 09:28:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:28:05] INFO Watching for file changes with StatReloader
+[2023-04-25 09:28:10] ERROR Internal Server Error: /api/app/users/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 38, in sentry_patched_render
+    return old_render(self)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Projects\chatgptapi\core\api\renderers.py", line 13, in render
+    token = data.get('token', None)
+AttributeError: 'str' object has no attribute 'get'
+[2023-04-25 09:28:10] ERROR "POST /api/app/users/register/ HTTP/1.1" 500 89227
+[2023-04-25 09:28:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:28:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:28:33] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:28:35] INFO Watching for file changes with StatReloader
+[2023-04-25 09:28:47] ERROR Internal Server Error: /api/app/users/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 38, in sentry_patched_render
+    return old_render(self)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Projects\chatgptapi\core\api\renderers.py", line 13, in render
+    token = data.get('token', None)
+AttributeError: 'str' object has no attribute 'get'
+[2023-04-25 09:28:47] ERROR "POST /api/app/users/register/ HTTP/1.1" 500 89227
+[2023-04-25 09:29:09] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:29:11] INFO Watching for file changes with StatReloader
+[2023-04-25 09:29:17] INFO "POST /api/app/users/register/ HTTP/1.1" 201 7004
+[2023-04-25 09:30:01] WARNING Forbidden: /api/app/users/register/
+[2023-04-25 09:30:01] WARNING "POST /api/app/users/register/ HTTP/1.1" 403 124
+[2023-04-25 09:30:11] INFO "POST /api/get_token/ HTTP/1.1" 200 225
+[2023-04-25 09:30:33] WARNING Forbidden: /api/app/users/register/
+[2023-04-25 09:30:33] WARNING "POST /api/app/users/register/ HTTP/1.1" 403 124
+[2023-04-25 09:30:52] INFO "GET /admin/api/user/ HTTP/1.1" 200 16108
+[2023-04-25 09:30:52] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:31:08] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 12084
+[2023-04-25 09:31:08] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:31:08] INFO "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[2023-04-25 09:31:09] INFO "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[2023-04-25 09:31:10] INFO "GET /admin/api/pricingplan/3/change/ HTTP/1.1" 200 13892
+[2023-04-25 09:31:11] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:31:17] INFO "POST /admin/api/pricingplan/3/change/ HTTP/1.1" 302 0
+[2023-04-25 09:31:17] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 12289
+[2023-04-25 09:31:17] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:31:20] WARNING Forbidden: /api/app/users/register/
+[2023-04-25 09:31:20] WARNING "POST /api/app/users/register/ HTTP/1.1" 403 124
+[2023-04-25 09:31:22] WARNING Forbidden: /api/app/users/register/
+[2023-04-25 09:31:22] WARNING "POST /api/app/users/register/ HTTP/1.1" 403 124
+[2023-04-25 09:31:25] WARNING Forbidden: /api/app/users/register/
+[2023-04-25 09:31:25] WARNING "POST /api/app/users/register/ HTTP/1.1" 403 124
+[2023-04-25 09:31:38] INFO "GET /admin/api/pricingplan/3/change/ HTTP/1.1" 200 13891
+[2023-04-25 09:31:38] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:31:45] INFO "POST /admin/api/pricingplan/3/change/ HTTP/1.1" 302 0
+[2023-04-25 09:31:45] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 12292
+[2023-04-25 09:31:45] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 09:31:48] INFO "POST /api/app/users/register/ HTTP/1.1" 201 7201
+[2023-04-25 09:32:36] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:32:39] INFO Watching for file changes with StatReloader
+[2023-04-25 09:32:45] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:32:48] INFO Watching for file changes with StatReloader
+[2023-04-25 09:32:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:32:54] INFO Watching for file changes with StatReloader
+[2023-04-25 09:32:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:32:59] INFO Watching for file changes with StatReloader
+[2023-04-25 09:33:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:33:07] INFO Watching for file changes with StatReloader
+[2023-04-25 09:33:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:33:23] INFO Watching for file changes with StatReloader
+[2023-04-25 09:33:25] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:33:28] INFO Watching for file changes with StatReloader
+[2023-04-25 09:37:45] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:37:48] INFO Watching for file changes with StatReloader
+[2023-04-25 09:37:52] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:37:56] INFO Watching for file changes with StatReloader
+[2023-04-25 09:38:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:38:26] INFO Watching for file changes with StatReloader
+[2023-04-25 09:38:30] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:38:33] INFO Watching for file changes with StatReloader
+[2023-04-25 09:38:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:38:40] INFO Watching for file changes with StatReloader
+[2023-04-25 09:38:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:38:54] INFO Watching for file changes with StatReloader
+[2023-04-25 09:38:59] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:39:02] INFO Watching for file changes with StatReloader
+[2023-04-25 09:39:08] INFO "POST /api/app/users/register/ HTTP/1.1" 201 67
+[2023-04-25 09:41:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:41:09] INFO Watching for file changes with StatReloader
+[2023-04-25 09:41:24] INFO "POST /api/app/users/register/ HTTP/1.1" 201 38
+[2023-04-25 09:41:44] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:41:48] INFO Watching for file changes with StatReloader
+[2023-04-25 09:42:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:42:02] INFO Watching for file changes with StatReloader
+[2023-04-25 09:42:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:42:15] INFO Watching for file changes with StatReloader
+[2023-04-25 09:42:31] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:42:34] INFO Watching for file changes with StatReloader
+[2023-04-25 09:42:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:42:44] INFO Watching for file changes with StatReloader
+[2023-04-25 09:42:49] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:42:52] INFO Watching for file changes with StatReloader
+[2023-04-25 09:43:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:43:08] INFO Watching for file changes with StatReloader
+[2023-04-25 09:43:10] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:43:12] INFO Watching for file changes with StatReloader
+[2023-04-25 09:43:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:43:17] INFO Watching for file changes with StatReloader
+[2023-04-25 09:43:23] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:43:25] INFO Watching for file changes with StatReloader
+[2023-04-25 09:43:40] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:43:42] INFO Watching for file changes with StatReloader
+[2023-04-25 09:43:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:43:49] INFO Watching for file changes with StatReloader
+[2023-04-25 09:43:52] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:43:54] INFO Watching for file changes with StatReloader
+[2023-04-25 09:44:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:44:17] INFO Watching for file changes with StatReloader
+[2023-04-25 09:45:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:45:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:45:40] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:45:43] INFO Watching for file changes with StatReloader
+[2023-04-25 09:45:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:45:53] INFO Watching for file changes with StatReloader
+[2023-04-25 09:46:11] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:46:13] INFO Watching for file changes with StatReloader
+[2023-04-25 09:46:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:46:18] INFO Watching for file changes with StatReloader
+[2023-04-25 09:46:33] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:46:35] INFO Watching for file changes with StatReloader
+[2023-04-25 09:46:43] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:46:45] INFO Watching for file changes with StatReloader
+[2023-04-25 09:47:27] INFO C:\Projects\chatgptapi\core\api\admin.py changed, reloading.
+[2023-04-25 09:47:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:47:57] INFO C:\Projects\chatgptapi\core\api\admin.py changed, reloading.
+[2023-04-25 09:47:59] INFO Watching for file changes with StatReloader
+[2023-04-25 09:48:11] INFO C:\Projects\chatgptapi\core\api\admin.py changed, reloading.
+[2023-04-25 09:48:14] INFO Watching for file changes with StatReloader
+[2023-04-25 09:48:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:48:45] INFO Watching for file changes with StatReloader
+[2023-04-25 09:48:54] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:48:57] INFO Watching for file changes with StatReloader
+[2023-04-25 09:49:01] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:49:04] INFO Watching for file changes with StatReloader
+[2023-04-25 09:49:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:49:20] INFO Watching for file changes with StatReloader
+[2023-04-25 09:49:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:49:25] INFO Watching for file changes with StatReloader
+[2023-04-25 09:50:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:50:12] INFO Watching for file changes with StatReloader
+[2023-04-25 09:50:22] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:50:24] INFO Watching for file changes with StatReloader
+[2023-04-25 09:50:26] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:50:29] INFO Watching for file changes with StatReloader
+[2023-04-25 09:50:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:50:35] INFO Watching for file changes with StatReloader
+[2023-04-25 09:50:39] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 09:50:42] INFO Watching for file changes with StatReloader
+[2023-04-25 09:53:35] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-25 09:53:37] INFO Watching for file changes with StatReloader
+[2023-04-25 09:53:46] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-25 09:53:49] INFO Watching for file changes with StatReloader
+[2023-04-25 09:53:52] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-25 09:53:54] INFO Watching for file changes with StatReloader
+[2023-04-25 09:54:21] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-25 09:54:23] INFO Watching for file changes with StatReloader
+[2023-04-25 09:56:50] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:56:53] INFO Watching for file changes with StatReloader
+[2023-04-25 09:56:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 09:56:59] INFO Watching for file changes with StatReloader
+[2023-04-25 10:00:08] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:00:11] INFO Watching for file changes with StatReloader
+[2023-04-25 10:00:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:00:44] INFO Watching for file changes with StatReloader
+[2023-04-25 10:01:08] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 10:01:10] INFO Watching for file changes with StatReloader
+[2023-04-25 10:01:14] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-25 10:01:16] INFO Watching for file changes with StatReloader

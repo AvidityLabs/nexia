@@ -90,25 +90,35 @@ class UserManager(BaseUserManager):
     to create `User` objects.
     """
 
-    def create_user(self, username, email, password=None):
+    def create_user(self, username, email, password=None, groups=None, app_owner_id=None):
         """Create and return a `User` with an email, username and password."""
-        if username is None:
-            raise TypeError('Users must have a username.')
+        if not username:
+            raise ValueError('Users must have a username.')
 
-        if email is None:
-            raise TypeError('Users must have an email address.')
+        if not email:
+            raise ValueError('Users must have an email address.')
         
-        user = self.model.objects.filter(email=email)
-        if len(user) !=0:
-            raise TypeError('User email already exists.')
+        if self.model.objects.filter(email=email).exists():
+            raise ValueError('User email already exists.')
         
-        if len(self.model.objects.filter(username=username))!=0:
-            raise TypeError('Username already exists.')
+        if self.model.objects.filter(username=username).exists():
+            raise ValueError('Username already exists.')
 
         user = self.model(username=username, email=self.normalize_email(email))
         user.set_password(password)
         user.save()
+        
+        if groups:
+            for grp in groups:
+                obj, _ = Group.objects.get_or_create(name=grp)
+                user.groups.add(obj)
+                
+        if app_owner_id:
+            user.app_owner_id=app_owner_id
+            user.save()
+        
         return user
+
     
     def create_superuser(self, username, email, password):
         """
@@ -134,7 +144,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
-    api_key = models.CharField(max_length=100, null=True, blank=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
     subscription = models.ForeignKey(
         Subscription, on_delete=models.CASCADE, null=True, blank=True)
     total_tokens_used = models.IntegerField(default=0)
@@ -219,6 +229,7 @@ class TokenUsage(models.Model):
     month = models.IntegerField(null=True, blank=True)
     year = models.IntegerField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return f"{self.user.email} Token Usage for {self.timestamp.strftime('%B %Y')}"
@@ -228,7 +239,7 @@ class SentimentAnalysis(models.Model):
     text = models.TextField(null=True, blank=True)
     positive = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
-    user_id = models.CharField(max_length=255, null=True, blank=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
@@ -243,7 +254,7 @@ class EmotionAnalysis(models.Model):
     sadness_score = models.FloatField(null=True, blank=True)
     surprise_score = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
-    user_id = models.CharField(max_length=255, null=True, blank=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
@@ -251,7 +262,7 @@ class EmotionAnalysis(models.Model):
 
 class TextToImage(models.Model):
     image = models.CharField(max_length=255)
-    # Other fields
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def generate_image(self, text):
         # Call the AI API to generate the image based on the input text
@@ -266,7 +277,7 @@ class TextToImage(models.Model):
 
 class TextToVideo(models.Model):
     video = models.CharField(max_length=255)
-    # Other fields
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def generate_video(self, text):
         # Call the AI API to generate the video based on the input text
