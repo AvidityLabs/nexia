@@ -79,6 +79,9 @@ class Subscription(BaseModel):
             return f"{self.pricing_plan.name}"
         return ''
 
+class Role(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    
 
 class UserManager(BaseUserManager):
     """
@@ -90,34 +93,29 @@ class UserManager(BaseUserManager):
     to create `User` objects.
     """
 
-    def create_user(self, username, email, password=None, groups=None, app_owner_id=None):
+    def create_user(self, username, email, password=None, roles=None, app_owner_id=None):
         """Create and return a `User` with an email, username and password."""
-        if not username:
-            raise ValueError('Users must have a username.')
+        if username is None:
+            raise TypeError('Users must have a username.')
 
-        if not email:
-            raise ValueError('Users must have an email address.')
+        if email is None:
+            raise TypeError('Users must have an email address.')
         
-        if self.model.objects.filter(email=email).exists():
-            raise ValueError('User email already exists.')
+        user = self.model.objects.filter(email=email)
+        if len(user) !=0:
+            raise TypeError('User email already exists.')
         
-        if self.model.objects.filter(username=username).exists():
-            raise ValueError('Username already exists.')
+        if len(self.model.objects.filter(username=username))!=0:
+            raise TypeError('Username already exists.')
 
         user = self.model(username=username, email=self.normalize_email(email))
         user.set_password(password)
         user.save()
-        
-        if groups:
-            for grp in groups:
-                obj, _ = Group.objects.get_or_create(name=grp)
-                user.groups.add(obj)
-                
         if app_owner_id:
             user.app_owner_id=app_owner_id
             user.save()
-        
         return user
+
 
     
     def create_superuser(self, username, email, password):
@@ -148,6 +146,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     subscription = models.ForeignKey(
         Subscription, on_delete=models.CASCADE, null=True, blank=True)
     total_tokens_used = models.IntegerField(default=0)
+    roles = models.ManyToManyField(Role, blank=True, related_name='users')
 
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.

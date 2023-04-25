@@ -8,8 +8,14 @@ from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework import serializers
 
-from api.models import TokenUsage, User, TextToImage, TextToVideo
+from api.models import Role, TokenUsage, User, TextToImage, TextToVideo
 
+
+class RoleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Role
+        fields = ('name',)
+        # read_only_fields = ('name',)
 class UserSerializer(serializers.ModelSerializer):
     """Handles serialization and deserialization of User objects."""
     password = serializers.CharField(
@@ -107,7 +113,6 @@ class LoginSerializer(serializers.Serializer):
         }
 
 
-
 class DeveloperRegisterSerializer(serializers.ModelSerializer):
     """Serializers registration requests and creates a new user."""
 
@@ -127,7 +132,7 @@ class DeveloperRegisterSerializer(serializers.ModelSerializer):
         model = User
         # List all of the fields that could possibly be included in a request
         # or response, including fields specified explicitly above.
-        fields = ['email', 'username', 'password', 'token']
+        fields = ['email', 'username', 'password','token']
 
     def create(self, validated_data):
         # Use the `create_user` method we wrote earlier to create a new user.

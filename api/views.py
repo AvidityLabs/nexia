@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from .models import TextToImage, TextToVideo
+from .models import Role, TextToImage, TextToVideo
 from .serializers import TextToImageSerializer, TextToVideoSerializer
 
 from rest_framework import generics
@@ -20,11 +20,13 @@ from rest_framework.generics import RetrieveUpdateAPIView
 
 from api.renderers import UserJSONRenderer
 from api.utilities.hugging_face.queries import query_emotions_model, query_sentiment_model
-from api.utilities.hugging_face.utils  import rename_sentiment_labels, add_emotion_percentages
+from api.utilities.hugging_face.utils import rename_sentiment_labels, add_emotion_percentages
 from api.utilities.tokens import update_token_usage
 from api.utilities.openai.utils import completion
 from api.utilities.hugging_face.tokenizer import calculate_tokens
 from api.utilities.jwt_helper import decode_jwt_token
+
+from django.contrib.auth.models import (Group)
 
 from api.serializers import (
     DeveloperRegisterSerializer,
@@ -40,7 +42,6 @@ logger = logging.getLogger(__name__)
 ERROR_MSG = 'Oops, something went wrong. If this issue persists, please contact our customer support team at aviditylabs@hotmail.com for assistance. We apologize for the inconvenience and appreciate your patience as we work to resolve the issue.'
 # Validate prompt text length
 MAX_PROMPT_LENGTH = 1000  # Maximum allowed length for prompt text
-
 
 
 class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
@@ -69,8 +70,10 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 class LoginAPIView(APIView):
     permission_classes = (AllowAny,)
+    # renderer_classes = (UserJSONRenderer,)
     serializer_class = LoginSerializer
 
     def post(self, request):
@@ -78,16 +81,11 @@ class LoginAPIView(APIView):
             "email": request.data.get('email'),
             "password": request.data.get('password')
         }
-
-        # Notice here that we do not call `serializer.save()` like we did for
-        # the registration endpoint. This is because we don't  have
-        # anything to save. Instead, the `validate` method on our serializer
-        # handles everything we need
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
-    
+
 class DeveloperRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (AllowAny,)
@@ -95,23 +93,17 @@ class DeveloperRegisterView(generics.CreateAPIView):
     serializer_class = DeveloperRegisterSerializer
 
     def post(self, request):
-
         user = {
             "email": request.data.get('email'),
             "username": request.data.get('username'),
-            "password": request.data.get('password'),
-            "groups": ['developer']
+            "password": request.data.get('password')
         }
 
-        # The create serializer, validate serializer, save serializer pattern
-        # below is common and you will see it a lot throughout this course and
-        # your own work later on. Get familiar with it.
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
+
 
 class AppUserRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
@@ -123,11 +115,11 @@ class AppUserRegisterView(generics.CreateAPIView):
         decoded_user_id = decode_jwt_token(request)
         if request.user.id == decoded_user_id:
             user = {
-            "email": request.data.get('email'),
-            "username": request.data.get('username'),
-            "password": request.data.get('password'),
-            "groups": request.data.get('groups'),
-            "app_owner_id": request.user.id
+                "email": request.data.get('email'),
+                "username": request.data.get('username'),
+                "password": request.data.get('password'),
+                "groups": request.data.get('groups'),
+                "app_owner_id": request.user.id
             }
 
             serializer = self.serializer_class(data=user)
@@ -138,8 +130,10 @@ class AppUserRegisterView(generics.CreateAPIView):
             # The user in the request is not the same as the user in the token
         return Response({'error': 'Invalid token for this user'}, status=401)
 
+
 class TextEmotionAnalysisView(APIView):
     permission_classes = [IsAuthenticated,]
+
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
         if text_serializer.is_valid():
@@ -150,13 +144,17 @@ class TextEmotionAnalysisView(APIView):
                     return Response({'error': f'{ERROR_MSG}'}, status=400)
 
                 data = add_emotion_percentages(response_data)
-                #prepare_to_cal_token
+                # prepare_to_cal_token
                 # Flatten the list of labels into a single list of labels
-                flat_labels = [item["label"] for sublist in data for item in sublist]
-                flat_scores = [str(item["score"]) for sublist in data for item in sublist]
-                flat_percentages = [str(item["percentage"]) for sublist in data for item in sublist]
+                flat_labels = [item["label"]
+                               for sublist in data for item in sublist]
+                flat_scores = [str(item["score"])
+                               for sublist in data for item in sublist]
+                flat_percentages = [str(item["percentage"])
+                                    for sublist in data for item in sublist]
                 # Convert the flat list of labels into a string
-                string_response_data = "{}{}{}".format(" ".join(flat_labels), " ".join(flat_percentages), " ".join(map(str, flat_scores)))
+                string_response_data = "{}{}{}".format(" ".join(flat_labels), " ".join(
+                    flat_percentages), " ".join(map(str, flat_scores)))
 
                 prompt_tokens = calculate_tokens(text)
                 completion_tokens = calculate_tokens(string_response_data)
@@ -164,8 +162,9 @@ class TextEmotionAnalysisView(APIView):
 
                 # # Track token usage
                 user = request.user
-                # Assuming user and num_tokens are defined update token usage 
-                update_token_usage(user, prompt_tokens, completion_tokens, total_tokens)
+                # Assuming user and num_tokens are defined update token usage
+                update_token_usage(user, prompt_tokens,
+                                   completion_tokens, total_tokens)
                 result = {
                     "analysis": data,
                     "prompt_tokens": prompt_tokens,
@@ -174,14 +173,18 @@ class TextEmotionAnalysisView(APIView):
                 }
                 return Response(data=result, status=200)
             except Exception as e:
-                logger.exception(f"An error occurred @api/emotion_analysis/: {e}")
+                logger.exception(
+                    f"An error occurred @api/emotion_analysis/: {e}")
                 return Response({'error': f'{ERROR_MSG}'}, status=400)
         else:
-            logger.error(f"An error occurred @api/emotion_analysis/{text_serializer.errors}")
+            logger.error(
+                f"An error occurred @api/emotion_analysis/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
+
 
 class TextSentimentAnalysisView(APIView):
     permission_classes = [IsAuthenticated,]
+
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
 
@@ -190,11 +193,12 @@ class TextSentimentAnalysisView(APIView):
             try:
                 response_data = query_sentiment_model(text)
                 if response_data is None:
-                    return Response({"error":ERROR_MSG}, status=400)
+                    return Response({"error": ERROR_MSG}, status=400)
 
                 fixed_labels = rename_sentiment_labels(response_data)
-                fixed_labels_str=''
-                fixed_labels_str = "\n".join([f"{key}: {value}" for sublist in fixed_labels for dictionary in sublist for key, value in dictionary.items()])
+                fixed_labels_str = ''
+                fixed_labels_str = "\n".join(
+                    [f"{key}: {value}" for sublist in fixed_labels for dictionary in sublist for key, value in dictionary.items()])
 
                 prompt_tokens = calculate_tokens(text)
                 completion_tokens = calculate_tokens(fixed_labels_str)
@@ -202,8 +206,9 @@ class TextSentimentAnalysisView(APIView):
 
                 # # # Track token usage
                 user = request.user
-                # Assuming user and num_tokens are defined update token usage 
-                update_token_usage(user, prompt_tokens, completion_tokens, total_tokens)
+                # Assuming user and num_tokens are defined update token usage
+                update_token_usage(user, prompt_tokens,
+                                   completion_tokens, total_tokens)
                 result = {
                     "analysis": fixed_labels,
                     "prompt_tokens": prompt_tokens,
@@ -213,16 +218,19 @@ class TextSentimentAnalysisView(APIView):
                 return Response(data=result, status=200)
             except Exception as e:
                 print(e)
-                logger.error(f"An error occurred @api/sentiment_analysis/: {e}")
+                logger.error(
+                    f"An error occurred @api/sentiment_analysis/: {e}")
                 return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             print(text_serializer.errors)
-            logger.exception(f"An error occurred @api/sentiment_analysis/{text_serializer.errors}")
+            logger.exception(
+                f"An error occurred @api/sentiment_analysis/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
-        
+
 
 class ChatGPTCompletionView(APIView):
     permission_classes = [IsAuthenticated,]
+
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
 
@@ -240,8 +248,9 @@ class ChatGPTCompletionView(APIView):
 
                 # # # Track token usage
                 user = request.user
-                # Assuming user and num_tokens are defined update token usage 
-                update_token_usage(user, prompt_tokens, completion_tokens, total_tokens)
+                # Assuming user and num_tokens are defined update token usage
+                update_token_usage(user, prompt_tokens,
+                                   completion_tokens, total_tokens)
                 result = {
                     "result": response.choices[0].message,
                     "prompt_tokens": prompt_tokens,
@@ -254,12 +263,14 @@ class ChatGPTCompletionView(APIView):
                 return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             print(text_serializer.errors)
-            logger.exception(f"An error occurred @api/gpt/completion/{text_serializer.errors}")
+            logger.exception(
+                f"An error occurred @api/gpt/completion/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
-        
+
 
 class GenerateImageView(APIView):
     permission_classes = [IsAuthenticated,]
+
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
 
@@ -277,8 +288,9 @@ class GenerateImageView(APIView):
 
                 # # # Track token usage
                 user = request.user
-                # Assuming user and num_tokens are defined update token usage 
-                update_token_usage(user, prompt_tokens, completion_tokens, total_tokens,img_count=1)
+                # Assuming user and num_tokens are defined update token usage
+                update_token_usage(user, prompt_tokens,
+                                   completion_tokens, total_tokens, img_count=1)
                 result = {
                     "result": response.imgUrl,
                     "prompt_tokens": prompt_tokens,
@@ -291,9 +303,10 @@ class GenerateImageView(APIView):
                 logger.error(f"An error occurred @api/generate/img: {e}")
                 return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            logger.exception(f"An error occurred @api/generate/img{text_serializer.errors}")
+            logger.exception(
+                f"An error occurred @api/generate/img{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
-        
+
 
 class TextToImageView(generics.CreateAPIView):
     queryset = TextToImage.objects.all()
@@ -309,6 +322,7 @@ class TextToImageView(generics.CreateAPIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'Please provide input text'}, status=status.HTTP_400_BAD_REQUEST)
+
 
 class TextToVideoView(generics.CreateAPIView):
     queryset = TextToVideo.objects.all()

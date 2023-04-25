@@ -8713,3 +8713,1235 @@ AttributeError: 'str' object has no attribute 'get'
 [2023-04-25 10:01:10] INFO Watching for file changes with StatReloader
 [2023-04-25 10:01:14] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
 [2023-04-25 10:01:16] INFO Watching for file changes with StatReloader
+[2023-04-25 10:02:54] INFO Watching for file changes with StatReloader
+[2023-04-25 10:03:00] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: table api_user has no column named app_owner_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 111, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 109, in create_user
+    user.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\contrib\auth\base_user.py", line 67, in save
+    super().save(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 778, in save_base
+    force_update, using, update_fields,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: table api_user has no column named app_owner_id
+[2023-04-25 10:03:00] ERROR "POST /api/register/ HTTP/1.1" 500 210595
+[2023-04-25 10:04:06] INFO Watching for file changes with StatReloader
+[2023-04-25 10:04:15] INFO "POST /api/register/ HTTP/1.1" 201 256
+[2023-04-25 10:04:32] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 14905
+[2023-04-25 10:04:32] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:04:33] INFO "GET /admin/api/user/ HTTP/1.1" 200 16858
+[2023-04-25 10:04:34] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:04:37] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 14905
+[2023-04-25 10:04:37] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:04:45] INFO "GET /admin/api/sentimentanalysis/ HTTP/1.1" 200 6267
+[2023-04-25 10:04:45] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:04:47] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 12086
+[2023-04-25 10:04:47] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:04:50] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 14905
+[2023-04-25 10:04:50] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:05:21] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 15268
+[2023-04-25 10:05:22] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:05:34] INFO "POST /api/get_token/ HTTP/1.1" 200 225
+[2023-04-25 10:06:26] WARNING Bad Request: /api/register/
+[2023-04-25 10:06:26] WARNING "POST /api/register/ HTTP/1.1" 400 84
+[2023-04-25 10:06:38] INFO "POST /api/register/ HTTP/1.1" 201 232
+[2023-04-25 10:06:51] INFO "GET /admin/api/user/ HTTP/1.1" 200 17523
+[2023-04-25 10:06:51] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:07:08] INFO "GET /admin/api/user/adfe92b7-1320-4776-a0df-dddc37e6b572/change/ HTTP/1.1" 200 20095
+[2023-04-25 10:07:08] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:07:08] INFO "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19634
+[2023-04-25 10:07:08] INFO "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+[2023-04-25 10:07:08] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[2023-04-25 10:07:08] INFO "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[2023-04-25 10:07:08] INFO "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[2023-04-25 10:09:20] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:09:23] INFO Watching for file changes with StatReloader
+[2023-04-25 10:09:28] INFO "POST /api/register/ HTTP/1.1" 201 234
+[2023-04-25 10:09:33] INFO "GET /admin/api/user/ HTTP/1.1" 200 18189
+[2023-04-25 10:09:33] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:09:44] INFO "GET /admin/api/user/cf191e4b-6353-4e06-baf0-adf759c08234/change/ HTTP/1.1" 200 20172
+[2023-04-25 10:09:44] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:09:55] INFO "GET /admin/api/user/ HTTP/1.1" 200 18189
+[2023-04-25 10:09:58] INFO "GET /admin/api/user/adfe92b7-1320-4776-a0df-dddc37e6b572/change/ HTTP/1.1" 200 20167
+[2023-04-25 10:09:58] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:10:00] INFO "GET /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 7595
+[2023-04-25 10:10:01] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:10:01] INFO "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12350
+[2023-04-25 10:10:01] INFO "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4360
+[2023-04-25 10:10:01] INFO "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[2023-04-25 10:10:11] INFO "GET /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 7595
+[2023-04-25 10:10:11] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:11:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:11:27] INFO Watching for file changes with StatReloader
+[2023-04-25 10:11:31] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:11:33] INFO Watching for file changes with StatReloader
+[2023-04-25 10:11:47] INFO "POST /api/register/ HTTP/1.1" 201 234
+[2023-04-25 10:11:53] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 16800
+[2023-04-25 10:11:53] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:11:55] INFO "GET /admin/api/user/ HTTP/1.1" 200 18855
+[2023-04-25 10:11:55] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:12:05] INFO "GET /admin/api/user/6d525a6c-ee3b-4dc0-9582-7cd6fefe675e/change/ HTTP/1.1" 200 20244
+[2023-04-25 10:12:05] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:12:18] INFO "GET /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 7595
+[2023-04-25 10:12:18] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:12:34] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:12:37] INFO Watching for file changes with StatReloader
+[2023-04-25 10:13:54] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:13:56] INFO Watching for file changes with StatReloader
+[2023-04-25 10:14:11] WARNING Bad Request: /api/register/
+[2023-04-25 10:14:11] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-25 10:14:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:14:48] INFO Watching for file changes with StatReloader
+[2023-04-25 10:15:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:15:14] INFO Watching for file changes with StatReloader
+[2023-04-25 10:15:16] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:15:19] INFO Watching for file changes with StatReloader
+[2023-04-25 10:15:30] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:15:33] INFO Watching for file changes with StatReloader
+[2023-04-25 10:15:43] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:15:45] INFO Watching for file changes with StatReloader
+[2023-04-25 10:15:50] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:15:52] INFO Watching for file changes with StatReloader
+[2023-04-25 10:16:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:16:06] INFO Watching for file changes with StatReloader
+[2023-04-25 10:16:30] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:16:32] INFO Watching for file changes with StatReloader
+[2023-04-25 10:17:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:17:08] INFO Watching for file changes with StatReloader
+[2023-04-25 10:17:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:17:13] INFO Watching for file changes with StatReloader
+[2023-04-25 10:17:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:17:22] INFO Watching for file changes with StatReloader
+[2023-04-25 10:17:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:17:30] INFO Watching for file changes with StatReloader
+[2023-04-25 10:17:51] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:17:53] INFO Watching for file changes with StatReloader
+[2023-04-25 10:18:00] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:18:03] INFO Watching for file changes with StatReloader
+[2023-04-25 10:18:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:18:18] INFO Watching for file changes with StatReloader
+[2023-04-25 10:18:27] WARNING Bad Request: /api/register/
+[2023-04-25 10:18:27] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-25 10:18:44] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:18:47] INFO Watching for file changes with StatReloader
+[2023-04-25 10:19:02] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:19:04] INFO Watching for file changes with StatReloader
+[2023-04-25 10:19:07] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:19:09] INFO Watching for file changes with StatReloader
+[2023-04-25 10:19:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:19:18] INFO Watching for file changes with StatReloader
+[2023-04-25 10:19:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:19:26] INFO Watching for file changes with StatReloader
+[2023-04-25 10:19:36] WARNING Bad Request: /api/register/
+[2023-04-25 10:19:36] WARNING "POST /api/register/ HTTP/1.1" 400 88
+[2023-04-25 10:20:02] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:20:06] INFO Watching for file changes with StatReloader
+[2023-04-25 10:20:29] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:20:32] INFO Watching for file changes with StatReloader
+[2023-04-25 10:20:37] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:20:40] INFO Watching for file changes with StatReloader
+[2023-04-25 10:20:46] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:20:49] INFO Watching for file changes with StatReloader
+[2023-04-25 10:20:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:20:55] INFO Watching for file changes with StatReloader
+[2023-04-25 10:20:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:21:00] INFO Watching for file changes with StatReloader
+[2023-04-25 10:21:05] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:21:08] INFO Watching for file changes with StatReloader
+[2023-04-25 10:21:13] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Group'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 113, in create_user
+    grp=Group.objects.get(id=id)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 424, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\query.py", line 1438, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\query.py", line 1370, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\query.py", line 1216, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\__init__.py", line 1827, in get_prep_value
+    ) from e
+TypeError: Field 'id' expected a number but got <Group: developer>.
+[2023-04-25 10:21:13] ERROR "POST /api/register/ HTTP/1.1" 500 176754
+[2023-04-25 10:21:34] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:21:37] INFO Watching for file changes with StatReloader
+[2023-04-25 10:21:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:21:45] INFO Watching for file changes with StatReloader
+[2023-04-25 10:21:55] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:21:58] INFO Watching for file changes with StatReloader
+[2023-04-25 10:22:03] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 113, in create_user
+    user.groups.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1058, in _get_target_ids
+    (obj, self.instance._state.db, obj._state.db)
+ValueError: Cannot add "<Group: developer>": instance is on database "None", value is on database "default"
+[2023-04-25 10:22:03] ERROR "POST /api/register/ HTTP/1.1" 500 131064
+[2023-04-25 10:22:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:22:25] INFO Watching for file changes with StatReloader
+[2023-04-25 10:22:34] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 113, in create_user
+    user.groups.objects.add(grp)
+AttributeError: 'ManyRelatedManager' object has no attribute 'objects'
+[2023-04-25 10:22:34] ERROR "POST /api/register/ HTTP/1.1" 500 116064
+[2023-04-25 10:22:44] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:22:47] INFO Watching for file changes with StatReloader
+[2023-04-25 10:22:51] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 113, in create_user
+    user.groups.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1058, in _get_target_ids
+    (obj, self.instance._state.db, obj._state.db)
+ValueError: Cannot add "<Group: developer>": instance is on database "None", value is on database "default"
+[2023-04-25 10:22:51] ERROR "POST /api/register/ HTTP/1.1" 500 131064
+[2023-04-25 10:23:18] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:23:23] INFO Watching for file changes with StatReloader
+[2023-04-25 10:23:29] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 134, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 114, in create_user
+    user.groups.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1058, in _get_target_ids
+    (obj, self.instance._state.db, obj._state.db)
+ValueError: Cannot add "<Group: developer>": instance is on database "None", value is on database "default"
+[2023-04-25 10:23:29] ERROR "POST /api/register/ HTTP/1.1" 500 131034
+[2023-04-25 10:23:50] INFO "GET /admin/auth/group/ HTTP/1.1" 200 7674
+[2023-04-25 10:23:51] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:23:52] INFO "GET /admin/auth/group/1/change/ HTTP/1.1" 200 11831
+[2023-04-25 10:23:52] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:23:52] INFO "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[2023-04-25 10:23:52] INFO "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[2023-04-25 10:24:49] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:24:51] INFO Watching for file changes with StatReloader
+[2023-04-25 10:24:54] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:24:57] INFO Watching for file changes with StatReloader
+[2023-04-25 10:26:29] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:26:33] INFO Watching for file changes with StatReloader
+[2023-04-25 10:29:07] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:29:09] INFO Watching for file changes with StatReloader
+[2023-04-25 10:29:12] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:29:14] INFO Watching for file changes with StatReloader
+[2023-04-25 10:29:30] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:29:32] INFO Watching for file changes with StatReloader
+[2023-04-25 10:29:38] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:29:40] INFO Watching for file changes with StatReloader
+[2023-04-25 10:30:15] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:30:17] INFO Watching for file changes with StatReloader
+[2023-04-25 10:30:35] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:30:38] INFO Watching for file changes with StatReloader
+[2023-04-25 10:30:59] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:31:01] INFO Watching for file changes with StatReloader
+[2023-04-25 10:31:48] INFO Watching for file changes with StatReloader
+[2023-04-25 10:31:52] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 133, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 114, in create_user
+    user.groups.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1058, in _get_target_ids
+    (obj, self.instance._state.db, obj._state.db)
+ValueError: Cannot add "<Group: developer>": instance is on database "None", value is on database "default"
+[2023-04-25 10:31:52] ERROR "POST /api/register/ HTTP/1.1" 500 131034
+[2023-04-25 10:37:01] INFO Watching for file changes with StatReloader
+[2023-04-25 10:37:07] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 133, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 114, in create_user
+    user.groups.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1058, in _get_target_ids
+    (obj, self.instance._state.db, obj._state.db)
+ValueError: Cannot add "<Group: developer>": instance is on database "None", value is on database "default"
+[2023-04-25 10:37:07] ERROR "POST /api/register/ HTTP/1.1" 500 131034
+[2023-04-25 10:37:46] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:37:49] INFO Watching for file changes with StatReloader
+[2023-04-25 10:37:52] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:37:54] INFO Watching for file changes with StatReloader
+[2023-04-25 10:38:18] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:38:20] INFO Watching for file changes with StatReloader
+[2023-04-25 10:38:25] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:38:27] INFO Watching for file changes with StatReloader
+[2023-04-25 10:38:36] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:38:38] INFO Watching for file changes with StatReloader
+[2023-04-25 10:38:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:38:47] INFO Watching for file changes with StatReloader
+[2023-04-25 10:39:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:39:20] INFO Watching for file changes with StatReloader
+[2023-04-25 10:39:32] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:39:34] INFO Watching for file changes with StatReloader
+[2023-04-25 10:39:40] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:39:43] INFO Watching for file changes with StatReloader
+[2023-04-25 10:40:29] INFO Watching for file changes with StatReloader
+[2023-04-25 10:40:33] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 133, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 115, in create_user
+    user.roles.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1070, in _get_target_ids
+    (self.model._meta.object_name, obj)
+TypeError: 'Role' instance expected, got <Group: developer>
+[2023-04-25 10:40:33] ERROR "POST /api/register/ HTTP/1.1" 500 130460
+[2023-04-25 10:40:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:40:54] INFO Watching for file changes with StatReloader
+[2023-04-25 10:41:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:41:02] INFO Watching for file changes with StatReloader
+[2023-04-25 10:41:09] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 581, in get_or_create
+    return self.get(**kwargs), False
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 437, in get
+    self.model._meta.object_name
+api.models.Role.DoesNotExist: Role matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: auth_group.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 101, in post
+    grp_obj, _ = Role.objects.get_or_create(name='developer')
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 588, in get_or_create
+    return self.create(**params), True
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 775, in save_base
+    parent_inserted = self._save_parents(cls, using, update_fields)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 806, in _save_parents
+    force_insert=parent_inserted,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: auth_group.name
+[2023-04-25 10:41:09] ERROR "POST /api/register/ HTTP/1.1" 500 208133
+[2023-04-25 10:41:42] INFO "GET /admin/auth/group/ HTTP/1.1" 200 7674
+[2023-04-25 10:41:42] INFO "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+[2023-04-25 10:41:42] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:41:42] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 200 6874
+[2023-04-25 10:41:43] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[2023-04-25 10:41:48] INFO "POST /admin/auth/group/ HTTP/1.1" 200 6310
+[2023-04-25 10:41:49] INFO "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+[2023-04-25 10:41:50] INFO "POST /admin/auth/group/ HTTP/1.1" 302 0
+[2023-04-25 10:41:50] INFO "GET /admin/auth/group/ HTTP/1.1" 200 6665
+[2023-04-25 10:41:50] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:41:50] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[2023-04-25 10:42:11] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 133, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 115, in create_user
+    user.roles.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1070, in _get_target_ids
+    (self.model._meta.object_name, obj)
+TypeError: 'Role' instance expected, got <Group: developer>
+[2023-04-25 10:42:11] ERROR "POST /api/register/ HTTP/1.1" 500 130458
+[2023-04-25 10:42:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:42:51] INFO Watching for file changes with StatReloader
+[2023-04-25 10:42:55] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 133, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 115, in create_user
+    user.roles.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1070, in _get_target_ids
+    (self.model._meta.object_name, obj)
+TypeError: 'Role' instance expected, got <Group: developer>
+[2023-04-25 10:42:55] ERROR "POST /api/register/ HTTP/1.1" 500 130459
+[2023-04-25 10:43:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:43:10] INFO Watching for file changes with StatReloader
+[2023-04-25 10:43:19] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:43:21] INFO Watching for file changes with StatReloader
+[2023-04-25 10:43:25] INFO "POST /api/register/ HTTP/1.1" 201 240
+[2023-04-25 10:43:38] INFO "GET /admin/auth/group/ HTTP/1.1" 200 7674
+[2023-04-25 10:43:38] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:43:44] INFO "GET /admin/api/user/ HTTP/1.1" 200 19518
+[2023-04-25 10:43:44] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:43:56] INFO "GET /admin/api/user/d9571cb6-765e-436e-b4ac-bfac93867a0c/change/ HTTP/1.1" 200 21253
+[2023-04-25 10:43:56] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:44:22] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:44:25] INFO Watching for file changes with StatReloader
+[2023-04-25 10:44:28] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:44:30] INFO Watching for file changes with StatReloader
+[2023-04-25 10:44:32] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:44:34] INFO Watching for file changes with StatReloader
+[2023-04-25 10:44:38] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:44:40] INFO Watching for file changes with StatReloader
+[2023-04-25 10:44:43] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:44:45] INFO Watching for file changes with StatReloader
+[2023-04-25 10:44:53] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:44:55] INFO Watching for file changes with StatReloader
+[2023-04-25 10:45:07] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:45:10] INFO Watching for file changes with StatReloader
+[2023-04-25 10:45:12] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:45:14] INFO Watching for file changes with StatReloader
+[2023-04-25 10:45:20] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:45:22] INFO Watching for file changes with StatReloader
+[2023-04-25 10:45:28] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:45:31] INFO Watching for file changes with StatReloader
+[2023-04-25 10:45:38] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:45:40] INFO Watching for file changes with StatReloader
+[2023-04-25 10:45:45] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:45:47] INFO Watching for file changes with StatReloader
+[2023-04-25 10:45:53] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:45:55] INFO Watching for file changes with StatReloader
+[2023-04-25 10:46:21] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:46:23] INFO Watching for file changes with StatReloader
+[2023-04-25 10:46:39] WARNING Bad Request: /api/register/
+[2023-04-25 10:46:39] WARNING "POST /api/register/ HTTP/1.1" 400 60
+[2023-04-25 10:46:51] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:46:54] INFO Watching for file changes with StatReloader
+[2023-04-25 10:46:56] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:46:58] INFO Watching for file changes with StatReloader
+[2023-04-25 10:47:03] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:47:05] INFO Watching for file changes with StatReloader
+[2023-04-25 10:47:09] INFO "POST /api/register/ HTTP/1.1" 201 242
+[2023-04-25 10:47:45] WARNING Bad Request: /api/register/
+[2023-04-25 10:47:45] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 10:47:57] INFO "POST /api/register/ HTTP/1.1" 201 244
+[2023-04-25 10:48:05] INFO "GET /admin/api/user/ HTTP/1.1" 200 20847
+[2023-04-25 10:48:05] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:48:07] INFO "GET /admin/api/user/fe3d1119-418a-4da5-ab3b-93063f2f0e9a/change/ HTTP/1.1" 200 21407
+[2023-04-25 10:48:08] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:48:24] INFO "GET /admin/api/user/ HTTP/1.1" 200 20847
+[2023-04-25 10:48:24] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:48:29] INFO "GET /admin/api/user/c799622d-6d02-46e5-8f22-cf5eccac7037/change/ HTTP/1.1" 200 21457
+[2023-04-25 10:48:29] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:48:41] INFO "GET /admin/api/user/ HTTP/1.1" 200 20847
+[2023-04-25 10:48:41] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:48:44] INFO "GET /admin/api/user/c799622d-6d02-46e5-8f22-cf5eccac7037/change/ HTTP/1.1" 200 21457
+[2023-04-25 10:48:44] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 10:49:25] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:49:27] INFO Watching for file changes with StatReloader
+[2023-04-25 10:49:38] INFO "POST /api/register/ HTTP/1.1" 201 246
+[2023-04-25 10:49:59] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:50:02] INFO Watching for file changes with StatReloader
+[2023-04-25 10:50:09] INFO "POST /api/register/ HTTP/1.1" 201 248
+[2023-04-25 10:50:40] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:50:43] INFO Watching for file changes with StatReloader
+[2023-04-25 10:50:49] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:50:51] INFO Watching for file changes with StatReloader
+[2023-04-25 10:50:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 10:50:58] INFO Watching for file changes with StatReloader
+[2023-04-25 10:51:01] WARNING Bad Request: /api/register/
+[2023-04-25 10:51:01] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 10:51:08] INFO "POST /api/register/ HTTP/1.1" 201 250
+[2023-04-25 10:51:23] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:51:25] INFO Watching for file changes with StatReloader
+[2023-04-25 10:51:33] INFO "POST /api/register/ HTTP/1.1" 201 252
+[2023-04-25 10:51:56] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:51:59] INFO Watching for file changes with StatReloader
+[2023-04-25 10:52:03] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:52:05] INFO Watching for file changes with StatReloader
+[2023-04-25 10:52:10] WARNING Bad Request: /api/register/
+[2023-04-25 10:52:10] WARNING "POST /api/register/ HTTP/1.1" 400 208
+[2023-04-25 10:52:17] WARNING Bad Request: /api/register/
+[2023-04-25 10:52:17] WARNING "POST /api/register/ HTTP/1.1" 400 100
+[2023-04-25 10:53:00] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 10:53:03] INFO Watching for file changes with StatReloader
+[2023-04-25 10:53:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 10:53:14] INFO Watching for file changes with StatReloader
+[2023-04-25 10:53:20] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 139, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 116, in create_user
+    user.roles.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1058, in _get_target_ids
+    (obj, self.instance._state.db, obj._state.db)
+ValueError: Cannot add "<Role: developer>": instance is on database "None", value is on database "default"
+[2023-04-25 10:53:20] ERROR "POST /api/register/ HTTP/1.1" 500 130732
+[2023-04-25 11:00:10] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:00:15] INFO Watching for file changes with StatReloader
+[2023-04-25 11:03:52] INFO Watching for file changes with StatReloader
+[2023-04-25 11:05:24] INFO Watching for file changes with StatReloader
+[2023-04-25 11:05:37] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: api_role.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 101, in post
+    grp_obj, _ = Role.objects.get_or_create(name='developer')
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 581, in get_or_create
+    return self.get(**kwargs), False
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 431, in get
+    num = len(clone)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: api_role.id
+[2023-04-25 11:05:37] ERROR "POST /api/register/ HTTP/1.1" 500 176439
+[2023-04-25 11:10:09] INFO Watching for file changes with StatReloader
+[2023-04-25 11:10:14] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 139, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 117, in create_user
+    user.roles.add(grp)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 952, in add
+    through_defaults=through_defaults,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1126, in _add_items
+    target_ids = self._get_target_ids(target_field_name, objs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1058, in _get_target_ids
+    (obj, self.instance._state.db, obj._state.db)
+ValueError: Cannot add "<Role: Role object (1)>": instance is on database "None", value is on database "default"
+[2023-04-25 11:10:14] ERROR "POST /api/register/ HTTP/1.1" 500 130867
+[2023-04-25 11:11:47] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:11:50] INFO Watching for file changes with StatReloader
+[2023-04-25 11:12:04] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:12:06] INFO Watching for file changes with StatReloader
+[2023-04-25 11:12:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:12:18] INFO Watching for file changes with StatReloader
+[2023-04-25 11:13:26] INFO "POST /api/register/ HTTP/1.1" 201 254
+[2023-04-25 11:15:00] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:15:03] INFO Watching for file changes with StatReloader
+[2023-04-25 11:15:10] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:15:12] INFO Watching for file changes with StatReloader
+[2023-04-25 11:15:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:15:21] INFO Watching for file changes with StatReloader
+[2023-04-25 11:15:32] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:15:34] INFO Watching for file changes with StatReloader
+[2023-04-25 11:15:39] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:15:41] INFO Watching for file changes with StatReloader
+[2023-04-25 11:15:46] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:15:48] INFO Watching for file changes with StatReloader
+[2023-04-25 11:15:51] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:15:53] INFO Watching for file changes with StatReloader
+[2023-04-25 11:15:59] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:16:01] INFO Watching for file changes with StatReloader
+[2023-04-25 11:16:39] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:16:42] INFO Watching for file changes with StatReloader
+[2023-04-25 11:16:47] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:16:50] INFO Watching for file changes with StatReloader
+[2023-04-25 11:16:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:16:59] INFO Watching for file changes with StatReloader
+[2023-04-25 11:17:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:17:06] INFO Watching for file changes with StatReloader
+[2023-04-25 11:17:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:17:11] INFO Watching for file changes with StatReloader
+[2023-04-25 11:17:19] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:17:21] INFO Watching for file changes with StatReloader
+[2023-04-25 11:17:37] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 140, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 115, in create_user
+    obj,_=Role.objects.get(name=role)
+TypeError: cannot unpack non-iterable Role object
+[2023-04-25 11:17:37] ERROR "POST /api/register/ HTTP/1.1" 500 115135
+[2023-04-25 11:17:59] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:18:02] INFO Watching for file changes with StatReloader
+[2023-04-25 11:18:05] WARNING Bad Request: /api/register/
+[2023-04-25 11:18:05] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 11:18:11] WARNING Bad Request: /api/register/
+[2023-04-25 11:18:11] WARNING "POST /api/register/ HTTP/1.1" 400 79
+[2023-04-25 11:18:21] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'User' object has no attribute 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 116, in post
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `role` on serializer `DeveloperRegisterSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `User` instance.
+Original exception text was: 'User' object has no attribute 'role'.
+[2023-04-25 11:18:21] ERROR "POST /api/register/ HTTP/1.1" 500 130361
+[2023-04-25 11:19:03] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:19:06] INFO Watching for file changes with StatReloader
+[2023-04-25 11:19:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:19:13] INFO Watching for file changes with StatReloader
+[2023-04-25 11:19:19] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 113, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 479, in to_internal_value
+    for field in fields:
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 362, in _writable_fields
+    for field in self.fields.values():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1153, in get_field_names
+    serializer_class=self.__class__.__name__
+AssertionError: The field 'roles' was declared on serializer DeveloperRegisterSerializer, but has not been included in the 'fields' option.
+[2023-04-25 11:19:19] ERROR "POST /api/register/ HTTP/1.1" 500 146948
+[2023-04-25 11:19:34] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:19:37] INFO Watching for file changes with StatReloader
+[2023-04-25 11:19:38] WARNING Bad Request: /api/register/
+[2023-04-25 11:19:38] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 11:19:51] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 140, in create
+    return User.objects.create_user(**validated_data)
+TypeError: create_user() got an unexpected keyword argument 'roles'
+[2023-04-25 11:19:51] ERROR "POST /api/register/ HTTP/1.1" 500 110711
+[2023-04-25 11:20:25] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:20:28] INFO Watching for file changes with StatReloader
+[2023-04-25 11:20:37] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:20:39] INFO Watching for file changes with StatReloader
+[2023-04-25 11:20:50] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 114, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 140, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 115, in create_user
+    obj,_=Role.objects.get_or_create(name=role)
+NameError: name 'role' is not defined
+[2023-04-25 11:20:50] ERROR "POST /api/register/ HTTP/1.1" 500 115215
+[2023-04-25 11:20:58] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:21:01] INFO Watching for file changes with StatReloader
+[2023-04-25 11:21:07] WARNING Bad Request: /api/register/
+[2023-04-25 11:21:07] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 11:21:13] INFO "POST /api/register/ HTTP/1.1" 201 259
+[2023-04-25 11:21:52] INFO "GET /admin/api/user/ HTTP/1.1" 302 0
+[2023-04-25 11:21:52] INFO "GET /admin/login/?next=/admin/api/user/ HTTP/1.1" 200 2229
+[2023-04-25 11:21:53] INFO "GET /static/admin/css/login.css HTTP/1.1" 200 939
+[2023-04-25 11:21:54] INFO "POST /admin/login/?next=/admin/api/user/ HTTP/1.1" 200 2400
+[2023-04-25 11:24:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:24:06] INFO Watching for file changes with StatReloader
+[2023-04-25 11:24:28] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-25 11:24:30] INFO Watching for file changes with StatReloader
+[2023-04-25 11:24:37] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:24:40] INFO Watching for file changes with StatReloader
+[2023-04-25 11:24:49] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:24:52] INFO Watching for file changes with StatReloader
+[2023-04-25 11:25:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:25:07] INFO Watching for file changes with StatReloader
+[2023-04-25 11:25:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:25:13] INFO Watching for file changes with StatReloader
+[2023-04-25 11:25:16] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:25:18] INFO Watching for file changes with StatReloader
+[2023-04-25 11:25:25] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:25:28] INFO Watching for file changes with StatReloader
+[2023-04-25 11:25:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:25:37] INFO Watching for file changes with StatReloader
+[2023-04-25 11:25:42] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:25:42] WARNING "POST /api/get_token/ HTTP/1.1" 400 87
+[2023-04-25 11:25:46] WARNING Bad Request: /api/register/
+[2023-04-25 11:25:46] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 11:25:53] INFO "POST /api/register/ HTTP/1.1" 201 235
+[2023-04-25 11:26:14] WARNING Not Found: /api/app/users/register/
+[2023-04-25 11:26:14] WARNING "POST /api/app/users/register/ HTTP/1.1" 404 3824
+[2023-04-25 11:26:22] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:26:22] WARNING "POST /api/get_token/ HTTP/1.1" 400 87
+[2023-04-25 11:26:38] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:26:38] WARNING "POST /api/get_token/ HTTP/1.1" 400 87
+[2023-04-25 11:27:14] WARNING Bad Request: /api/register/
+[2023-04-25 11:27:14] WARNING "POST /api/register/ HTTP/1.1" 400 84
+[2023-04-25 11:27:20] INFO "POST /api/register/ HTTP/1.1" 201 237
+[2023-04-25 11:27:28] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:27:28] WARNING "POST /api/get_token/ HTTP/1.1" 400 87
+[2023-04-25 11:28:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 11:28:06] INFO Watching for file changes with StatReloader
