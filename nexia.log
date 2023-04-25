@@ -10097,3 +10097,23 @@ NameError: name 'role' is not defined
 [2023-04-25 20:11:51] INFO Watching for file changes with StatReloader
 [2023-04-25 20:12:26] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
 [2023-04-25 20:12:28] INFO Watching for file changes with StatReloader
+[2023-04-25 23:51:31] INFO - Broken pipe from ('127.0.0.1', 63570)
+
+[2023-04-26 00:25:45] WARNING Not Found: /api/gpt/completion/
+[2023-04-26 00:25:45] WARNING "POST /api/gpt/completion/ HTTP/1.1" 404 3812
+[2023-04-26 00:25:45] WARNING Not Found: /api/sentiment_analysis/
+[2023-04-26 00:25:45] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 404 3824
+[2023-04-26 00:27:33] WARNING Forbidden: /api/auto/completion/
+[2023-04-26 00:27:33] WARNING "POST /api/auto/completion/ HTTP/1.1" 403 196
+[2023-04-26 00:27:36] WARNING Forbidden: /api/auto/completion/
+[2023-04-26 00:27:36] WARNING "POST /api/auto/completion/ HTTP/1.1" 403 196
+[2023-04-26 00:27:54] WARNING Forbidden: /api/auto/completion/
+[2023-04-26 00:27:54] WARNING "POST /api/auto/completion/ HTTP/1.1" 403 196
+[2023-04-26 00:29:00] WARNING Forbidden: /api/auto/completion/
+[2023-04-26 00:29:00] WARNING "POST /api/auto/completion/ HTTP/1.1" 403 173
+[2023-04-26 00:29:02] WARNING Forbidden: /api/auto/completion/
+[2023-04-26 00:29:02] WARNING "POST /api/auto/completion/ HTTP/1.1" 403 173
+[2023-04-26 00:29:32] WARNING Forbidden: /api/auto/completion/
+[2023-04-26 00:29:32] WARNING "POST /api/auto/completion/ HTTP/1.1" 403 173
+[2023-04-26 00:30:06] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-26 00:30:12] INFO Watching for file changes with StatReloader
