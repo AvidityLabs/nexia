@@ -8,7 +8,7 @@ from api.models import TokenUsage
 def check_count_value(val):
     return 0 if not val else val
 
-
+# Only executed when prompting 
 def update_token_usage(user, prompt_tokens, completion_tokens, total_tokens, img_count=None, audio_count=None, video_count=None):
     # Get the current month and year
     today = date.today()
@@ -30,7 +30,7 @@ def update_token_usage(user, prompt_tokens, completion_tokens, total_tokens, img
             'total_videos': check_count_value(video_count)
         }
     )
-
+    print(token_usage)
     # If the token usage object already existed, update the token usage fields
     if not created:
         token_usage.prompt_tokens_used += prompt_tokens
@@ -53,20 +53,21 @@ def validate_token_usage(user):
 
     if not token_usage:
         # Token usage record doesn't exist for the current month, assume no tokens used
-        return {"valid": True, "message": "No token usage record found for the current month."}
+        return {"valid": True, "message": "We couldn't find any token usage records for the current month. Please make contact support."}
 
     # Get the pricing plan for the user
     pricing_plan = token_usage.pricing_plan
 
     # Check if the user's token usage is within the limit defined in their pricing plan
     if token_usage.total_images > pricing_plan.monthly_image_limit:
-        raise AuthenticationFailed("Monthly image limit exceeded.")
+        raise AuthenticationFailed("Sorry, your account has exceeded the monthly image limit. Please upgrade your plan or reduce your image usage.")
     if token_usage.total_audios > pricing_plan.monthly_audio_limit:
-        raise AuthenticationFailed("Monthly audio limit exceeded.")
+        raise AuthenticationFailed("We're sorry, but you have used up your monthly audio quota. Please upgrade your plan or reduce your audio usage.")
     if token_usage.total_videos > pricing_plan.monthly_video_limit:
-        raise AuthenticationFailed("Monthly video limit exceeded.")
+        raise AuthenticationFailed("We regret to inform you that your monthly video limit has been exceeded. Please upgrade your plan or reduce your video usage.")
     if token_usage.total_tokens_used > pricing_plan.monthly_token_limit:
-        raise AuthenticationFailed("Monthly token limit exceeded.")
+        raise AuthenticationFailed("Unfortunately, you have exceeded your monthly token limit. Please upgrade your plan or reduce your token usage.")
+
     
     # Token usage is within the limit defined in the pricing plan
     pass

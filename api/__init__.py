@@ -5,4 +5,4 @@ class APIConfig(AppConfig):
     name = 'api'
 
     def ready(self):
-        import api.authentication.signals
+        import api.signals

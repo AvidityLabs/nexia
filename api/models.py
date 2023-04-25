@@ -73,7 +73,9 @@ class Subscription(BaseModel):
     user_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.pricing_plan.name}"
+        if self.pricing_plan:
+            return f"{self.pricing_plan.name}"
+        return ''
 
 
 class UserManager(BaseUserManager):
@@ -173,10 +175,13 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         This method is used to get the user subscription
         """
+        if self.subscription is None:
+            return None
+        if self.subscription.pricing_plan is None:
+            return None
         plan = self.subscription.pricing_plan.name
         if self.subscription.pricing_plan.name:
             return plan
-        return None
 
     def get_short_name(self):
         """
@@ -221,6 +226,7 @@ class SentimentAnalysis(models.Model):
     text = models.TextField(null=True, blank=True)
     positive = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
+    user_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
@@ -235,9 +241,8 @@ class EmotionAnalysis(models.Model):
     sadness_score = models.FloatField(null=True, blank=True)
     surprise_score = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
+    user_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
-
-# Signals
 

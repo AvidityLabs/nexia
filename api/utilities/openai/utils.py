@@ -7,7 +7,7 @@ openai.organization = os.environ.get('OPENAI_ORGANIZATION')
 
 
 # general 
-def get_chatgpt_completion(topic):
+def completion(topic):
     try:
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",

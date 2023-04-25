@@ -8,7 +8,7 @@ from rest_framework.exceptions import AuthenticationFailed
 
 from api.models import User
 from api.utilities.subscription import update_subscription
-from api.utilities.token_management import validate_token_usage
+from api.utilities.tokens import validate_token_usage
 
 RAPID_API_APP_URL =  os.environ.get('RAPID_API_APP_URL')
 HTTP_X_RAPIDAPI_PROXY_SECRET = os.environ.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
@@ -49,10 +49,10 @@ class JWTAuthentication(authentication.BaseAuthentication):
         rapidapi_proxy_secret = request.META.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
 
         if not rapidapi_host:
-            raise AuthenticationFailed('X-RapidAPI-Host not found in request headers')
-        
+            raise AuthenticationFailed('Missing request header. The X-RapidAPI-Host header was not found in your request. Please ensure that your request includes this header and try again. Thank you for your understanding.')
+      
         if HTTP_X_RAPIDAPI_PROXY_SECRET != rapidapi_proxy_secret:
-            raise AuthenticationFailed(f'Invalid request. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI and use their platform to access this API.{RAPID_API_APP_URL}')
+            raise AuthenticationFailed(f'Restricted access. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI at {RAPID_API_APP_URL} and use their platform to access this API. Thank you for your understanding.')
         
 
         if not auth_header:
@@ -98,7 +98,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
             payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
 
         except Exception as e:
-            msg = 'Invalid authentication. Could not decode token.'
+            msg = 'Authentication failed. The token provided could not be decoded. Please ensure that you are using a valid token and try again.'
             raise exceptions.AuthenticationFailed()
 
         try:
@@ -108,11 +108,11 @@ class JWTAuthentication(authentication.BaseAuthentication):
             # validate token usage 
             validate_token_usage(user)
         except User.DoesNotExist:
-            msg = 'No user matching this token was found.'
+            msg = 'User not found. We could not locate a user account associated with this token. Please ensure that you are using a valid token or contact support for assistance.'
             raise exceptions.AuthenticationFailed(msg)
 
         if not user.is_active:
-            msg = 'This user has been deactivated.'
+            msg = 'Account deactivated. We\'re sorry, but this user account has been deactivated. Please contact support for assistance.'
             raise exceptions.AuthenticationFailed(msg)
         
         return (user, token)

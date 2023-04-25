@@ -96,7 +96,7 @@ REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-       'api.authentication.backends.JWTAuthentication',
+       'api.backends.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -151,7 +151,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'nexiadb', # This is where you put the name of the db file. 
+        'NAME': 'nexiadb1', # This is where you put the name of the db file. 
                  # If one doesn't exist, it will be created at migration time.
     }
 }

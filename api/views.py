@@ -1,7 +1,7 @@
-import re
+import logging
 
-from django.core import exceptions
 from django.utils.translation import gettext_lazy as _
+
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -11,30 +11,25 @@ from rest_framework import generics
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework import serializers
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import RetrieveUpdateAPIView
 
-from api.serializers import LoginSerializer
-from api.authentication.renderers import UserJSONRenderer
-from api.utilities.transformers_tokenizer import calculate_tokens
-from api.utilities.hugging_face import (
-    query_emotions_model, query_sentiment_model)
+from api.renderers import UserJSONRenderer
+from api.utilities.hugging_face.queries import query_emotions_model, query_sentiment_model
+from api.utilities.hugging_face.utils  import rename_sentiment_labels, add_emotion_percentages
+from api.utilities.tokens import update_token_usage
+from api.utilities.openai.utils import completion
+from api.utilities.hugging_face.tokenizer import calculate_tokens
 
-from api.utilities.data_cleaning import rename_sentiment_labels, add_emotion_percentages
-from api.utilities.validations import check_duplicate_email
-from api.utilities.token_management import update_token_usage, validate_token_usage
-from api.utilities.openai import get_chatgpt_completion
 from api.serializers import (
     DeveloperRegisterSerializer,
-    TextSerializer,)
-from api.models import (PricingPlan, User, TokenUsage)
+    TextSerializer,
+    LoginSerializer,
+    UserSerializer
+)
 
-import logging
-
-from api.serializers import UserSerializer
 
 logger = logging.getLogger(__name__)
-ERROR_MSG='Something went wrong. If this issue persists please contact us through our customer support at aviditylabs@hotmail.com'
+ERROR_MSG = 'Oops, something went wrong. If this issue persists, please contact our customer support team at aviditylabs@hotmail.com for assistance. We apologize for the inconvenience and appreciate your patience as we work to resolve the issue.'
 # Validate prompt text length
 MAX_PROMPT_LENGTH = 1000  # Maximum allowed length for prompt text
 
@@ -79,7 +74,7 @@ class LoginAPIView(APIView):
         # Notice here that we do not call `serializer.save()` like we did for
         # the registration endpoint. This is because we don't  have
         # anything to save. Instead, the `validate` method on our serializer
-        # handles everything we need.
+        # handles everything we need
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
 
@@ -203,7 +198,7 @@ class ChatGPTCompletionView(APIView):
                 if response_data is None:
                     return Response({'error': f'{ERROR_MSG}'}, status=400)
 
-                response = get_chatgpt_completion(text)
+                response = completion(text)
                 prompt_tokens = response.usage.prompt_tokens
                 completion_tokens = response.usage.completion_tokens
                 total_tokens = response.usage.total_tokens
@@ -220,16 +215,15 @@ class ChatGPTCompletionView(APIView):
                 }
                 return Response(data=result, status=200)
             except Exception as e:
-                print(e)
-                logger.error(f"An error occurred @api/prompt/: {e}")
+                logger.error(f"An error occurred @api/gpt/completion/: {e}")
                 return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
         else:
             print(text_serializer.errors)
-            logger.exception(f"An error occurred @api/prompt/{text_serializer.errors}")
+            logger.exception(f"An error occurred @api/gpt/completion/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
         
 
-class GenerateViewImage(APIView):
+class GenerateImageView(APIView):
     permission_classes = [IsAuthenticated,]
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
@@ -241,7 +235,7 @@ class GenerateViewImage(APIView):
                 if response_data is None:
                     return Response({'error': f'{ERROR_MSG}'}, status=400)
 
-                response = get_chatgpt_completion(text)
+                response = completion(text)
                 prompt_tokens = response.completion.usage.prompt_tokens
                 completion_tokens = response.completion.usage.completion_tokens
                 total_tokens = response.completion.usage.total_tokens
@@ -262,6 +256,5 @@ class GenerateViewImage(APIView):
                 logger.error(f"An error occurred @api/generate/img: {e}")
                 return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            print(text_serializer.errors)
             logger.exception(f"An error occurred @api/generate/img{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
