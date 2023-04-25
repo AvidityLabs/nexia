@@ -9985,3 +9985,109 @@ NameError: name 'role' is not defined
 [2023-04-25 11:46:31] WARNING "POST /api/get_token/ HTTP/1.1" 400 75
 [2023-04-25 11:47:32] WARNING Forbidden: /api/register/
 [2023-04-25 11:47:32] WARNING "POST /api/register/ HTTP/1.1" 403 61
+[2023-04-25 11:55:16] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:55:16] WARNING "POST /api/get_token/ HTTP/1.1" 400 75
+[2023-04-25 11:55:46] WARNING Forbidden: /api/get_token/
+[2023-04-25 11:55:46] WARNING "POST /api/get_token/ HTTP/1.1" 403 196
+[2023-04-25 11:57:05] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 11:57:05] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 173
+[2023-04-25 11:57:05] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 11:57:05] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 173
+[2023-04-25 11:57:05] WARNING Not Found: /api/gpt/completion/
+[2023-04-25 11:57:05] WARNING "POST /api/gpt/completion/ HTTP/1.1" 404 3812
+[2023-04-25 11:57:06] WARNING Not Found: /api/sentiment_analysis/
+[2023-04-25 11:57:06] WARNING "POST /api/sentiment_analysis/ HTTP/1.1" 404 3824
+[2023-04-25 12:14:05] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 12:14:05] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 173
+[2023-04-25 12:14:16] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 12:14:16] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 173
+[2023-04-25 12:15:27] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 12:15:27] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 173
+[2023-04-25 12:16:11] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 12:16:11] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 173
+[2023-04-25 12:16:14] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 12:16:14] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 173
+[2023-04-25 19:23:03] INFO "GET /admin/ HTTP/1.1" 302 0
+[2023-04-25 19:23:04] INFO "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2211
+[2023-04-25 19:23:04] INFO "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2023-04-25 19:23:04] INFO "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[2023-04-25 19:23:04] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+[2023-04-25 19:23:04] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+[2023-04-25 19:23:04] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+[2023-04-25 19:23:04] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[2023-04-25 19:23:04] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[2023-04-25 19:23:04] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[2023-04-25 19:23:07] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2382
+[2023-04-25 19:23:07] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[2023-04-25 19:23:13] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2369
+[2023-04-25 19:23:15] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2369
+[2023-04-25 19:24:17] INFO Watching for file changes with StatReloader
+[2023-04-25 19:24:30] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-04-25 19:24:30] INFO "GET /admin/ HTTP/1.1" 200 5773
+[2023-04-25 19:24:30] INFO "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+[2023-04-25 19:24:30] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2023-04-25 19:24:30] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[2023-04-25 19:24:33] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 12725
+[2023-04-25 19:24:33] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2023-04-25 19:24:33] INFO "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+[2023-04-25 19:24:33] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[2023-04-25 19:24:33] INFO "GET /static/admin/js/actions.js HTTP/1.1" 200 7867
+[2023-04-25 19:24:33] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+[2023-04-25 19:24:33] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[2023-04-25 19:24:34] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[2023-04-25 19:24:34] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:24:34] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[2023-04-25 19:24:34] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[2023-04-25 19:24:34] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+[2023-04-25 19:24:34] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2023-04-25 19:25:56] WARNING Bad Request: /api/get_token/
+[2023-04-25 19:25:56] WARNING "POST /api/get_token/ HTTP/1.1" 400 75
+[2023-04-25 19:26:04] INFO "POST /api/register/ HTTP/1.1" 201 238
+[2023-04-25 19:26:32] INFO "POST /api/emotion/analysis/ HTTP/1.1" 200 547
+[2023-04-25 19:26:47] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 13273
+[2023-04-25 19:26:47] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:26:50] INFO "GET /admin/api/user/ HTTP/1.1" 200 14778
+[2023-04-25 19:26:50] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:26:50] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[2023-04-25 19:27:53] WARNING Bad Request: /api/register/
+[2023-04-25 19:27:53] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-25 19:27:59] INFO "POST /api/get_token/ HTTP/1.1" 200 223
+[2023-04-25 19:28:08] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 19:28:08] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 124
+[2023-04-25 19:28:19] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 13139
+[2023-04-25 19:28:20] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:28:25] INFO "GET /admin/api/user/ HTTP/1.1" 200 14778
+[2023-04-25 19:28:25] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:28:30] INFO "GET /admin/api/user/f19c62a4-d654-4d93-9d89-5b172d7b9348/change/ HTTP/1.1" 200 20739
+[2023-04-25 19:28:30] INFO "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[2023-04-25 19:28:30] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:28:30] INFO "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[2023-04-25 19:28:30] INFO "GET /static/admin/css/forms.css HTTP/1.1" 200 8804
+[2023-04-25 19:28:30] INFO "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+[2023-04-25 19:28:30] INFO "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+[2023-04-25 19:28:31] INFO "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[2023-04-25 19:28:31] INFO "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+[2023-04-25 19:28:31] INFO "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+[2023-04-25 19:28:41] INFO "GET /admin/api/subscription/ HTTP/1.1" 200 13273
+[2023-04-25 19:28:41] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:36:49] INFO "GET /admin/api/pricingplan/ HTTP/1.1" 200 10396
+[2023-04-25 19:36:49] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-25 19:43:04] WARNING Not Found: /adminlocahost:4200
+[2023-04-25 19:43:04] WARNING "GET /adminlocahost:4200 HTTP/1.1" 404 2592
+[2023-04-25 19:49:23] INFO "GET /admin/ HTTP/1.1" 200 5773
+[2023-04-25 19:56:38] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 19:56:42] INFO Watching for file changes with StatReloader
+[2023-04-25 19:56:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 19:56:51] INFO Watching for file changes with StatReloader
+[2023-04-25 19:56:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 19:56:58] INFO Watching for file changes with StatReloader
+[2023-04-25 19:57:13] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 19:57:15] INFO Watching for file changes with StatReloader
+[2023-04-25 19:57:44] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 19:57:47] INFO Watching for file changes with StatReloader
+[2023-04-25 19:58:40] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-25 19:58:42] INFO Watching for file changes with StatReloader
+[2023-04-25 19:58:44] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-25 19:58:47] INFO Watching for file changes with StatReloader
+[2023-04-25 19:58:52] INFO C:\Projects\chatgptapi\core\api\utilities\subscription.py changed, reloading.
+[2023-04-25 19:58:54] INFO Watching for file changes with StatReloader

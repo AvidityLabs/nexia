@@ -147,6 +147,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         Subscription, on_delete=models.CASCADE, null=True, blank=True)
     total_tokens_used = models.IntegerField(default=0)
     roles = models.ManyToManyField(Role, blank=True, related_name='users')
+    is_app_user = models.BooleanField(default=False)
 
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.
