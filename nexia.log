@@ -10240,3 +10240,4 @@ NameError: name 'role' is not defined
 [2023-04-26 01:34:39] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
 [2023-04-26 01:34:42] INFO Watching for file changes with StatReloader
 [2023-04-26 01:34:44] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-26 01:34:47] INFO Watching for file changes with StatReloader
