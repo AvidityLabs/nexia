@@ -7,7 +7,7 @@ from django.db import transaction
 def update_subscription(user, request):
     pricing_plan = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
     rapid_api_user = request.META.get('HTTP_X_RAPIDAPI_USER')
-
+    print(rapid_api_user)
     if rapid_api_user and pricing_plan and pricing_plan != user.get_subscription() and not user.is_app_user:
         valid_plans = {'BASIC', 'PRO', 'ULTRA', 'MEGA', 'CUSTOM'}
         if pricing_plan in valid_plans:

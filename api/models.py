@@ -187,13 +187,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         This method is used to get the user subscription
         """
-        if self.subscription is None:
-            return None
-        if self.subscription.pricing_plan is None:
-            return None
         plan = self.subscription.pricing_plan.name
-        if self.subscription.pricing_plan.name:
-            return plan
+        return plan
 
     def get_short_name(self):
         """
