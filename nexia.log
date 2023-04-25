@@ -10117,3 +10117,9 @@ NameError: name 'role' is not defined
 [2023-04-26 00:29:32] WARNING "POST /api/auto/completion/ HTTP/1.1" 403 173
 [2023-04-26 00:30:06] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
 [2023-04-26 00:30:12] INFO Watching for file changes with StatReloader
+[2023-04-26 01:03:01] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-26 01:03:04] INFO Watching for file changes with StatReloader
+[2023-04-26 01:03:08] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-26 01:03:11] INFO Watching for file changes with StatReloader
+[2023-04-26 01:03:14] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-26 01:03:16] INFO Watching for file changes with StatReloader

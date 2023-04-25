@@ -22,7 +22,7 @@ urlpatterns = [
     path('register/', DeveloperRegisterView.as_view(), name="register"),
     path('emotion/analysis/', TextEmotionAnalysisView.as_view(), name='text-emotion-analysis'),
     path('sentiment/analysis/', TextSentimentAnalysisView.as_view(), name='text-sentiment-analysis'),
-    path('auto/completion/', ChatGPTCompletionView.as_view(), name='gpt/completion'),
+    path('prompt/completion/', ChatGPTCompletionView.as_view(), name='gpt/completion'),
     path('text-to-image/', TextToImageView.as_view(), name='text-to-image'),
     path('text-to-video/', TextToVideoView.as_view(), name='text-to-video'),
   
