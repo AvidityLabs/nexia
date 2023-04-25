@@ -4,8 +4,8 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from .models import Role, TextToImage, TextToVideo
-from .serializers import TextToImageSerializer, TextToVideoSerializer
+from .models import Instruction,  Role, TextToImage, TextToVideo
+from .serializers import InstructionSerializer, TextToImageSerializer, TextToVideoSerializer
 
 from rest_framework import generics
 from rest_framework.views import APIView
@@ -338,3 +338,26 @@ class TextToVideoView(generics.CreateAPIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'Please provide input text'}, status=status.HTTP_400_BAD_REQUEST)
+
+class InstructionCreateView(CreateAPIView):
+    queryset = Instruction.objects.all()
+    serializer_class = InstructionSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def perform_create(self, serializer):
+        serializer.save(user_id=self.request.user.id)
+
+
+class InstructionRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = InstructionSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Instruction.objects.all()
+    
+class InstructionListView(ListAPIView):
+    serializer_class = InstructionSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        return Instruction.objects.filter(user_id=self.request.user.id)

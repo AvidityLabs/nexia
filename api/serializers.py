@@ -8,7 +8,9 @@ from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework import serializers
 
-from api.models import Role, TokenUsage, User, TextToImage, TextToVideo
+
+from api.models import Role, TokenUsage, User, TextToImage, TextToVideo, Instruction, Tone, InstructionCategory
+
 
 
 class RoleSerializer(serializers.ModelSerializer):
@@ -193,3 +195,26 @@ class TextToVideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = TextToVideo
         fields = '__all__'
+
+class ToneSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tone
+        fields = ['name']
+
+class InstructionSerializer(serializers.ModelSerializer):
+    tones = ToneSerializer(many=True)
+
+    class Meta:
+        model = Instruction
+        fields = ['id', 'description', 'nov', 'tones', 'category']
+
+    def create(self, validated_data):
+        tones_data = validated_data.pop('tones')
+        category_data = validated_data.pop('category')
+        category, _ = InstructionCategory.objects.get_or_create(name=category_data)
+        instruction = Instruction.objects.create(category=category, **validated_data)
+        for tone_data in tones_data:
+            tone, _ = Tone.objects.get_or_create(name=tone_data['name'])
+            instruction.tones.add(tone)
+        return instruction
+

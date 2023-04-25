@@ -9,7 +9,9 @@ from api.views import (
     ChatGPTCompletionView,
     TextToImageView,
     TextToVideoView,
-    AppUserRegisterView
+    AppUserRegisterView,
+    InstructionListCreateView,
+    InstructionRetrieveUpdateDestroyView
     )
 
 
@@ -23,7 +25,9 @@ urlpatterns = [
     path('emotion/analysis/', TextEmotionAnalysisView.as_view(), name='text-emotion-analysis'),
     path('sentiment/analysis/', TextSentimentAnalysisView.as_view(), name='text-sentiment-analysis'),
     path('prompt/completion/', ChatGPTCompletionView.as_view(), name='gpt/completion'),
-    path('text-to-image/', TextToImageView.as_view(), name='text-to-image'),
-    path('text-to-video/', TextToVideoView.as_view(), name='text-to-video'),
+    # path('text-to-image/', TextToImageView.as_view(), name='text-to-image'),
+    # path('text-to-video/', TextToVideoView.as_view(), name='text-to-video'),
+    # path('instructions/', InstructionListCreateView.as_view(), name='instruction-list-create'),
+    # path('instructions/<int:pk>/', InstructionRetrieveUpdateDestroyView.as_view(), name='instruction-retrieve-update-destroy'),
   
 ]

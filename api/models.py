@@ -284,3 +284,27 @@ class TextToVideo(models.Model):
         # Save the Cloudinary URL to the Django model
         self.video = upload_result['url']
         self.save()
+
+
+class Tone(BaseModel):
+    name = models.CharField(max_length=100, blank=True, null=True)
+    def __str__(self):
+        return self.name
+    
+class InstructionCategory(BaseModel):
+    name = models.CharField(max_length=100, blank=True, null=True)
+    def __str__(self):
+        return self.name
+class Instruction(BaseModel):
+     description = models.TextField(null=True, blank=True)
+     tones = models.ManyToManyField(Tone,blank=True)
+     nov = models.IntegerField(null=True, blank=True)
+     category = models.ForeignKey(InstructionCategory)
+     user_id = models.CharField(max_length=255, null=True,blank=True)
+
+     @property
+     def prompt(self):
+        if self.nov == 1 or self.nov == None or self.nov == 0:
+            return f"Please {self.description}. The text should be written in a {self.tone} tone. And write only {self.nov} variation of the text."
+        else:
+            return f"Please {self.description}. The text should be written in a {self.tone} tone. And write {self.nov} variations of the text."
