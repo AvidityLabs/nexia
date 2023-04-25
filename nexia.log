@@ -9945,3 +9945,19 @@ NameError: name 'role' is not defined
 [2023-04-25 11:27:28] WARNING "POST /api/get_token/ HTTP/1.1" 400 87
 [2023-04-25 11:28:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
 [2023-04-25 11:28:06] INFO Watching for file changes with StatReloader
+[2023-04-25 11:28:09] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:28:09] WARNING "POST /api/get_token/ HTTP/1.1" 400 75
+[2023-04-25 11:28:12] WARNING Bad Request: /api/get_token/
+[2023-04-25 11:28:12] WARNING "POST /api/get_token/ HTTP/1.1" 400 75
+[2023-04-25 11:28:40] WARNING Forbidden: /api/emotion/analysis/
+[2023-04-25 11:28:40] WARNING "POST /api/emotion/analysis/ HTTP/1.1" 403 173
+[2023-04-25 11:28:50] WARNING Forbidden: /api/sentiment/analysis/
+[2023-04-25 11:28:50] WARNING "POST /api/sentiment/analysis/ HTTP/1.1" 403 173
+[2023-04-25 11:28:58] WARNING Not Found: /api/gpt/completion/
+[2023-04-25 11:28:58] WARNING "POST /api/gpt/completion/ HTTP/1.1" 404 3812
+[2023-04-25 11:29:06] WARNING Not Found: /api/completion/
+[2023-04-25 11:29:06] WARNING "POST /api/completion/ HTTP/1.1" 404 3800
+[2023-04-25 11:29:13] WARNING Not Found: /api/gpt/completion/
+[2023-04-25 11:29:13] WARNING "POST /api/gpt/completion/ HTTP/1.1" 404 3812
+[2023-04-25 11:31:15] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 11:31:17] INFO Watching for file changes with StatReloader

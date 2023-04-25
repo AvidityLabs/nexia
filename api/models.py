@@ -138,7 +138,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                           default=uuid.uuid4, primary_key=True)
     email = models.EmailField(db_index=True, unique=True)
     username = models.CharField(db_index=True, max_length=255, unique=True)
-    is_developer = models.BooleanField(default=False)
+    is_developer = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
