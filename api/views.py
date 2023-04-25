@@ -1,6 +1,11 @@
 import logging
 
 from django.utils.translation import gettext_lazy as _
+from rest_framework import generics
+from rest_framework import status
+from rest_framework.response import Response
+from .models import TextToImage, TextToVideo
+from .serializers import TextToImageSerializer, TextToVideoSerializer
 
 from rest_framework import generics
 from rest_framework.views import APIView
@@ -24,7 +29,9 @@ from api.serializers import (
     DeveloperRegisterSerializer,
     TextSerializer,
     LoginSerializer,
-    UserSerializer
+    UserSerializer,
+    TextToImageSerializer,
+    TextToVideoSerializer
 )
 
 
@@ -258,3 +265,34 @@ class GenerateImageView(APIView):
         else:
             logger.exception(f"An error occurred @api/generate/img{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
+        
+
+class TextToImageView(generics.CreateAPIView):
+    queryset = TextToImage.objects.all()
+    serializer_class = TextToImageSerializer
+
+    def create(self, request, *args, **kwargs):
+        text = request.data.get('text', '')
+        if text:
+            # Generate the image based on the input text
+            text_to_image = TextToImage.objects.create()
+            text_to_image.generate_image(text)
+            serializer = TextToImageSerializer(text_to_image)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'error': 'Please provide input text'}, status=status.HTTP_400_BAD_REQUEST)
+
+class TextToVideoView(generics.CreateAPIView):
+    queryset = TextToVideo.objects.all()
+    serializer_class = TextToVideoSerializer
+
+    def create(self, request, *args, **kwargs):
+        text = request.data.get('text', '')
+        if text:
+            # Generate the video based on the input text
+            text_to_video = TextToVideo.objects.create()
+            text_to_video.generate_video(text)
+            serializer = TextToVideoSerializer(text_to_video)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'error': 'Please provide input text'}, status=status.HTTP_400_BAD_REQUEST)

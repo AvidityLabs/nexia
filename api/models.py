@@ -1,4 +1,5 @@
 import uuid
+import requests
 from datetime import datetime, timedelta
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -11,7 +12,7 @@ from django.contrib.auth.models import (
 
 from django.db import models
 import jwt
-
+import cloudinary.uploader
 from cloudinary.models import CloudinaryField
 
 class BaseModel(models.Model):
@@ -248,5 +249,32 @@ class EmotionAnalysis(models.Model):
         return self.text
 
 
-class Image(BaseModel):
-    url = CloudinaryField('image')
+class TextToImage(models.Model):
+    image = models.CharField(max_length=255)
+    # Other fields
+
+    def generate_image(self, text):
+        # Call the AI API to generate the image based on the input text
+        response = requests.post('https://your-ai-api.com/generate-image', json={'text': text})
+
+        # Upload the generated image to Cloudinary
+        upload_result = cloudinary.uploader.upload(response.content)
+
+        # Save the Cloudinary URL to the Django model
+        self.image = upload_result['url']
+        self.save()
+
+class TextToVideo(models.Model):
+    video = models.CharField(max_length=255)
+    # Other fields
+
+    def generate_video(self, text):
+        # Call the AI API to generate the video based on the input text
+        response = requests.post('https://your-ai-api.com/generate-video', json={'text': text})
+
+        # Upload the generated video to Cloudinary
+        upload_result = cloudinary.uploader.upload(response.content, resource_type="video")
+
+        # Save the Cloudinary URL to the Django model
+        self.video = upload_result['url']
+        self.save()

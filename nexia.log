@@ -8201,3 +8201,24 @@ django.db.utils.OperationalError: no such column: api_sentimentanalysis.user_id
 [2023-04-25 07:23:17] WARNING "POST /api/users/ HTTP/1.1" 405 52
 [2023-04-25 07:23:31] INFO "GET /api/users/ HTTP/1.1" 200 240
 [2023-04-25 08:05:53] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-25 08:33:26] INFO Watching for file changes with StatReloader
+[2023-04-25 08:40:52] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 08:40:56] INFO Watching for file changes with StatReloader
+[2023-04-25 08:41:06] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 08:41:09] INFO Watching for file changes with StatReloader
+[2023-04-25 08:41:31] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 08:41:34] INFO Watching for file changes with StatReloader
+[2023-04-25 08:43:37] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 08:43:40] INFO Watching for file changes with StatReloader
+[2023-04-25 08:43:52] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 08:43:55] INFO Watching for file changes with StatReloader
+[2023-04-25 08:48:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 08:48:07] INFO Watching for file changes with StatReloader
+[2023-04-25 08:48:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 08:48:52] INFO Watching for file changes with StatReloader
+[2023-04-25 08:49:43] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-25 08:49:47] INFO Watching for file changes with StatReloader
+[2023-04-25 08:50:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 08:50:54] INFO Watching for file changes with StatReloader
+[2023-04-25 08:51:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-25 08:51:09] INFO Watching for file changes with StatReloader

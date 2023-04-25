@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework import serializers
 
-from api.models import TokenUsage, User
+from api.models import TokenUsage, User, TextToImage, TextToVideo
 
 class UserSerializer(serializers.ModelSerializer):
     """Handles serialization and deserialization of User objects."""
@@ -176,3 +176,15 @@ class TextSerializer(serializers.Serializer):
             raise serializers.ValidationError("Text cannot contain non-ASCII characters.")
 
         return value
+    
+
+
+class TextToImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TextToImage
+        fields = '__all__'
+
+class TextToVideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TextToVideo
+        fields = '__all__'
