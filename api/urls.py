@@ -1,6 +1,7 @@
 
 from django.urls import include, path
 from api.views import (
+    # CategorySearchView,
     UserRetrieveUpdateAPIView,
     LoginAPIView,
     DeveloperRegisterView,
@@ -10,8 +11,16 @@ from api.views import (
     TextToImageView,
     TextToVideoView,
     AppUserRegisterView,
-    InstructionListCreateView,
-    InstructionRetrieveUpdateDestroyView
+    InstructionRetrieveView,
+    InstructionListView,
+    InstructionCreateView,
+    InstructionUpdateView,
+    InstructionSearchView,
+    ToneListView,
+    InstructionCategoryCreateView,
+    InstructionCategoryListView,
+    InstructionRetrieveUpdateView,
+    ToneRetrieveView
     )
 
 
@@ -27,7 +36,18 @@ urlpatterns = [
     path('prompt/completion/', ChatGPTCompletionView.as_view(), name='gpt/completion'),
     # path('text-to-image/', TextToImageView.as_view(), name='text-to-image'),
     # path('text-to-video/', TextToVideoView.as_view(), name='text-to-video'),
-    # path('instructions/', InstructionListCreateView.as_view(), name='instruction-list-create'),
-    # path('instructions/<int:pk>/', InstructionRetrieveUpdateDestroyView.as_view(), name='instruction-retrieve-update-destroy'),
+    path('instructions/', InstructionListView.as_view(), name='instruction-create'),
+    path('instructions/create/', InstructionCreateView.as_view(), name='instruction-create'),
+    path('instructions/update/<int:pk>/', InstructionUpdateView.as_view(), name='instruction-update'),
+    path('instructions/detail/<int:pk>/', InstructionRetrieveView.as_view(), name='instruction-retrieve'),
+    path('instructions/categories/create/', InstructionCategoryCreateView.as_view(), name='category-create'),
+    path('instructions/categories/', InstructionCategoryListView.as_view(), name='category-list'),
+    path('instructions/categories/detail/<int:pk>/', InstructionRetrieveUpdateView.as_view(), name='instruction-retrieve-update'),
+    path('instructions/search/', InstructionSearchView.as_view(), name='instruction-search'),
+    path('instructions/', InstructionListView.as_view(), name='instruction-slist'),
+    path('instructions/tones/', ToneListView.as_view(), name='tone-list'),
+    path('instructions/tones/detail/<int:pk>/', ToneRetrieveView.as_view(), name='instruction-retrieve-update-destroy'),
+    
+
   
 ]

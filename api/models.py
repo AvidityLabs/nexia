@@ -295,16 +295,18 @@ class InstructionCategory(BaseModel):
     name = models.CharField(max_length=100, blank=True, null=True)
     def __str__(self):
         return self.name
+    
 class Instruction(BaseModel):
      description = models.TextField(null=True, blank=True)
      tones = models.ManyToManyField(Tone,blank=True)
      nov = models.IntegerField(null=True, blank=True)
-     category = models.ForeignKey(InstructionCategory)
+     category = models.ForeignKey(InstructionCategory, on_delete=models.CASCADE, null=True, blank=True)
      user_id = models.CharField(max_length=255, null=True,blank=True)
-
+        
      @property
      def prompt(self):
-        if self.nov == 1 or self.nov == None or self.nov == 0:
-            return f"Please {self.description}. The text should be written in a {self.tone} tone. And write only {self.nov} variation of the text."
-        else:
-            return f"Please {self.description}. The text should be written in a {self.tone} tone. And write {self.nov} variations of the text."
+        tones = ""
+        for t in self.tones.all():
+            tones+=t.name
+        return f"Please {self.description}. The text should be written in a {tones} tone. The text is for {self.category.name} purposes"
+

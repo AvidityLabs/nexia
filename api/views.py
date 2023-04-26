@@ -1,11 +1,12 @@
 import logging
 
 from django.utils.translation import gettext_lazy as _
+from api.utilities.validators.text_validator import validate_text_input
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from .models import Instruction,  Role, TextToImage, TextToVideo
-from .serializers import InstructionSerializer, TextToImageSerializer, TextToVideoSerializer
+from .models import Instruction, InstructionCategory,  Role, TextToImage, TextToVideo, Tone
+from .serializers import InstructionCategorySerializer, InstructionSerializer, InstructionSerializerResult, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
 
 from rest_framework import generics
 from rest_framework.views import APIView
@@ -13,7 +14,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework import generics
-from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.filters import SearchFilter
 from rest_framework import serializers
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.generics import RetrieveUpdateAPIView
@@ -25,6 +26,7 @@ from api.utilities.tokens import update_token_usage
 from api.utilities.openai.utils import completion
 from api.utilities.hugging_face.tokenizer import calculate_tokens
 from api.utilities.jwt_helper import decode_jwt_token
+from api.utilities.data import TONES
 
 from django.contrib.auth.models import (Group)
 
@@ -85,6 +87,7 @@ class LoginAPIView(APIView):
         serializer.is_valid(raise_exception=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 class DeveloperRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
@@ -339,25 +342,241 @@ class TextToVideoView(generics.CreateAPIView):
         else:
             return Response({'error': 'Please provide input text'}, status=status.HTTP_400_BAD_REQUEST)
 
-class InstructionCreateView(CreateAPIView):
+
+class InstructionCategoryCreateView(APIView):
+    def post(self, request):
+        # Get the 'name' field from the request data
+        name = request.data.get('name')
+
+        # Validate the 'name' field
+        if not isinstance(name, str) or not name.strip():
+            return Response({'error': 'Invalid name field.'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        is_valid = validate_text_input(text=name)
+        if is_valid[0] == False:
+            return Response({'error': f'Invalid name field.{is_valid[1]}'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Check if the 'name' field already exists in the database
+        if InstructionCategory.objects.filter(name__iexact=name).exists():
+            return Response({'error': 'Instruction category with this name already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Create a new InstructionCategory object with the given 'name' field
+        obj = InstructionCategory.objects.create(
+            name=name,
+            created_by=request.user.id
+        )
+
+        # Serialize the new InstructionCategory object and return the serialized data in the response
+        serializer = InstructionCategorySerializer(obj)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class InstructionCategoryListView(generics.ListAPIView):
+    serializer_class = InstructionCategorySerializer
+
+    def get_queryset(self):
+        queryset = InstructionCategory.objects.all()
+        search_query = self.request.query_params.get('q')
+        # If the search query is present, filter the queryset by the name field
+        if search_query:
+            queryset = queryset.filter(name__icontains=search_query)
+        return queryset
+
+
+class InstructionRetrieveUpdateView(generics.RetrieveUpdateAPIView):
+    serializer_class = ToneSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Tone.objects.all()
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+
+        # Check if the Tone object was created by the current user
+        if instance.created_by != request.user:
+            return Response({'error': 'You do not have permission to update this Tone object.'}, status=status.HTTP_403_FORBIDDEN)
+
+        # Proceed with the update if the Tone object was created by the current user
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        return Response(serializer.data)
+
+
+class InstructionCategoryView(generics.RetrieveAPIView):
+    serializer_class = InstructionCategorySerializer
+
+    def get_queryset(self):
+        return InstructionCategory.objects.all()
+
+
+class InstructionCreateView(APIView):
     queryset = Instruction.objects.all()
     serializer_class = InstructionSerializer
     permission_classes = [IsAuthenticated]
-    
-    def perform_create(self, serializer):
-        serializer.save(user_id=self.request.user.id)
+
+    def post(self, request):
+        # Get data from request
+        description = request.data.get('description')
+        tones_data = self.request.data.get('tones')
+        category_data = self.request.data.get('category')
+        is_desc_valid = validate_text_input(text=description)
+
+        # Validate data
+        if is_desc_valid[0] == False:
+            return Response({'error': f'Description is required. {is_desc_valid[1]}'}, status=status.HTTP_400_BAD_REQUEST)
+        if not category_data:
+            return Response({'error': 'Category is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        is_cat_valid = validate_text_input(text=category_data)
+
+        if is_cat_valid[0] == False:
+            return Response({'error': f'Category {is_cat_valid [1]}'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not tones_data:
+            return Response({'error': 'At least one tone is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Check if instruction with the same description already exists
+        existing_inst = Instruction.objects.filter(description=description).first()
+        if existing_inst:
+            # If exists, return the existing instance
+            serializer = InstructionSerializer(existing_inst)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
+        # Add tones to Instruction object
+        tones = []
+        for tone in tones_data:
+            is_tone_valid = validate_text_input(tone)
+
+            if is_tone_valid[0] == False:
+                return Response({'error': f'At least one tone is required. {is_tone_valid[1]}'}, status=status.HTTP_400_BAD_REQUEST)
+
+            tone, created = Tone.objects.get_or_create(name=tone)
+            if created:
+                tone.created_by = self.request.user.id
+                tone.save()
+            tones.append(tone)
+
+        category, created = InstructionCategory.objects.get_or_create(name=category_data)
+        if created:
+            category.created_by = self.request.user.id
+            category.save()
+
+        inst_obj = Instruction.objects.create(
+            description=description,
+            category=category,
+            created_by=request.user.id
+        )
+        inst_obj.tones.set(tones)
+        inst_obj.save()
+        serializer = InstructionSerializer(inst_obj)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-class InstructionRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+class InstructionRetrieveView(generics.RetrieveAPIView):
     serializer_class = InstructionSerializer
     permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Instruction.objects.filter(user_id=self.request.user.id)
+
+
+class InstructionUpdateView(APIView):
+    serializer_class = InstructionSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Instruction.objects.filter(user_id=self.request.user.id)
+
+    def put(self, request, pk):
+        try:
+            instruction = self.get_queryset().get(pk=pk)
+        except Instruction.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        if instruction.created_by != self.request.user.id:
+            return Response({'error': 'You can only update the instructions you created.'},status=status.HTTP_403_FORBIDDEN)
+
+        desc = request.data.get('description')
+        tones = request.data.get('tones')
+        category_name = request.data.get('category')
+
+        if desc:
+            instruction.description = desc
+
+        if category_name:
+            is_cat_valid = validate_text_input(text=category_name)
+            if is_cat_valid[0]==False:
+                return Response({'error': f'Invalid category. {is_cat_valid[1]}'}, status=status.HTTP_400_BAD_REQUEST)
+            
+            category, _ = InstructionCategory.objects.get_or_create(
+                name=category_name)
+            if category is None:
+                return Response({'error': 'Invalid category'}, status=status.HTTP_400_BAD_REQUEST)
+            instruction.category = category
+
+        if tones:
+            tones_data = []
+            for tone_item in tones:
+                is_tone_valid = validate_text_input(text=category_name)
+                if is_tone_valid[0]==False:
+                    return Response({'error': f'Invalid tone. {is_tone_valid[1]}'}, status=status.HTTP_400_BAD_REQUEST)
+                tone, _ = Tone.objects.get_or_create(name=tone_item)
+                if tone is None:
+                    return Response({'error': f'Invalid tone: {tone_item}'}, status=status.HTTP_400_BAD_REQUEST)
+                tones_data.append(tone)
+            instruction.tones.set(tones_data)
+
+        serializer = InstructionSerializerResult(instruction)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class InstructionListView(generics.ListAPIView):
+    serializer_class = InstructionSerializerResult
+    permission_classes = [AllowAny]
 
     def get_queryset(self):
         return Instruction.objects.all()
-    
-class InstructionListView(ListAPIView):
-    serializer_class = InstructionSerializer
-    permission_classes = [IsAuthenticated]
-    
+
+class InstructionSearchView(generics.ListAPIView):
+    serializer_class = InstructionSerializerResult
+    permission_classes = [AllowAny]
+
     def get_queryset(self):
-        return Instruction.objects.filter(user_id=self.request.user.id)
+        queryset = Instruction.objects.filter(user_id=self.request.user.id)
+        description = self.request.query_params.get('description', None)
+        category = self.request.query_params.get('category', None)
+        tones = self.request.query_params.getlist('tones', [])
+
+        if description is not None:
+            queryset = queryset.filter(description__icontains=description)
+        if category is not None:
+            queryset = queryset.filter(category__name__icontains=category)
+        if tones:
+            queryset = queryset.filter(tones__name__in=tones).distinct()
+        return queryset
+
+
+class ToneListView(generics.ListAPIView):
+    serializer_class = ToneSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        queryset = Tone.objects.all()
+        # Instruction.objects.filter(user_id=self.request.user.id)
+        # Get the search query parameter from the request
+        search_query = self.request.query_params.get('q')
+
+        # If the search query is present, filter the queryset by the name field
+        if search_query:
+            queryset = queryset.filter(name__icontains=search_query)
+        return queryset
+
+class ToneRetrieveView(generics.RetrieveAPIView):
+    serializer_class = ToneSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        return Tone.objects.all()

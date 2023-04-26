@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import PricingPlan, Subscription, User, TokenUsage, SentimentAnalysis, EmotionAnalysis
+from .models import Instruction, PricingPlan, Subscription, User, TokenUsage, SentimentAnalysis, EmotionAnalysis, Tone
+
+admin.site.register(Tone)
+
+admin.site.register(Instruction)
 
 @admin.register(PricingPlan)
 class PricingPlanAdmin(admin.ModelAdmin):

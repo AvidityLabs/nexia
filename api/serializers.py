@@ -201,20 +201,39 @@ class ToneSerializer(serializers.ModelSerializer):
         model = Tone
         fields = ['name']
 
+
+class InstructionCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InstructionCategory
+        fields = ['name']
+
 class InstructionSerializer(serializers.ModelSerializer):
     tones = ToneSerializer(many=True)
+    category = InstructionCategorySerializer()
 
     class Meta:
         model = Instruction
-        fields = ['id', 'description', 'nov', 'tones', 'category']
+        fields = ['id', 'description','category', 'tones' ]
 
     def create(self, validated_data):
         tones_data = validated_data.pop('tones')
         category_data = validated_data.pop('category')
-        category, _ = InstructionCategory.objects.get_or_create(name=category_data)
-        instruction = Instruction.objects.create(category=category, **validated_data)
+        category, _ = InstructionCategory.objects.get_or_create(name=category_data['name'])
+        tones = []
         for tone_data in tones_data:
             tone, _ = Tone.objects.get_or_create(name=tone_data['name'])
-            instruction.tones.add(tone)
+            tones.append(tone)
+        instruction = Instruction.objects.create(category=category, **validated_data)
+        instruction.tones.set(tones)
         return instruction
 
+
+class InstructionSerializerResult(serializers.ModelSerializer):
+    tones = ToneSerializer(many=True)
+    category = serializers.CharField()
+    prompt = serializers.CharField()
+
+
+    class Meta:
+        model = Instruction
+        fields = ['id', 'description','category', 'tones','prompt' ]

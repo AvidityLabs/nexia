@@ -1,6 +1,10 @@
 import re
+from rest_framework.response import Response
+from rest_framework import status
 
 def validate_text_input(text, min_length=1, max_length=2048):
+    if text=="":
+          return False, "Text cannot be empty"
     if not text:
         return False, "Text cannot be empty"
     elif text.isspace():
