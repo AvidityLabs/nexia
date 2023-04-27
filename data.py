@@ -52,3 +52,17 @@ instruction_prompt = ['Cooking - Write a recipe for a classic spaghetti carbonar
 'Painting - Explain how to create a textured abstract painting using acrylics.
 'Music - Give instructions for playing a basic drum beat on a drum'
 ]
+
+
+"""GENERIC PROMPTS 
+
+Write a text that meets the following criteria: it should have a tone of [insert tones here], and it is intended for [insert category name here] purposes. The content should be based on the following description: [insert description here].
+
+We need a text that is suitable for [insert category name here] purposes. It should be written in a [insert tones here] tone, and it needs to include the following description: [insert description here].
+
+Please write a text that adheres to the following instructions: the content should be about [insert description here], and it should be written in a [insert tones here] tone. The text is intended for [insert category name here] purposes.
+
+Can you create a piece of text that matches these specifications? The text should be about [insert description here], written in a [insert tones here] tone, and it is for [insert category name here] purposes.
+
+Your task is to produce a text that satisfies these requirements: it should be written in a [insert tones here] tone, about [insert description here], and intended for [insert category name here] purposes.
+"""

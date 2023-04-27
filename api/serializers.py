@@ -3,21 +3,17 @@ import logging
 logger = logging.getLogger(__name__)
 
 import string
+from django.contrib.auth.models import (Group)
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework import serializers
 
 
-from api.models import Role, TokenUsage, User, TextToImage, TextToVideo, Instruction, Tone, InstructionCategory
+from api.models import TokenUsage, User, TextToImage, TextToVideo, Instruction, Tone
 
 
 
-class RoleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Role
-        fields = ('name',)
-        # read_only_fields = ('name',)
 class UserSerializer(serializers.ModelSerializer):
     """Handles serialization and deserialization of User objects."""
     password = serializers.CharField(
@@ -115,6 +111,15 @@ class LoginSerializer(serializers.Serializer):
         }
 
 
+class GroupSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model=Group
+        fields=['name']
+        extra_kwargs = {
+            'name': {'validators': []},
+        }
+
 class DeveloperRegisterSerializer(serializers.ModelSerializer):
     """Serializers registration requests and creates a new user."""
 
@@ -130,14 +135,17 @@ class DeveloperRegisterSerializer(serializers.ModelSerializer):
     # request. Making `token` read-only handles that for us.
     token = serializers.CharField(max_length=255, read_only=True)
 
+    groups = GroupSerializer(many=True)
+
     class Meta:
         model = User
         # List all of the fields that could possibly be included in a request
         # or response, including fields specified explicitly above.
-        fields = ['email', 'username', 'password','token']
+        fields = ['email', 'password','token', 'groups']
 
     def create(self, validated_data):
         # Use the `create_user` method we wrote earlier to create a new user.
+        # Model serialiser automatically created the groups object for some reason learn about this.
         return User.objects.create_user(**validated_data)
 
 
@@ -202,38 +210,48 @@ class ToneSerializer(serializers.ModelSerializer):
         fields = ['name']
 
 
-class InstructionCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = InstructionCategory
-        fields = ['name']
-
 class InstructionSerializer(serializers.ModelSerializer):
     tones = ToneSerializer(many=True)
-    category = InstructionCategorySerializer()
+    prompt = serializers.CharField(read_only=True)
 
     class Meta:
         model = Instruction
-        fields = ['id', 'description','category', 'tones' ]
+        fields = ['id', 'description', 'tones', 'audience', 'style', 'context', 'language', 'length', 'source_text', 'prompt']
 
     def create(self, validated_data):
         tones_data = validated_data.pop('tones')
-        category_data = validated_data.pop('category')
-        category, _ = InstructionCategory.objects.get_or_create(name=category_data['name'])
+
         tones = []
         for tone_data in tones_data:
             tone, _ = Tone.objects.get_or_create(name=tone_data['name'])
             tones.append(tone)
-        instruction = Instruction.objects.create(category=category, **validated_data)
-        instruction.tones.set(tones)
-        return instruction
 
+        # Check if the instruction already exists
+        description = validated_data['description']
+        existing_instruction = Instruction.objects.filter(description=description).first()
+
+        if existing_instruction:
+            # Update the existing instruction if it already exists
+            existing_instruction.audience = validated_data.get('audience', existing_instruction.audience)
+            existing_instruction.style = validated_data.get('style', existing_instruction.style)
+            existing_instruction.context = validated_data.get('context', existing_instruction.context)
+            existing_instruction.language = validated_data.get('language', existing_instruction.language)
+            existing_instruction.length = validated_data.get('length', existing_instruction.length)
+            existing_instruction.source_text = validated_data.get('source_text', existing_instruction.source_text)
+            existing_instruction.save()
+            existing_instruction.tones.set(tones)
+            return existing_instruction
+        else:
+            # Create a new instruction if it does not exist
+            instruction = Instruction.objects.create(**validated_data)
+            instruction.tones.set(tones)
+            return instruction
 
 class InstructionSerializerResult(serializers.ModelSerializer):
     tones = ToneSerializer(many=True)
-    category = serializers.CharField()
-    prompt = serializers.CharField()
+    prompt = serializers.CharField(read_only=True)
 
 
     class Meta:
         model = Instruction
-        fields = ['id', 'description','category', 'tones','prompt' ]
+        fields = ['id', 'description','tones','prompt' ]

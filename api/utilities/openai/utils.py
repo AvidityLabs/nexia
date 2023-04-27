@@ -17,3 +17,14 @@ def completion(topic):
         return completion
     except Exception as e:
         return None
+
+def edit(text,instruction):
+    try:
+        edit = openai.Edit.create(
+        model="gpt-3.5-turbo",
+        input=text,
+        instruction=instruction
+        )
+        return edit
+    except Exception as e:
+        return None

@@ -12828,3 +12828,1722 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'user_id' into field. 
 [2023-04-27 00:50:34] WARNING "POST /api/instructions/tones/create/ HTTP/1.1" 400 33
 [2023-04-27 00:50:43] WARNING Bad Request: /api/instructions/tones/create/
 [2023-04-27 00:50:43] WARNING "POST /api/instructions/tones/create/ HTTP/1.1" 400 69
+[2023-04-27 07:51:58] INFO Watching for file changes with StatReloader
+[2023-04-27 09:56:09] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 09:56:13] INFO Watching for file changes with StatReloader
+[2023-04-27 09:56:44] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 09:56:47] INFO Watching for file changes with StatReloader
+[2023-04-27 09:57:01] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 09:57:03] INFO Watching for file changes with StatReloader
+[2023-04-27 09:57:11] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 09:57:13] INFO Watching for file changes with StatReloader
+[2023-04-27 09:57:21] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 09:57:23] INFO Watching for file changes with StatReloader
+[2023-04-27 09:57:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 09:57:30] INFO Watching for file changes with StatReloader
+[2023-04-27 09:58:38] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 09:58:40] INFO Watching for file changes with StatReloader
+[2023-04-27 09:58:43] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 09:58:45] INFO Watching for file changes with StatReloader
+[2023-04-27 10:03:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 10:03:06] INFO Watching for file changes with StatReloader
+[2023-04-27 10:03:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 10:03:10] INFO Watching for file changes with StatReloader
+[2023-04-27 10:03:14] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 10:03:17] INFO Watching for file changes with StatReloader
+[2023-04-27 10:03:57] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:03:59] INFO Watching for file changes with StatReloader
+[2023-04-27 10:04:32] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:04:35] INFO Watching for file changes with StatReloader
+[2023-04-27 10:04:38] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:04:40] INFO Watching for file changes with StatReloader
+[2023-04-27 10:04:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:04:48] INFO Watching for file changes with StatReloader
+[2023-04-27 10:04:51] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:04:54] INFO Watching for file changes with StatReloader
+[2023-04-27 10:05:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:05:11] INFO Watching for file changes with StatReloader
+[2023-04-27 10:05:20] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:05:22] INFO Watching for file changes with StatReloader
+[2023-04-27 10:05:28] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:05:31] INFO Watching for file changes with StatReloader
+[2023-04-27 10:05:41] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:05:44] INFO Watching for file changes with StatReloader
+[2023-04-27 10:05:47] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:05:49] INFO Watching for file changes with StatReloader
+[2023-04-27 10:06:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:06:06] INFO Watching for file changes with StatReloader
+[2023-04-27 10:06:24] WARNING Bad Request: /api/register/
+[2023-04-27 10:06:24] WARNING "POST /api/register/ HTTP/1.1" 400 194
+[2023-04-27 10:06:39] INFO "GET /admin HTTP/1.1" 301 0
+[2023-04-27 10:06:40] INFO "GET /admin/ HTTP/1.1" 200 6610
+[2023-04-27 10:06:41] INFO "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+[2023-04-27 10:06:41] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[2023-04-27 10:06:41] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /admin/auth/group/ HTTP/1.1" 200 7110
+[2023-04-27 10:06:44] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2023-04-27 10:06:44] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[2023-04-27 10:06:45] INFO "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2023-04-27 10:06:45] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2023-04-27 10:06:48] INFO "GET /admin/api/user/ HTTP/1.1" 200 16028
+[2023-04-27 10:06:48] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:06:48] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[2023-04-27 10:06:48] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[2023-04-27 10:07:05] WARNING Bad Request: /api/register/
+[2023-04-27 10:07:05] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:09:18] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:09:22] INFO Watching for file changes with StatReloader
+[2023-04-27 10:09:29] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:09:31] INFO Watching for file changes with StatReloader
+[2023-04-27 10:09:38] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:09:41] INFO Watching for file changes with StatReloader
+[2023-04-27 10:09:56] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:09:58] INFO Watching for file changes with StatReloader
+[2023-04-27 10:10:03] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:10:05] INFO Watching for file changes with StatReloader
+[2023-04-27 10:12:10] INFO Watching for file changes with StatReloader
+[2023-04-27 10:12:31] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:12:34] INFO Watching for file changes with StatReloader
+[2023-04-27 10:14:11] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:14:15] INFO Watching for file changes with StatReloader
+[2023-04-27 10:14:48] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:14:51] INFO Watching for file changes with StatReloader
+[2023-04-27 10:14:55] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:14:57] INFO Watching for file changes with StatReloader
+[2023-04-27 10:15:31] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:15:34] INFO Watching for file changes with StatReloader
+[2023-04-27 10:15:40] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:15:42] INFO Watching for file changes with StatReloader
+[2023-04-27 10:15:46] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:15:48] INFO Watching for file changes with StatReloader
+[2023-04-27 10:16:03] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 152, in create
+    validated_data['groups']=groups_data
+NameError: name 'va' is not defined
+[2023-04-27 10:16:03] ERROR "POST /api/register/ HTTP/1.1" 500 110298
+[2023-04-27 10:16:28] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:16:31] INFO Watching for file changes with StatReloader
+[2023-04-27 10:16:35] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 153, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 119, in create_user
+    grp, _ = Group.objects.create(name=i)
+TypeError: cannot unpack non-iterable Group object
+[2023-04-27 10:16:35] ERROR "POST /api/register/ HTTP/1.1" 500 115310
+[2023-04-27 10:16:52] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:16:54] INFO Watching for file changes with StatReloader
+[2023-04-27 10:16:58] WARNING Bad Request: /api/register/
+[2023-04-27 10:16:58] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 10:17:06] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 153, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 119, in create_user
+    grp, _ = Group.objects.create(name=i)
+TypeError: cannot unpack non-iterable Group object
+[2023-04-27 10:17:06] ERROR "POST /api/register/ HTTP/1.1" 500 115335
+[2023-04-27 10:17:19] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:17:23] INFO Watching for file changes with StatReloader
+[2023-04-27 10:17:34] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 153, in create
+    print(validated_data)
+NameError: name 'va' is not defined
+[2023-04-27 10:17:34] ERROR "POST /api/register/ HTTP/1.1" 500 110310
+[2023-04-27 10:17:43] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:17:45] INFO Watching for file changes with StatReloader
+[2023-04-27 10:17:50] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: auth_group.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 154, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 119, in create_user
+    grp, _ = Group.objects.create(name=i)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 778, in save_base
+    force_update, using, update_fields,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: auth_group.name
+[2023-04-27 10:17:50] ERROR "POST /api/register/ HTTP/1.1" 500 205412
+[2023-04-27 10:18:20] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:18:23] INFO Watching for file changes with StatReloader
+[2023-04-27 10:18:39] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:18:41] INFO Watching for file changes with StatReloader
+[2023-04-27 10:18:45] WARNING Bad Request: /api/register/
+[2023-04-27 10:18:45] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 10:18:52] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 163, in post
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 1626, in to_representation
+    return [self.child.to_representation(item) if item is not None else None for item in data]
+TypeError: 'ManyRelatedManager' object is not iterable
+[2023-04-27 10:18:52] ERROR "POST /api/register/ HTTP/1.1" 500 119690
+[2023-04-27 10:20:55] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:20:58] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:01] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:04] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:08] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:09] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:14] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:16] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:19] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:21] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:33] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:35] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:39] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:42] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:48] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:51] INFO Watching for file changes with StatReloader
+[2023-04-27 10:21:56] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:21:59] INFO Watching for file changes with StatReloader
+[2023-04-27 10:22:11] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:22:13] INFO Watching for file changes with StatReloader
+[2023-04-27 10:22:17] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:22:20] INFO Watching for file changes with StatReloader
+[2023-04-27 10:22:22] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:22:24] INFO Watching for file changes with StatReloader
+[2023-04-27 10:22:31] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:22:33] INFO Watching for file changes with StatReloader
+[2023-04-27 10:23:38] INFO Watching for file changes with StatReloader
+[2023-04-27 10:24:18] INFO Watching for file changes with StatReloader
+[2023-04-27 10:24:35] WARNING Bad Request: /api/register/
+[2023-04-27 10:24:35] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:24:48] WARNING Bad Request: /api/register/
+[2023-04-27 10:24:48] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:25:09] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:25:11] INFO Watching for file changes with StatReloader
+[2023-04-27 10:25:15] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:25:17] INFO Watching for file changes with StatReloader
+[2023-04-27 10:25:23] WARNING Bad Request: /api/register/
+[2023-04-27 10:25:23] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:26:00] WARNING Bad Request: /api/register/
+[2023-04-27 10:26:00] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:28:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:28:47] INFO Watching for file changes with StatReloader
+[2023-04-27 10:28:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:28:59] INFO Watching for file changes with StatReloader
+[2023-04-27 10:29:05] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:29:07] INFO Watching for file changes with StatReloader
+[2023-04-27 10:29:12] WARNING Bad Request: /api/register/
+[2023-04-27 10:29:12] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:29:18] WARNING Bad Request: /api/register/
+[2023-04-27 10:29:18] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:29:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:29:50] INFO Watching for file changes with StatReloader
+[2023-04-27 10:30:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 10:30:02] INFO Watching for file changes with StatReloader
+[2023-04-27 10:30:05] INFO "POST /api/register/ HTTP/1.1" 201 266
+[2023-04-27 10:31:29] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:31:32] INFO Watching for file changes with StatReloader
+[2023-04-27 10:31:37] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:31:40] INFO Watching for file changes with StatReloader
+[2023-04-27 10:31:44] WARNING Bad Request: /api/register/
+[2023-04-27 10:31:44] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 10:31:51] INFO "POST /api/register/ HTTP/1.1" 201 268
+[2023-04-27 10:32:08] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:32:11] INFO Watching for file changes with StatReloader
+[2023-04-27 10:32:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:32:18] INFO Watching for file changes with StatReloader
+[2023-04-27 10:32:26] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:32:28] INFO Watching for file changes with StatReloader
+[2023-04-27 10:32:32] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:32:34] INFO Watching for file changes with StatReloader
+[2023-04-27 10:32:55] INFO "POST /api/register/ HTTP/1.1" 201 252
+[2023-04-27 10:33:04] WARNING Bad Request: /api/register/
+[2023-04-27 10:33:04] WARNING "POST /api/register/ HTTP/1.1" 400 194
+[2023-04-27 10:33:17] INFO "GET /admin/api/user/ HTTP/1.1" 200 20746
+[2023-04-27 10:33:17] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:33:21] INFO "GET /admin/api/user/6860d0cd-e828-4c49-a3ad-b9d1514db50d/change/ HTTP/1.1" 200 23357
+[2023-04-27 10:33:21] INFO "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[2023-04-27 10:33:21] INFO "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[2023-04-27 10:33:21] INFO "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[2023-04-27 10:33:21] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:33:21] INFO "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[2023-04-27 10:33:21] INFO "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[2023-04-27 10:33:21] INFO "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[2023-04-27 10:33:22] INFO "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+[2023-04-27 10:33:22] INFO "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+[2023-04-27 10:33:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:33:45] INFO Watching for file changes with StatReloader
+[2023-04-27 10:33:55] WARNING Bad Request: /api/register/
+[2023-04-27 10:33:55] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:34:00] WARNING Bad Request: /api/register/
+[2023-04-27 10:34:00] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:38:34] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:38:36] INFO Watching for file changes with StatReloader
+[2023-04-27 10:38:52] WARNING Bad Request: /api/register/
+[2023-04-27 10:38:52] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:38:56] WARNING Bad Request: /api/register/
+[2023-04-27 10:38:56] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:39:02] WARNING Bad Request: /api/register/
+[2023-04-27 10:39:02] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:40:02] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:40:05] INFO Watching for file changes with StatReloader
+[2023-04-27 10:40:10] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:40:12] INFO Watching for file changes with StatReloader
+[2023-04-27 10:40:23] WARNING Bad Request: /api/register/
+[2023-04-27 10:40:23] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:41:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:41:38] INFO Watching for file changes with StatReloader
+[2023-04-27 10:41:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:41:49] INFO Watching for file changes with StatReloader
+[2023-04-27 10:41:54] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:41:56] INFO Watching for file changes with StatReloader
+[2023-04-27 10:42:01] WARNING Bad Request: /api/register/
+[2023-04-27 10:42:01] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:42:04] WARNING Bad Request: /api/register/
+[2023-04-27 10:42:04] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:42:34] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:42:38] INFO Watching for file changes with StatReloader
+[2023-04-27 10:42:41] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:42:43] INFO Watching for file changes with StatReloader
+[2023-04-27 10:42:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:43:01] INFO Watching for file changes with StatReloader
+[2023-04-27 10:43:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:43:06] INFO Watching for file changes with StatReloader
+[2023-04-27 10:43:10] WARNING Bad Request: /api/register/
+[2023-04-27 10:43:10] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:43:15] WARNING Bad Request: /api/register/
+[2023-04-27 10:43:15] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:44:57] INFO "GET /admin/auth/group/ HTTP/1.1" 200 8682
+[2023-04-27 10:44:57] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:45:57] INFO "GET /admin/api/user/ HTTP/1.1" 200 20746
+[2023-04-27 10:45:57] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:46:00] INFO "GET /admin/api/user/f5163b81-508e-4e3a-b811-1a569f80d04c/change/ HTTP/1.1" 200 23381
+[2023-04-27 10:46:00] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:46:04] INFO "GET /admin/api/user/ HTTP/1.1" 200 20746
+[2023-04-27 10:46:31] WARNING Bad Request: /api/register/
+[2023-04-27 10:46:31] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:47:20] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 10:47:25] INFO Watching for file changes with StatReloader
+[2023-04-27 10:47:27] WARNING Bad Request: /api/register/
+[2023-04-27 10:47:27] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:47:52] WARNING Bad Request: /api/register/
+[2023-04-27 10:47:52] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:48:04] WARNING Bad Request: /api/register/
+[2023-04-27 10:48:04] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:50:33] WARNING Bad Request: /api/register/
+[2023-04-27 10:50:33] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:51:43] WARNING Bad Request: /api/register/
+[2023-04-27 10:51:43] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 10:53:07] INFO "GET /admin/auth/group/ HTTP/1.1" 200 8682
+[2023-04-27 10:53:08] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:53:14] INFO "POST /admin/auth/group/ HTTP/1.1" 200 7294
+[2023-04-27 10:53:14] INFO "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+[2023-04-27 10:53:15] INFO "POST /admin/auth/group/ HTTP/1.1" 302 0
+[2023-04-27 10:53:15] INFO "GET /admin/auth/group/ HTTP/1.1" 200 7246
+[2023-04-27 10:53:16] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:53:26] INFO "POST /api/register/ HTTP/1.1" 201 269
+[2023-04-27 10:55:59] INFO "GET /admin/api/user/ HTTP/1.1" 200 21425
+[2023-04-27 10:55:59] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:56:01] INFO "GET /admin/auth/group/ HTTP/1.1" 200 7110
+[2023-04-27 10:56:02] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 10:56:11] WARNING Bad Request: /api/register/
+[2023-04-27 10:56:11] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 10:56:20] INFO "POST /api/register/ HTTP/1.1" 201 271
+[2023-04-27 10:56:49] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:56:52] INFO Watching for file changes with StatReloader
+[2023-04-27 10:56:57] WARNING Bad Request: /api/register/
+[2023-04-27 10:56:57] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 10:57:05] INFO "POST /api/register/ HTTP/1.1" 201 273
+[2023-04-27 10:57:25] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:57:28] INFO Watching for file changes with StatReloader
+[2023-04-27 10:57:30] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:57:32] INFO Watching for file changes with StatReloader
+[2023-04-27 10:57:42] INFO "POST /api/register/ HTTP/1.1" 201 275
+[2023-04-27 10:58:04] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:58:07] INFO Watching for file changes with StatReloader
+[2023-04-27 10:58:10] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:58:12] INFO Watching for file changes with StatReloader
+[2023-04-27 10:58:15] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 10:58:17] INFO Watching for file changes with StatReloader
+[2023-04-27 10:58:21] WARNING Bad Request: /api/register/
+[2023-04-27 10:58:21] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 10:58:29] INFO "POST /api/register/ HTTP/1.1" 201 277
+[2023-04-27 11:00:02] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 11:00:05] INFO Watching for file changes with StatReloader
+[2023-04-27 11:00:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 11:00:18] INFO Watching for file changes with StatReloader
+[2023-04-27 11:00:21] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 11:00:23] INFO Watching for file changes with StatReloader
+[2023-04-27 11:02:07] INFO "POST /api/register/ HTTP/1.1" 201 301
+[2023-04-27 11:02:16] WARNING Bad Request: /api/register/
+[2023-04-27 11:02:17] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 11:02:25] WARNING Bad Request: /api/register/
+[2023-04-27 11:02:25] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 11:02:47] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 11:02:50] INFO Watching for file changes with StatReloader
+[2023-04-27 11:02:54] WARNING Bad Request: /api/register/
+[2023-04-27 11:02:55] WARNING "POST /api/register/ HTTP/1.1" 400 86
+[2023-04-27 11:05:08] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 11:05:10] INFO Watching for file changes with StatReloader
+[2023-04-27 11:05:16] INFO "POST /api/register/ HTTP/1.1" 201 305
+[2023-04-27 11:05:24] INFO "POST /api/register/ HTTP/1.1" 201 307
+[2023-04-27 11:05:32] INFO "POST /api/register/ HTTP/1.1" 201 309
+[2023-04-27 11:07:13] INFO "GET /admin/auth/group/ HTTP/1.1" 200 8255
+[2023-04-27 11:07:13] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 11:07:15] INFO "GET /admin/api/user/ HTTP/1.1" 200 26896
+[2023-04-27 11:07:15] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 11:07:20] INFO "GET /admin/api/user/a2afeffd-6f90-4827-98db-dc6447c95a93/change/ HTTP/1.1" 200 24001
+[2023-04-27 11:07:20] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 11:07:28] INFO "GET /admin/api/user/ HTTP/1.1" 200 26896
+[2023-04-27 11:07:32] INFO "GET /admin/api/user/86a5881a-eb00-4f4d-aa77-6a8a574260c4/change/ HTTP/1.1" 200 23996
+[2023-04-27 11:07:32] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:07:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:07:12] INFO Watching for file changes with StatReloader
+[2023-04-27 19:07:23] WARNING Bad Request: /api/register/
+[2023-04-27 19:07:23] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 19:07:31] INFO "POST /api/register/ HTTP/1.1" 201 310
+[2023-04-27 19:10:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:10:46] INFO Watching for file changes with StatReloader
+[2023-04-27 19:10:59] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:11:02] INFO Watching for file changes with StatReloader
+[2023-04-27 19:11:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:11:11] INFO Watching for file changes with StatReloader
+[2023-04-27 19:11:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:11:23] INFO Watching for file changes with StatReloader
+[2023-04-27 19:11:37] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 163, in post
+    del serializer.data['user']['groups']
+KeyError: 'user'
+[2023-04-27 19:11:37] ERROR "POST /api/register/ HTTP/1.1" 500 100656
+[2023-04-27 19:11:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:11:54] INFO Watching for file changes with StatReloader
+[2023-04-27 19:11:57] WARNING Bad Request: /api/register/
+[2023-04-27 19:11:57] WARNING "POST /api/register/ HTTP/1.1" 400 130
+[2023-04-27 19:12:04] WARNING Bad Request: /api/register/
+[2023-04-27 19:12:04] WARNING "POST /api/register/ HTTP/1.1" 400 79
+[2023-04-27 19:12:10] INFO "POST /api/register/ HTTP/1.1" 201 268
+[2023-04-27 19:12:36] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:12:39] INFO Watching for file changes with StatReloader
+[2023-04-27 19:13:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:13:25] INFO Watching for file changes with StatReloader
+[2023-04-27 19:13:36] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:13:38] INFO Watching for file changes with StatReloader
+[2023-04-27 19:13:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:13:47] INFO Watching for file changes with StatReloader
+[2023-04-27 19:13:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:13:55] INFO Watching for file changes with StatReloader
+[2023-04-27 19:14:36] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 158, in create
+    return User.objects.create_user(**validated_data)
+TypeError: create_user() got an unexpected keyword argument 'username'
+[2023-04-27 19:14:36] ERROR "POST /api/register/ HTTP/1.1" 500 110655
+[2023-04-27 19:15:13] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:15:15] INFO Watching for file changes with StatReloader
+[2023-04-27 19:15:20] ERROR Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.save()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Projects\chatgptapi\core\api\serializers.py", line 158, in create
+    return User.objects.create_user(**validated_data)
+TypeError: create_user() got an unexpected keyword argument 'username'
+[2023-04-27 19:15:20] ERROR "POST /api/register/ HTTP/1.1" 500 110655
+[2023-04-27 19:15:41] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:15:44] INFO Watching for file changes with StatReloader
+[2023-04-27 19:16:05] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:16:08] INFO Watching for file changes with StatReloader
+[2023-04-27 19:16:13] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:16:16] INFO Watching for file changes with StatReloader
+[2023-04-27 19:16:25] INFO "POST /api/register/ HTTP/1.1" 201 249
+[2023-04-27 19:16:34] INFO "GET /admin/api/user/ HTTP/1.1" 200 29591
+[2023-04-27 19:16:35] INFO "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[2023-04-27 19:16:35] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /admin/api/user/8397190c-d7d4-455b-a0c3-7e39e5b631cd/change/ HTTP/1.1" 200 24245
+[2023-04-27 19:16:40] INFO "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:16:40] INFO "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+[2023-04-27 19:16:40] INFO "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+[2023-04-27 19:16:49] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:16:52] INFO Watching for file changes with StatReloader
+[2023-04-27 19:17:06] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:17:09] INFO Watching for file changes with StatReloader
+[2023-04-27 19:17:13] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:17:15] INFO Watching for file changes with StatReloader
+[2023-04-27 19:17:18] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:17:21] INFO Watching for file changes with StatReloader
+[2023-04-27 19:17:25] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:17:27] INFO Watching for file changes with StatReloader
+[2023-04-27 19:18:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:18:22] INFO Watching for file changes with StatReloader
+[2023-04-27 19:18:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:18:32] INFO Watching for file changes with StatReloader
+[2023-04-27 19:18:39] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:18:42] INFO Watching for file changes with StatReloader
+[2023-04-27 19:18:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:18:48] INFO Watching for file changes with StatReloader
+[2023-04-27 19:18:53] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:18:56] INFO Watching for file changes with StatReloader
+[2023-04-27 19:19:02] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:19:04] INFO Watching for file changes with StatReloader
+[2023-04-27 19:19:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:19:10] INFO Watching for file changes with StatReloader
+[2023-04-27 19:19:17] INFO "POST /api/register/ HTTP/1.1" 201 250
+[2023-04-27 19:19:24] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:19:26] INFO Watching for file changes with StatReloader
+[2023-04-27 19:19:34] WARNING Bad Request: /api/register/
+[2023-04-27 19:19:34] WARNING "POST /api/register/ HTTP/1.1" 400 73
+[2023-04-27 19:19:39] INFO "POST /api/register/ HTTP/1.1" 201 216
+[2023-04-27 19:20:30] INFO C:\Projects\chatgptapi\core\api\renderers.py changed, reloading.
+[2023-04-27 19:20:33] INFO Watching for file changes with StatReloader
+[2023-04-27 19:21:12] INFO C:\Projects\chatgptapi\core\api\renderers.py changed, reloading.
+[2023-04-27 19:21:14] INFO Watching for file changes with StatReloader
+[2023-04-27 19:21:23] INFO "GET /admin/auth/group/ HTTP/1.1" 200 8462
+[2023-04-27 19:21:23] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:21:23] INFO "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[2023-04-27 19:21:38] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:21:40] INFO Watching for file changes with StatReloader
+[2023-04-27 19:21:43] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:21:45] INFO Watching for file changes with StatReloader
+[2023-04-27 19:22:06] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:22:09] INFO Watching for file changes with StatReloader
+[2023-04-27 19:22:20] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:22:22] INFO Watching for file changes with StatReloader
+[2023-04-27 19:22:28] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:22:30] INFO Watching for file changes with StatReloader
+[2023-04-27 19:22:33] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 19:22:35] INFO Watching for file changes with StatReloader
+[2023-04-27 19:24:05] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 19:24:09] INFO Watching for file changes with StatReloader
+[2023-04-27 19:24:34] INFO "POST /api/register/ HTTP/1.1" 201 217
+[2023-04-27 19:27:05] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:27:09] INFO Watching for file changes with StatReloader
+[2023-04-27 19:27:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:27:20] INFO Watching for file changes with StatReloader
+[2023-04-27 19:27:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:27:29] INFO Watching for file changes with StatReloader
+[2023-04-27 19:29:02] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:29:05] INFO Watching for file changes with StatReloader
+[2023-04-27 19:29:14] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 19:29:16] INFO Watching for file changes with StatReloader
+[2023-04-27 19:30:17] INFO Watching for file changes with StatReloader
+[2023-04-27 19:30:23] INFO "POST /api/get_token/ HTTP/1.1" 200 221
+[2023-04-27 19:30:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:30:37] INFO Watching for file changes with StatReloader
+[2023-04-27 19:30:42] INFO "POST /api/get_token/ HTTP/1.1" 200 236
+[2023-04-27 19:31:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 19:31:10] INFO Watching for file changes with StatReloader
+[2023-04-27 19:31:21] INFO "GET /admin/api/user/ HTTP/1.1" 200 31601
+[2023-04-27 19:31:21] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:31:25] INFO "GET /admin/api/user/cbcd68e0-21ad-4c36-b850-bce500638104/change/ HTTP/1.1" 200 23742
+[2023-04-27 19:31:26] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:31:44] INFO "POST /api/get_token/ HTTP/1.1" 200 250
+[2023-04-27 19:31:49] INFO "GET /admin/api/user/ HTTP/1.1" 200 31601
+[2023-04-27 19:31:50] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:31:55] INFO "GET /admin/api/user/98fef0be-ba16-47cd-a6c7-0b525d5b8368/change/ HTTP/1.1" 200 23763
+[2023-04-27 19:31:55] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:32:40] INFO "GET /admin/api/user/ HTTP/1.1" 200 31601
+[2023-04-27 19:32:40] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:32:48] INFO "GET /admin/api/user/2706b3b1-35d4-4edd-8ef6-3144e1169b89/change/ HTTP/1.1" 200 23768
+[2023-04-27 19:32:48] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:33:41] INFO "POST /api/get_token/ HTTP/1.1" 200 250
+[2023-04-27 19:33:47] INFO "GET /admin/api/user/2706b3b1-35d4-4edd-8ef6-3144e1169b89/change/ HTTP/1.1" 200 23764
+[2023-04-27 19:33:47] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:34:19] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 26241
+[2023-04-27 19:34:19] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:34:21] INFO "GET /admin/api/tokenusage/34/change/ HTTP/1.1" 200 18609
+[2023-04-27 19:34:21] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[2023-04-27 19:34:27] INFO "GET /admin/api/tokenusage/ HTTP/1.1" 200 26241
+[2023-04-27 20:12:47] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:12:52] INFO Watching for file changes with StatReloader
+[2023-04-27 20:12:59] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:13:01] INFO Watching for file changes with StatReloader
+[2023-04-27 20:13:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:13:15] INFO Watching for file changes with StatReloader
+[2023-04-27 20:16:19] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:16:27] INFO Watching for file changes with StatReloader
+[2023-04-27 20:16:35] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:16:40] INFO Watching for file changes with StatReloader
+[2023-04-27 20:16:46] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:16:50] INFO Watching for file changes with StatReloader
+[2023-04-27 20:16:57] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:17:01] INFO Watching for file changes with StatReloader
+[2023-04-27 20:17:05] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:17:09] INFO Watching for file changes with StatReloader
+[2023-04-27 20:17:14] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:17:18] INFO Watching for file changes with StatReloader
+[2023-04-27 20:17:26] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:17:35] INFO Watching for file changes with StatReloader
+[2023-04-27 20:17:45] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:17:48] INFO Watching for file changes with StatReloader
+[2023-04-27 20:17:53] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-27 20:17:57] INFO Watching for file changes with StatReloader
+[2023-04-27 20:18:10] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:18:14] INFO Watching for file changes with StatReloader
+[2023-04-27 20:18:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:18:24] INFO Watching for file changes with StatReloader
+[2023-04-27 20:18:47] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:18:51] INFO Watching for file changes with StatReloader
+[2023-04-27 20:19:02] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:19:06] INFO Watching for file changes with StatReloader
+[2023-04-27 20:19:45] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:19:55] INFO Watching for file changes with StatReloader
+[2023-04-27 20:20:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:20:20] INFO Watching for file changes with StatReloader
+[2023-04-27 20:20:31] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:20:35] INFO Watching for file changes with StatReloader
+[2023-04-27 20:20:39] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:20:42] INFO Watching for file changes with StatReloader
+[2023-04-27 20:20:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:20:50] INFO Watching for file changes with StatReloader
+[2023-04-27 20:20:58] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:21:00] INFO Watching for file changes with StatReloader
+[2023-04-27 20:21:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:21:06] INFO Watching for file changes with StatReloader
+[2023-04-27 20:21:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:21:54] INFO Watching for file changes with StatReloader
+[2023-04-27 20:24:56] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:25:00] INFO Watching for file changes with StatReloader
+[2023-04-27 20:25:06] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:25:08] INFO Watching for file changes with StatReloader
+[2023-04-27 20:25:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 20:25:20] INFO Watching for file changes with StatReloader
+[2023-04-27 20:38:00] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 20:38:03] INFO Watching for file changes with StatReloader
+[2023-04-27 20:38:08] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 20:38:10] INFO Watching for file changes with StatReloader
+[2023-04-27 20:38:15] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 20:38:17] INFO Watching for file changes with StatReloader
+[2023-04-27 20:38:21] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 20:38:23] INFO Watching for file changes with StatReloader
+[2023-04-27 20:38:45] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-27 20:38:47] INFO Watching for file changes with StatReloader
+[2023-04-27 20:46:18] INFO "POST /api/instructions/create/ HTTP/1.1" 200 116
+[2023-04-27 21:19:27] WARNING Not Found: /api/instructions/update/11/
+[2023-04-27 21:19:27] WARNING "PUT /api/instructions/update/11/ HTTP/1.1" 404 0
+[2023-04-27 21:19:50] INFO "PUT /api/instructions/update/16/ HTTP/1.1" 200 279
+[2023-04-27 21:34:13] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:34:16] INFO Watching for file changes with StatReloader
+[2023-04-27 21:34:21] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:34:23] INFO Watching for file changes with StatReloader
+[2023-04-27 21:34:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:34:38] INFO Watching for file changes with StatReloader
+[2023-04-27 21:35:05] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:35:10] INFO Watching for file changes with StatReloader
+[2023-04-27 21:35:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:35:19] INFO Watching for file changes with StatReloader
+[2023-04-27 21:36:08] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:36:11] INFO Watching for file changes with StatReloader
+[2023-04-27 21:36:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:36:19] INFO Watching for file changes with StatReloader
+[2023-04-27 21:36:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:36:50] INFO Watching for file changes with StatReloader
+[2023-04-27 21:36:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:36:56] INFO Watching for file changes with StatReloader
+[2023-04-27 21:43:22] INFO Watching for file changes with StatReloader
+[2023-04-27 21:43:24] INFO "GET /admin HTTP/1.1" 301 0
+[2023-04-27 21:43:24] INFO "GET /admin/ HTTP/1.1" 302 0
+[2023-04-27 21:43:24] INFO "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2211
+[2023-04-27 21:43:25] INFO "GET /static/admin/css/login.css HTTP/1.1" 200 939
+[2023-04-27 21:43:27] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2375
+[2023-04-27 21:43:33] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2375
+[2023-04-27 21:43:43] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2375
+[2023-04-27 21:44:25] INFO Watching for file changes with StatReloader
+[2023-04-27 21:44:33] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2381
+[2023-04-27 21:44:39] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2381
+[2023-04-27 21:45:21] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2381
+[2023-04-27 21:45:27] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2381
+[2023-04-27 21:45:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:45:50] INFO Watching for file changes with StatReloader
+[2023-04-27 21:45:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:46:00] INFO Watching for file changes with StatReloader
+[2023-04-27 21:46:30] INFO Watching for file changes with StatReloader
+[2023-04-27 21:46:41] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2379
+[2023-04-27 21:46:46] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2379
+[2023-04-27 21:46:48] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2379
+[2023-04-27 21:46:49] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2379
+[2023-04-27 21:47:04] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2379
+[2023-04-27 21:47:09] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-04-27 21:47:09] INFO "GET /admin/ HTTP/1.1" 200 6611
+[2023-04-27 21:47:09] INFO "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+[2023-04-27 21:48:00] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:48:03] INFO Watching for file changes with StatReloader
+[2023-04-27 21:48:08] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:48:11] INFO Watching for file changes with StatReloader
+[2023-04-27 21:48:24] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:48:26] INFO Watching for file changes with StatReloader
+[2023-04-27 21:48:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 21:48:37] INFO Watching for file changes with StatReloader
+[2023-04-27 21:48:45] INFO "GET /admin/logout/ HTTP/1.1" 200 1529
+[2023-04-27 21:48:47] INFO "GET /admin/ HTTP/1.1" 302 0
+[2023-04-27 21:48:47] INFO "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2214
+[2023-04-27 21:48:50] INFO "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[2023-04-27 21:48:50] INFO "GET /admin/ HTTP/1.1" 200 6611
+[2023-04-27 22:51:34] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:51:39] INFO Watching for file changes with StatReloader
+[2023-04-27 22:51:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:51:47] INFO Watching for file changes with StatReloader
+[2023-04-27 22:51:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:51:55] INFO Watching for file changes with StatReloader
+[2023-04-27 22:51:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:52:01] INFO Watching for file changes with StatReloader
+[2023-04-27 22:52:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:52:05] INFO Watching for file changes with StatReloader
+[2023-04-27 22:52:07] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:52:09] INFO Watching for file changes with StatReloader
+[2023-04-27 22:52:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:52:19] INFO Watching for file changes with StatReloader
+[2023-04-27 22:52:24] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:52:26] INFO Watching for file changes with StatReloader
+[2023-04-27 22:52:48] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:52:50] INFO Watching for file changes with StatReloader
+[2023-04-27 22:53:04] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:53:06] INFO Watching for file changes with StatReloader
+[2023-04-27 22:53:08] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:53:10] INFO Watching for file changes with StatReloader
+[2023-04-27 22:53:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:53:44] INFO Watching for file changes with StatReloader
+[2023-04-27 22:53:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:53:58] INFO Watching for file changes with StatReloader
+[2023-04-27 22:54:01] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:54:04] INFO Watching for file changes with StatReloader
+[2023-04-27 22:54:08] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:54:09] INFO Watching for file changes with StatReloader
+[2023-04-27 22:54:14] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:54:16] INFO Watching for file changes with StatReloader
+[2023-04-27 22:54:19] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:54:21] INFO Watching for file changes with StatReloader
+[2023-04-27 22:58:18] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:58:20] INFO Watching for file changes with StatReloader
+[2023-04-27 22:58:29] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:58:31] INFO Watching for file changes with StatReloader
+[2023-04-27 22:58:53] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 22:58:54] INFO Watching for file changes with StatReloader
+[2023-04-27 23:00:38] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:00:40] INFO Watching for file changes with StatReloader
+[2023-04-27 23:00:50] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:00:53] INFO Watching for file changes with StatReloader
+[2023-04-27 23:01:11] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:01:14] INFO Watching for file changes with StatReloader
+[2023-04-27 23:01:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:01:20] INFO Watching for file changes with StatReloader
+[2023-04-27 23:01:30] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:01:33] INFO Watching for file changes with StatReloader
+[2023-04-27 23:01:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:01:37] INFO Watching for file changes with StatReloader
+[2023-04-27 23:01:40] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:01:44] INFO Watching for file changes with StatReloader
+[2023-04-27 23:01:52] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:01:55] INFO Watching for file changes with StatReloader
+[2023-04-27 23:01:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:01:59] INFO Watching for file changes with StatReloader
+[2023-04-27 23:02:04] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:02:07] INFO Watching for file changes with StatReloader
+[2023-04-27 23:02:12] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:02:15] INFO Watching for file changes with StatReloader
+[2023-04-27 23:02:17] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:02:19] INFO Watching for file changes with StatReloader
+[2023-04-27 23:02:22] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:02:24] INFO Watching for file changes with StatReloader
+[2023-04-27 23:22:15] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:22:18] INFO Watching for file changes with StatReloader
+[2023-04-27 23:25:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:25:58] INFO Watching for file changes with StatReloader
+[2023-04-27 23:26:31] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:26:33] INFO Watching for file changes with StatReloader
+[2023-04-27 23:27:04] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:27:07] INFO Watching for file changes with StatReloader
+[2023-04-27 23:30:50] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-27 23:30:53] INFO Watching for file changes with StatReloader
+[2023-04-27 23:34:46] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:34:47] INFO Watching for file changes with StatReloader
+[2023-04-27 23:35:01] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:35:03] INFO Watching for file changes with StatReloader
+[2023-04-27 23:35:21] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:35:23] INFO Watching for file changes with StatReloader
+[2023-04-27 23:35:53] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:35:55] INFO Watching for file changes with StatReloader
+[2023-04-27 23:36:09] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:36:11] INFO Watching for file changes with StatReloader
+[2023-04-27 23:36:32] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:36:35] INFO Watching for file changes with StatReloader
+[2023-04-27 23:36:39] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:36:41] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:10] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:13] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:18] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:24] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:29] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:37] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:40] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:42] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:44] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:48] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:51] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:53] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:39:56] INFO Watching for file changes with StatReloader
+[2023-04-27 23:39:58] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:40:01] INFO Watching for file changes with StatReloader
+[2023-04-27 23:40:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:40:07] INFO Watching for file changes with StatReloader
+[2023-04-27 23:40:09] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:40:11] INFO Watching for file changes with StatReloader
+[2023-04-27 23:40:14] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:40:16] INFO Watching for file changes with StatReloader
+[2023-04-27 23:40:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:40:43] INFO Watching for file changes with StatReloader
+[2023-04-27 23:41:02] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:41:05] INFO Watching for file changes with StatReloader
+[2023-04-27 23:41:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:41:09] INFO Watching for file changes with StatReloader
+[2023-04-27 23:41:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:41:18] INFO Watching for file changes with StatReloader
+[2023-04-27 23:41:25] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:41:28] INFO Watching for file changes with StatReloader
+[2023-04-27 23:41:37] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:41:39] INFO Watching for file changes with StatReloader
+[2023-04-27 23:41:43] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:41:45] INFO Watching for file changes with StatReloader
+[2023-04-27 23:41:51] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:41:53] INFO Watching for file changes with StatReloader
+[2023-04-27 23:44:43] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:44:46] INFO Watching for file changes with StatReloader
+[2023-04-27 23:45:05] WARNING Forbidden: /api/instructions/create/
+[2023-04-27 23:45:05] WARNING "POST /api/instructions/create/ HTTP/1.1" 403 173
+[2023-04-27 23:45:16] WARNING Bad Request: /api/get_token/
+[2023-04-27 23:45:16] WARNING "POST /api/get_token/ HTTP/1.1" 400 87
+[2023-04-27 23:45:24] INFO "POST /api/register/ HTTP/1.1" 201 217
+[2023-04-27 23:46:05] WARNING Forbidden: /api/instructions/create/
+[2023-04-27 23:46:05] WARNING "POST /api/instructions/create/ HTTP/1.1" 403 50
+[2023-04-27 23:46:54] WARNING Forbidden: /api/instructions/
+[2023-04-27 23:46:54] WARNING "GET /api/instructions/ HTTP/1.1" 403 50
+[2023-04-27 23:47:17] INFO "POST /api/get_token/ HTTP/1.1" 200 250
+[2023-04-27 23:47:49] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: api_instruction.audience
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 605, in post
+    existing_inst = Instruction.objects.filter(description=description).first()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 674, in first
+    for obj in (self if self.ordered else self.order_by('pk'))[:1]:
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 280, in __iter__
+    self._fetch_all()
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\__init__.py", line 582, in execute
+    return real_execute(self, sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: api_instruction.audience
+[2023-04-27 23:47:49] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 180439
+[2023-04-27 23:48:20] INFO Watching for file changes with StatReloader
+[2023-04-27 23:48:25] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 638, in post
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1129, in get_field_names
+    serializer_class=self.__class__.__name__
+AssertionError: ("Creating a ModelSerializer without either the 'fields' attribute or the 'exclude' attribute has been deprecated since 3.3.0, and is now disallowed. Add an explicit fields = '__all__' to the InstructionSerializer serializer.",)
+[2023-04-27 23:48:25] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 147904
+[2023-04-27 23:48:46] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:48:48] INFO Watching for file changes with StatReloader
+[2023-04-27 23:48:53] INFO "POST /api/instructions/create/ HTTP/1.1" 200 238
+[2023-04-27 23:49:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:49:24] INFO Watching for file changes with StatReloader
+[2023-04-27 23:49:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:49:32] INFO Watching for file changes with StatReloader
+[2023-04-27 23:49:42] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:49:44] INFO Watching for file changes with StatReloader
+[2023-04-27 23:49:53] INFO "POST /api/instructions/create/ HTTP/1.1" 200 238
+[2023-04-27 23:50:02] INFO "POST /api/instructions/create/ HTTP/1.1" 200 238
+[2023-04-27 23:51:23] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:51:25] INFO Watching for file changes with StatReloader
+[2023-04-27 23:51:31] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:51:34] INFO Watching for file changes with StatReloader
+[2023-04-27 23:51:55] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:51:57] INFO Watching for file changes with StatReloader
+[2023-04-27 23:52:01] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:52:03] INFO Watching for file changes with StatReloader
+[2023-04-27 23:52:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:52:09] INFO Watching for file changes with StatReloader
+[2023-04-27 23:52:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:52:31] INFO Watching for file changes with StatReloader
+[2023-04-27 23:52:36] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:52:38] INFO Watching for file changes with StatReloader
+[2023-04-27 23:53:04] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:53:05] INFO Watching for file changes with StatReloader
+[2023-04-27 23:53:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:53:14] INFO Watching for file changes with StatReloader
+[2023-04-27 23:53:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:53:20] INFO Watching for file changes with StatReloader
+[2023-04-27 23:54:11] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:54:13] INFO Watching for file changes with StatReloader
+[2023-04-27 23:54:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:54:18] INFO Watching for file changes with StatReloader
+[2023-04-27 23:54:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:54:30] INFO Watching for file changes with StatReloader
+[2023-04-27 23:54:33] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:54:35] INFO Watching for file changes with StatReloader
+[2023-04-27 23:54:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:54:40] INFO Watching for file changes with StatReloader
+[2023-04-27 23:54:48] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:54:51] INFO Watching for file changes with StatReloader
+[2023-04-27 23:54:54] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:54:57] INFO Watching for file changes with StatReloader
+[2023-04-27 23:55:06] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:55:08] INFO Watching for file changes with StatReloader
+[2023-04-27 23:55:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:55:16] INFO Watching for file changes with StatReloader
+[2023-04-27 23:55:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-27 23:55:21] INFO Watching for file changes with StatReloader
+[2023-04-27 23:56:12] INFO "POST /api/instructions/create/ HTTP/1.1" 201 264
+[2023-04-27 23:58:02] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:58:04] INFO Watching for file changes with StatReloader
+[2023-04-27 23:58:57] INFO "POST /api/instructions/create/ HTTP/1.1" 201 286
+[2023-04-27 23:59:13] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-27 23:59:16] INFO Watching for file changes with StatReloader
+[2023-04-28 00:01:53] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:01:55] INFO Watching for file changes with StatReloader
+[2023-04-28 00:02:03] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 609, in post
+    return Response({"message": "Instruction with the provided description already exists, returning existing instance","data":serializers.data }, status=status.HTTP_200_OK  )
+AttributeError: module 'rest_framework.serializers' has no attribute 'data'
+[2023-04-28 00:02:03] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 105734
+[2023-04-28 00:03:13] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:03:16] INFO Watching for file changes with StatReloader
+[2023-04-28 00:03:19] INFO "POST /api/instructions/create/ HTTP/1.1" 200 393
+[2023-04-28 00:04:21] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:04:23] INFO Watching for file changes with StatReloader
+[2023-04-28 00:04:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:04:30] INFO Watching for file changes with StatReloader
+[2023-04-28 00:04:39] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:04:41] INFO Watching for file changes with StatReloader
+[2023-04-28 00:04:45] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:04:47] INFO Watching for file changes with StatReloader
+[2023-04-28 00:04:55] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:04:57] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:05:06] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:09] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:05:12] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:05:19] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:23] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:05:25] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:05:32] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:39] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:05:41] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:44] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:05:46] INFO Watching for file changes with StatReloader
+[2023-04-28 00:05:52] INFO "POST /api/instructions/create/ HTTP/1.1" 200 393
+[2023-04-28 00:06:45] INFO "POST /api/instructions/create/ HTTP/1.1" 201 331
+[2023-04-28 00:07:08] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:07:11] INFO Watching for file changes with StatReloader
+[2023-04-28 00:07:19] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:07:21] INFO Watching for file changes with StatReloader
+[2023-04-28 00:07:32] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:07:35] INFO Watching for file changes with StatReloader
+[2023-04-28 00:07:39] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:07:41] INFO Watching for file changes with StatReloader
+[2023-04-28 00:07:46] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 609, in post
+    return Response({"message": "Instruction with the provided description already exists, returning existing instance","data":serializer.data }, status=status.HTTP_200_OK  )
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1153, in get_field_names
+    serializer_class=self.__class__.__name__
+AssertionError: The field 'prompt' was declared on serializer InstructionSerializer, but has not been included in the 'fields' option.
+[2023-04-28 00:07:46] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 146731
+[2023-04-28 00:08:03] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:08:05] INFO Watching for file changes with StatReloader
+[2023-04-28 00:08:10] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 609, in post
+    return Response({"message": "Instruction with the provided description already exists, returning existing instance","data":serializer.data }, status=status.HTTP_200_OK  )
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 346, in prompt
+    return self.generate_prompt(self.description, self.category.name, list(self.tones.all()))
+TypeError: generate_prompt() missing 6 required positional arguments: 'context', 'language', 'length', 'source_text', 'nov', and 'tones'
+[2023-04-28 00:08:10] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 133463
+[2023-04-28 00:10:14] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:10:17] INFO Watching for file changes with StatReloader
+[2023-04-28 00:10:44] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:10:47] INFO Watching for file changes with StatReloader
+[2023-04-28 00:10:50] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:10:54] INFO Watching for file changes with StatReloader
+[2023-04-28 00:11:00] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:11:02] INFO Watching for file changes with StatReloader
+[2023-04-28 00:11:08] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:11:10] INFO Watching for file changes with StatReloader
+[2023-04-28 00:11:12] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:11:14] INFO Watching for file changes with StatReloader
+[2023-04-28 00:11:16] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:11:18] INFO Watching for file changes with StatReloader
+[2023-04-28 00:11:23] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:11:25] INFO Watching for file changes with StatReloader
+[2023-04-28 00:11:30] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:11:32] INFO Watching for file changes with StatReloader
+[2023-04-28 00:11:35] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:11:38] INFO Watching for file changes with StatReloader
+[2023-04-28 00:12:04] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:12:06] INFO Watching for file changes with StatReloader
+[2023-04-28 00:12:36] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:12:38] INFO Watching for file changes with StatReloader
+[2023-04-28 00:12:50] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:12:53] INFO Watching for file changes with StatReloader
+[2023-04-28 00:13:14] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:13:17] INFO Watching for file changes with StatReloader
+[2023-04-28 00:13:21] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:13:23] INFO Watching for file changes with StatReloader
+[2023-04-28 00:13:29] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 609, in post
+    return Response({"message": "Instruction with the provided description already exists, returning existing instance","data":serializer.data }, status=status.HTTP_200_OK  )
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 345, in prompt
+    return self.generate_prompt(self.description, self.category.name, self.audience, self.style, self.context, self.language, self.length, self.source_text, self.tones.all())
+TypeError: generate_prompt() takes 9 positional arguments but 10 were given
+[2023-04-28 00:13:29] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 132892
+[2023-04-28 00:13:51] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:13:53] INFO Watching for file changes with StatReloader
+[2023-04-28 00:14:13] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:14:16] INFO Watching for file changes with StatReloader
+[2023-04-28 00:14:23] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 609, in post
+    return Response({"message": "Instruction with the provided description already exists, returning existing instance","data":serializer.data }, status=status.HTTP_200_OK  )
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 345, in prompt
+    return self.generate_prompt(self.description, self.category.name, self.audience, self.style, self.context, self.language, self.length, self.source_text, self.tones.all())
+TypeError: generate_prompt() takes 9 positional arguments but 10 were given
+[2023-04-28 00:14:23] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 132892
+[2023-04-28 00:14:38] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:14:42] INFO Watching for file changes with StatReloader
+[2023-04-28 00:14:47] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:14:50] INFO Watching for file changes with StatReloader
+[2023-04-28 00:14:55] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:14:57] INFO Watching for file changes with StatReloader
+[2023-04-28 00:15:32] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:15:35] INFO Watching for file changes with StatReloader
+[2023-04-28 00:15:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:15:47] INFO Watching for file changes with StatReloader
+[2023-04-28 00:16:03] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:16:05] INFO Watching for file changes with StatReloader
+[2023-04-28 00:16:11] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:16:13] INFO Watching for file changes with StatReloader
+[2023-04-28 00:16:31] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 609, in post
+    return Response({"message": "Instruction with the provided description already exists, returning existing instance","data":serializer.data }, status=status.HTTP_200_OK  )
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 345, in prompt
+    tones='/'.join(self.tones)
+TypeError: can only join an iterable
+[2023-04-28 00:16:31] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 133387
+[2023-04-28 00:16:42] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:16:44] INFO Watching for file changes with StatReloader
+[2023-04-28 00:17:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:17:48] INFO Watching for file changes with StatReloader
+[2023-04-28 00:17:56] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:17:58] INFO Watching for file changes with StatReloader
+[2023-04-28 00:18:02] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:18:04] INFO Watching for file changes with StatReloader
+[2023-04-28 00:18:09] ERROR Internal Server Error: /api/instructions/create/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 609, in post
+    return Response({"message": "Instruction with the provided description already exists, returning existing instance","data":serializer.data }, status=status.HTTP_200_OK  )
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+  File "C:\Projects\chatgptapi\core\api\models.py", line 355, in prompt
+    tones)
+TypeError: generate_prompt() takes 9 positional arguments but 10 were given
+[2023-04-28 00:18:09] ERROR "POST /api/instructions/create/ HTTP/1.1" 500 132790
+[2023-04-28 00:20:30] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:20:33] INFO Watching for file changes with StatReloader
+[2023-04-28 00:20:37] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:20:41] INFO Watching for file changes with StatReloader
+[2023-04-28 00:20:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:20:47] INFO Watching for file changes with StatReloader
+[2023-04-28 00:20:57] INFO "POST /api/instructions/create/ HTTP/1.1" 200 842
+[2023-04-28 00:22:14] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:22:17] INFO Watching for file changes with StatReloader
+[2023-04-28 00:22:22] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:22:24] INFO Watching for file changes with StatReloader
+[2023-04-28 00:22:33] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:22:37] INFO Watching for file changes with StatReloader
+[2023-04-28 00:22:45] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:22:47] INFO Watching for file changes with StatReloader
+[2023-04-28 00:22:57] INFO C:\Projects\chatgptapi\core\api\models.py changed, reloading.
+[2023-04-28 00:23:00] INFO Watching for file changes with StatReloader
+[2023-04-28 00:24:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:24:23] INFO Watching for file changes with StatReloader
+[2023-04-28 00:24:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:24:30] INFO Watching for file changes with StatReloader
+[2023-04-28 00:24:40] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:24:43] INFO Watching for file changes with StatReloader
+[2023-04-28 00:25:14] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:25:17] INFO Watching for file changes with StatReloader
+[2023-04-28 00:25:25] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:25:28] INFO Watching for file changes with StatReloader
+[2023-04-28 00:25:32] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:25:34] INFO Watching for file changes with StatReloader
+[2023-04-28 00:25:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:25:40] INFO Watching for file changes with StatReloader
+[2023-04-28 00:25:47] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:25:49] INFO Watching for file changes with StatReloader
+[2023-04-28 00:25:53] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:25:55] INFO Watching for file changes with StatReloader
+[2023-04-28 00:26:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:26:01] INFO Watching for file changes with StatReloader
+[2023-04-28 00:26:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:26:09] INFO Watching for file changes with StatReloader
+[2023-04-28 00:26:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:26:22] INFO Watching for file changes with StatReloader
+[2023-04-28 00:26:30] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:26:32] INFO Watching for file changes with StatReloader
+[2023-04-28 00:26:47] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:26:49] INFO Watching for file changes with StatReloader
+[2023-04-28 00:26:55] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:26:57] INFO Watching for file changes with StatReloader
+[2023-04-28 00:27:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:27:09] INFO Watching for file changes with StatReloader
+[2023-04-28 00:27:39] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:27:41] INFO Watching for file changes with StatReloader
+[2023-04-28 00:27:48] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 00:27:57] INFO Watching for file changes with StatReloader
+[2023-04-28 00:29:07] INFO Watching for file changes with StatReloader
+[2023-04-28 00:29:11] INFO "POST /api/instructions/create/ HTTP/1.1" 200 728
+[2023-04-28 00:31:27] INFO "GET /api/instructions/search/?tones=insightfull HTTP/1.1" 200 2
+[2023-04-28 00:31:51] ERROR Internal Server Error: /api/instructions/search/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'Instruction' object has no attribute 'category'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `category` on serializer `InstructionSerializerResult`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Instruction` instance.
+Original exception text was: 'Instruction' object has no attribute 'category'.
+[2023-04-28 00:31:51] ERROR "GET /api/instructions/search/?tones=insightful HTTP/1.1" 500 145511
+[2023-04-28 00:32:22] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:32:24] INFO Watching for file changes with StatReloader
+[2023-04-28 00:32:30] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:32:33] INFO Watching for file changes with StatReloader
+[2023-04-28 00:32:45] ERROR Internal Server Error: /api/instructions/search/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 687, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1077, in get_fields
+    source, info, model, depth
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 1342, in build_unknown_field
+    (field_name, model_class.__name__)
+django.core.exceptions.ImproperlyConfigured: Field name `category` is not valid for model `Instruction`.
+[2023-04-28 00:32:45] ERROR "GET /api/instructions/search/?tones=insightful HTTP/1.1" 500 158474
+[2023-04-28 00:32:59] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
+[2023-04-28 00:33:01] INFO Watching for file changes with StatReloader
