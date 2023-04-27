@@ -1,11 +1,14 @@
 import logging
-
+from datetime import date
 from django.utils.translation import gettext_lazy as _
+from django.shortcuts import get_object_or_404
+from django.http import Http404
+from django.core.exceptions import ValidationError
 from api.utilities.validators.text_validator import validate_text_input
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from .models import Instruction, InstructionCategory,  Role, TextToImage, TextToVideo, Tone
+from .models import Instruction, InstructionCategory, PricingPlan, Role, TextToImage, TextToVideo, TokenUsage, Tone, User
 from .serializers import InstructionCategorySerializer, InstructionSerializer, InstructionSerializerResult, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
 
 from rest_framework import generics
@@ -83,10 +86,43 @@ class LoginAPIView(APIView):
             "email": request.data.get('email'),
             "password": request.data.get('password')
         }
-        serializer = self.serializer_class(data=user)
-        serializer.is_valid(raise_exception=True)
+        try:
+            serializer = self.serializer_class(data=user)
+            serializer.is_valid(raise_exception=True)
+            # Update subscription if the user is a rapid api user 
+            user = get_object_or_404(User.objects.select_related('subscription__pricing_plan'), email=user['email'])
+            subscription_meta = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
+            # Subscription UPDATE only for RAPID API users 
+            if subscription_meta and not user.is_app_user and user.subscription.pricing_plan.name != subscription_meta:
+                pricing_plan, _ = PricingPlan.objects.get_or_create(name=subscription_meta)
+                user.subscription.pricing_plan = pricing_plan
+                user.subscription.save()
+                # Update token usage 
+                
+                today = date.today()
+                token_usage = TokenUsage.objects.filter(
+                        user=user,
+                        month=today.month,
+                        year=today.year,
+                    ).first()
+                
+                if token_usage:
+                    token_usage.pricing_plan = pricing_plan
+                    token_usage.save()
+                else:
+                    token_usage = TokenUsage(
+                        user=user,
+                        month=today.month,
+                        year=today.year,
+                        pricing_plan=pricing_plan,
+                    )
+                    token_usage.save()
 
-        return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Http404:
+            return Response({'error': 'User does not exist.'}, status=status.HTTP_404_NOT_FOUND)
+        except ValidationError:
+            return Response({'error': 'Invalid credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class DeveloperRegisterView(generics.CreateAPIView):
@@ -105,6 +141,8 @@ class DeveloperRegisterView(generics.CreateAPIView):
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        # Update subscription if the user is a rapid api user 
+
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -383,34 +421,60 @@ class InstructionCategoryListView(generics.ListAPIView):
         return queryset
 
 
-class InstructionRetrieveUpdateView(generics.RetrieveUpdateAPIView):
-    serializer_class = ToneSerializer
-    permission_classes = [IsAuthenticated]
-
-    def get_queryset(self):
-        return Tone.objects.all()
-
-    def update(self, request, *args, **kwargs):
-        instance = self.get_object()
-
-        # Check if the Tone object was created by the current user
-        if instance.created_by != request.user:
-            return Response({'error': 'You do not have permission to update this Tone object.'}, status=status.HTTP_403_FORBIDDEN)
-
-        # Proceed with the update if the Tone object was created by the current user
-        serializer = self.get_serializer(instance, data=request.data, partial=True)
-        serializer.is_valid(raise_exception=True)
-        self.perform_update(serializer)
-
-        return Response(serializer.data)
-
-
 class InstructionCategoryView(generics.RetrieveAPIView):
     serializer_class = InstructionCategorySerializer
 
     def get_queryset(self):
         return InstructionCategory.objects.all()
 
+
+class CreateToneAPIView(APIView):
+    def post(self, request):
+        name = request.data.get('name')
+        if not name:
+            return Response({'error': 'Tone detail required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Validate the 'name' field
+        is_valid, error_msg = validate_text_input(name)
+        if not is_valid:
+            return Response({'error': f'Invalid tone. {error_msg}'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Check if the 'name' field already exists in the database
+        if Tone.objects.filter(name__iexact=name).exists():
+            return Response({'error': 'Tone with this name already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            obj = Tone.objects.create(
+                created_by=request.user.id,
+                name=name
+            )
+            serializer = ToneSerializer(obj)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ToneListView(generics.ListAPIView):
+    serializer_class = ToneSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        queryset = Tone.objects.all()
+        # Instruction.objects.filter(user_id=self.request.user.id)
+        # Get the search query parameter from the request
+        search_query = self.request.query_params.get('q')
+
+        # If the search query is present, filter the queryset by the name field
+        if search_query:
+            queryset = queryset.filter(name__icontains=search_query)
+        return queryset
+
+class ToneRetrieveView(generics.RetrieveAPIView):
+    serializer_class = ToneSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        return Tone.objects.all()
 
 class InstructionCreateView(APIView):
     queryset = Instruction.objects.all()
@@ -533,6 +597,26 @@ class InstructionUpdateView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+class InstructionRetrieveUpdateView(generics.RetrieveUpdateAPIView):
+    serializer_class = ToneSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Tone.objects.all()
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+
+        # Check if the Tone object was created by the current user
+        if instance.created_by != request.user:
+            return Response({'error': 'You do not have permission to update this Tone object.'}, status=status.HTTP_403_FORBIDDEN)
+
+        # Proceed with the update if the Tone object was created by the current user
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        return Response(serializer.data)
 class InstructionListView(generics.ListAPIView):
     serializer_class = InstructionSerializerResult
     permission_classes = [AllowAny]
@@ -559,24 +643,3 @@ class InstructionSearchView(generics.ListAPIView):
         return queryset
 
 
-class ToneListView(generics.ListAPIView):
-    serializer_class = ToneSerializer
-    permission_classes = [AllowAny]
-
-    def get_queryset(self):
-        queryset = Tone.objects.all()
-        # Instruction.objects.filter(user_id=self.request.user.id)
-        # Get the search query parameter from the request
-        search_query = self.request.query_params.get('q')
-
-        # If the search query is present, filter the queryset by the name field
-        if search_query:
-            queryset = queryset.filter(name__icontains=search_query)
-        return queryset
-
-class ToneRetrieveView(generics.RetrieveAPIView):
-    serializer_class = ToneSerializer
-    permission_classes = [AllowAny]
-
-    def get_queryset(self):
-        return Tone.objects.all()

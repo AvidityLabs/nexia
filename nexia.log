@@ -12822,3 +12822,9 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'user_id' into field. 
 [2023-04-26 20:37:37] INFO Watching for file changes with StatReloader
 [2023-04-26 20:37:40] INFO "POST /api/instructions/create/ HTTP/1.1" 200 116
 [2023-04-26 20:38:03] INFO "POST /api/instructions/create/ HTTP/1.1" 200 116
+[2023-04-27 00:50:20] INFO Watching for file changes with StatReloader
+[2023-04-27 00:50:26] INFO "POST /api/instructions/tones/create/ HTTP/1.1" 201 21
+[2023-04-27 00:50:34] WARNING Bad Request: /api/instructions/tones/create/
+[2023-04-27 00:50:34] WARNING "POST /api/instructions/tones/create/ HTTP/1.1" 400 33
+[2023-04-27 00:50:43] WARNING Bad Request: /api/instructions/tones/create/
+[2023-04-27 00:50:43] WARNING "POST /api/instructions/tones/create/ HTTP/1.1" 400 69

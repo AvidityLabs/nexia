@@ -47,17 +47,20 @@ class JWTAuthentication(authentication.BaseAuthentication):
         auth_header_prefix = self.authentication_header_prefix.lower()
         rapidapi_host = request.META.get('HTTP_X_RAPIDAPI_HOST')
         rapidapi_proxy_secret = request.META.get('HTTP_X_RAPIDAPI_PROXY_SECRET')
-
+        
         if not rapidapi_host:
             raise AuthenticationFailed('Missing request header. The X-RapidAPI-Host header was not found in your request. Please ensure that your request includes this header and try again. Thank you for your understanding.')
       
         if HTTP_X_RAPIDAPI_PROXY_SECRET != rapidapi_proxy_secret:
             raise AuthenticationFailed(f'Restricted access. This API can only be accessed through the RapidAPI platform. Please sign up for RapidAPI at {RAPID_API_APP_URL} and use their platform to access this API. Thank you for your understanding.')
         
-
-        if not auth_header:
-            return None
         
+        if not auth_header:
+            # Scenerios where the user is registering or obtaining the Authorization token key the HTTP_AUTHIRIZATION IS NOT NEEDED
+            # It will be impossible to update the user subscription so update this in the obtain token view or register view
+
+            return None
+       
         
         if len(auth_header) == 1:
             # Invalid token header. No credentials provided. Do not attempt to authenticate.
@@ -68,7 +71,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
             # Invalid token header. The Token string should not contain spaces. Do
             # not attempt to authenticate.
             return None
-
+        print('found user-----------------')
         # The JWT library we're using can't handle the `byte` type, which is
         # commonly used by standard libraries in Python 3. To get around this,
         # we simply have to decode `prefix` and `token`. This does not make for
