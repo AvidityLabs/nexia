@@ -425,7 +425,13 @@ class InstructionCategoryView(generics.RetrieveAPIView):
     serializer_class = InstructionCategorySerializer
 
     def get_queryset(self):
-        return InstructionCategory.objects.all()
+        return InstructionCategory.objects.filter(created_by=self.request.user.id)
+    
+class InstructionCategoryUpdateView(generics.UpdateAPIView):
+    serializer_class = InstructionCategorySerializer
+
+    def get_queryset(self):
+        return InstructionCategory.objects.filter(created_by=self.request.user.id)
 
 
 class CreateToneAPIView(APIView):
@@ -475,6 +481,13 @@ class ToneRetrieveView(generics.RetrieveAPIView):
 
     def get_queryset(self):
         return Tone.objects.all()
+
+class ToneUpdateView(generics.RetrieveAPIView):
+    serializer_class = ToneSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Tone.objects.filter(created_by=self.request.user.id)
 
 class InstructionCreateView(APIView):
     queryset = Instruction.objects.all()
@@ -544,7 +557,7 @@ class InstructionRetrieveView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Instruction.objects.filter(user_id=self.request.user.id)
+        return Instruction.objects.filter(created_by=self.request.user.id)
 
 
 class InstructionUpdateView(APIView):
@@ -552,7 +565,7 @@ class InstructionUpdateView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Instruction.objects.filter(user_id=self.request.user.id)
+        return Instruction.objects.filter(created_by=self.request.user.id)
 
     def put(self, request, pk):
         try:
@@ -596,27 +609,6 @@ class InstructionUpdateView(APIView):
         serializer = InstructionSerializerResult(instruction)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-class InstructionRetrieveUpdateView(generics.RetrieveUpdateAPIView):
-    serializer_class = ToneSerializer
-    permission_classes = [IsAuthenticated]
-
-    def get_queryset(self):
-        return Tone.objects.all()
-
-    def update(self, request, *args, **kwargs):
-        instance = self.get_object()
-
-        # Check if the Tone object was created by the current user
-        if instance.created_by != request.user:
-            return Response({'error': 'You do not have permission to update this Tone object.'}, status=status.HTTP_403_FORBIDDEN)
-
-        # Proceed with the update if the Tone object was created by the current user
-        serializer = self.get_serializer(instance, data=request.data, partial=True)
-        serializer.is_valid(raise_exception=True)
-        self.perform_update(serializer)
-
-        return Response(serializer.data)
 class InstructionListView(generics.ListAPIView):
     serializer_class = InstructionSerializerResult
     permission_classes = [AllowAny]
@@ -626,10 +618,10 @@ class InstructionListView(generics.ListAPIView):
 
 class InstructionSearchView(generics.ListAPIView):
     serializer_class = InstructionSerializerResult
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        queryset = Instruction.objects.filter(user_id=self.request.user.id)
+        queryset = Instruction.objects.filter(created_by=self.request.user.id)
         description = self.request.query_params.get('description', None)
         category = self.request.query_params.get('category', None)
         tones = self.request.query_params.getlist('tones', [])

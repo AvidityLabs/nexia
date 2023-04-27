@@ -301,7 +301,6 @@ class Instruction(BaseModel):
      tones = models.ManyToManyField(Tone,blank=True)
      nov = models.IntegerField(null=True, blank=True)
      category = models.ForeignKey(InstructionCategory, on_delete=models.CASCADE, null=True, blank=True)
-     user_id = models.CharField(max_length=255, null=True,blank=True)
         
      @property
      def prompt(self):

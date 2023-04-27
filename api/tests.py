@@ -2,6 +2,7 @@ import os
 from unittest import mock
 from django.test import TestCase
 from django.urls import reverse
+from api.serializers import InstructionSerializerResult
 from rest_framework import status
 from rest_framework.test import APIClient
 from rest_framework.authtoken.models import Token
@@ -754,3 +755,172 @@ class TestCreateToneAPIView(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.data['error'], 'Tone with this name already exists.')
         self.assertEqual(Tone.objects.count(), 1)
+
+
+class InstructionCreateViewTestCase(TestCase):
+    def setUp(self):
+        self.user = User.objects.create(
+            username='testuser',
+            email='test@test.com',
+        )
+        self.user.set_password('password')
+        self.user.save()
+        print(colorize(Fore.GREEN, "User created successfully!"))
+        self.token = self.user.token
+
+        self.client = APIClient()
+        self.headers = {
+            'HTTP_AUTHORIZATION': f'Bearer {self.user.token}',
+            'HTTP_X_RAPIDAPI_HOST': HTTP_X_RAPIDAPI_HOST,
+            'HTTP_X_RAPIDAPI_PROXY_SECRET': HTTP_X_RAPIDAPI_PROXY_SECRET,
+            'HTTP_X_RAPIDAPI_SUBSCRIPTION': HTTP_X_RAPIDAPI_SUBSCRIPTION
+        }
+        self.client.credentials(**self.headers)
+
+    def test_create_valid_instruction(self):
+        url = reverse('api:instruction-create')
+        data = {
+            'description': 'Test instruction',
+            'category': 'Test category',
+            'tones': ['Test tone 1', 'Test tone 2']
+        }
+        response = self.client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_create_instruction_with_invalid_description(self):
+        url = reverse('instruction-create')
+        data = {
+            'description': '',
+            'category': 'Test category',
+            'tones': ['Test tone 1', 'Test tone 2']
+        }
+        response = self.client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_create_instruction_with_invalid_category(self):
+        url = reverse('instruction-create')
+        data = {
+            'description': 'Test instruction',
+            'category': '',
+            'tones': ['Test tone 1', 'Test tone 2']
+        }
+        response = self.client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_create_instruction_with_invalid_tones(self):
+        url = reverse('instruction-create')
+        data = {
+            'description': 'Test instruction',
+            'category': 'Test category',
+            'tones': ['', 'Test tone 2']
+        }
+        response = self.client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+
+class InstructionRetrieveViewTestCase(TestCase):
+    def setUp(self):
+        self.user = User.objects.create(
+            username='testuser',
+            email='test@test.com',
+        )
+        self.user.set_password('password')
+        self.user.save()
+        print(colorize(Fore.GREEN, "User created successfully!"))
+        self.token = self.user.token
+
+        self.client = APIClient()
+        self.headers = {
+            'HTTP_AUTHORIZATION': f'Bearer {self.user.token}',
+            'HTTP_X_RAPIDAPI_HOST': HTTP_X_RAPIDAPI_HOST,
+            'HTTP_X_RAPIDAPI_PROXY_SECRET': HTTP_X_RAPIDAPI_PROXY_SECRET,
+            'HTTP_X_RAPIDAPI_SUBSCRIPTION': HTTP_X_RAPIDAPI_SUBSCRIPTION
+        }
+        self.client.credentials(**self.headers)
+        self.instruction = Instruction.objects.create(
+            description='Test instruction',
+            category=InstructionCategory.objects.create(name='Test category'),
+            created_by=self.user
+        )
+
+    def test_retrieve_valid_instruction(self):
+        url = reverse('api:instruction-detail', kwargs={'pk': self.instruction.pk})
+        response = self.client.get(url)
+        print(response.json())
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_retrieve_nonexistent_instruction(self):
+        url = reverse('api:instruction-detail', kwargs={'pk': 999})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+class InstructionUpdateViewTestCase(APITestCase):
+    def setUp(self):
+        self.user = User.objects.create(
+            username='testuser',
+            email='test@test.com',
+        )
+        self.user.set_password('password')
+        self.user.save()
+        print(colorize(Fore.GREEN, "User created successfully!"))
+        self.token = self.user.token
+
+        self.client = APIClient()
+        self.headers = {
+            'HTTP_AUTHORIZATION': f'Bearer {self.user.token}',
+            'HTTP_X_RAPIDAPI_HOST': HTTP_X_RAPIDAPI_HOST,
+            'HTTP_X_RAPIDAPI_PROXY_SECRET': HTTP_X_RAPIDAPI_PROXY_SECRET,
+            'HTTP_X_RAPIDAPI_SUBSCRIPTION': HTTP_X_RAPIDAPI_SUBSCRIPTION
+        }
+        # self.instruction = Instruction.objects.create(
+        #     description='Test instruction',
+        #     category=InstructionCategory.objects.create(name='Test category'),
+        #     created_by=self.user
+        # )
+        # self.instruction.tones.add(Tone.objects.create(name='Test tone'))
+
+    # def test_update_instruction_with_valid_data(self):
+    #     url = reverse('api:instruction-update', kwargs={'pk': self.instruction.pk})
+    #     data = {
+    #         'description': 'Updated test instruction',
+    #         'category': 'Updated test category',
+    #         'tones': ['Updated test tone']
+    #     }
+    #     response = self.client.put(url, data, format='json')
+    #     instruction = Instruction.objects.get(pk=self.instruction.pk)
+    #     serializer =  InstructionSerializerResult(instruction)
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+    #     self.assertEqual(response.data, serializer.data)
+
+    # def test_update_instruction_with_invalid_category(self):
+    #     url = reverse('api:instruction-update', kwargs={'pk': self.instruction.pk})
+    #     data = {
+    #         'category': 'Invalid category'
+    #     }
+    #     response = self.client.put(url, data, format='json')
+    #     self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    # def test_update_instruction_with_invalid_tone(self):
+    #     url = reverse('api:instruction-update', kwargs={'pk': self.instruction.pk})
+    #     data = {
+    #         'tones': ['Invalid tone']
+    #     }
+    #     response = self.client.put(url, data, format='json')
+    #     self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    # def test_update_instruction_created_by_another_user(self):
+    #     another_user = User.objects.create_user(
+    #         username='anotheruser',
+    #         email='testuser@email.com'
+    #     )
+    #     another_user.set_password('testpass')
+    #     another_user.save()
+    #     self.client.force_authenticate(user=another_user)
+    #     url = reverse('api:instruction-update', kwargs={'pk': self.instruction.pk})
+    #     data = {
+    #         'description': 'Updated test instruction',
+    #         'category': 'Updated test category',
+    #         'tones': ['Updated test tone']
+    #     }
+    #     response = self.client.put(url, data, format='json')
+    #     self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
