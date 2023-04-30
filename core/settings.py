@@ -68,13 +68,16 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_spectacular',
     'django_filters',
-    'cloudinary'
+    'cloudinary',
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
+    
     'api.exceptions.handle_500.InternalServerErrorMiddleware',
     'api.exceptions.handle_404.Handle404Middleware',
     'corsheaders.middleware.CorsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -84,6 +87,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+
 
 AUTH_USER_MODEL = 'api.User'
 
@@ -112,11 +117,12 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
-# Use JWT tokens that never expire (for demonstration purposes only!)
-# SIMPJEWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(days=36500),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=36500),
-# }
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
+
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Nexia API',
@@ -154,7 +160,19 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Cache time to live is 15 minutes.
+CACHE_TTL = 60 * 15
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        "KEY_PREFIX": "api"
+    }
+}
 
 # DATABASES = {}
 # DATABASES["default"] = dj_database_url.config(conn_max_age=600)

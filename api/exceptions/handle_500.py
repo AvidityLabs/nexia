@@ -9,6 +9,6 @@ class InternalServerErrorMiddleware:
 
         if response.status_code == 500:
             error_message = "An internal server error occurred. Please try again later. If the problem persists, please contact the API owner for assistance."
-            return JsonResponse({'error': error_message}, status=500)
+            return JsonResponse({'error': error_message, "status_code": 500}, status=500)
 
         return response

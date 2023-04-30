@@ -8,5 +8,5 @@ class Handle404Middleware:
     def __call__(self, request):
         response = self.get_response(request)
         if response.status_code == 404:
-            return JsonResponse({'error': 'Resource Not found'}, status=404)
+            return JsonResponse({'error': 'Resource Not found', "status_code": 404}, status=404)
         return response

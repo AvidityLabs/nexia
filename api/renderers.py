@@ -30,16 +30,13 @@ class APIJSONRenderer(JSONRenderer):
         # If we receive a `token` key as part of the response, it will be a
         # byte object. Byte objects don't serialize well, so we need to
         # decode it before rendering the User object.
-        token = data.get('token', None)
 
-        if token is not None and isinstance(token, bytes):
             # Also as mentioned above, we will decode `token` if it is of type
             # bytes.
-            data['token'] = token.decode('utf-8')
-
+  
         # Get the status code from the renderer context
         response_status_code = renderer_context['response'].status_code
 
         # Finally, we can render our data along with the status code
-        response_data = {'status_code': response_status_code, **data}
+        response_data = {'status_code': response_status_code, "data":data}
         return super().render(response_data, media_type, renderer_context)

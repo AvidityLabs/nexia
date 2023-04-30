@@ -3,8 +3,12 @@ from datetime import date
 from django.utils.translation import gettext_lazy as _
 from django.shortcuts import get_object_or_404
 from django.http import Http404
+from django.utils.decorators import method_decorator
 from django.core.exceptions import ValidationError
 from api.utilities.validators.text_validator import validate_text_input
+from django.conf import settings
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.views.decorators.cache import cache_page
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
@@ -51,6 +55,8 @@ logger = logging.getLogger(__name__)
 ERROR_MSG = 'Oops, something went wrong. If this issue persists, please contact our customer support team at aviditylabs@hotmail.com for assistance. We apologize for the inconvenience and appreciate your patience as we work to resolve the issue.'
 # Validate prompt text length
 MAX_PROMPT_LENGTH = 1000  # Maximum allowed length for prompt text
+
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
 class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
@@ -473,11 +479,12 @@ class CreateToneAPIView(APIView):
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class ToneListView(generics.ListAPIView):
     serializer_class = ToneSerializer
     permission_classes = [IsAuthenticated,]
     renderer_classes = (APIJSONRenderer,)
+
 
     def get_queryset(self):
         queryset = Tone.objects.filter(created_by=self.request.user.id)
@@ -488,7 +495,7 @@ class ToneListView(generics.ListAPIView):
         if search_query:
             queryset = queryset.filter(name__icontains=search_query)
         return queryset
-
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class ToneRetrieveView(generics.RetrieveAPIView):
     serializer_class = ToneSerializer
     permission_classes = [IsAuthenticated,]
@@ -600,7 +607,7 @@ class InstructionCreateView(APIView):
         serializer = InstructionSerializer(inst_obj)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class InstructionRetrieveView(generics.RetrieveAPIView):
     serializer_class = InstructionSerializer
     permission_classes = [IsAuthenticated]
@@ -648,15 +655,15 @@ class InstructionUpdateView(APIView):
 
         serializer = InstructionSerializerResult(instruction)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class InstructionListView(generics.ListAPIView):
     serializer_class = InstructionSerializerResult
     permission_classes = [IsAuthenticated,]
     renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
-        return Instruction.objects.filter(created_by=self.user.id)
-
+        return Instruction.objects.filter(created_by=self.request.user.id)
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class InstructionSearchView(generics.ListAPIView):
     serializer_class = InstructionSerializerResult
     permission_classes = [IsAuthenticated]
