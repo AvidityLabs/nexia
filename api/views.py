@@ -66,7 +66,6 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
     """
 
     permission_classes = (IsAuthenticated,)
-    renderer_classes = (UserJSONRenderer,)
     serializer_class = UserSerializer
 
     def retrieve(self, request, *args, **kwargs):
@@ -94,7 +93,6 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
 
 class GetTokenAPIView(APIView):
     permission_classes = (AllowAny,)
-    renderer_classes = (UserJSONRenderer,)
     serializer_class = LoginSerializer
 
     def post(self, request):
@@ -143,7 +141,6 @@ class GetTokenAPIView(APIView):
 class DeveloperRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (AllowAny,)
-    renderer_classes = (UserJSONRenderer,)
     serializer_class = DeveloperRegisterSerializer
 
     def post(self, request):

@@ -19,11 +19,13 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from sentry_sdk.integrations.django import DjangoIntegration
+
 import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 envpath = os.path.join(BASE_DIR, ".env")
 load_dotenv(dotenv_path=envpath)
+
 
 
 DEBUG = os.environ.get('DEBUG')
@@ -70,6 +72,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'api.exceptions.handle_500.InternalServerErrorMiddleware',
+    'api.exceptions.handle_404.Handle404Middleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -243,6 +247,7 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
+
 
 
 LOGGING = {

@@ -71,7 +71,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
             # Invalid token header. The Token string should not contain spaces. Do
             # not attempt to authenticate.
             return None
-        print('found user-----------------')
+
         # The JWT library we're using can't handle the `byte` type, which is
         # commonly used by standard libraries in Python 3. To get around this,
         # we simply have to decode `prefix` and `token`. This does not make for

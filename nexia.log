@@ -14547,3 +14547,426 @@ django.core.exceptions.ImproperlyConfigured: Field name `category` is not valid 
 [2023-04-28 00:32:45] ERROR "GET /api/instructions/search/?tones=insightful HTTP/1.1" 500 158474
 [2023-04-28 00:32:59] INFO C:\Projects\chatgptapi\core\api\serializers.py changed, reloading.
 [2023-04-28 00:33:01] INFO Watching for file changes with StatReloader
+[2023-04-28 00:33:05] INFO "GET /api/instructions/search/?tones=insightful HTTP/1.1" 200 492
+[2023-04-28 00:33:46] INFO "GET /api/instructions/ HTTP/1.1" 200 1240
+[2023-04-28 00:34:17] WARNING Not Found: /api/instructions/detail/11/
+[2023-04-28 00:34:17] WARNING "GET /api/instructions/detail/11/ HTTP/1.1" 404 23
+[2023-04-28 05:20:54] INFO "GET /admin/ HTTP/1.1" 200 6611
+[2023-04-28 05:20:54] INFO "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2023-04-28 05:20:54] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2023-04-28 05:20:54] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2023-04-28 05:20:55] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2023-04-28 05:20:56] INFO "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[2023-04-28 05:20:58] INFO "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[2023-04-28 05:20:59] INFO "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[2023-04-28 05:20:59] INFO "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[2023-04-28 05:20:59] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2023-04-28 05:20:59] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2023-04-28 05:34:06] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 05:34:27] INFO Watching for file changes with StatReloader
+[2023-04-28 05:34:45] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 05:35:07] INFO Watching for file changes with StatReloader
+[2023-04-28 05:41:53] INFO "GET /api/instructions/search/?tones=insightful HTTP/1.1" 200 492
+[2023-04-28 05:42:06] WARNING Not Found: /api/instructions/detail/11/
+[2023-04-28 05:42:06] WARNING "GET /api/instructions/detail/11/ HTTP/1.1" 404 23
+[2023-04-28 05:42:26] WARNING Not Found: /api/instructions/detail/11/
+[2023-04-28 05:42:26] WARNING "GET /api/instructions/detail/11/ HTTP/1.1" 404 23
+[2023-04-28 05:43:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 05:43:16] INFO Watching for file changes with StatReloader
+[2023-04-28 05:43:23] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 05:43:27] INFO Watching for file changes with StatReloader
+[2023-04-28 05:43:35] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 05:43:37] INFO Watching for file changes with StatReloader
+[2023-04-28 05:45:05] INFO "GET /api/instructions/search/?tones=insightful HTTP/1.1" 200 492
+[2023-04-28 05:49:13] WARNING Not Found: /api/instructions/detail/16/
+[2023-04-28 05:49:13] WARNING "GET /api/instructions/detail/16/ HTTP/1.1" 404 23
+[2023-04-28 05:49:19] WARNING Not Found: /api/instructions/detail/17/
+[2023-04-28 05:49:19] WARNING "GET /api/instructions/detail/17/ HTTP/1.1" 404 23
+[2023-04-28 05:49:23] INFO "GET /api/instructions/detail/1/ HTTP/1.1" 200 300
+[2023-04-28 05:49:32] INFO "GET /api/instructions/detail/3/ HTTP/1.1" 200 372
+[2023-04-28 05:49:38] WARNING Not Found: /api/instructions/detail/5/
+[2023-04-28 05:49:38] WARNING "GET /api/instructions/detail/5/ HTTP/1.1" 404 23
+[2023-04-28 05:49:43] WARNING Not Found: /api/instructions/detail/6/
+[2023-04-28 05:49:43] WARNING "GET /api/instructions/detail/6/ HTTP/1.1" 404 23
+[2023-04-28 05:49:48] WARNING Not Found: /api/instructions/detail/5/
+[2023-04-28 05:49:48] WARNING "GET /api/instructions/detail/5/ HTTP/1.1" 404 23
+[2023-04-28 05:49:53] INFO "GET /api/instructions/detail/4/ HTTP/1.1" 200 621
+[2023-04-28 05:51:17] INFO "PUT /api/instructions/update/4/ HTTP/1.1" 200 408
+[2023-04-28 05:59:37] INFO "GET /api/instructions/ HTTP/1.1" 200 1228
+[2023-04-28 05:59:44] INFO "GET /api/instructions/detail/4/ HTTP/1.1" 200 609
+[2023-04-28 06:00:12] INFO "POST /api/get_token/ HTTP/1.1" 200 250
+[2023-04-28 06:00:41] INFO "GET /api/instructions/tones/ HTTP/1.1" 200 169
+[2023-04-28 06:08:09] INFO "GET /api/instructions/tones/detail/1/ HTTP/1.1" 200 17
+[2023-04-28 06:11:09] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-28 06:11:12] INFO Watching for file changes with StatReloader
+[2023-04-28 08:43:15] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-28 08:43:20] INFO Watching for file changes with StatReloader
+[2023-04-28 09:06:19] ERROR Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+[2023-04-28 09:06:20] WARNING Bad Request: /admin
+[2023-04-28 09:06:20] WARNING "GET /admin HTTP/1.1" 400 81042
+[2023-04-30 03:48:48] INFO Watching for file changes with StatReloader
+[2023-04-30 03:49:43] ERROR Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+[2023-04-30 03:49:44] WARNING Bad Request: /api/v1/register/
+[2023-04-30 03:49:44] WARNING "POST /api/v1/register/ HTTP/1.1" 400 78794
+[2023-04-30 03:50:30] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-30 03:50:33] INFO Watching for file changes with StatReloader
+[2023-04-30 03:50:36] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-30 03:50:38] INFO Watching for file changes with StatReloader
+[2023-04-30 03:50:43] INFO "POST /api/v1/register/ HTTP/1.1" 201 217
+[2023-04-30 03:51:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:06] INFO Watching for file changes with StatReloader
+[2023-04-30 03:51:10] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:12] INFO Watching for file changes with StatReloader
+[2023-04-30 03:51:16] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:19] INFO Watching for file changes with StatReloader
+[2023-04-30 03:51:24] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:26] INFO Watching for file changes with StatReloader
+[2023-04-30 03:51:31] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:33] INFO Watching for file changes with StatReloader
+[2023-04-30 03:51:38] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:40] INFO Watching for file changes with StatReloader
+[2023-04-30 03:51:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:48] INFO Watching for file changes with StatReloader
+[2023-04-30 03:51:52] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:51:54] INFO Watching for file changes with StatReloader
+[2023-04-30 03:52:03] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:52:06] INFO Watching for file changes with StatReloader
+[2023-04-30 03:52:10] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 03:52:12] INFO Watching for file changes with StatReloader
+[2023-04-30 07:54:17] INFO Watching for file changes with StatReloader
+[2023-04-30 07:54:27] WARNING Bad Request: /api/v1/register/
+[2023-04-30 07:54:27] WARNING "POST /api/v1/register/ HTTP/1.1" 400 111
+[2023-04-30 07:55:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 07:55:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 07:55:31] INFO Watching for file changes with StatReloader
+[2023-04-30 07:55:31] INFO Watching for file changes with StatReloader
+[2023-04-30 07:55:34] WARNING Bad Request: /api/v1/register/
+[2023-04-30 07:55:35] WARNING "POST /api/v1/register/ HTTP/1.1" 400 97
+[2023-04-30 07:57:06] WARNING Not Found: /api/v1/regis
+[2023-04-30 07:57:06] WARNING "POST /api/v1/regis HTTP/1.1" 404 5535
+[2023-04-30 08:05:27] INFO C:\Projects\chatgptapi\core\api\exceptions\responses.py changed, reloading.
+[2023-04-30 08:05:30] INFO Watching for file changes with StatReloader
+[2023-04-30 08:05:38] WARNING Not Found: /api/v1/regis
+[2023-04-30 08:05:38] WARNING "POST /api/v1/regis HTTP/1.1" 404 5535
+[2023-04-30 08:05:40] WARNING Not Found: /api/v1/regis
+[2023-04-30 08:05:40] WARNING "POST /api/v1/regis HTTP/1.1" 404 5535
+[2023-04-30 08:05:48] WARNING Not Found: /api/v1/regis
+[2023-04-30 08:05:48] WARNING "POST /api/v1/regis HTTP/1.1" 404 5535
+[2023-04-30 08:06:01] ERROR Internal Server Error: /api/v1/register/
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 160, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\serializers.py", line 235, in is_valid
+    raise ValidationError(self.errors)
+rest_framework.exceptions.ValidationError: {'email': [ErrorDetail(string='This field may not be blank.', code='blank')], 'password': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\chatgptapi\env\lib\site-packages\rest_framework\views.py", line 466, in handle_exception
+    response = exception_handler(exc, context)
+  File "C:\Projects\chatgptapi\core\api\exceptions\responses.py", line 4, in core_exception_handler
+    response = exception_handler(exc, context)
+NameError: name 'exception_handler' is not defined
+[2023-04-30 08:06:01] ERROR "POST /api/v1/register/ HTTP/1.1" 500 104968
+[2023-04-30 08:06:14] INFO C:\Projects\chatgptapi\core\api\exceptions\responses.py changed, reloading.
+[2023-04-30 08:06:17] INFO Watching for file changes with StatReloader
+[2023-04-30 08:06:22] WARNING Bad Request: /api/v1/register/
+[2023-04-30 08:06:22] WARNING "POST /api/v1/register/ HTTP/1.1" 400 97
+[2023-04-30 08:06:24] WARNING Bad Request: /api/v1/register/
+[2023-04-30 08:06:24] WARNING "POST /api/v1/register/ HTTP/1.1" 400 97
+[2023-04-30 08:07:09] WARNING Bad Request: /api/v1/register/
+[2023-04-30 08:07:09] WARNING "POST /api/v1/register/ HTTP/1.1" 400 61
+[2023-04-30 08:08:22] INFO "POST /api/v1/get_token/ HTTP/1.1" 200 250
+[2023-04-30 08:09:17] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:09:18] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:09:21] INFO Watching for file changes with StatReloader
+[2023-04-30 08:09:22] INFO Watching for file changes with StatReloader
+[2023-04-30 08:09:24] INFO "POST /api/v1/get_token/ HTTP/1.1" 200 235
+[2023-04-30 08:09:59] WARNING Bad Request: /api/v1/get_token/
+[2023-04-30 08:09:59] WARNING "POST /api/v1/get_token/ HTTP/1.1" 400 53
+[2023-04-30 08:16:15] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:16:15] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:16:18] INFO Watching for file changes with StatReloader
+[2023-04-30 08:16:18] INFO Watching for file changes with StatReloader
+[2023-04-30 08:17:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:17:20] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:17:23] INFO Watching for file changes with StatReloader
+[2023-04-30 08:17:23] INFO Watching for file changes with StatReloader
+[2023-04-30 08:20:43] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:20:44] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:20:47] INFO Watching for file changes with StatReloader
+[2023-04-30 08:20:48] INFO Watching for file changes with StatReloader
+[2023-04-30 08:24:27] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:24:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:24:33] INFO Watching for file changes with StatReloader
+[2023-04-30 08:24:35] INFO Watching for file changes with StatReloader
+[2023-04-30 08:24:45] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:24:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:24:47] INFO Watching for file changes with StatReloader
+[2023-04-30 08:24:49] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:01] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:01] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:04] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:06] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:07] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:08] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:09] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:11] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:12] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:14] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:15] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:18] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:21] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:21] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:23] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:24] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:26] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:28] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:40] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:41] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:25:43] INFO Watching for file changes with StatReloader
+[2023-04-30 08:25:44] INFO Watching for file changes with StatReloader
+[2023-04-30 08:26:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:26:00] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:26:02] INFO Watching for file changes with StatReloader
+[2023-04-30 08:26:04] INFO Watching for file changes with StatReloader
+[2023-04-30 08:26:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:26:28] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:26:31] INFO Watching for file changes with StatReloader
+[2023-04-30 08:26:33] INFO Watching for file changes with StatReloader
+[2023-04-30 08:27:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:27:46] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 08:27:48] INFO Watching for file changes with StatReloader
+[2023-04-30 08:27:49] INFO Watching for file changes with StatReloader
+[2023-04-30 08:28:28] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:28:28] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:28:30] INFO Watching for file changes with StatReloader
+[2023-04-30 08:28:31] INFO Watching for file changes with StatReloader
+[2023-04-30 08:28:56] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:28:57] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:29:00] INFO Watching for file changes with StatReloader
+[2023-04-30 08:29:00] INFO Watching for file changes with StatReloader
+[2023-04-30 08:29:05] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:29:05] INFO C:\Projects\chatgptapi\core\api\utilities\openai\utils.py changed, reloading.
+[2023-04-30 08:29:07] INFO Watching for file changes with StatReloader
+[2023-04-30 08:29:09] INFO Watching for file changes with StatReloader
+[2023-04-30 08:29:28] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-30 08:29:32] INFO Watching for file changes with StatReloader
+[2023-04-30 08:31:49] INFO Watching for file changes with StatReloader
+[2023-04-30 08:37:06] INFO Watching for file changes with StatReloader
+[2023-04-30 08:50:27] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 08:50:33] INFO Watching for file changes with StatReloader
+[2023-04-30 08:50:53] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 08:50:56] INFO Watching for file changes with StatReloader
+[2023-04-30 08:59:48] INFO C:\Projects\chatgptapi\core\api\backends.py changed, reloading.
+[2023-04-30 08:59:51] INFO Watching for file changes with StatReloader
+[2023-04-30 09:01:09] WARNING Not Found: /api/v1/get_token/
+[2023-04-30 09:01:09] WARNING "POST /api/v1/get_token/ HTTP/1.1" 404 5505
+[2023-04-30 09:07:03] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-30 09:07:32] INFO Watching for file changes with StatReloader
+[2023-04-30 09:07:40] WARNING Not Found: /api/v1/get_token/
+[2023-04-30 09:07:40] WARNING "POST /api/v1/get_token/ HTTP/1.1" 404 31
+[2023-04-30 09:07:59] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:08:01] INFO Watching for file changes with StatReloader
+[2023-04-30 09:09:15] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:09:18] INFO Watching for file changes with StatReloader
+[2023-04-30 09:09:29] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:09:32] INFO Watching for file changes with StatReloader
+[2023-04-30 09:09:58] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:10:01] INFO Watching for file changes with StatReloader
+[2023-04-30 09:10:26] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:10:29] INFO Watching for file changes with StatReloader
+[2023-04-30 09:10:45] WARNING Not Found: /api/v1/get_token/
+[2023-04-30 09:10:45] WARNING "POST /api/v1/get_token/ HTTP/1.1" 404 31
+[2023-04-30 09:10:48] WARNING Not Found: /api/v1/get_token/
+[2023-04-30 09:10:48] WARNING "POST /api/v1/get_token/ HTTP/1.1" 404 31
+[2023-04-30 09:14:12] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:14:14] INFO Watching for file changes with StatReloader
+[2023-04-30 09:14:18] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:14:20] INFO Watching for file changes with StatReloader
+[2023-04-30 09:14:32] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_404.py changed, reloading.
+[2023-04-30 09:14:34] INFO Watching for file changes with StatReloader
+[2023-04-30 09:16:08] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 09:16:10] INFO Watching for file changes with StatReloader
+[2023-04-30 09:16:18] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 09:16:20] INFO Watching for file changes with StatReloader
+[2023-04-30 09:16:26] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 09:16:28] INFO Watching for file changes with StatReloader
+[2023-04-30 09:16:45] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 09:16:47] INFO Watching for file changes with StatReloader
+[2023-04-30 09:16:51] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 09:16:54] INFO Watching for file changes with StatReloader
+[2023-04-30 09:17:48] INFO C:\Projects\chatgptapi\core\api\utilities\tokens.py changed, reloading.
+[2023-04-30 09:17:51] INFO Watching for file changes with StatReloader
+[2023-04-30 09:19:16] WARNING Not Found: /api/v1/prompt/completion/
+[2023-04-30 09:19:16] WARNING "POST /api/v1/prompt/completion/ HTTP/1.1" 404 31
+[2023-04-30 09:19:21] WARNING Not Found: /api/v1/prompt/completion/
+[2023-04-30 09:19:21] WARNING "POST /api/v1/prompt/completion/ HTTP/1.1" 404 31
+[2023-04-30 09:20:11] INFO C:\Projects\chatgptapi\core\api\urls.py changed, reloading.
+[2023-04-30 09:20:14] INFO Watching for file changes with StatReloader
+[2023-04-30 09:20:24] INFO "POST /api/v1/prompt/completion/ HTTP/1.1" 200 513
+[2023-04-30 09:21:03] INFO "POST /api/v1/get_token/ HTTP/1.1" 200 250
+[2023-04-30 09:21:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 09:21:24] INFO Watching for file changes with StatReloader
+[2023-04-30 09:21:29] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 09:21:31] INFO Watching for file changes with StatReloader
+[2023-04-30 09:21:36] INFO "POST /api/v1/get_token/ HTTP/1.1" 200 235
+[2023-04-30 09:21:43] ERROR Internal Server Error: /api/v1/register/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 156, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\serializers.py", line 235, in is_valid
+    raise ValidationError(self.errors)
+rest_framework.exceptions.ValidationError: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 466, in handle_exception
+    response = exception_handler(exc, context)
+  File "C:\Projects\chatgptapi\core\api\exceptions\responses.py", line 13, in core_exception_handler
+    print(response)
+UnboundLocalError: local variable 'response' referenced before assignment
+[2023-04-30 09:21:43] ERROR "POST /api/v1/register/ HTTP/1.1" 500 105943
+[2023-04-30 09:23:48] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-30 09:23:51] INFO Watching for file changes with StatReloader
+[2023-04-30 09:24:03] INFO Watching for file changes with StatReloader
+[2023-04-30 09:24:19] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-30 09:24:22] INFO Watching for file changes with StatReloader
+[2023-04-30 09:24:27] ERROR Internal Server Error: /api/v1/register/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 156, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\serializers.py", line 235, in is_valid
+    raise ValidationError(self.errors)
+rest_framework.exceptions.ValidationError: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 466, in handle_exception
+    response = exception_handler(exc, context)
+  File "C:\Projects\chatgptapi\core\api\exceptions\responses.py", line 13, in core_exception_handler
+    print(response)
+UnboundLocalError: local variable 'response' referenced before assignment
+[2023-04-30 09:24:27] ERROR Internal Server Error: /api/v1/register/
+[2023-04-30 09:24:27] ERROR "POST /api/v1/register/ HTTP/1.1" 500 71
+[2023-04-30 09:26:13] INFO C:\Projects\chatgptapi\core\api\exceptions\handle_500.py changed, reloading.
+[2023-04-30 09:26:15] INFO Watching for file changes with StatReloader
+[2023-04-30 09:26:26] ERROR Internal Server Error: /api/v1/register/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 156, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\serializers.py", line 235, in is_valid
+    raise ValidationError(self.errors)
+rest_framework.exceptions.ValidationError: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 466, in handle_exception
+    response = exception_handler(exc, context)
+  File "C:\Projects\chatgptapi\core\api\exceptions\responses.py", line 13, in core_exception_handler
+    print(response)
+UnboundLocalError: local variable 'response' referenced before assignment
+[2023-04-30 09:26:26] ERROR Internal Server Error: /api/v1/register/
+[2023-04-30 09:26:26] ERROR "POST /api/v1/register/ HTTP/1.1" 500 142
+[2023-04-30 09:28:15] INFO C:\Projects\chatgptapi\core\core\settings.py changed, reloading.
+[2023-04-30 09:32:02] INFO Watching for file changes with StatReloader
+[2023-04-30 09:32:06] ERROR Internal Server Error: /api/v1/register/
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Projects\chatgptapi\core\api\views.py", line 156, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\serializers.py", line 235, in is_valid
+    raise ValidationError(self.errors)
+rest_framework.exceptions.ValidationError: {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\sentry_sdk\integrations\django\views.py", line 85, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Projects\NLP\nexia\env\lib\site-packages\rest_framework\views.py", line 466, in handle_exception
+    response = exception_handler(exc, context)
+  File "C:\Projects\chatgptapi\core\api\exceptions\responses.py", line 13, in core_exception_handler
+    print(response)
+UnboundLocalError: local variable 'response' referenced before assignment
+[2023-04-30 09:32:06] ERROR Internal Server Error: /api/v1/register/
+[2023-04-30 09:32:06] ERROR "POST /api/v1/register/ HTTP/1.1" 500 141
+[2023-04-30 09:32:30] INFO "POST /api/v1/get_token/ HTTP/1.1" 200 235
+[2023-04-30 09:32:50] INFO C:\Projects\chatgptapi\core\api\exceptions\responses.py changed, reloading.
+[2023-04-30 09:32:53] INFO Watching for file changes with StatReloader
+[2023-04-30 09:32:56] INFO "POST /api/v1/get_token/ HTTP/1.1" 200 235
+[2023-04-30 09:33:08] WARNING Bad Request: /api/v1/register/
+[2023-04-30 09:33:08] WARNING "POST /api/v1/register/ HTTP/1.1" 400 73
+[2023-04-30 09:33:22] INFO C:\Projects\chatgptapi\core\api\views.py changed, reloading.
+[2023-04-30 09:33:25] INFO Watching for file changes with StatReloader
