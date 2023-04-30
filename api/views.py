@@ -8,6 +8,10 @@ from api.utilities.validators.text_validator import validate_text_input
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
+
+from api.utilities.tokens import MonthlyTokenLimitExceeded
+from api.utilities.tokens import validate_token_usage
+from api.renderers import APIJSONRenderer
 from .models import Instruction, PricingPlan, TextToImage, TextToVideo, TokenUsage, Tone, User
 from .serializers import  InstructionSerializer, InstructionSerializerResult, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
 
@@ -67,6 +71,7 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
 
     permission_classes = (IsAuthenticated,)
     serializer_class = UserSerializer
+    renderer_classes = (APIJSONRenderer,)
 
     def retrieve(self, request, *args, **kwargs):
         """
@@ -94,6 +99,7 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
 class GetTokenAPIView(APIView):
     permission_classes = (AllowAny,)
     serializer_class = LoginSerializer
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request):
         user = {
@@ -142,6 +148,7 @@ class DeveloperRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (AllowAny,)
     serializer_class = DeveloperRegisterSerializer
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request):
         user = {
@@ -162,7 +169,7 @@ class DeveloperRegisterView(generics.CreateAPIView):
 class AppUserRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (IsAuthenticated,)
-    # renderer_classes = (UserJSONRenderer,)
+    renderer_classes = (APIJSONRenderer,)
     serializer_class = DeveloperRegisterSerializer
 
     def post(self, request):
@@ -187,6 +194,7 @@ class AppUserRegisterView(generics.CreateAPIView):
 
 class TextEmotionAnalysisView(APIView):
     permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
@@ -238,6 +246,7 @@ class TextEmotionAnalysisView(APIView):
 
 class TextSentimentAnalysisView(APIView):
     permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
@@ -284,8 +293,12 @@ class TextSentimentAnalysisView(APIView):
 
 class ChatGPTCompletionView(APIView):
     permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
+
+        validate_token_usage(request.user)
+
         text_serializer = TextSerializer(data=request.data)
 
         if text_serializer.is_valid():
@@ -316,15 +329,18 @@ class ChatGPTCompletionView(APIView):
                 logger.error(f"An error occurred @api/gpt/completion/: {e}")
                 return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            print(text_serializer.errors)
             logger.exception(
                 f"An error occurred @api/gpt/completion/{text_serializer.errors}")
             return Response({'error': text_serializer.errors}, status=400)
 
 class ChatGPTEditView(APIView):
     permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
+
+        validate_token_usage(self.request.user)
+
         text_serializer = TextSerializer(data=request.data)
         instruction_serializer = TextSerializer(data=request.data)
         if text_serializer.is_valid() and instruction_serializer.is_valid():
@@ -357,6 +373,7 @@ class ChatGPTEditView(APIView):
 
 class GenerateImageView(APIView):
     permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
         text_serializer = TextSerializer(data=request.data)
@@ -398,6 +415,7 @@ class GenerateImageView(APIView):
 class TextToImageView(generics.CreateAPIView):
     queryset = TextToImage.objects.all()
     serializer_class = TextToImageSerializer
+    renderer_classes = (APIJSONRenderer,)
 
     def create(self, request, *args, **kwargs):
         text = request.data.get('text', '')
@@ -414,6 +432,7 @@ class TextToImageView(generics.CreateAPIView):
 class TextToVideoView(generics.CreateAPIView):
     queryset = TextToVideo.objects.all()
     serializer_class = TextToVideoSerializer
+    renderer_classes = (APIJSONRenderer,)
 
     def create(self, request, *args, **kwargs):
         text = request.data.get('text', '')
@@ -428,6 +447,8 @@ class TextToVideoView(generics.CreateAPIView):
 
 
 class CreateToneAPIView(APIView):
+    renderer_classes = (APIJSONRenderer,)
+    permission_classes = [IsAuthenticated,]
     def post(self, request):
         name = request.data.get('name')
         if not name:
@@ -439,7 +460,7 @@ class CreateToneAPIView(APIView):
             return Response({'error': f'Invalid tone. {error_msg}'}, status=status.HTTP_400_BAD_REQUEST)
 
         # Check if the 'name' field already exists in the database
-        if Tone.objects.filter(name__iexact=name).exists():
+        if Tone.objects.filter(name__iexact=name, created_by=self.request.user.id).exists():
             return Response({'error': 'Tone with this name already exists.'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
@@ -455,14 +476,14 @@ class CreateToneAPIView(APIView):
 
 class ToneListView(generics.ListAPIView):
     serializer_class = ToneSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
-        queryset = Tone.objects.all()
+        queryset = Tone.objects.filter(created_by=self.request.user.id)
         # Instruction.objects.filter(user_id=self.request.user.id)
         # Get the search query parameter from the request
         search_query = self.request.query_params.get('q')
-
         # If the search query is present, filter the queryset by the name field
         if search_query:
             queryset = queryset.filter(name__icontains=search_query)
@@ -470,14 +491,16 @@ class ToneListView(generics.ListAPIView):
 
 class ToneRetrieveView(generics.RetrieveAPIView):
     serializer_class = ToneSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
-        return Tone.objects.all()
+        return Tone.objects.filter(created_by=self.request.user.id)
 
 class ToneUpdateView(generics.RetrieveAPIView):
     serializer_class = ToneSerializer
     permission_classes = [IsAuthenticated]
+    renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
         return Tone.objects.filter(created_by=self.request.user.id)
@@ -486,6 +509,7 @@ class InstructionCreateView(APIView):
     queryset = Instruction.objects.all()
     serializer_class = InstructionSerializer
     permission_classes = [IsAuthenticated]
+    renderer_classes = (APIJSONRenderer,)
 
     def post(self, request):
         # Get data from request
@@ -580,6 +604,7 @@ class InstructionCreateView(APIView):
 class InstructionRetrieveView(generics.RetrieveAPIView):
     serializer_class = InstructionSerializer
     permission_classes = [IsAuthenticated]
+    renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
         return Instruction.objects.filter(created_by=self.request.user.id)
@@ -588,6 +613,7 @@ class InstructionRetrieveView(generics.RetrieveAPIView):
 class InstructionUpdateView(APIView):
     serializer_class = InstructionSerializer
     permission_classes = [IsAuthenticated]
+    renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
         return Instruction.objects.filter(created_by=self.request.user.id)
@@ -608,7 +634,6 @@ class InstructionUpdateView(APIView):
         if desc:
             instruction.description = desc
 
-
         if tones:
             tones_data = []
             for tone_item in tones:
@@ -626,14 +651,16 @@ class InstructionUpdateView(APIView):
 
 class InstructionListView(generics.ListAPIView):
     serializer_class = InstructionSerializerResult
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
-        return Instruction.objects.all()
+        return Instruction.objects.filter(created_by=self.user.id)
 
 class InstructionSearchView(generics.ListAPIView):
     serializer_class = InstructionSerializerResult
     permission_classes = [IsAuthenticated]
+    renderer_classes = (APIJSONRenderer,)
 
     def get_queryset(self):
         queryset = Instruction.objects.filter(created_by=self.request.user.id)

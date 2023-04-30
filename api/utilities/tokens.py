@@ -13,17 +13,17 @@ class MonthlyImageLimitExceeded(APIException):
 
 class MonthlyAudioLimitExceeded(APIException):
     status_code = 401
-    default_detail = "We're sorry, but you have used up your monthly audio quota. Please upgrade your plan or reduce your audio usage."
+    default_detail = "We're sorry, but you have used up your monthly audio quota. Please upgrade your plan."
     default_code = "monthly_audio_limit_exceeded"
 
 class MonthlyVideoLimitExceeded(APIException):
     status_code = 401
-    default_detail = "We regret to inform you that your monthly video limit has been exceeded. Please upgrade your plan or reduce your video usage."
+    default_detail = "We regret to inform you that your monthly video limit has been exceeded. Please upgrade your plan."
     default_code = "monthly_video_limit_exceeded"
 
 class MonthlyTokenLimitExceeded(APIException):
     status_code = 401
-    default_detail = "Unfortunately, you have exceeded your monthly token limit. Please upgrade your plan or reduce your token usage."
+    default_detail = "Unfortunately, you have exceeded your monthly token limit. Please upgrade your plan."
     default_code = "monthly_token_limit_exceeded"
 
 def check_count_value(val):
@@ -31,6 +31,7 @@ def check_count_value(val):
 
 # Only executed when prompting 
 def update_token_usage(user, prompt_tokens, completion_tokens, total_tokens, img_count=None, audio_count=None, video_count=None):
+    print('hello')
     # Get the current month and year
     today = date.today()
     month = today.month
@@ -65,7 +66,7 @@ def update_token_usage(user, prompt_tokens, completion_tokens, total_tokens, img
             token_usage.total_videos += video_count
         token_usage.save()
 
-
+# Only used on some endpoints to ckeck token usage
 def validate_token_usage(user):
     # Get the user's current token usage for the current month
     current_month = datetime.now().month
