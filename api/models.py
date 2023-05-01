@@ -1,4 +1,5 @@
 import uuid
+import requests
 from datetime import datetime, timedelta
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -6,10 +7,13 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin
+    AbstractBaseUser, BaseUserManager, Group,  PermissionsMixin
 )
+
 from django.db import models
 import jwt
+import cloudinary.uploader
+from cloudinary.models import CloudinaryField
 
 
 class BaseModel(models.Model):
@@ -17,8 +21,6 @@ class BaseModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
     created_by = models.CharField(max_length=100, blank=True, null=True)
-
-    
 
     class Meta:
         abstract = True
@@ -32,7 +34,7 @@ class PricingPlan(BaseModel):
     MEGA = 'MEGA'
     CUSTOM = 'CUSTOM'
     PENDING = 'PENDING'
-    
+
     CHOICES = [
         (BASIC, 'BASIC'),
         (PRO, 'PRO'),
@@ -42,16 +44,22 @@ class PricingPlan(BaseModel):
         (PENDING, 'PENDING'),
     ]
 
-    name = models.CharField(max_length=50, choices=CHOICES, null=True,blank=True)
-    description = models.TextField(null=True,blank=True)
-    features = models.TextField(null=True,blank=True)
-    monthly_price = models.DecimalField(max_digits=8, decimal_places=2, default="0.00")
+    name = models.CharField(
+        max_length=50, choices=CHOICES, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    features = models.TextField(null=True, blank=True)
+    monthly_price = models.DecimalField(
+        max_digits=8, decimal_places=2, default="0.00")
     monthly_character_limit = models.IntegerField(default=0)
-    rate_limit = models.IntegerField(default=0)
-    data_storage_limit = models.IntegerField(default=0)
-    additional_character_charge = models.DecimalField(max_digits=8, decimal_places=4, default="0.00")
+    monthly_image_limit = models.IntegerField(default=0)
+    monthly_audio_limit = models.IntegerField(default=0)
+    monthly_video_limit = models.IntegerField(default=0)
+    monthly_rate_limit = models.IntegerField(default=0)
+    monthly_data_storage_limit = models.IntegerField(default=0)
+    monthly_token_limit = models.IntegerField(default=0)
+    additional_character_charge = models.DecimalField(
+        max_digits=8, decimal_places=4, default="0.00")
     currency = models.CharField(max_length=3, default='USD')
-
 
     def __str__(self):
         return self.name
@@ -64,9 +72,13 @@ class Subscription(BaseModel):
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    username = models.CharField(max_length=100, null=True, blank=True)
+    user_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.pricing_plan.name}"
+        if self.pricing_plan:
+            return f"{self.pricing_plan.name}"
+        return ''
 
 
 class UserManager(BaseUserManager):
@@ -79,19 +91,28 @@ class UserManager(BaseUserManager):
     to create `User` objects.
     """
 
-    def create_user(self, username, email, password=None, request=None):
+    def create_user(self, email, password=None, app_owner_id=None, groups=None):
         """Create and return a `User` with an email, username and password."""
-        if username is None:
-            raise TypeError('Users must have a username.')
 
         if email is None:
             raise TypeError('Users must have an email address.')
 
-        user = self.model(username=username, email=self.normalize_email(email))
+        user = self.model.objects.filter(email=email)
+        if len(user) != 0:
+            raise TypeError('User email already exists.')
+
+        user = self.model(username=email, email=self.normalize_email(email))
         user.set_password(password)
         user.save()
+        if app_owner_id:
+            user.app_owner_id = app_owner_id
+            user.save()
+        if groups:
+            for group in groups:
+                group_obj, _ = Group.objects.get_or_create(name=group['name'])
+                user.groups.add(group_obj)
         return user
-    
+
     def create_superuser(self, username, email, password):
         """
         Create and return a `User` with superuser (admin) permissions.
@@ -99,52 +120,34 @@ class UserManager(BaseUserManager):
         if password is None:
             raise TypeError('Superusers must have a password.')
 
-        user = self.create_user(username, email, password)
+        user = self.create_user(username, email)
+        user.set_password(password)
         user.is_superuser = True
         user.is_staff = True
         user.save()
 
         return user
 
-    def create_user_subscription(self, user_id, request):
-        """
-        Create a subscription for the user with the given user_id and return the user object.
-        """
-        if request is None:
-            raise TypeError('A valid request object is required to create a subscription.')
-            
-        user = self.model.objects.filter(id=user_id).first()
-        if user is None:
-            raise ValueError('User with id={} does not exist.'.format(user_id))
-        
-        plan = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
-        if plan not in ('BASIC', 'PRO', 'ULTRA', 'MEGA', 'CUSTOM'):
-            raise ValueError('Invalid subscription plan: {}'.format(plan))
-        
-        plan_obj, _ = PricingPlan.objects.get_or_create(name=plan)
-        subscription = Subscription.objects.create(pricing_plan=plan_obj)
-        user.subscription = subscription
-        user.save()
-        return user
 
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.CharField(max_length=100, unique=True,
                           default=uuid.uuid4, primary_key=True)
     email = models.EmailField(db_index=True, unique=True)
     username = models.CharField(db_index=True, max_length=255, unique=True)
-    is_developer = models.BooleanField(default=False)
+    is_developer = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
-    api_key = models.CharField(max_length=100, null=True, blank=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
     subscription = models.ForeignKey(
         Subscription, on_delete=models.CASCADE, null=True, blank=True)
     total_tokens_used = models.IntegerField(default=0)
+    is_app_user = models.BooleanField(default=False)
 
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
 
     objects = UserManager()
 
@@ -174,15 +177,13 @@ class User(AbstractBaseUser, PermissionsMixin):
         not store the user's real name, we return their username instead.
         """
         return self.username
-    
+
     def get_subscription(self):
         """
         This method is used to get the user subscription
         """
         plan = self.subscription.pricing_plan.name
-        if self.subscription.pricing_plan.name:
-            return plan
-        return None
+        return plan
 
     def get_short_name(self):
         """
@@ -191,7 +192,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         the user's real name, we return their username instead.
         """
         return self.username
-    
+
     def _generate_jwt_token(self):
         """
         Generates a JSON Web Token that stores this user's ID and has an expiry
@@ -206,27 +207,38 @@ class User(AbstractBaseUser, PermissionsMixin):
         }, settings.SECRET_KEY, algorithm='HS256')
         return token
 
+
 class TokenUsage(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pricing_plan = models.ForeignKey(PricingPlan, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True)
+    pricing_plan = models.ForeignKey(
+        PricingPlan, on_delete=models.CASCADE, null=True, blank=True)
     prompt_tokens_used = models.IntegerField(default=0)
     completion_tokens_used = models.IntegerField(default=0)
     total_tokens_used = models.IntegerField(default=0)
+    total_images = models.IntegerField(default=0)
+    total_audios = models.IntegerField(default=0)
+    total_videos = models.IntegerField(default=0)
+    month = models.IntegerField(null=True, blank=True)
+    year = models.IntegerField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return f"{self.user.email} Token Usage for {self.timestamp.strftime('%B %Y')}"
 
 
-class SentimentAnalysis(models.Model):
+class SentimentAnalysis(BaseModel):
     text = models.TextField(null=True, blank=True)
     positive = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
 
-class EmotionAnalysis(models.Model):
+
+class EmotionAnalysis(BaseModel):
     text = models.TextField(null=True, blank=True)
     anger_score = models.FloatField(null=True, blank=True)
     disgust_score = models.FloatField(null=True, blank=True)
@@ -236,9 +248,95 @@ class EmotionAnalysis(models.Model):
     sadness_score = models.FloatField(null=True, blank=True)
     surprise_score = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
 
-# Signals
 
+class TextToImage(BaseModel):
+    url = models.CharField(max_length=255)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
+
+    def generate_image(self, text):
+        # Call the AI API to generate the image based on the input text
+        response = requests.post(
+            'https://your-ai-api.com/generate-image', json={'text': text})
+
+        # Upload the generated image to Cloudinary
+        upload_result = cloudinary.uploader.upload(response.content)
+
+        # Save the Cloudinary URL to the Django model
+        self.im = upload_result['url']
+        self.save()
+
+
+class TextToVideo(BaseModel):
+    url = models.CharField(max_length=255)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
+
+    def generate_video(self, text):
+        # Call the AI API to generate the video based on the input text
+        response = requests.post(
+            'https://your-ai-api.com/generate-video', json={'text': text})
+
+        # Upload the generated video to Cloudinary
+        upload_result = cloudinary.uploader.upload(
+            response.content, resource_type="video")
+
+        # Save the Cloudinary URL to the Django model
+        self.url = upload_result['url']
+        self.save()
+
+
+class Tone(BaseModel):
+    name = models.CharField(max_length=100, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Instruction(BaseModel):
+    description = models.TextField(null=True, blank=True)
+    tones = models.ManyToManyField(Tone, blank=True)
+    audience = models.CharField(max_length=100, blank=True, null=True)
+    style = models.CharField(max_length=100, blank=True, null=True)
+    context = models.CharField(max_length=100, blank=True, null=True)
+    language = models.CharField(max_length=100, blank=True, null=True)
+    length = models.CharField(max_length=100, blank=True, null=True)
+    source_text = models.CharField(max_length=100, blank=True, null=True)
+
+    def generate_prompt(self,description, audience, style, context, language, length, source_text, tones):
+        prompt = f"Write a {tones} prompt"
+        if description:
+            prompt += f" about {description}."
+        else:
+            prompt += "."
+        if audience:
+            prompt += f" The intended audience is {audience}."
+        if style:
+            prompt += f" The writing style should be {style}."
+        if context:
+            prompt += f" The prompt should be set in the context of {context}."
+        if language:
+            prompt += f" The prompt should be in {language}."
+        if length:
+            prompt += f" The prompt should be {length} in length."
+        if source_text:
+            prompt += f" The prompt should be based on the source text {source_text}."
+
+        return prompt
+
+
+    @property
+    def prompt(self):
+        tones = '/'.join(i.name for i in self.tones.all())
+        return self.generate_prompt(
+            self.description,
+            self.audience,
+            self.style,
+            self.context,
+            self.language,
+            self.length,
+            self.source_text,
+            tones)

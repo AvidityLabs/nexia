@@ -1,9 +1,13 @@
 from django.contrib import admin
-from .models import PricingPlan, Subscription, User, TokenUsage, SentimentAnalysis, EmotionAnalysis
+from .models import Instruction, PricingPlan, Subscription, User, TokenUsage, SentimentAnalysis, EmotionAnalysis, Tone
+
+admin.site.register(Tone)
+
+admin.site.register(Instruction)
 
 @admin.register(PricingPlan)
 class PricingPlanAdmin(admin.ModelAdmin):
-    list_display = ('name', 'monthly_price', 'monthly_character_limit', 'rate_limit', 'data_storage_limit')
+    list_display = ('name', 'monthly_price','monthly_token_limit', 'monthly_character_limit', 'monthly_rate_limit', 'monthly_data_storage_limit', 'monthly_image_limit','monthly_audio_limit','monthly_video_limit')
     list_filter = ('name',)
     search_fields = ('name',)
     ordering = ('name',)
@@ -12,9 +16,10 @@ class PricingPlanAdmin(admin.ModelAdmin):
             'fields': ('name', 'description', 'features')
         }),
         ('Pricing Details', {
-            'fields': ('monthly_price', 'currency', 'monthly_character_limit', 'rate_limit', 'data_storage_limit', 'additional_character_charge'),
+            'fields': ('monthly_price', 'currency','monthly_token_limit', 'monthly_character_limit', 'monthly_rate_limit', 'monthly_data_storage_limit', 'monthly_image_limit','monthly_audio_limit','monthly_video_limit','additional_character_charge'),
         }),
     )
+
 
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):
@@ -22,7 +27,7 @@ class SubscriptionAdmin(admin.ModelAdmin):
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('email', 'is_developer', 'is_admin', 'is_superuser', 'api_key', 'subscription', 'total_tokens_used')
+    list_display = ('email', 'is_developer', 'is_admin', 'is_superuser', 'app_owner_id', 'subscription', 'total_tokens_used')
 
 @admin.register(TokenUsage)
 class TokenUsageAdmin(admin.ModelAdmin):

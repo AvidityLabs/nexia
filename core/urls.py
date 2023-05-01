@@ -22,6 +22,7 @@ def trigger_error(request):
     division_by_zero = 1 / 0
     
 urlpatterns = [
+    path('__debug__/', include('debug_toolbar.urls')),
     path('admin/', admin.site.urls),
     path('sentry-debug/', trigger_error),
     path('api/', include(('api.urls', 'api'), namespace='api')),
@@ -35,3 +36,9 @@ urlpatterns = [
         name="swagger-ui",
     ),
 ]
+
+# If using Docker the following will set your INTERNAL_IPS correctly in Debug mode:
+# if DEBUG:
+#     import socket  # only if you haven't already imported this
+#     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+#     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]

@@ -1,4 +1,30 @@
-# Test cases for DeveloperRegisterView
+
+# Test case 1: Test UserRetrieveUpdateAPIView (feature not requred at the moment)
+
+- [x]  Test if the user can retrieve their own information successfully using a GET request
+- []  Test if the user can update their own information successfully using a PATCH request with valid data
+- []  Test if the user can update their own information successfully using a PATCH request with invalid data
+
+# Test case 2: Test LoginAPIView
+
+- [x]  Test if a user can log in successfully using a POST request with valid credentials
+- [x]  Test if a user cannot log in using a POST request with an invalid email
+- [x]  Test if a user cannot log in using a POST request with an invalid password
+- [x]  Test if a user subscription, pricing plan and token usage have been updated.
+
+Test case 3: Test DeveloperRegisterView
+
+- [x]  Test if a user can register successfully using a POST request with valid data
+- [x]  Test if a user can register successfully and objects Subscription, TokenUsage created for the user.(plan=NOTSET)
+- [x]  Test if a user cannot register using a POST request with an invalid email
+- [x] Test if a user cannot register using a POST request with an invalid username
+- [x]  Test if a user cannot register using a POST request with an invalid password
+
+Test case 4: Test TextEmotionAnalysisView
+
+1.  Test if a user can analyze text successfully using a POST request with valid data
+2.  Test if a user cannot analyze text using a POST request with invalid data
+3.  Test if a user cannot analyze text using a POST request with no authentication token.
 
 - [x] Test for successful registration:
 
@@ -79,3 +105,8 @@
 20. Test with a user who has exceeded their completion tokens usage limit
 
 21. Test with a user who has exceeded their total tokens usage limit
+
+
+incase the yget errors
+
+{'detail': 'Authentication credentials were not provided.'}

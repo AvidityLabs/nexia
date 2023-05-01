@@ -15,12 +15,17 @@ from datetime import timedelta
 import logging
 from dotenv import load_dotenv
 import sentry_sdk
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from sentry_sdk.integrations.django import DjangoIntegration
+
 import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 envpath = os.path.join(BASE_DIR, ".env")
 load_dotenv(dotenv_path=envpath)
+
 
 
 DEBUG = os.environ.get('DEBUG')
@@ -63,10 +68,16 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_spectacular',
     'django_filters',
+    'cloudinary',
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
+    
+    'api.exceptions.handle_500.InternalServerErrorMiddleware',
+    'api.exceptions.handle_404.Handle404Middleware',
     'corsheaders.middleware.CorsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,6 +87,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+
 
 AUTH_USER_MODEL = 'api.User'
 
@@ -96,7 +109,7 @@ REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-       'api.authentication.backends.JWTAuthentication',
+       'api.backends.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -104,11 +117,12 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
-# Use JWT tokens that never expire (for demonstration purposes only!)
-# SIMPJEWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(days=36500),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=36500),
-# }
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
+
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Nexia API',
@@ -117,6 +131,8 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
     # OTHER SETTINGS
 }
+
+
 
 
 
@@ -144,14 +160,26 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Cache time to live is 15 minutes.
+CACHE_TTL = 60 * 15
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": os.environ.get('REDIS_URL'),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        "KEY_PREFIX": "api"
+    }
+}
 
-DATABASES = {}
+# DATABASES = {}
 # DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'nexiadb', # This is where you put the name of the db file. 
+        'NAME': 'nexiadb1', # This is where you put the name of the db file. 
                  # If one doesn't exist, it will be created at migration time.
     }
 }
@@ -200,6 +228,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 DISABLE_COLLECTSTATIC = 0
 
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -212,6 +241,13 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+)
+
 
 
 sentry_sdk.init(
@@ -229,6 +265,7 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
+
 
 
 LOGGING = {
