@@ -134,6 +134,8 @@ dmypy.json
 # logs 
 nexia.log
 
+nexiadb1
+
 # pytype static type analyzer
 .pytype/
 
