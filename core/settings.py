@@ -174,15 +174,15 @@ CACHES = {
     }
 }
 
-# DATABASES = {}
-# DATABASES["default"] = dj_database_url.config(conn_max_age=600)
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'nexiadb1', # This is where you put the name of the db file. 
-                 # If one doesn't exist, it will be created at migration time.
-    }
-}
+DATABASES = {}
+DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'nexiadb1', # This is where you put the name of the db file. 
+#                  # If one doesn't exist, it will be created at migration time.
+#     }
+# }
 
 
 # Password validation
