@@ -310,7 +310,7 @@ class ChatGPTCompletionView(APIView):
         if text_serializer.is_valid():
             text = text_serializer.validated_data['text']
             try:
-                response = completion(text)
+                response = completion(request.data.get('text'))
                 if response is None:
                     return Response({'error': f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
 
