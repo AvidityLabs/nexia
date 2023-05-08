@@ -348,10 +348,9 @@ class ChatGPTEditView(APIView):
         validate_token_usage(self.request.user)
 
         text_serializer = TextSerializer(data=request.data)
-        instruction_serializer = TextSerializer(data=request.data)
-        if text_serializer.is_valid() and instruction_serializer.is_valid():
-            text = text_serializer.validated_data['text']
-            instruction = instruction_serializer.validated_data['instruction']
+        if text_serializer.is_valid():
+            text = request.data.get('text')
+            instruction = request.data.get('instruction')
             try:
                 response_data = query_sentiment_model(text)
                 if response_data is None:
