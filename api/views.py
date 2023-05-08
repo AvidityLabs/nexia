@@ -17,7 +17,7 @@ from api.utilities.tokens import MonthlyTokenLimitExceeded
 from api.utilities.tokens import validate_token_usage
 from api.renderers import APIJSONRenderer
 from .models import Instruction, PricingPlan, TextToImage, TextToVideo, TokenUsage, Tone, User
-from .serializers import  InstructionSerializer, InstructionSerializerResult, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
+from .serializers import  InstructionSerializer, InstructionSerializerResult, TextCompletionSerializer, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
 
 from rest_framework import generics
 from rest_framework.views import APIView
@@ -305,7 +305,7 @@ class ChatGPTCompletionView(APIView):
 
         validate_token_usage(request.user)
 
-        text_serializer = TextSerializer(data=request.data)
+        text_serializer = TextCompletionSerializer(data=request.data)
 
         if text_serializer.is_valid():
             text = text_serializer.validated_data['text']

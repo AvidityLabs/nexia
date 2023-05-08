@@ -157,6 +157,42 @@ class TokenUsageSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'user', 'timestamp']
 
 
+class TextCompletionSerializer(serializers.Serializer):
+    text = serializers.CharField(
+        min_length=1, max_length=2048,
+        error_messages={
+            'required': 'This field is required.',
+            'blank': 'This field cannot be blank.',
+            'max_length': 'This field cannot exceed 100 characters.',
+            
+        })
+
+    def validate_text(self, value):
+        # Check for empty text
+        if not value.strip():
+            raise serializers.ValidationError("Text cannot be empty.")
+
+        # Check for text containing only spaces
+        if value.isspace():
+            raise serializers.ValidationError("Text cannot contain only spaces.")
+
+        # Check for text containing only special characters
+        if all(c in string.punctuation for c in value):
+            raise serializers.ValidationError("Text cannot contain only special characters.")
+
+        # Check for text containing only digits
+        if value.isdigit():
+            raise serializers.ValidationError("Text cannot contain only digits.")
+
+        # Check for non-ASCII characters
+        try:
+            value.encode('ascii')
+        except UnicodeEncodeError:
+            raise serializers.ValidationError("Text cannot contain non-ASCII characters.")
+
+        return value        
+
+
 class TextSerializer(serializers.Serializer):
     instruction = serializers.CharField(
         min_length=1, max_length=2048,
