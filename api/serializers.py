@@ -158,6 +158,14 @@ class TokenUsageSerializer(serializers.ModelSerializer):
 
 
 class TextSerializer(serializers.Serializer):
+    instruction = serializers.CharField(
+        min_length=1, max_length=2048,
+        error_messages={
+            'required': 'This field is required.',
+            'blank': 'This field cannot be blank.',
+            'max_length': 'This field cannot exceed 100 characters.',
+            
+        })
     text = serializers.CharField(
         min_length=1, max_length=2048,
         error_messages={
