@@ -21,7 +21,7 @@ def completion(topic):
 def edit(text,instruction):
     try:
         edit = openai.Edit.create(
-        model="gpt-3.5-turbo",
+        model="text-davinci-edit-001",
         input=text,
         instruction=instruction
         )
