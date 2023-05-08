@@ -209,7 +209,7 @@ class TextEmotionAnalysisView(APIView):
             try:
                 response_data = query_emotions_model(text)
                 if response_data is None:
-                    return Response({'error': f'{ERROR_MSG}'}, status=400)
+                    return Response({'error': f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
 
                 data = add_emotion_percentages(response_data)
                 # prepare_to_cal_token
@@ -243,7 +243,7 @@ class TextEmotionAnalysisView(APIView):
             except Exception as e:
                 logger.exception(
                     f"An error occurred @api/emotion_analysis/: {e}")
-                return Response({'error': f'{ERROR_MSG}'}, status=400)
+                return Response({'error': f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
         else:
             logger.error(
                 f"An error occurred @api/emotion_analysis/{text_serializer.errors}")
@@ -262,7 +262,7 @@ class TextSentimentAnalysisView(APIView):
             try:
                 response_data = query_sentiment_model(text)
                 if response_data is None:
-                    return Response({"error": ERROR_MSG}, status=400)
+                    return Response({"error": f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
 
                 fixed_labels = rename_sentiment_labels(response_data)
                 fixed_labels_str = ''
@@ -310,11 +310,10 @@ class ChatGPTCompletionView(APIView):
         if text_serializer.is_valid():
             text = text_serializer.validated_data['text']
             try:
-                response_data = query_sentiment_model(text)
-                if response_data is None:
-                    return Response({'error': f'{ERROR_MSG}'}, status=400)
-
                 response = completion(text)
+                if response is None:
+                    return Response({'error': f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
+
                 prompt_tokens = response.usage.prompt_tokens
                 completion_tokens = response.usage.completion_tokens
                 total_tokens = response.usage.total_tokens
@@ -352,11 +351,10 @@ class ChatGPTEditView(APIView):
             text = request.data.get('text')
             instruction = request.data.get('instruction')
             try:
-                response_data = query_sentiment_model(text)
-                if response_data is None:
+                response = edit(text,instruction)
+                if response is None:
                     return Response({'error': f'{ERROR_MSG}'}, status=400)
 
-                response = edit(text,instruction)
                 prompt_tokens = response.usage.prompt_tokens
                 completion_tokens = response.usage.completion_tokens
                 total_tokens = response.usage.total_tokens
