@@ -203,7 +203,7 @@ class TextEmotionAnalysisView(APIView):
     renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
-        text_serializer = TextSerializer(data=request.data)
+        text_serializer = TextCompletionSerializer(data=request.data)
         if text_serializer.is_valid():
             text = text_serializer.validated_data['text']
             try:
@@ -255,7 +255,7 @@ class TextSentimentAnalysisView(APIView):
     renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
-        text_serializer = TextSerializer(data=request.data)
+        text_serializer = TextCompletionSerializer(data=request.data)
 
         if text_serializer.is_valid():
             text = text_serializer.validated_data['text']
