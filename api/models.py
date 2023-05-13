@@ -207,7 +207,23 @@ class User(AbstractBaseUser, PermissionsMixin):
         }, settings.SECRET_KEY, algorithm='HS256')
         return token
 
+class UseCase(BaseModel):
+    name = models.CharField(max_length=255) 
 
+    def __str__(self):
+        return self.name
+
+class Draft(BaseModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    use_case = models.ForeignKey(UseCase, on_delete=models.CASCADE, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
+    is_saved = models.BooleanField(default=False)
+    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.title if self.title else f"Draft {self.id}"
+    
 class TokenUsage(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=True)
