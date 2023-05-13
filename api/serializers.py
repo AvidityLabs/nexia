@@ -10,7 +10,7 @@ from rest_framework import serializers
 from rest_framework import serializers
 
 
-from api.models import TokenUsage, User, TextToImage, TextToVideo, Instruction, Tone
+from api.models import Draft, TokenUsage, User, TextToImage, TextToVideo, Instruction, Tone
 
 
 
@@ -299,3 +299,9 @@ class InstructionSerializerResult(serializers.ModelSerializer):
     class Meta:
         model = Instruction
         fields = ['id', 'description','tones','prompt' ]
+
+
+class DraftSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Draft
+        fields = ['id', 'user', 'use_case', 'title', 'content', 'is_saved', 'app_owner_id']

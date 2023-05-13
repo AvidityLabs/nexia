@@ -16,8 +16,8 @@ from rest_framework.response import Response
 from api.utilities.tokens import MonthlyTokenLimitExceeded
 from api.utilities.tokens import validate_token_usage
 from api.renderers import APIJSONRenderer
-from .models import Instruction, PricingPlan, TextToImage, TextToVideo, TokenUsage, Tone, User
-from .serializers import  InstructionSerializer, InstructionSerializerResult, TextCompletionSerializer, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
+from .models import Draft, Instruction, PricingPlan, TextToImage, TextToVideo, TokenUsage, Tone, UseCase, User
+from .serializers import  DraftSerializer, InstructionSerializer, InstructionSerializerResult, TextCompletionSerializer, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
 
 from rest_framework import generics
 from rest_framework.views import APIView
@@ -677,4 +677,30 @@ class InstructionSearchView(generics.ListAPIView):
             queryset = queryset.filter(tones__name__in=tones).distinct()
         return queryset
 
+class DraftListCreateView(generics.ListCreateAPIView):
+    queryset = Draft.objects.all()
+    serializer_class = DraftSerializer
+    permission_classes = [IsAuthenticated]
+    renderer_classes = (APIJSONRenderer,)
 
+    @method_decorator(cache_page(CACHE_TTL))
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        use_case = request.data.get('use_case')
+        title = request.data.get('title')
+        content = request.data.get('content')
+
+        use_case, _ = UseCase.objects.get_or_create(name=use_case)
+
+        draft = Draft(user=user, use_case=use_case, title=title, content=content)
+        draft.save()
+
+        serializer = DraftSerializer(draft)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+class DraftRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Draft.objects.all()
+    serializer_class = DraftSerializer

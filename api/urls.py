@@ -19,7 +19,9 @@ from api.views import (
     ToneListView,
     ToneRetrieveView,
     CreateToneAPIView,
-    ChatGPTEditView
+    ChatGPTEditView,
+    DraftListCreateView,
+    DraftRetrieveUpdateDestroyView
     )
 
 
@@ -47,6 +49,8 @@ urlpatterns = [
     path('v1/instructions/update/<int:pk>/', InstructionUpdateView.as_view(), name='instruction-update'),
     path('v1/instructions/detail/<int:pk>/', InstructionRetrieveView.as_view(), name='instruction-detail'),
     path('v1/instructions/search/', InstructionSearchView.as_view(), name='instruction-search'),
+    path('drafts/', DraftListCreateView.as_view(), name='draft-list-create'),
+    path('drafts/<int:pk>/', DraftRetrieveUpdateDestroyView.as_view(), name='draft-retrieve-update-destroy'),
 
 
     
