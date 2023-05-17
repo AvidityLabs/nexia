@@ -21,7 +21,8 @@ from api.views import (
     CreateToneAPIView,
     ChatGPTEditView,
     DraftListCreateView,
-    DraftRetrieveUpdateDestroyView
+    DraftRetrieveUpdateDestroyView,
+    UseCasesList
     )
 
 
@@ -51,6 +52,7 @@ urlpatterns = [
     path('v1/instructions/search/', InstructionSearchView.as_view(), name='instruction-search'),
     path('drafts/', DraftListCreateView.as_view(), name='draft-list-create'),
     path('drafts/<int:pk>/', DraftRetrieveUpdateDestroyView.as_view(), name='draft-retrieve-update-destroy'),
+    path('v1/usecases/', UseCasesList.as_view(), name='usecase_list'),
 
 
     

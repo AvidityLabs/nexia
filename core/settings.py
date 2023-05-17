@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.sites",
     # Signal Configs
     # Applications
     'api.APIConfig',
@@ -70,17 +71,23 @@ INSTALLED_APPS = [
     'django_filters',
     'cloudinary',
     "debug_toolbar",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    # social providers
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.twitter",
 ]
 
 MIDDLEWARE = [
-    
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'api.exceptions.handle_500.InternalServerErrorMiddleware',
     'api.exceptions.handle_404.Handle404Middleware',
-    'corsheaders.middleware.CorsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -92,7 +99,12 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL = 'api.User'
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+'http://localhost:4200',
+# 'http://127.0.0.1:3000'
+]
+
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -102,6 +114,28 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 CORS_ALLOW_HEADERS = ['*']
+
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Accept-Language',
+    'Content-Type',
+    'Authorization',
+    'Content-Type',
+    'X-RapidAPI-Host',
+    'X-RapidAPI-Key',
+    'X-App-User-Identifier',
+    # Add any additional headers your API requires
+]
+
+
+AUTHENTICATION_BACKENDS = (
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = "none"
+LOGIN_REDIRECT_URL = "home" # Angular app
+ACCOUNT_LOGOUT_ON_GET = True
 
 
 REST_FRAMEWORK = {
@@ -174,15 +208,15 @@ CACHES = {
     }
 }
 
-DATABASES = {}
-DATABASES["default"] = dj_database_url.config(conn_max_age=600)
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'nexiadb1', # This is where you put the name of the db file. 
-#                  # If one doesn't exist, it will be created at migration time.
-#     }
-# }
+# DATABASES = {}
+# DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'nexiadb1', # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
+    }
+}
 
 
 # Password validation

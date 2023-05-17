@@ -7,22 +7,22 @@ from api.models import TokenUsage
 from rest_framework.exceptions import APIException
 
 class MonthlyImageLimitExceeded(APIException):
-    status_code = 401
+    status_code = 403
     default_detail = "Sorry, your account has exceeded the monthly image limit. Please upgrade your plan or reduce your image usage."
     default_code = "monthly_image_limit_exceeded"
 
 class MonthlyAudioLimitExceeded(APIException):
-    status_code = 401
+    status_code = 403
     default_detail = "We're sorry, but you have used up your monthly audio quota. Please upgrade your plan."
     default_code = "monthly_audio_limit_exceeded"
 
 class MonthlyVideoLimitExceeded(APIException):
-    status_code = 401
+    status_code = 403
     default_detail = "We regret to inform you that your monthly video limit has been exceeded. Please upgrade your plan."
     default_code = "monthly_video_limit_exceeded"
 
 class MonthlyTokenLimitExceeded(APIException):
-    status_code = 401
+    status_code = 403
     default_detail = "Unfortunately, you have exceeded your monthly token limit. Please upgrade your plan."
     default_code = "monthly_token_limit_exceeded"
 

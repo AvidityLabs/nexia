@@ -5,20 +5,22 @@ admin.site.register(Tone)
 
 admin.site.register(Instruction)
 
-@admin.register(PricingPlan)
-class PricingPlanAdmin(admin.ModelAdmin):
-    list_display = ('name', 'monthly_price','monthly_token_limit', 'monthly_character_limit', 'monthly_rate_limit', 'monthly_data_storage_limit', 'monthly_image_limit','monthly_audio_limit','monthly_video_limit')
-    list_filter = ('name',)
-    search_fields = ('name',)
-    ordering = ('name',)
-    fieldsets = (
-        (None, {
-            'fields': ('name', 'description', 'features')
-        }),
-        ('Pricing Details', {
-            'fields': ('monthly_price', 'currency','monthly_token_limit', 'monthly_character_limit', 'monthly_rate_limit', 'monthly_data_storage_limit', 'monthly_image_limit','monthly_audio_limit','monthly_video_limit','additional_character_charge'),
-        }),
-    )
+admin.site.register(PricingPlan)
+
+# @admin.register(PricingPlan)
+# class PricingPlanAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'monthly_price','monthly_token_limit', 'monthly_character_limit', 'monthly_rate_limit', 'monthly_data_storage_limit', 'monthly_image_limit','monthly_audio_limit','monthly_video_limit')
+#     list_filter = ('name',)
+#     search_fields = ('name',)
+#     ordering = ('name',)
+#     fieldsets = (
+#         (None, {
+#             'fields': ('name', 'description', 'features')
+#         }),
+#         ('Pricing Details', {
+#             'fields': ('monthly_price', 'currency','monthly_token_limit', 'monthly_character_limit', 'monthly_rate_limit', 'monthly_data_storage_limit', 'monthly_image_limit','monthly_audio_limit','monthly_video_limit','additional_character_charge'),
+#         }),
+#     )
 
 
 @admin.register(Subscription)

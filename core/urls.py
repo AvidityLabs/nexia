@@ -26,15 +26,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sentry-debug/', trigger_error),
     path('api/', include(('api.urls', 'api'), namespace='api')),
+    path("accounts/", include("allauth.urls")),
     # OpenAPI 3 documentation with Swagger UI
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
-    path(
-        "docs/",
-        SpectacularSwaggerView.as_view(
-            template_name="swagger-ui.html", url_name="schema"
-        ),
-        name="swagger-ui",
-    ),
+    path("docs/", SpectacularSwaggerView.as_view(template_name="swagger-ui.html", url_name="schema"),name="swagger-ui",),
 ]
 
 # If using Docker the following will set your INTERNAL_IPS correctly in Debug mode:

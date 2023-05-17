@@ -17,7 +17,7 @@ from api.utilities.tokens import MonthlyTokenLimitExceeded
 from api.utilities.tokens import validate_token_usage
 from api.renderers import APIJSONRenderer
 from .models import Draft, Instruction, PricingPlan, TextToImage, TextToVideo, TokenUsage, Tone, UseCase, User
-from .serializers import  DraftSerializer, InstructionSerializer, InstructionSerializerResult, TextCompletionSerializer, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
+from .serializers import  AnyPayloadSerializer, DraftSerializer, InstructionSerializer, InstructionSerializerResult, TextCompletionSerializer, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
 
 from rest_framework import generics
 from rest_framework.views import APIView
@@ -38,6 +38,7 @@ from api.utilities.openai.utils import completion, edit
 from api.utilities.hugging_face.tokenizer import calculate_tokens
 from api.utilities.jwt_helper import decode_jwt_token
 from api.utilities.data import TONES
+from api.prompts.repository import promptExecute
 
 from django.contrib.auth.models import (Group)
 
@@ -302,41 +303,37 @@ class ChatGPTCompletionView(APIView):
     renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
-
+        print(request.data)
         validate_token_usage(request.user)
 
-        text_serializer = TextCompletionSerializer(data=request.data)
+        text_serializer = AnyPayloadSerializer(data=request.data)
 
-        if text_serializer.is_valid():
-            text = text_serializer.validated_data['text']
-            try:
-                response = completion(request.data.get('text'))
-                if response is None:
-                    return Response({'error': f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
+        try:
+            response = promptExecute(request.data.get('payload')['usecase'], request.data.get('payload'))
+            print(response)
+            if response is None:
+                return Response({'error': f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
 
-                prompt_tokens = response.usage.prompt_tokens
-                completion_tokens = response.usage.completion_tokens
-                total_tokens = response.usage.total_tokens
+            prompt_tokens = response.usage.prompt_tokens
+            completion_tokens = response.usage.completion_tokens
+            total_tokens = response.usage.total_tokens
 
-                # # # Track token usage
-                user = request.user
-                # Assuming user and num_tokens are defined update token usage
-                update_token_usage(user, prompt_tokens,
-                                   completion_tokens, total_tokens)
-                result = {
-                    "result": response.choices[0].message,
-                    "prompt_tokens": prompt_tokens,
-                    "completion_tokens": completion_tokens,
-                    "total_tokens_used": total_tokens,
-                }
-                return Response(data=result, status=200)
-            except Exception as e:
-                logger.error(f"An error occurred @api/gpt/completion/: {e}")
-                return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
-        else:
-            logger.exception(
-                f"An error occurred @api/gpt/completion/{text_serializer.errors}")
-            return Response({'error': text_serializer.errors}, status=400)
+            # # # Track token usage
+            user = request.user
+            # Assuming user and num_tokens are defined update token usage
+            update_token_usage(user, prompt_tokens,
+                                completion_tokens, total_tokens)
+            result = {
+                "result": response.choices[0].message,
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens,
+                "total_tokens_used": total_tokens,
+            }
+            return Response(data=result, status=200)
+        except Exception as e:
+            logger.error(f"An error occurred @api/gpt/completion/: {e}")
+            return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
+
 
 class ChatGPTEditView(APIView):
     permission_classes = [IsAuthenticated,]
@@ -704,3 +701,12 @@ class DraftListCreateView(generics.ListCreateAPIView):
 class DraftRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Draft.objects.all()
     serializer_class = DraftSerializer
+
+
+class UseCasesList(APIView):
+
+    def get(self,request):
+        from .models import use_cases
+        import json 
+
+        return Response(use_cases, status=200)

@@ -305,3 +305,17 @@ class DraftSerializer(serializers.ModelSerializer):
     class Meta:
         model = Draft
         fields = ['id', 'user', 'use_case', 'title', 'content', 'is_saved', 'app_owner_id']
+
+
+
+
+class AnyPayloadSerializer(serializers.Serializer):
+    payload = serializers.JSONField()
+
+    """
+    In this updated example, a custom validate() method is added to the serializer. It checks whether the 'payload' key is present in the payload data. If it's missing, a ValidationError is raised.
+    """
+    # def validate(self, attrs):
+    #     if 'payload' not in attrs:
+    #         raise serializers.ValidationError("Payload is required")
+    #     return attrs
