@@ -21,3 +21,9 @@ tokenizers==0.13.3
 sentry-sdk==1.21.1
 whitenoise==6.4.0
 transformers==4.28.1
+oauthlib==3.2.2
+facebook-sdk==3.1.0
+google-api-python-client==2.86.0
+oauthlib==3.2.2
+python-twitter==3.5
+firebase-admin==6.1.0

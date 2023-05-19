@@ -23,10 +23,8 @@ from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.authtoken.models import Token
 from rest_framework import generics
-from rest_framework.filters import SearchFilter
-from rest_framework import serializers
+# from rest_framework.filters import SearchFilter
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.generics import RetrieveUpdateAPIView
 
@@ -40,10 +38,8 @@ from api.utilities.jwt_helper import decode_jwt_token
 from api.utilities.data import TONES
 from api.prompts.repository import promptExecute
 
-from django.contrib.auth.models import (Group)
-
 from api.serializers import (
-    DeveloperRegisterSerializer,
+    UserRegisterSerializer,
     TextSerializer,
     LoginSerializer,
     UserSerializer,
@@ -103,6 +99,9 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+
+
+
 class GetTokenAPIView(APIView):
     permission_classes = (AllowAny,)
     serializer_class = LoginSerializer
@@ -116,34 +115,6 @@ class GetTokenAPIView(APIView):
         try:
             serializer = self.serializer_class(data=user)
             serializer.is_valid(raise_exception=True)
-            # Update subscription if the user is a rapid api user 
-            user = get_object_or_404(User.objects.select_related('subscription__pricing_plan'), email=user['email'])
-            subscription_meta = request.META.get('HTTP_X_RAPIDAPI_SUBSCRIPTION')
-            # Subscription UPDATE only for RAPID API users 
-            if subscription_meta and not user.is_app_user and user.subscription.pricing_plan.name != subscription_meta:
-                pricing_plan, _ = PricingPlan.objects.get_or_create(name=subscription_meta)
-                user.subscription.pricing_plan = pricing_plan
-                user.subscription.save()
-                # Update token usage 
-                today = date.today()
-                token_usage = TokenUsage.objects.filter(
-                        user=user,
-                        month=today.month,
-                        year=today.year,
-                    ).first()
-                
-                if token_usage:
-                    token_usage.pricing_plan = pricing_plan
-                    token_usage.save()
-                else:
-                    token_usage = TokenUsage(
-                        user=user,
-                        month=today.month,
-                        year=today.year,
-                        pricing_plan=pricing_plan,
-                    )
-                    token_usage.save()
-
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Http404:
             return Response({'error': 'User does not exist.'}, status=status.HTTP_404_NOT_FOUND)
@@ -151,10 +122,10 @@ class GetTokenAPIView(APIView):
             return Response({'error': 'Invalid credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
-class DeveloperRegisterView(generics.CreateAPIView):
+class UserRegisterView(generics.CreateAPIView):
     # Allow any user (authenticated or not) to hit this endpoint.
     permission_classes = (AllowAny,)
-    serializer_class = DeveloperRegisterSerializer
+    serializer_class = UserRegisterSerializer
     renderer_classes = (APIJSONRenderer,)
 
     def post(self, request):
@@ -162,41 +133,14 @@ class DeveloperRegisterView(generics.CreateAPIView):
             "email": request.data.get('email'),
             "username": request.data.get('email'),
             "password": request.data.get('password'),
-            "groups": [{'name':'developer'}]
+            "pricing_plan": request.data.get('pricing_plan')
         }
 
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        # Update subscription if the user is a rapid api user 
         data = {"email": serializer.data.get('email'), "token": serializer.data.get('token')}
         return Response(data, status=status.HTTP_201_CREATED)
-
-
-class AppUserRegisterView(generics.CreateAPIView):
-    # Allow any user (authenticated or not) to hit this endpoint.
-    permission_classes = (IsAuthenticated,)
-    renderer_classes = (APIJSONRenderer,)
-    serializer_class = DeveloperRegisterSerializer
-
-    def post(self, request):
-        decoded_user_id = decode_jwt_token(request)
-        if request.user.id == decoded_user_id:
-            user = {
-                "email": request.data.get('email'),
-                "username": request.data.get('username'),
-                "password": request.data.get('password'),
-                "groups": request.data.get('groups'),
-                "app_owner_id": request.user.id
-            }
-
-            serializer = self.serializer_class(data=user)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            return Response(str(request.user.id), status=status.HTTP_201_CREATED)
-            # The user in the request is not the same as the user in the token
-        return Response({'error': 'Invalid token for this user'}, status=401)
 
 
 class TextEmotionAnalysisView(APIView):

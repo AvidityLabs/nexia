@@ -29,7 +29,7 @@ class SubscriptionAdmin(admin.ModelAdmin):
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('email', 'is_developer', 'is_admin', 'is_superuser', 'app_owner_id', 'subscription', 'total_tokens_used')
+    list_display = ('email', 'is_admin', 'is_superuser','subscription', 'total_tokens_used')
 
 @admin.register(TokenUsage)
 class TokenUsageAdmin(admin.ModelAdmin):

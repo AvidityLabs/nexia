@@ -31,7 +31,6 @@ def check_count_value(val):
 
 # Only executed when prompting 
 def update_token_usage(user, prompt_tokens, completion_tokens, total_tokens, img_count=None, audio_count=None, video_count=None):
-    print('hello')
     # Get the current month and year
     today = date.today()
     month = today.month

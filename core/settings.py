@@ -59,10 +59,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django.contrib.sites",
     # Signal Configs
     # Applications
-    'api.APIConfig',
+    'api.APIAppConfig',
+    'social_auth',
     # Third party libraries
     "whitenoise.runserver_nostatic",
     'rest_framework',
@@ -71,19 +71,12 @@ INSTALLED_APPS = [
     'django_filters',
     'cloudinary',
     "debug_toolbar",
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    # social providers
-    "allauth.socialaccount.providers.google",
-    "allauth.socialaccount.providers.facebook",
-    "allauth.socialaccount.providers.twitter",
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'api.exceptions.handle_500.InternalServerErrorMiddleware',
+    # 'api.exceptions.handle_500.InternalServerErrorMiddleware',
     'api.exceptions.handle_404.Handle404Middleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
@@ -121,21 +114,8 @@ CORS_ALLOW_HEADERS = [
     'Content-Type',
     'Authorization',
     'Content-Type',
-    'X-RapidAPI-Host',
-    'X-RapidAPI-Key',
-    'X-App-User-Identifier',
     # Add any additional headers your API requires
 ]
-
-
-AUTHENTICATION_BACKENDS = (
-    "allauth.account.auth_backends.AuthenticationBackend",
-)
-
-SITE_ID = 1
-ACCOUNT_EMAIL_VERIFICATION = "none"
-LOGIN_REDIRECT_URL = "home" # Angular app
-ACCOUNT_LOGOUT_ON_GET = True
 
 
 REST_FRAMEWORK = {
@@ -143,7 +123,7 @@ REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-       'api.backends.JWTAuthentication',
+       'api.authentication.backends.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -332,3 +312,10 @@ LOGGING = {
     },
 }
 
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
