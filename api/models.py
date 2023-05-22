@@ -97,13 +97,14 @@ class UserManager(BaseUserManager):
     to create `User` objects.
     """
 
-    def create_user(self, email, password=None, pricing_plan=None, display_name=None, photo_url=None, uid=None, auth_provider=None):
+    def create_user(self, email, password=None, pricing_plan=None, display_name=None, photo_url=None, uid=None, auth_provider=None,is_verified=None):
         """Create and return a `User` with an email, username, and password."""
         provider = auth_provider or 'email'
         plan = pricing_plan or 'BASIC'
         display_name = display_name or ''
         photo_url = photo_url or ''
         uid = uid or ''
+        is_verified = is_verified or True
 
         if not email:
             raise TypeError('Users must have an email address.')
@@ -118,20 +119,17 @@ class UserManager(BaseUserManager):
             photo_url=photo_url,
             uid=uid,
             pricing_plan=plan,
-            is_verified=True,
+            is_verified= is_verified,
             auth_provider=provider
         )
         user.set_password(password)
         user.save()
         return user
 
-
     def create_superuser(self, username, email, password):
         if password is None:
             raise TypeError('Superusers must have a password.')
-        
         user = self.create_user(email, password)
-        user.set_password(password)
         user.is_superuser = True
         user.is_staff = True
         user.is_admin = True

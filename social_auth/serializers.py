@@ -7,8 +7,12 @@ from rest_framework.exceptions import AuthenticationFailed
 
 
 class SocialAuthSerializer(serializers.Serializer):
-    auth_token = serializers.CharField()
+    id = serializers.CharField(read_only=True)
+    email = serializers.CharField(read_only=True)
+    display_name = serializers.CharField(read_only=True)
+    photo_url = serializers.CharField(read_only=True)
     pricing_plan = serializers.CharField()
+    auth_token = serializers.CharField()
 
     def validate(self, data):
         auth_token = data.get('auth_token')
