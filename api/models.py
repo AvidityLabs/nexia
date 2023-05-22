@@ -1,9 +1,10 @@
 import uuid
+from datetime import date
+from django.utils import timezone
 import requests
 from datetime import datetime, timedelta
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import (
@@ -15,6 +16,12 @@ import jwt
 import cloudinary.uploader
 from cloudinary.models import CloudinaryField
 
+AUTH_PROVIDERS = {
+    'email':'email',
+    'facebook.com': 'facebook.com',
+    'google.com': 'google.com',
+    'twitter.com': 'twitter.com' 
+}
 
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -67,8 +74,7 @@ class PricingPlan(BaseModel):
 
 class Subscription(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    pricing_plan = models.ForeignKey(
-        PricingPlan, on_delete=models.CASCADE, null=True, blank=True)
+    pricing_plan = models.ForeignKey(PricingPlan, on_delete=models.CASCADE, null=True, blank=True)
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
@@ -91,58 +97,63 @@ class UserManager(BaseUserManager):
     to create `User` objects.
     """
 
-    def create_user(self, email, password=None, app_owner_id=None, groups=None):
-        """Create and return a `User` with an email, username and password."""
+    def create_user(self, email, password=None, pricing_plan=None, display_name=None, photo_url=None, uid=None, auth_provider=None,is_verified=None):
+        """Create and return a `User` with an email, username, and password."""
+        provider = auth_provider or 'email'
+        plan = pricing_plan or 'BASIC'
+        display_name = display_name or ''
+        photo_url = photo_url or ''
+        uid = uid or ''
+        is_verified = is_verified or True
 
-        if email is None:
+        if not email:
             raise TypeError('Users must have an email address.')
 
-        user = self.model.objects.filter(email=email)
-        if len(user) != 0:
+        if self.model.objects.filter(email=email).exists():
             raise TypeError('User email already exists.')
 
-        user = self.model(username=email, email=self.normalize_email(email))
+        user = self.model(
+            username=email,
+            email=self.normalize_email(email),
+            display_name=display_name,
+            photo_url=photo_url,
+            uid=uid,
+            pricing_plan=plan,
+            is_verified= is_verified,
+            auth_provider=provider
+        )
         user.set_password(password)
         user.save()
-        if app_owner_id:
-            user.app_owner_id = app_owner_id
-            user.save()
-        if groups:
-            for group in groups:
-                group_obj, _ = Group.objects.get_or_create(name=group['name'])
-                user.groups.add(group_obj)
         return user
 
     def create_superuser(self, username, email, password):
-        """
-        Create and return a `User` with superuser (admin) permissions.
-        """
         if password is None:
             raise TypeError('Superusers must have a password.')
-
-        user = self.create_user(username, email)
-        user.set_password(password)
+        user = self.create_user(email, password)
         user.is_superuser = True
         user.is_staff = True
+        user.is_admin = True
         user.save()
-
         return user
-
 
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.CharField(max_length=100, unique=True,
                           default=uuid.uuid4, primary_key=True)
     email = models.EmailField(db_index=True, unique=True)
-    username = models.CharField(db_index=True, max_length=255, unique=True)
-    is_developer = models.BooleanField(default=True)
+    username = models.CharField(max_length=100, null=True, blank=True, unique=True)
+    display_name = models.CharField(max_length=100, null=True, blank=True)
+    photo_url = models.TextField(null=True, blank=True)
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    bio = models.TextField(null=True, blank=True)
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
-    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
-    subscription = models.ForeignKey(
-        Subscription, on_delete=models.CASCADE, null=True, blank=True)
+    is_verified = models.BooleanField(default=False)
+    uid = models.CharField(max_length=20, null=True, blank=True)
+    pricing_plan = models.CharField(max_length=20, null=True, blank=True)
+    subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE, null=True, blank=True)
     total_tokens_used = models.IntegerField(default=0)
-    is_app_user = models.BooleanField(default=False)
+    auth_provider = models.CharField(blank=True,null=True,max_length=20, default=AUTH_PROVIDERS.get('email'))
 
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.
@@ -157,7 +168,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
         This string is used when a `User` is printed in the console.
         """
-        return f'{self.email} - Subscription Plan= {self.subscription.pricing_plan} - Tokens Used = {self.total_tokens_used}'
+        if self.subscription is None:
+            return f'{self.email}'
+        else:
+            return f'{self.email} - Subscription Plan= {self.subscription.pricing_plan} - Tokens Used = {self.total_tokens_used}'
 
     @property
     def token(self):
@@ -207,7 +221,31 @@ class User(AbstractBaseUser, PermissionsMixin):
         }, settings.SECRET_KEY, algorithm='HS256')
         return token
 
+class UseCaseCategory(BaseModel):
+    name =  models.CharField(max_length=255,blank=True, null=True) 
 
+def __str__(self):
+    return self.name
+
+class UseCase(BaseModel):
+    title = models.CharField(max_length=255,blank=True, null=True) 
+    description = models.TextField(blank=True, null=True)
+    navigateTo = models.CharField(max_length=255,blank=True, null=True) 
+    category = models.ForeignKey(UseCaseCategory, on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+class Draft(BaseModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    use_case = models.ForeignKey(UseCase, on_delete=models.CASCADE, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
+    is_saved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title if self.title else f"Draft {self.id}"
+    
 class TokenUsage(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=True)
@@ -222,7 +260,6 @@ class TokenUsage(models.Model):
     month = models.IntegerField(null=True, blank=True)
     year = models.IntegerField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return f"{self.user.email} Token Usage for {self.timestamp.strftime('%B %Y')}"
@@ -232,7 +269,6 @@ class SentimentAnalysis(BaseModel):
     text = models.TextField(null=True, blank=True)
     positive = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
-    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
@@ -248,7 +284,6 @@ class EmotionAnalysis(BaseModel):
     sadness_score = models.FloatField(null=True, blank=True)
     surprise_score = models.FloatField(null=True, blank=True)
     analyzed_at = models.DateTimeField(auto_now_add=True)
-    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.text
@@ -256,7 +291,6 @@ class EmotionAnalysis(BaseModel):
 
 class TextToImage(BaseModel):
     url = models.CharField(max_length=255)
-    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def generate_image(self, text):
         # Call the AI API to generate the image based on the input text
@@ -273,7 +307,6 @@ class TextToImage(BaseModel):
 
 class TextToVideo(BaseModel):
     url = models.CharField(max_length=255)
-    app_owner_id = models.CharField(max_length=255, null=True, blank=True)
 
     def generate_video(self, text):
         # Call the AI API to generate the video based on the input text

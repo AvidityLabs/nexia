@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework.authtoken.views import obtain_auth_token
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 def trigger_error(request):
@@ -26,15 +25,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sentry-debug/', trigger_error),
     path('api/', include(('api.urls', 'api'), namespace='api')),
+    path('social_auth/', include(('social_auth.urls', 'social_auth'), namespace='social_auth')),
     # OpenAPI 3 documentation with Swagger UI
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
-    path(
-        "docs/",
-        SpectacularSwaggerView.as_view(
-            template_name="swagger-ui.html", url_name="schema"
-        ),
-        name="swagger-ui",
-    ),
+    path("docs/", SpectacularSwaggerView.as_view(template_name="swagger-ui.html", url_name="schema"),name="swagger-ui",),
 ]
 
 # If using Docker the following will set your INTERNAL_IPS correctly in Debug mode:

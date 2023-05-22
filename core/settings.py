@@ -61,7 +61,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Signal Configs
     # Applications
-    'api.APIConfig',
+    'api.APIAppConfig',
+    'social_auth',
     # Third party libraries
     "whitenoise.runserver_nostatic",
     'rest_framework',
@@ -73,14 +74,13 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    
-    'api.exceptions.handle_500.InternalServerErrorMiddleware',
-    'api.exceptions.handle_404.Handle404Middleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    # 'api.exceptions.handle_500.InternalServerErrorMiddleware',
+    'api.exceptions.handle_404.Handle404Middleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -92,7 +92,12 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL = 'api.User'
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+'http://localhost:4200',
+# 'http://127.0.0.1:3000'
+]
+
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -103,13 +108,22 @@ CORS_ALLOW_METHODS = [
 ]
 CORS_ALLOW_HEADERS = ['*']
 
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Accept-Language',
+    'Content-Type',
+    'Authorization',
+    'Content-Type',
+    # Add any additional headers your API requires
+]
+
 
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'api.exceptions.responses.core_exception_handler',
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-       'api.backends.JWTAuthentication',
+       'api.authentication.backends.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -174,15 +188,15 @@ CACHES = {
     }
 }
 
-DATABASES = {}
-DATABASES["default"] = dj_database_url.config(conn_max_age=600)
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'nexiadb1', # This is where you put the name of the db file. 
-#                  # If one doesn't exist, it will be created at migration time.
-#     }
-# }
+# DATABASES = {}
+# DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'nexiadb1', # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
+    }
+}
 
 
 # Password validation
@@ -298,3 +312,10 @@ LOGGING = {
     },
 }
 
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
