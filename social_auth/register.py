@@ -43,7 +43,7 @@ def register_social_user(provider, user_id, email, display_name, pricing_plan, p
         authenticated_user = authenticate(username=email, password=user.password)
         
         return {
-                'id': authenticated_user.id,
+                'id': authenticated_user.uid,
                 'username': authenticated_user.email,
                 'display_name': authenticated_user.display_name,
                 'photo_url': authenticated_user.photo_url, 
