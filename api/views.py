@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.http import Http404
 from django.utils.decorators import method_decorator
 from django.core.exceptions import ValidationError
+from api.email import send_email_to_user
 from api.utilities.validators.text_validator import validate_text_input
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
@@ -135,12 +136,11 @@ class UserRegisterView(generics.CreateAPIView):
             "password": request.data.get('password'),
             "pricing_plan": request.data.get('pricing_plan')
         }
-
+        # send_email_to_user(user.get('email'))
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        data = {"email": serializer.data.get('email'), "token": serializer.data.get('token')}
-        return Response(data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class TextEmotionAnalysisView(APIView):

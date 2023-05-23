@@ -19,9 +19,11 @@ class SocialAuthView(GenericAPIView):
         Send an idtoken as from google to get user information
 
         """
-        print('incomming request------------')
-        print(request.data)
-        serializer = self.serializer_class(data=request.data)
+        payload = {
+            "auth_token": request.data.get('auth_token'),
+            "pricing_plan": request.data.get('pricing_plan')
+        }
+        serializer = self.serializer_class(data=payload)
         serializer.is_valid(raise_exception=True)
         # data = ((serializer.validated_data)['auth_token'])
         return Response(serializer.data, status=status.HTTP_200_OK)

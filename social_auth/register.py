@@ -22,7 +22,7 @@ def register_social_user(provider, user_id, email, display_name, pricing_plan, p
                 'photo_url': authenticated_user.photo_url, 
                 'email': authenticated_user.email,
                 'pricing_plan': authenticated_user.pricing_plan,
-                'auth_token': authenticated_user.token
+                'token': authenticated_user.token
             }
 
         raise AuthenticationFailed(detail='Please continue your login using ' + registered_user.auth_provider)
@@ -45,9 +45,10 @@ def register_social_user(provider, user_id, email, display_name, pricing_plan, p
         return {
                 'id': authenticated_user.uid,
                 'username': authenticated_user.email,
+                'is_verified': authenticated_user.is_verified,
                 'display_name': authenticated_user.display_name,
                 'photo_url': authenticated_user.photo_url, 
                 'email': authenticated_user.email,
                 'pricing_plan': authenticated_user.pricing_plan,
-                'auth_token': authenticated_user.token
+                'token': authenticated_user.token
         }

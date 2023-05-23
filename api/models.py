@@ -1,6 +1,7 @@
 import uuid
 from datetime import date
 from django.utils import timezone
+import json 
 import requests
 from datetime import datetime, timedelta
 from django.db.models.signals import post_save
@@ -245,7 +246,19 @@ class Draft(BaseModel):
 
     def __str__(self):
         return self.title if self.title else f"Draft {self.id}"
-    
+  
+class TokenUsageManager(models.Manager):
+    def get_yearly_token_usage(self, user, year):
+        # Filter TokenUsage objects for the user and year
+        token_usage_data = self.filter(user=user, year=year).order_by('month')
+
+        # Extract the monthly token usage values
+        monthly_token_usage = [token.total_tokens_used for token in token_usage_data]
+
+        return {
+            "year": year,
+            "token_usage": monthly_token_usage,
+        }  
 class TokenUsage(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=True)
@@ -260,9 +273,23 @@ class TokenUsage(models.Model):
     month = models.IntegerField(null=True, blank=True)
     year = models.IntegerField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
+    
+    objects = TokenUsageManager()
 
     def __str__(self):
         return f"{self.user.email} Token Usage for {self.timestamp.strftime('%B %Y')}"
+    
+    def get_yearly_token_usage(user, year):
+        # Filter TokenUsage objects for the user and year
+        token_usage_data = TokenUsage.objects.filter(user=user, year=year).order_by('month')
+
+        # Extract the monthly token usage values and month labels
+        monthly_token_usage = [token.total_tokens_used for token in token_usage_data]
+
+        return {
+            "year": year,
+            "token_usage": monthly_token_usage,
+        }
 
 
 class SentimentAnalysis(BaseModel):

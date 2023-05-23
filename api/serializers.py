@@ -51,6 +51,11 @@ class UserSerializer(serializers.ModelSerializer):
         return instance
 
 class LoginSerializer(serializers.Serializer):
+    id = serializers.CharField(max_length=255, read_only=True)
+    is_verified = serializers.CharField(max_length=255, read_only=True)
+    display_name = serializers.CharField(max_length=255, read_only=True)
+    photo_url = serializers.CharField(max_length=255, read_only=True)
+    pricing_plan = serializers.CharField(max_length=255, read_only=True)
     email = serializers.CharField(max_length=255)
     username = serializers.CharField(max_length=255, read_only=True)
     password = serializers.CharField(max_length=128, write_only=True)
@@ -105,14 +110,27 @@ class LoginSerializer(serializers.Serializer):
         # This is the data that is passed to the `create` and `update` methods
         # that we will see later on.
         return {
-            'email': user.email,
-            'username': user.username,
-            'token': user.token
+             
+                'id': user.uid,
+                'username': user.email,
+                'is_verified': user.is_verified,
+                'display_name': user.display_name,
+                'photo_url': user.photo_url, 
+                'email': user.email,
+                'pricing_plan': user.pricing_plan,
+                'token': user.token
         }
-
+        
 
 class UserRegisterSerializer(serializers.ModelSerializer):
     """Serializers registration requests and creates a new user."""
+    id = serializers.CharField(max_length=255, read_only=True)
+    is_verified = serializers.CharField(max_length=255, read_only=True)
+    display_name = serializers.CharField(max_length=255, read_only=True)
+    photo_url = serializers.CharField(max_length=255, read_only=True)
+    pricing_plan = serializers.CharField(max_length=255, read_only=True)
+    email = serializers.CharField(max_length=255, write_only=True)
+    username = serializers.CharField(max_length=255, read_only=True)
 
     # Ensure passwords are at least 8 characters long, no longer than 128
     # characters, and can not be read by the client.
@@ -132,7 +150,8 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         model = User
         # List all of the fields that could possibly be included in a request
         # or response, including fields specified explicitly above.
-        fields = ['email', 'password','token', 'groups', 'pricing_plan']
+        fields = ['id','is_verified','display_name','photo_url','username','email', 'password','token', 'pricing_plan']
+        
 
     def create(self, validated_data):
         # Use the `create_user` method we wrote earlier to create a new user.

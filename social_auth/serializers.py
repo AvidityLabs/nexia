@@ -11,14 +11,15 @@ class SocialAuthSerializer(serializers.Serializer):
     email = serializers.CharField(read_only=True)
     display_name = serializers.CharField(read_only=True)
     photo_url = serializers.CharField(read_only=True)
-    pricing_plan = serializers.CharField()
-    auth_token = serializers.CharField()
+    token = serializers.CharField(read_only=True)
+    pricing_plan = serializers.CharField(write_only=True)
+    auth_token = serializers.CharField(write_only=True)
 
-    def validate(self, data):
-        auth_token = data.get('auth_token')
-        pricing_plan = data.get('pricing_plan')
+    def validate(self, data):    
+        token_str = self.initial_data.get('auth_token')
+        plan = self.initial_data.get('pricing_plan')
 
-        user_data = firebase_validation(auth_token)
+        user_data = firebase_validation(token_str)
         try:
             user_data['sub']
         except:
@@ -36,4 +37,4 @@ class SocialAuthSerializer(serializers.Serializer):
         photo_url = user_data['photo_url']
         is_verified = user_data['is_verified']
 
-        return register_social_user(provider=provider, user_id=user_id, email=email, display_name=name, pricing_plan=pricing_plan, photo_url=photo_url, is_verified=is_verified)
+        return register_social_user(provider=provider, user_id=user_id, email=email, display_name=name, pricing_plan=plan, photo_url=photo_url, is_verified=is_verified)
