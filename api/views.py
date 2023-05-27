@@ -136,11 +136,16 @@ class UserRegisterView(generics.CreateAPIView):
             "password": request.data.get('password'),
             "pricing_plan": request.data.get('pricing_plan')
         }
-        # send_email_to_user(user.get('email'))
         serializer = self.serializer_class(data=user)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        try:
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            send_email_to_user(user.get('email'))
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        except TypeError as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class TextEmotionAnalysisView(APIView):
@@ -650,7 +655,7 @@ class DraftRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 class UseCasesList(APIView):
 
     def get(self,request):
-        from .models import use_cases
+        from api.data import use_cases
         import json 
 
         return Response(use_cases, status=200)
