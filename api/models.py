@@ -35,6 +35,13 @@ class BaseModel(models.Model):
         abstract = True
         ordering = ['-created_at', '-updated_at']
 
+# supported languages by chat gpt 
+class Language(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    code = models.CharField(max_length=10, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
 class PricingPlan(BaseModel):
     BASIC = 'BASIC'

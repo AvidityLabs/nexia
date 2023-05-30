@@ -27,3 +27,4 @@ google-api-python-client==2.86.0
 oauthlib==3.2.2
 python-twitter==3.5
 firebase-admin==6.1.0
+python-decouple==3.8
