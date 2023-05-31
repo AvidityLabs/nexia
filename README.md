@@ -69,3 +69,40 @@ find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 find . -path "*/migrations/*.pyc"  -delete
 
 
+
+
+Okay, here's your zappa_settings.json:
+
+{
+    "dev": {
+        "django_settings": "core.settings",
+        "profile_name": "default",
+        "project_name": "core",
+        "runtime": "python3.7",
+        "s3_bucket": "andika"
+    }
+}
+
+Does this look okay? (default 'y') [y/n]: y
+
+Done! Now you can deploy your Zappa application by executing:
+
+        $ zappa deploy dev
+
+After that, you can update your application code with:
+
+        $ zappa update dev
+
+To learn more, check out our project page on GitHub here: https://github.com/Zappa/Zappa
+and stop by our Slack channel here: https://zappateam.slack.com
+
+Enjoy!,
+ ~ Team Zappa!
+
+
+net stop com.docker.service
+net start com.docker.service
+
+
+
+ docker build -t lambda-andika:latest .

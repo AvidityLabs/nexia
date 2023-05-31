@@ -33,7 +33,7 @@ DEBUG = os.environ.get('DEBUG')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+PAYPAL_TEST=True
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'django_filters',
     'cloudinary',
     "debug_toolbar",
+    "paypal.standard.ipn"
 ]
 
 MIDDLEWARE = [

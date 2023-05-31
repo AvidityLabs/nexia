@@ -63,3 +63,15 @@ def promotion_payment_success(request):
 	callback_url = b2c_callback_url
 	r = cl.promotion_payment(phone_number, amount, transaction_desc, callback_url, occassion)
 	return JsonResponse(r.response_description, safe=False)
+
+
+class  PayPalPayment(APIView):
+	def post(request):
+		# paypal_dict = {
+		# 	'business': 'id@business.com',
+		# 	'amount': 3,
+		# 	'currency_code': 'GBP',
+		# 	'item_name': 'book',
+		# 	'notify_url':
+		# }
+		return Response(request.data, 200)

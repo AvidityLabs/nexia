@@ -50,6 +50,8 @@ class PricingPlan(BaseModel):
     MEGA = 'MEGA'
     CUSTOM = 'CUSTOM'
     PENDING = 'PENDING'
+    MONTHLY ='monthly'
+    YEARLY = 'yearly'
 
     CHOICES = [
         (BASIC, 'BASIC'),
@@ -59,6 +61,11 @@ class PricingPlan(BaseModel):
         (CUSTOM, 'CUSTOM'),
         (PENDING, 'PENDING'),
     ]
+    
+    DURATION_CHOICES = [
+        (MONTHLY, 'monthly'),
+        (YEARLY, 'yearly'),
+    ]
 
     name = models.CharField(
         max_length=50, choices=CHOICES, null=True, blank=True)
@@ -66,6 +73,9 @@ class PricingPlan(BaseModel):
     features = models.TextField(null=True, blank=True)
     monthly_price = models.DecimalField(
         max_digits=8, decimal_places=2, default="0.00")
+    yearly_price = models.DecimalField(
+        max_digits=8, decimal_places=2, default="0.00")
+    duration = models.CharField(max_length=50, choices=DURATION_CHOICES, null=True, blank=True)
     monthly_character_limit = models.IntegerField(default=0)
     monthly_image_limit = models.IntegerField(default=0)
     monthly_audio_limit = models.IntegerField(default=0)
@@ -244,6 +254,12 @@ class UseCase(BaseModel):
 
     def __str__(self):
         return self.title
+    
+
+class DraftManager(models.Manager):
+    def favourites(self, **kwargs):
+        """Draft.objects.favourites().count()"""
+        return self.filter(created_at__lte=timezone.now(), **kwargs)
 
 class Draft(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
@@ -251,9 +267,13 @@ class Draft(BaseModel):
     title = models.CharField(max_length=255, blank=True, null=True)
     content = models.TextField(blank=True, null=True)
     is_saved = models.BooleanField(default=False)
+    is_favourite = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title if self.title else f"Draft {self.id}"
+    
+    
+    objects = DraftManager()
   
 class TokenUsageManager(models.Manager):
     def get_yearly_token_usage(self, user, year):
