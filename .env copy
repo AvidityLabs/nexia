@@ -1,0 +1,85 @@
+DEBUG=True
+DATABASE_URL=postgresql://postgres:o3pYmLH00QBTunvyqLYd@containers-us-west-85.railway.app:6235/railway
+
+SECRET_KEY=fmTn4WgnMsmsheNJj9M7SFt8t37kp1kjhikjsnzLoTV0TWlEIb
+X_RAPID_API_KEY=fmTn4WgnMsmsheNJj9M7SFt8t37kp1kjhikjsnzLoTV0TWlEIb
+X_RAPID_API_HOST=nexia2.p.rapidapi.com
+HTTP_X_RAPIDAPI_PROXY_SECRET=c7b970d0-dc8a-11ed-ba4c-f5094ac89edd
+EMOTION_MODEL_TOKEN=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
+EMOTION_MODEL_URL=https://api-inference.huggingface.co/models/j-hartmann/emotion-english-distilroberta-base
+SENTIMENT_MODEL_URL=https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment
+SENTIMENT_MODEL_TOKEN=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
+RAPID_API_APP_URL=https://rapidapi.com/AvidityLabs/api/nexia2
+STABLE_DIFFUSION_API_KEY=bNNEFRpouWM914ZriDSChuHH5vf2jBIyB4BYccbPLkuq01IdUd2djg2qZHIS
+OPENAI_API_KEY=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
+OPENAI_ORGANIZATION=org-M3s4CIjWGwvBbMzjsII5OAcB
+REDIS_URL=redis://default:HzHHdfWUn5TPi6KwYdJ6@containers-us-west-76.railway.app:8017
+SOCIAL_SECRET=92a4bja15dmce0
+FIREBASE_CLIENT_ID=andika-16cf6
+FIREBASE_AUTH_URI=https://accounts.google.com/o/oauth2/auth
+FIREBASE_TOKEN_URI=https://accounts.google.com/o/oauth2/token
+FIREBASE_TOKEN_URI_AUTH_PROVIDER_X_509_CERT_URL=https://www.googleapis.com/oauth2/v1/certs
+FIREBASE_CLIENT_CERT_URL=1
+TWITER_API_KEY=1
+TWITTER_CONSUMER_SECRET=1
+FIREBASE_PROJECT_ID=1
+FIREBASE_PRIVATE_KEY_ID=1
+FIREBASE_PRIVATE_KEY=1
+FIREBASE_CLIENT_EMAIL=1
+
+EMAIL_HOST=smtp.elasticemail.com
+EMAIL_HOST_USER=aviditylabs@hotmail.com
+EMAIL_HOST_PASSWORD=7152A15CD8AFF50A430729911078DAE9010F
+
+
+
+# MPESA Configuration variables
+
+# The Mpesa environment to use
+# Possible values: sandbox, production
+
+MPESA_ENVIRONMENT=sandbox
+
+# Credentials for the daraja app
+
+MPESA_CONSUMER_KEY=113Aw76O0FDdw8e02wGARMAKxQ3558IA
+MPESA_CONSUMER_SECRET=Hsbjz70kbObMxUOo
+
+#Shortcode to use for transactions. For sandbox  use the Shortcode 1 provided on test credentials page
+
+MPESA_SHORTCODE=mpesa_shortcode
+
+# Shortcode to use for Lipa na MPESA Online (MPESA Express) transactions
+# This only has a different value on sandbox, you do not need to set it on production
+# For sandbox use the Lipa na MPESA Online Shorcode provided on test credentials page
+
+MPESA_EXPRESS_SHORTCODE=mpesa_express_shortcode
+
+#Type of shortcode
+# Possible values: 
+# - paybill (For Paybill)
+# - till_number (For Buy Goods Till Number)
+
+MPESA_SHORTCODE_TYPE=paybill
+
+# Lipa na MPESA Online passkey
+# Sandbox passkey is available on test credentials page
+# Production passkey is sent via email once you go live
+
+MPESA_PASSKEY=bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919
+
+# Username for initiator (to be used in B2C, B2B, AccountBalance and TransactionStatusQuery Transactions)
+
+MPESA_INITIATOR_USERNAME=initiator_username
+
+# Plaintext password for initiator (to be used in B2C, B2B, AccountBalance and TransactionStatusQuery Transactions)
+
+MPESA_INITIATOR_SECURITY_CREDENTIAL=Mk5LKmyagmhFE4fBoiu0xfC39gYksE5BdOeEkTW1YN1CduqWx2JopB+sZjZxxI0pSENHlqUo6HEzhwzbhWBpodkNz234BodDHQLKTYLVpbznx1UphwaIOW0HZbrRtkTv5SIaY+bxcXNWWvjxnhylfOGXCVT0IzPUsuIicjzxwVP9kK1v4/3smqDiS6uJcPvBND66X28Vkyt2UHc2xrw6p87i3BvGbfRGn6VSI6AEVMPtBK11Yo9ds0pFP+5TiFT79DWwSoaaLgC/9mxziEh7spF47aYy1pzaVRC8f244+aqKDl32m0ofKCymC9kLMXcE7NpskdTZhXE4+U39xhu0CQ==
+
+
+
+# AWS 
+AWS_STORAGE_BUCKET_NAME=
+AWS_SECRET_ACCESS_KEY=
+AWS_SECRET_ACCESS_KEY_ID=
+AWS_S3_CUSTOM_DOMAIN=
