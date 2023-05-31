@@ -37,7 +37,7 @@ PAYPAL_TEST=True
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # Enable HTTPS-only communication for a specified amount of time, with subdomains included
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -191,15 +191,24 @@ CACHES = {
 }
 
 # TODO decouple settings.py into dev, staging and prod
-# DATABASES = {}
-# DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'nexiadb1', # This is where you put the name of the db file. 
-                 # If one doesn't exist, it will be created at migration time.
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': os.environ.get('DB_NAME'),
+    'HOST': os.environ.get('DB_HOST'),
+    'PORT': os.environ.get('DB_PORT'),
+    'USER': os.environ.get('DB_USER'),
+    'PASSWORD': os.environ.get('DB_PASSWORD'),
+    'OPTIONS': {'ssl': {'ca': os.environ.get('MYSQL_ATTR_SSL_CA')}}
+  }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'nexiadb1', # This is where you put the name of the db file. 
+#                  # If one doesn't exist, it will be created at migration time.
+#     }
+# }
 
 
 # Password validation
