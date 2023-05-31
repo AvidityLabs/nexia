@@ -283,35 +283,35 @@ sentry_sdk.init(
 
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'human_readable': {
-            'format': '[%(asctime)s] %(levelname)s %(message)s',
-            'datefmt': '%Y-%m-%d %H:%M:%S',
-        },
-    },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'human_readable',
-            'level': 'DEBUG',
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': 'nexia.log',
-            'formatter': 'human_readable',
-            'level': 'INFO',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'file'],
-            'level': 'INFO',
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'human_readable': {
+#             'format': '[%(asctime)s] %(levelname)s %(message)s',
+#             'datefmt': '%Y-%m-%d %H:%M:%S',
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'human_readable',
+#             'level': 'DEBUG',
+#         },
+#         'file': {
+#             'class': 'logging.FileHandler',
+#             'filename': 'nexia.log',
+#             'formatter': 'human_readable',
+#             'level': 'INFO',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#         },
+#     },
+# }
 
 
 # EMAIL
