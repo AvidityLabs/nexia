@@ -105,8 +105,3 @@ Test case 4: Test TextEmotionAnalysisView
 20. Test with a user who has exceeded their completion tokens usage limit
 
 21. Test with a user who has exceeded their total tokens usage limit
-
-
-incase the yget errors
-
-{'detail': 'Authentication credentials were not provided.'}

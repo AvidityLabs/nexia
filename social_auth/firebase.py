@@ -6,7 +6,7 @@ import os
 import firebase_admin
 from firebase_admin import credentials
 
-
+# This is just for tesing purposes 
 cred = credentials.Certificate({
     "type": "service_account",
     "project_id": "andika-16cf6",
