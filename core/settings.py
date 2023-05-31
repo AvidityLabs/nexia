@@ -191,17 +191,8 @@ CACHES = {
 }
 
 # TODO decouple settings.py into dev, staging and prod
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': os.environ.get('DB_NAME'),
-    'HOST': os.environ.get('DB_HOST'),
-    'PORT': os.environ.get('DB_PORT'),
-    'USER': os.environ.get('DB_USER'),
-    'PASSWORD': os.environ.get('DB_PASSWORD'),
-    'OPTIONS': {'ssl': {'ca': os.environ.get('MYSQL_ATTR_SSL_CA')}}
-  }
-}
+DATABASES = {}
+DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
