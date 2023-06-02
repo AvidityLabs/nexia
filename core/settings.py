@@ -18,6 +18,7 @@ import sentry_sdk
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from kombu import Queue
 from sentry_sdk.integrations.django import DjangoIntegration
 
 import dj_database_url
@@ -26,9 +27,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 envpath = os.path.join(BASE_DIR, ".env")
 load_dotenv(dotenv_path=envpath)
 
+sentry_sdk.init(
+    dsn="https://662de0da1df04ff98e2fd61461518edb@o333282.ingest.sentry.io/4505043740327936",
+    integrations=[
+        DjangoIntegration(),
+    ],
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
 
 
-DEBUG = os.environ.get('DEBUG')
+
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +52,7 @@ PAYPAL_TEST=True
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # Enable HTTPS-only communication for a specified amount of time, with subdomains included
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -191,16 +206,25 @@ CACHES = {
     }
 }
 
+# Broker 
+
+# Celery settings
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
+
 # TODO decouple settings.py into dev, staging and prod
-DATABASES = {}
-DATABASES["default"] = dj_database_url.config(conn_max_age=600)
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'nexiadb1', # This is where you put the name of the db file. 
-#                  # If one doesn't exist, it will be created at migration time.
-#     }
-# }
+DATABASES = {
+  'default': {
+    'ENGINE': 'django_psdb_engine',
+    'NAME': os.environ.get('DB_NAME'),
+    'HOST': os.environ.get('DB_HOST'),
+    'PORT': os.environ.get('DB_PORT'),
+    'USER': os.environ.get('DB_USER'),
+    'PASSWORD': os.environ.get('DB_PASSWORD'),
+    'OPTIONS': {'ssl': {'ca': os.environ.get('MYSQL_ATTR_SSL_CA')}, 'charset': 'utf8mb4'}
+  }
+}
+
 
 
 # Password validation
@@ -240,10 +264,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 DISABLE_COLLECTSTATIC=1
 STATIC_URL = "/static/"
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # DISABLE_COLLECTSTATIC = 0
+# media
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 
 
@@ -268,19 +294,7 @@ cloudinary.config(
 
 
 
-sentry_sdk.init(
-    dsn="https://662de0da1df04ff98e2fd61461518edb@o333282.ingest.sentry.io/4505043740327936",
-    integrations=[
-        DjangoIntegration(),
-    ],
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    # We recommend adjusting this value in production.
-    traces_sample_rate=1.0,
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True
-)
+
 
 
 

@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from django.conf import settings
+from django.conf.urls.static import static
 
 def trigger_error(request):
     division_by_zero = 1 / 0
@@ -30,6 +32,8 @@ urlpatterns = [
     path("docs/", SpectacularSwaggerView.as_view(template_name="swagger-ui.html", url_name="schema"),name="swagger-ui",),
 ]
 
+if bool(settings.DEBUG):
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 # If using Docker the following will set your INTERNAL_IPS correctly in Debug mode:
 # if DEBUG:
 #     import socket  # only if you haven't already imported this
