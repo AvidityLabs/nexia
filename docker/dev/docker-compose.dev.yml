@@ -20,7 +20,6 @@ services:
     build:
       context: ../../
       dockerfile: docker/dev/python/Dockerfile.dev
-    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
     # volumes:
     # - ../../../../app:/app
     # ports:
