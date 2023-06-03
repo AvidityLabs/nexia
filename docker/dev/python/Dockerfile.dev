@@ -1,21 +1,26 @@
 # Use the official Python base image with slim-buster
-FROM python:3.9-slim-buster
+FROM python:3.8-slim
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y gcc && \
+    apt-get install -y default-libmysqlclient-dev && \
+    apt-get install -y netcat
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y netcat
-
 # Upgrade pip
 RUN pip install --upgrade pip
 
-# Create directory for the app user
+# Create directory for the app
 WORKDIR /app
 
 # Copy project files
 COPY ./app /app
+
+RUN ls
 
 # Copy entrypoint.dev.sh and make it executable
 COPY ./docker/dev/python/entrypoint.dev.sh /app/entrypoint.dev.sh
@@ -23,7 +28,10 @@ RUN chmod +x /app/entrypoint.dev.sh
 
 # Install Python dependencies
 COPY ./app/requirements /app/requirements
-RUN pip install --no-cache-dir -r /app/requirements/dev.txt
+
+# Output pip installation log to console
+RUN pip install --no-cache-dir -r /app/requirements/dev.txt 2>&1 | tee pip-installation.log
+
 
 # Run entrypoint.dev.sh
 ENTRYPOINT ["/app/entrypoint.dev.sh"]

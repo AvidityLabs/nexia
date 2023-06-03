@@ -7,8 +7,11 @@ build:
 docker-build-prod:
 	docker-compose -f docker/dev/python/docker-compose.prod.yml up -d --build
 
-start-dev:
-	docker-compose -f docker/dev/docker-compose.dev.yml up -d --build 
+dev-build:
+	docker-compose -f docker/dev/docker-compose.dev.yml build 
+
+dev-run:
+	docker-compose -f docker/dev/docker-compose.dev.yml up
 
 stop-dev:
 	docker-compose -f docker/dev/docker-compose.dev.yml down

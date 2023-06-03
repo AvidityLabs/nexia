@@ -1,7 +1,6 @@
 *.sqlite3
 .idea
 .env
-venv
 .DS_Store
 __pycache__
 static

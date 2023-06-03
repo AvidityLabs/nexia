@@ -11,6 +11,9 @@ then
     echo "MYSQL started"
 fi
 
+# Read the contents of pip-installation.log
+cat pip-installation.log
+
 python manage.py flush --no-input
 
 # Check if migrations are needed
@@ -32,4 +35,4 @@ if [ $SUPERUSER_EXISTS -eq 0 ]; then
     echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@example.com', 'adminpassword')" | python manage.py shell
 fi
 
-python manage.py runserver 0.0.0.0:8000
+python manage.py runserver
