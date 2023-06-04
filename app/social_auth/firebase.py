@@ -33,6 +33,7 @@ def firebase_validation(id_token):
     """
     try:
         decoded_token = auth.verify_id_token(id_token)
+        print(decoded_token)
         uid = decoded_token['uid']
         provider = decoded_token['firebase']['sign_in_provider']
         image = None

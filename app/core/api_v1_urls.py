@@ -9,7 +9,7 @@ from social_auth  import views as social_auth_views
 from payments import views as payments_views
 
 urlpatterns = [
-path('social_auth', social_auth_views.SocialAuthView.as_view()),
+path('social_auth/', social_auth_views.SocialAuthView.as_view()),
 path('get_token/', api_views.GetTokenAPIView.as_view(), name='get_token'),
 path('register/',  api_views.UserRegisterView.as_view(), name="register"),
 path('emotion/analysis/',  api_views.TextEmotionAnalysisView.as_view(), name='text-emotion-analysis'),

@@ -13,7 +13,7 @@ dev-build:
 dev-run:
 	docker-compose -f docker/dev/docker-compose.dev.yml up
 
-stop-dev:
+dev-stop:
 	docker-compose -f docker/dev/docker-compose.dev.yml down
 
 stop:

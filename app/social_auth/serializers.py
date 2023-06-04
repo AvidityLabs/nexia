@@ -3,6 +3,7 @@ from rest_framework import serializers
 from social_auth.firebase import firebase_validation
 from .register import register_social_user
 import os
+from decouple import config
 from rest_framework.exceptions import AuthenticationFailed
 
 
@@ -26,8 +27,8 @@ class SocialAuthSerializer(serializers.Serializer):
             raise serializers.ValidationError(
                 'The token is invalid or expired. Please login again.'
             )
-        aud = os.environ.get('FIREBASE_CLIENT_ID')
-        if user_data['aud'] != aud.replace(' ', ''):
+        aud = config('FIREBASE_CLIENT_ID')
+        if user_data['aud'] != aud:
             raise AuthenticationFailed('oops, who are you?')
 
         user_id = user_data['sub']

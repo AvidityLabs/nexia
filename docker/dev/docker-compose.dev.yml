@@ -22,15 +22,15 @@ services:
       dockerfile: docker/dev/python/Dockerfile.dev
     # volumes:
     # - ../../../../app:/app
-    # ports:
-    #   - 8000:8000
+    ports:
+      - 8000:8000
     expose:
       - 8000
     env_file:
       - ./.env.dev
     depends_on:
       - db
-      - redis
+      # - redis
 
   # nginx:
   #   build: ./nginx
@@ -41,35 +41,35 @@ services:
   #   depends_on:
   #     - web
 
-  celery:
-    build:
-      context: ../../
-      dockerfile: docker/dev/python/Dockerfile.dev
-    command: celery --app=core worker --loglevel=info --logfile=logs/celery.log
-    # volumes:
-      # - ../../../../app:/app
-    env_file:
-      - ./.env.dev
-    depends_on:
-      - web
-      - redis
+  # celery:
+  #   build:
+  #     context: ../../
+  #     dockerfile: docker/dev/python/Dockerfile.dev
+  #   command: celery --app=core worker --loglevel=info --logfile=logs/celery.log
+  #   # volumes:
+  #     # - ../../../../app:/app
+  #   env_file:
+  #     - ./.env.dev
+  #   depends_on:
+  #     - web
+  #     - redis
 
-  redis:
-    image: redis:7-alpine
+  # redis:
+  #   image: redis:7-alpine
 
-  task_dashboard:
-    build:
-      context: ../../
-      dockerfile: docker/dev/python/Dockerfile.dev
-    command: celery flower -A core --port=5555 --broker=redis://redis:6379/0
-    ports:
-      - 5555:5555
-    env_file:
-      - ./.env.dev
-    depends_on:
-      - web
-      - redis
-      - celery
+  # task_dashboard:
+  #   build:
+  #     context: ../../
+  #     dockerfile: docker/dev/python/Dockerfile.dev
+  #   command: celery flower -A core --port=5555 --broker=redis://redis:6379/0
+  #   ports:
+  #     - 5555:5555
+  #   env_file:
+  #     - ./.env.dev
+  #   depends_on:
+  #     - web
+  #     - redis
+  #     - celery
 
 # volumes:
 #   mysql_data:

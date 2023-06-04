@@ -35,4 +35,5 @@ if [ $SUPERUSER_EXISTS -eq 0 ]; then
     echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@example.com', 'adminpassword')" | python manage.py shell
 fi
 
-python manage.py runserver
+gunicorn core.wsgi:application --bind 0.0.0.0:8000
+

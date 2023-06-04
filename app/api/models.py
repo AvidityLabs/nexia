@@ -290,7 +290,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_verified = models.BooleanField(default=False)
-    uid = models.CharField(max_length=20, null=True, blank=True)
+    uid = models.CharField(max_length=255, null=True, blank=True)
     pricing_plan = models.CharField(max_length=20, null=True, blank=True)
     subscription = models.ForeignKey(
         Subscription, on_delete=models.CASCADE, null=True, blank=True)
