@@ -363,84 +363,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         return token
 
 
-class UseCaseCategory(BaseModel):
-    """
-    Represents a category for use cases.
-
-    Attributes:
-        name (CharField): The name of the category (nullable).
-
-    Methods:
-        __str__(): Returns the name of the category.
-    """
-
-    name = models.CharField(max_length=255, blank=True, null=True)
-
-    def __str__(self):
-        return self.name
-
-
-class UseCase(BaseModel):
-    """
-    Represents a use case.
-
-    Attributes:
-        title (CharField): The title of the use case (nullable).
-        description (TextField): The description of the use case (nullable).
-        navigateTo (CharField): The navigation link for the use case (nullable).
-        category (ForeignKey): The associated category for the use case (nullable).
-
-    Methods:
-        __str__(): Returns the title of the use case.
-    """
-
-    title = models.CharField(max_length=255, blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
-    navigateTo = models.CharField(max_length=255, blank=True, null=True)
-    category = models.ForeignKey(
-        UseCaseCategory, on_delete=models.CASCADE, blank=True, null=True)
-
-    def __str__(self):
-        return self.title
-
-
-class DraftManager(models.Manager):
-    def favourites(self, **kwargs):
-        """Draft.objects.favourites().count()"""
-        return self.filter(created_at__lte=timezone.now(), **kwargs)
-
-
-class Draft(BaseModel):
-    """
-    Represents a draft of a use case.
-
-    Attributes:
-        user (ForeignKey): The user associated with the draft (nullable).
-        use_case (ForeignKey): The use case associated with the draft (nullable).
-        title (CharField): The title of the draft (nullable).
-        content (TextField): The content of the draft (nullable).
-        is_saved (BooleanField): Indicates whether the draft is saved or not (default: False).
-        is_favourite (BooleanField): Indicates whether the draft is marked as a favorite or not (default: False).
-
-    Methods:
-        __str__(): Returns the title of the draft or a default string if the title is not available.
-    """
-
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, blank=True, null=True)
-    use_case = models.ForeignKey(
-        UseCase, on_delete=models.CASCADE, blank=True, null=True)
-    title = models.CharField(max_length=255, blank=True, null=True)
-    content = models.TextField(blank=True, null=True)
-    is_saved = models.BooleanField(default=False)
-    is_favourite = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.title if self.title else f"Draft {self.id}"
-
-    objects = DraftManager()
-
-
 class TokenUsageManager(models.Manager):
     """
     Custom manager for TokenUsage model.
@@ -706,6 +628,7 @@ class Tone(BaseModel):
         return self.name
 
 
+# TODO: remove
 class Instruction(BaseModel):
     """
     Represents an instruction for generating a prompt.

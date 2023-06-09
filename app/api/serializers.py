@@ -11,7 +11,9 @@ from rest_framework import serializers
 from rest_framework import serializers
 
 
-from api.models import Draft, TokenUsage, User, TextToImage, TextToVideo, Instruction, Tone
+from api.models import TokenUsage, User, TextToImage, TextToVideo, Instruction, Tone
+
+from documents.models import (Document)
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -54,6 +56,8 @@ class LoginSerializer(serializers.Serializer):
     id = serializers.CharField(max_length=255, read_only=True)
     is_verified = serializers.CharField(max_length=255, read_only=True)
     display_name = serializers.CharField(max_length=255, read_only=True)
+    first_name = serializers.CharField(max_length=255, read_only=True)
+    last_name = serializers.CharField(max_length=255, read_only=True)
     photo_url = serializers.CharField(max_length=255, read_only=True)
     pricing_plan = serializers.CharField(max_length=255, read_only=True)
     email = serializers.CharField(max_length=255)
@@ -311,9 +315,9 @@ class InstructionSerializerResult(serializers.ModelSerializer):
         fields = ['id', 'description','tones','prompt' ]
 
 
-class DraftSerializer(serializers.ModelSerializer):
+class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Draft
+        model = Document
         fields = ['id', 'user', 'use_case', 'title', 'content', 'is_saved']
 
 

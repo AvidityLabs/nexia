@@ -9,9 +9,16 @@ from social_auth  import views as social_auth_views
 from payments import views as payments_views
 
 urlpatterns = [
+
+path('active-user/', api_views.GetActiveUserAPIView.as_view(), name='active_user'),
+path('change-password/', api_views.ChangePasswordView.as_view(), name='change_password'),
+path('change-email/', api_views.ChangeEmailView.as_view(), name='change_email'),
+path('delete-account/', api_views.DeleteAccountAPIView.as_view(), name='delete-account'),
+path('email_confirmation/', api_views.EmailComfirmationAPIView.as_view()),
 path('social_auth/', social_auth_views.SocialAuthView.as_view()),
 path('get_token/', api_views.GetTokenAPIView.as_view(), name='get_token'),
 path('register/',  api_views.UserRegisterView.as_view(), name="register"),
+path('update_user/', api_views.UpdateUserView.as_view(), name='user-update'),
 path('emotion/analysis/',  api_views.TextEmotionAnalysisView.as_view(), name='text-emotion-analysis'),
 path('sentiment/analysis/',  api_views.TextSentimentAnalysisView.as_view(), name='text-sentiment-analysis'),
 path('prompt/completion/',  api_views.ChatGPTCompletionView.as_view(), name='chatgpt-completion'),
@@ -23,14 +30,17 @@ path('instructions/tones/create/',  api_views.CreateToneAPIView.as_view(), name=
 path('instructions/tones/',  api_views.ToneListView.as_view(), name='tone-list'),
 path('instructions/tones/detail/<int:pk>/',  api_views.ToneRetrieveView.as_view(), name='instruction-retrieve-update-destroy'),
 path('instructions/tones/update/<int:pk>/',  api_views.ToneUpdateView.as_view(), name='instruction-retrieve-update-destroy'),
+
+# Documents 
+path('documents/',  api_views.DocumentListCreateView.as_view(), name='document-list-create'),
+path('document/<int:pk>/',  api_views.DocumentRetrieveUpdateDestroyView.as_view(), name='document-retrieve-update-destroy'),
 # Instructions
 path('instructions/',  api_views.InstructionListView.as_view(), name='instruction-create'),
 path('instructions/create/',  api_views.InstructionCreateView.as_view(), name='instruction-create'),
 path('instructions/update/<int:pk>/',  api_views.InstructionUpdateView.as_view(), name='instruction-update'),
 path('instructions/detail/<int:pk>/',  api_views.InstructionRetrieveView.as_view(), name='instruction-detail'),
 path('instructions/search/',  api_views.InstructionSearchView.as_view(), name='instruction-search'),
-path('drafts/',  api_views.DraftListCreateView.as_view(), name='draft-list-create'),
-path('drafts/<int:pk>/',  api_views.DraftRetrieveUpdateDestroyView.as_view(), name='draft-retrieve-update-destroy'),
+
 path('usecases/',  api_views.UseCasesList.as_view(), name='usecase_list'),
 # Payments
 path('home', payments_views.index, name='django_daraja_index'),

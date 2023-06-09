@@ -1,281 +1,281 @@
 from enum import Enum
-
+#TODO: move this to usecases
 class UseCase(Enum):
-    YoutubeIdea = 1,
-    YoutubeDescription = 2,
-    YoutubeChannelDescription = 3,
-    TestimonialAndReview = 4,
-    TagLineAndHeadline = 5,
-    StoryPlots = 6,
-    SongLyrics = 7,
-    SmsAndNotifications = 8,
-    EmailSubjectLine = 9,
-    JobDescription = 10,
-    BlogIdeaAndOutline= 11,
-    CoverLetter = 12,
-    ProfileBio=13,
-    ReplyToReviewsAndMessages = 14,
-    GrammarCorrection = 15,
-    BusinessIdea = 16,
-    BusinessIdeaPitch = 17,
-    Citation = 18,
-    CopywritingFrameworkAIDA = 19,
-    GoogleSearchAd = 20,
-    InterviewQuestions = 21,
-    KeywordsExtractor = 22,
-    LandingPage = 23, 
-    ParaphraseText = 24,
-    PostAndCaptionIdea = 25,
-    ProductDescriptionWithBulletPoints = 26,
-    ProductDescription = 27,
-    SeoMetaTitle = 28,
-    GenerateCallToAction = 29,
-    GenerateBrandName = 30,
-    GenerateQuestionAnswer = 31,
-    SocialMediaAd = 32,
-    GenerateLandingPageCopy = 33,
-    GenerateFacebookAd = 34,
-    GenerateInstagramCaption = 35,
-    GeneratePodcastIdea = 36,
-    GeneratePodcastTitle = 37,
-    GeneratePresentation = 38,
-    GeneratePressRelease = 39,
-    GenerateVideoScript = 40,
-    GenerateWebsiteCopy = 41,
-    GenerateNewsletterIdea = 42,
-    GenerateNewsletterTitle = 43,
-    GenerateSalesCopy = 44,
-    GenerateCourseTitle = 45,
-    GenerateCourseSubtitle = 46,
-    GenerateCourseDescription = 47,
-    GenerateCourseLectureTitles = 48,
-    GenerateCourseQuizQuestions = 49,
-    GenerateCourseExercises = 50,
-    GenerateCourseArticles = 51,
-    SummarizeText = 52,
-    AdCopy = 53,
-    EmailBody = 54,
-    EmailToneAdjustment = 55,
-    SocialMediaPost = 56,
-    SocialMediaAdGenerator = 57,
-    GoogleSearchAdsGenerator = 58,
-    Email = 59
+    YoutubeIdea = "/youtube/video_idea"
+    YoutubeVideoDescription = "/youtube/video_description"
+    YoutubeChannelDescription = "/youtube/channel_description"
+    BlogIdeaAndOutline = "/blog/idea_and_outline"
+    TestimonialAndReview = "/testimonials/testimonial_and_review"
+    TagLineAndHeadline = "/tagline_and_headline"
+    StoryPlots = "/story/plots"
+    SongLyrics = "/song/lyrics"
+    SmsAndNotifications = "/sms_and_notifications"
+    EmailSubjectLine = "/email/subject_line"
+    JobDescription = "/job/description"
+    CoverLetter = "/cover_letter"
+    ProfileBio = "/profile/bio"
+    ReplyToReviewsAndMessages = "/reply_to_reviews_and_messages"
+    GrammarCorrection = "/grammar_correction"
+    BusinessIdea = "/business/idea"
+    BusinessIdeaPitch = "/business/idea_pitch"
+    Citation = "/citation"
+    CopywritingFrameworkAIDA = "/copywriting/framework_aida"
+    GoogleSearchAd = "/google/search_ad"
+    InterviewQuestions = "/interview/questions"
+    KeywordsExtractor = "/keywords/extractor"
+    LandingPage = "/landing_page"
+    ParaphraseText = "/paraphrase/text"
+    PostAndCaptionIdea = "/post_and_caption/idea"
+    ProductDescriptionWithBulletPoints = "/product_description_with_bullet_points"
+    ProductDescription = "/product_description"
+    SeoMetaTitle = "/seo/meta_title"
+    GenerateCallToAction = "/generate/call_to_action"
+    GenerateBrandName = "/generate/brand_name"
+    GenerateQuestionAnswer = "/generate/question_answer"
+    SocialMediaAd = "/social_media/ad"
+    GenerateLandingPageCopy = "/generate/landing_page_copy"
+    GenerateFacebookAd = "/generate/facebook_ad"
+    GenerateInstagramCaption = "/generate/instagram_caption"
+    GeneratePodcastIdea = "/generate/podcast_idea"
+    GeneratePodcastTitle = "/generate/podcast_title"
+    GeneratePresentation = "/generate/presentation"
+    GeneratePressRelease = "/generate/press_release"
+    GenerateVideoScript = "/generate/video_script"
+    GenerateWebsiteCopy = "/generate/website_copy"
+    GenerateNewsletterIdea = "/generate/newsletter_idea"
+    GenerateNewsletterTitle = "/generate/newsletter_title"
+    GenerateSalesCopy = "/generate/sales_copy"
+    GenerateCourseTitle = "/generate/course_title"
+    GenerateCourseSubtitle = "/generate/course_subtitle"
+    GenerateCourseDescription = "/generate/course_description"
+    GenerateCourseLectureTitles = "/generate/course_lecture_titles"
+    GenerateCourseQuizQuestions = "/generate/course_quiz_questions"
+    GenerateCourseExercises = "/generate/course_exercises"
+    GenerateCourseArticles = "/generate/course_articles"
+    SummarizeText = "/summarize/text"
+    AdCopy = "/ad/copy"
+    EmailBody = "/email/body"
+    EmailToneAdjustment = "/email/tone_adjustment"
+    SocialMediaPost = "/social_media/post"
+    SocialMediaAdGenerator = "/social_media/ad_generator"
+    GoogleSearchAdsGenerator = "/google/search_ads_generator"
+    Email = "/email"
+
 
 use_cases = [
     {
         'title': 'Youtube Idea',
         'description': 'Generate ideas for YouTube videos.',
-        'navigateTo': UseCase.YoutubeIdea.value[0],
+        'navigateTo': '/youtube/video_idea',
         'category': 'youtube'
     },
     {
         'title': 'Youtube Description',
         'description': 'Create descriptions for YouTube videos.',
-        'navigateTo': UseCase.YoutubeDescription.value[0],
+        'navigateTo': '/youtube/video_description',
         'category': 'youtube'
     },
     {
         'title': 'Youtube Channel Description',
         'description': 'Write descriptions for YouTube channels.',
-        'navigateTo': UseCase.YoutubeChannelDescription.value[0],
+        'navigateTo': 'youtube/channel_description',
         'category': 'youtube'
     },
     {
         'title': 'Testimonial and Review',
         'description': 'Generate testimonials and reviews.',
-        'navigateTo': UseCase.TestimonialAndReview.value[0],
+        'navigateTo': '/testimonials/testimonial_and_review"',
         'category': 'Testimonials and Reviews'
-    },
-    {
+    },    {
         'title': 'Tagline and Headline',
         'description': 'Generate catchy taglines and headlines.',
-        'navigateTo': UseCase.TagLineAndHeadline.value[0],
+        'navigateTo': UseCase.TagLineAndHeadline.value,
         'category': 'Taglines and Headlines'
     },
     {
         'title': 'Story Plots',
         'description': 'Generate plots for stories or narratives.',
-        'navigateTo': UseCase.StoryPlots.value[0],
+        'navigateTo': UseCase.StoryPlots.value,
         'category': 'Story Plots'
     },
     {
         'title': 'Song Lyrics',
         'description': 'Create lyrics for songs.',
-        'navigateTo': UseCase.SongLyrics.value[0],
+        'navigateTo': UseCase.SongLyrics.value,
         'category': 'Song Lyrics'
     },
     {
         'title': 'SMS and Notifications',
         'description': 'Generate text messages and notifications.',
-        'navigateTo': UseCase.SmsAndNotifications.value[0],
+        'navigateTo': UseCase.SmsAndNotifications.value,
         'category': 'SMS and Notifications'
     },
     {
         'title': 'Email Subject Line',
         'description': 'Create subject lines for emails.',
-        'navigateTo': UseCase.EmailSubjectLine.value[0],
+        'navigateTo': UseCase.EmailSubjectLine.value,
         'category': 'Email'
     },
     {
         'title': 'Job Description',
         'description': 'Write descriptions for job postings.',
-        'navigateTo': UseCase.JobDescription.value[0],
+        'navigateTo': UseCase.JobDescription.value,
         'category': 'Job-related'
     },
     {
         'title': 'Blog Idea and Outline',
         'description': 'Generate ideas and outlines for blog posts.',
-        'navigateTo': UseCase.BlogIdeaAndOutline.value[0],
+        'navigateTo': UseCase.BlogIdeaAndOutline.value,
         'category': 'blog'
     },
     {
         'title': 'Cover Letter',
         'description': 'Create cover letters for job applications.',
-        'navigateTo': UseCase.CoverLetter.value[0],
+        'navigateTo': UseCase.CoverLetter.value,
         'category': 'Job-related'
     },
     {
         'title': 'Profile Bio',
         'description': 'Write a biography for a profile or portfolio.',
-        'navigateTo': UseCase.ProfileBio.value[0],
+        'navigateTo': UseCase.ProfileBio.value,
         'category': 'profile'
     },
     {
         'title': 'Reply to Reviews and Messages',
         'description': 'Craft responses to reviews and messages.',
-        'navigateTo': UseCase.ReplyToReviewsAndMessages.value[0],
+        'navigateTo': UseCase.ReplyToReviewsAndMessages.value,
         'category': 'Content Creation'
     },
     {
         'title': 'Grammar Correction',
         'description': 'Correct grammar and punctuation errors.',
-        'navigateTo': UseCase.GrammarCorrection.value[0],
+        'navigateTo': UseCase.GrammarCorrection.value,
         'category': "Business"
     },
     {
         'title': 'Business Idea',
         'description': 'Generate ideas for new businesses.',
-        'navigateTo': UseCase.BusinessIdea.value[0],
+        'navigateTo': UseCase.BusinessIdea.value,
         'category': 'business'
     },
     {
         'title': 'Business Idea Pitch',
         'description': 'Create a pitch for a business idea.',
-        'navigateTo': UseCase.BusinessIdeaPitch.value[0],
+        'navigateTo': UseCase.BusinessIdeaPitch.value,
         'category': 'business'
     },
     {
         'title': 'Citation',
         'description': 'Generate citations for references.',
-        'navigateTo': UseCase.Citation.value[0],
+        'navigateTo': UseCase.Citation.value,
         'category': 'academic'
     },
     {
         'title': 'Copywriting Framework AIDA',
         'description': 'Apply the AIDA framework to copywriting.',
-        'navigateTo': UseCase.CopywritingFrameworkAIDA.value[0],
+        'navigateTo': UseCase.CopywritingFrameworkAIDA.value,
         'category': 'business'
     },
         {
         'title': 'Google Search Ad',
         'description': 'Generate Google search ads.',
-        'navigateTo': UseCase.GoogleSearchAd.value[0],
+        'navigateTo': UseCase.GoogleSearchAd.value,
         'category': 'Marketing and Advertising'
     },
     {
         'title': 'Interview Questions',
         'description': 'Generate interview questions.',
-        'navigateTo': UseCase.InterviewQuestions.value[0],
+        'navigateTo': UseCase.InterviewQuestions.value,
         'category': 'Interview'
     },
     {
         'title': 'Keywords Extractor',
         'description': 'Extract keywords from text or documents.',
-        'navigateTo': UseCase.KeywordsExtractor.value[0],
+        'navigateTo': UseCase.KeywordsExtractor.value,
         'category': 'seo'
     },
     {
         'title': 'Landing Page',
         'description': 'Create landing page content.',
-        'navigateTo': UseCase.LandingPage.value[0],
+        'navigateTo': UseCase.LandingPage.value,
         'category': 'seo'
     },
     {
         'title': 'Paraphrase Text',
         'description': 'Paraphrase or rephrase text.',
-        'navigateTo': UseCase.ParaphraseText.value[0],
+        'navigateTo': UseCase.ParaphraseText.value,
         'category': 'Content Editing'
     },
     {
         'title': 'Post and Caption Idea',
         'description': 'Generate ideas for social media posts and captions.',
-        'navigateTo': UseCase.PostAndCaptionIdea.value[0],
+        'navigateTo': UseCase.PostAndCaptionIdea.value,
         'category': 'Social Media'
     },
     {
         'title': 'Product Description with Bullet Points',
         'description': 'Write product descriptions with bullet points.',
-        'navigateTo': UseCase.ProductDescriptionWithBulletPoints.value[0],
+        'navigateTo': UseCase.ProductDescriptionWithBulletPoints.value,
         'category': 'Product Description'
     },
     {
         'title': 'Product Description',
         'description': 'Write product descriptions.',
-        'navigateTo': UseCase.ProductDescription.value[0],
+        'navigateTo': UseCase.ProductDescription.value,
         'category': 'Product Description'
     },
     {
         'title': 'SEO Meta Title',
         'description': 'Generate SEO meta titles.',
-        'navigateTo': UseCase.SeoMetaTitle.value[0],
+        'navigateTo': UseCase.SeoMetaTitle.value,
         'category': 'seo'
     },
     {
         'title': 'Generate Call to Action',
         'description': 'Create compelling calls to action.',
-        'navigateTo': UseCase.GenerateCallToAction.value[0],
+        'navigateTo': UseCase.GenerateCallToAction.value,
         'category': 'Call to Action'
     },
     {
         'title': 'Generate Brand Name',
         'description': 'Generate brand names.',
-        'navigateTo': UseCase.GenerateBrandName.value[0],
+        'navigateTo': UseCase.GenerateBrandName.value,
         'category': 'Branding'
     },
     {
         'title': 'Generate Question Answer',
         'description': 'Generate questions and answers.',
-        'navigateTo': UseCase.GenerateQuestionAnswer.value[0],
+        'navigateTo': UseCase.GenerateQuestionAnswer.value,
         'category': 'Questions and Answers'
     },
     {
         'title': 'Social Media Ad',
         'description': 'Generate social media ads.',
-        'navigateTo': UseCase.SocialMediaAd.value[0],
+        'navigateTo': UseCase.SocialMediaAd.value,
         'category': 'Social Media Ad Generator'
     },
     {
         'title': 'Generate Landing Page Copy',
         'description': 'Generate landing page copy.',
-        'navigateTo': UseCase.GenerateLandingPageCopy.value[0],
+        'navigateTo': UseCase.GenerateLandingPageCopy.value,
         'category': 'Landing Page'
     },
     {
         'title': 'Generate Facebook Ad',
         'description': 'Generate Facebook ads.',
-        'navigateTo': UseCase.GenerateFacebookAd.value[0],
+        'navigateTo': UseCase.GenerateFacebookAd.value,
         'category': 'Facebook Ad'
     },
     {
         'title': 'Generate Instagram Caption',
         'description': 'Generate captions for Instagram posts.',
-        'navigateTo': UseCase.GenerateInstagramCaption.value[0],
+        'navigateTo': UseCase.GenerateInstagramCaption.value,
         'category': 'social media'
     },
     {
         'title': 'Generate Podcast Idea',
         'description': 'Generate ideas for podcasts.',
-        'navigateTo': UseCase.GeneratePodcastIdea.value[0],
+        'navigateTo': UseCase.GeneratePodcastIdea.value,
         'category': 'podcast'
     },
         {
@@ -405,3 +405,5 @@ use_cases = [
         "category": "Google Search Ads Generator"
     }
 ]
+
+

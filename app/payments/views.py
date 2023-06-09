@@ -27,8 +27,8 @@ def oauth_success(request):
 class STKPushAPIView(APIView):
     permission_classes = [AllowAny]
 
-    def post(self, request):
-        phone_number = '0722212132'
+    def get(self, request):
+        phone_number = '0725370318'
         amount = 1
         account_reference = 'ABC001'
         transaction_desc = 'STK Push Description'

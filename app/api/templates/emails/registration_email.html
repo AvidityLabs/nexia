@@ -3,70 +3,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <style>
-        /* Add your desired CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-        }
-        h1 {
-            color: #333333;
-            font-size: 24px;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #555555;
-            font-size: 16px;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .button {
-            display: inline-block;
-            background-color: #007bff;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Welcome Email</title>
+<link href="https://unpkg.com/tailwindcss@0.7.4/dist/tailwind.min.css" rel="stylesheet" />
+<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to [Your Company Name]</h1>
-        <p>Dear {{ user_name }},</p>
-        <p>Congratulations! We are thrilled to inform you that your registration with [Your Company Name] was successful. Welcome to our community! We're excited to have you on board.</p>
-        <p>Here are a few important details regarding your registration:</p>
-        <ul>
-            <li><strong>Username:</strong> {{ user_name }}</li>
-            <li><strong>Email Address:</strong> {{ user_email }}</li>
-            <li><strong>Registration Date:</strong> {{ registration_date }}</li>
-        </ul>
-        <p>As a registered member, you now have access to a wide range of features and benefits:</p>
-        <ol>
-            <li>[Feature 1]: [Brief description of the feature]</li>
-            <li>[Feature 2]: [Brief description of the feature]</li>
-            <li>[Feature 3]: [Brief description of the feature]</li>
-        </ol>
-        <p>To get started, please click on the button below to access your dashboard:</p>
-        <p><a href="{{ dashboard_link }}" class="button">Access Dashboard</a></p>
-        <p>If you have any questions or need assistance, feel free to reach out to our support team at [Support Email Address]. We're here to help!</p>
-        <p>Once again, we'd like to extend a warm welcome to you. Thank you for joining [Your Company Name]. We hope you have a great experience with our platform.</p>
-        <p>Best regards,<br>[Your Name]<br>[Your Company Name]<br>[Your Contact Information]</p>
+<div class="app font-sans min-w-screen min-h-screen bg-grey-lighter py-8 px-4">
+
+  <div class="mail__wrapper max-w-md mx-auto">
+
+    <div class="mail__content bg-white p-8 shadow-md">
+
+      <div class="content__header text-center tracking-wide border-b">
+        <div class="text-orange text-sm font-bold">ANDIKA.PRO</div>
+        <h1 class="text-3xl h-48 flex items-center justify-center">E-mail Confirmation</h1>
+      </div>
+
+      <div class="content__body py-8 border-b">
+        <p class="mb-5 py-2">
+          Hey, <br><br>It looks like you just signed up for The App, that’s awesome! Can we ask you for email confirmation? Just click the button bellow.
+        </p>
+        
+        <a button href="{{ dashboard_link }}" class="mb-5 text-white text-sm tracking-wide bg-teal rounded w-full my-10 p-4">CONFIRM EMAIL ADRESS</a>
+        
+        <p class="text-sm mt-5 py-4">
+          Keep Rockin'!<br> Andika App team
+        </p>
+      </div>
+
+      <div class="content__footer mt-8 text-center text-grey-darker">
+        <h3 class="text-base sm:text-lg mb-4">Thanks for using The App!</h3>
+        <p>www.andika.pro</p>
+      </div>
+
     </div>
+
+    <div class="mail__meta text-center text-sm text-grey-darker mt-8">
+
+      <div class="meta__social flex justify-center my-4">
+        <a href="#" class="flex items-center justify-center mr-4 bg-black text-white rounded-full w-8 h-8 no-underline"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="flex items-center justify-center mr-4 bg-black text-white rounded-full w-8 h-8 no-underline"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="flex items-center justify-center bg-black text-white rounded-full w-8 h-8 no-underline"><i class="fab fa-twitter"></i></a>
+      </div>
+
+      <div class="meta__help">
+        <p class="leading-loose">
+          Questions or concerns? <a href="#" class="text-grey-darkest">help@andika.pro</a>
+
+          <br> Want to quit getting updates? <a href="#" class="text-grey-darkest">Unsubscribe</a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 </body>
 </html>

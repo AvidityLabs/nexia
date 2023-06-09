@@ -1,0 +1,55 @@
+from api.utilities.openai.utils import completion
+
+
+def generateYoutubeChannelDescription(payload):
+    prompt = f"""
+    Perform the following actions:\
+    1 - Generate a YouTube channel description for a channel based on the following text delimited by tripple backticks in {prompt.language} language with a tone that is {prompt.tone}.\
+    2 - Include a detailed and clear overview of the channel, including the type of content, target audience, and unique selling points.\
+    3 - Include a call-to-action, encouraging viewers to subscribe to the channel.\
+    4 - Use appropriate keywords to optimize the channel description for search engines and make sure to align the tone with the channel's purpose and target audience.\
+    5 - Output the result in HTML format.
+
+    Text:
+    ```{payload.channelDescription}```       
+    """
+    return completion(prompt)
+
+
+def generateYoutubeVideoDescription(payload):
+    prompt = f"""
+    Perform the following actions:
+    1 - Generate a YouTube video description based on the following text delimited by triple backticks in ```{payload.get('language')}``` language, with a tone that is ```{payload.get('tone')}```.\
+
+    2 - Include a brief summary of the video content, highlighting the key points and main takeaways.\
+
+    3 - Include relevant keywords and hashtags to optimize the video for search engines.\
+
+    4 - Use persuasive language to encourage viewers to watch the video and to subscribe to your channel.\
+
+    5 - Include a call-to-action, such as asking viewers to leave a comment or to check out a related video or website.\
+
+    6 - Output the result in HTML format.
+
+    Text:
+    ```{payload.get('videoTitle')}```
+    """
+    return completion
+
+
+def generateYouTubeVideoIdea(payload):
+    prompt = f"""
+    Perform the following actions:
+    1 - Generate a YouTube video idea based on the provided information.
+    2 - The video should be in the {payload['language']} language with a {payload['tone']} tone.
+    3 - Consider the target audience and their interests when generating the idea.
+    4 - Ensure the idea is engaging, informative, and aligned with the channel's theme.
+    5 - Output the generated video idea in HTML format.
+
+    Information:
+    Channel Name: {payload['channelName']}
+    Channel Theme: {payload['channelTheme']}
+    Previous Video Topics: {payload['previousVideoTopics']}
+    """
+
+    return prompt

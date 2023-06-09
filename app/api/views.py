@@ -1,3 +1,4 @@
+import json
 import logging
 from datetime import date
 from django.utils.translation import gettext_lazy as _
@@ -10,6 +11,8 @@ from api.utilities.validators.text_validator import validate_text_input
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.views.decorators.cache import cache_page
+from django.contrib.auth.hashers import make_password
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
@@ -17,8 +20,12 @@ from rest_framework.response import Response
 from api.utilities.tokens import MonthlyTokenLimitExceeded
 from api.utilities.tokens import validate_token_usage
 from api.renderers import APIJSONRenderer
-from .models import Draft, Instruction, PricingPlan, TextToImage, TextToVideo, TokenUsage, Tone, UseCase, User
-from .serializers import  AnyPayloadSerializer, DraftSerializer, InstructionSerializer, InstructionSerializerResult, TextCompletionSerializer, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
+from .models import Instruction, PricingPlan, TextToImage, TextToVideo, TokenUsage, Tone, User
+from documents.models import (Document)
+from usecases.models import (
+    UseCase
+)
+from .serializers import  AnyPayloadSerializer, DocumentSerializer, InstructionSerializer, InstructionSerializerResult, TextCompletionSerializer, TextToImageSerializer, TextToVideoSerializer, ToneSerializer
 
 from rest_framework import generics
 from rest_framework.views import APIView
@@ -37,8 +44,7 @@ from api.utilities.openai.utils import completion, edit
 from api.utilities.hugging_face.tokenizer import calculate_tokens
 from api.utilities.jwt_helper import decode_jwt_token
 from api.utilities.data import TONES
-from api.prompts.repository import promptExecute
-
+# from api.prompts.repository import promptExecute
 from api.serializers import (
     UserRegisterSerializer,
     TextSerializer,
@@ -100,7 +106,158 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+class EmailComfirmationAPIView(APIView):
+    permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
+    def get(request):
+        if request.user is None:
+            return Response({'error': 'Invalid user credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
+        user= json.dumps(request.user)
+        return Response(request.user)
 
+
+
+class GetActiveUserAPIView(APIView):
+    permission_classes = [IsAuthenticated,]
+    renderer_classes = (APIJSONRenderer,)
+    def get(self, request):
+        if request.user is None:
+            return Response({'error': 'Invalid user credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
+        serializer = LoginSerializer(request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class ChangePasswordView(APIView):
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [APIJSONRenderer]
+
+    def post(self, request):
+        user = request.user
+        try:
+            # Get the current and new passwords from the request data
+            current_password = request.data.get('current_password')
+            new_password = request.data.get('new_password')
+            print(user.check_password(current_password))
+            print(request.data)
+            # Verify if the current password is correct
+            if not user.check_password(current_password):
+                return Response({'error': 'Invalid current password'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Update the user's password with the new password
+            user.set_password(new_password)
+            user.save()
+
+            # try:
+            #     # Send email notification to the user
+            #     send_mail(
+            #         'Password Changed',
+            #         'Your password has been successfully changed.',
+            #         'from@example.com',
+            #         [user.email],
+            #         fail_silently=False,
+            #     )
+            # except Exception as e:
+            #     # Handle any exception that occurs while sending the email
+            #     return Response({'error': 'Failed to send email notification'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+            # Serialize the user object and return the response
+            serializer = LoginSerializer(user)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response(str(e), 400)
+
+
+
+class ChangeEmailView(APIView):
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [APIJSONRenderer]
+
+    def post(self, request):
+        user = request.user
+        try:
+            # Get the current and new email from the request data
+            current_email = request.data.get('current_email')
+            new_email = request.data.get('new_email')
+
+            if user.email == new_email:
+                return Response({'error': 'Invalid current email and new email are the same'}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # Verify if the current email is correct
+            if user.email != current_email:
+                return Response({'error': 'Invalid current email'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Check if the new email already exists in the system
+            if User.objects.filter(email=new_email).exists():
+                return Response({'error': 'New email already exists'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Update the user's email with the new email
+            user.email = new_email
+            user.save()
+
+            # Uncomment the following code if you want to send an email notification to the user
+            """
+            try:
+                # Send email notification to the user
+                send_mail(
+                    'Email Changed',
+                    'Your email has been successfully changed.',
+                    'from@example.com',
+                    [user.email],
+                    fail_silently=False,
+                )
+            except Exception as e:
+                # Handle any exception that occurs while sending the email
+                return Response({'error': 'Failed to send email notification'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            """
+
+            # Serialize the user object and return the response
+            serializer = LoginSerializer(user)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class DeleteAccountAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    renderer_classes = [APIJSONRenderer]
+
+    def get(self, request):
+        user = request.user
+        try:
+            # Perform the user deletion logic here
+            user.delete()
+
+            # Optionally, you can send a response with a success message
+            # # Send email notification to the user
+            # send_mail(
+            #     'Email Changed',
+            #     'Your email has been successfully changed.',
+            #     'from@example.com',
+            #     [user.email],
+            #     fail_silently=False,
+            # )
+            return Response({'message': 'User deleted successfully'}, status=status.HTTP_200_OK)
+        except Exception as e:
+            # Handle any exception that occurs during user deletion
+            return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
+
+
+class UpdateUserView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        try:
+            user = request.user
+            name = request.data.get('name')
+            
+            if name:
+                user.display_name = name
+                user.save()
+                
+            serializer = UserSerializer(user)
+            return Response({'msg': 'Updated..', 'data': serializer.data}, status=status.HTTP_200_OK)
+        except ObjectDoesNotExist as e:
+            return Response({'msg': 'Unauthorized change profile', 'error': str(e)}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class GetTokenAPIView(APIView):
@@ -113,9 +270,11 @@ class GetTokenAPIView(APIView):
             "email": request.data.get('email'),
             "password": request.data.get('password')
         }
+        print(user)
         try:
             serializer = self.serializer_class(data=user)
             serializer.is_valid(raise_exception=True)
+            print(serializer.data)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Http404:
             return Response({'error': 'User does not exist.'}, status=status.HTTP_404_NOT_FOUND)
@@ -252,16 +411,18 @@ class ChatGPTCompletionView(APIView):
     renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
-        print(request.data)
         validate_token_usage(request.user)
 
         text_serializer = AnyPayloadSerializer(data=request.data)
 
         try:
-            response = promptExecute(request.data.get('payload')['usecase'], request.data.get('payload'))
-            print(response)
+            from usecases.models import UseCase
+            usecase= UseCase.objects.get(navigateTo=request.data.get('payload')['usecase'])
+            response = usecase.promptExecute(request.data.get('payload'))
+            # response = promptExecute(request.data.get('payload')['usecase'], request.data.get('payload'))
+            # response = ''
             if response is None:
-                return Response({'error': f'{ERROR_MSG}|>>Detail: Unable to communicate with gpt model'}, status=400)
+                return Response({'error': f'>>Unable to communicate with gpt model'}, status=400)
 
             prompt_tokens = response.usage.prompt_tokens
             completion_tokens = response.usage.completion_tokens
@@ -280,8 +441,9 @@ class ChatGPTCompletionView(APIView):
             }
             return Response(data=result, status=200)
         except Exception as e:
+            print(e)
             logger.error(f"An error occurred @api/gpt/completion/: {e}")
-            return Response({'error': f'{ERROR_MSG}'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': f'{e}'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ChatGPTEditView(APIView):
@@ -623,9 +785,9 @@ class InstructionSearchView(generics.ListAPIView):
             queryset = queryset.filter(tones__name__in=tones).distinct()
         return queryset
 
-class DraftListCreateView(generics.ListCreateAPIView):
-    queryset = Draft.objects.all()
-    serializer_class = DraftSerializer
+class DocumentListCreateView(generics.ListCreateAPIView):
+    queryset = Document.objects.all()
+    serializer_class = DocumentSerializer
     permission_classes = [IsAuthenticated]
     renderer_classes = (APIJSONRenderer,)
 
@@ -634,22 +796,45 @@ class DraftListCreateView(generics.ListCreateAPIView):
         return super().get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        user = request.user
-        use_case = request.data.get('use_case')
-        title = request.data.get('title')
-        content = request.data.get('content')
+        try:
+            user = request.user
+            use_case = request.data.get('use_case')
+            title = request.data.get('title')
+            content = request.data.get('content')
 
-        use_case, _ = UseCase.objects.get_or_create(name=use_case)
+            use_case = UseCase.objects.get(navigateTo=use_case)
 
-        draft = Draft(user=user, use_case=use_case, title=title, content=content)
-        draft.save()
+            # Check if a document with the same title exists
+            existing_document = Document.objects.filter(title=title).first()
+            
+            if existing_document and existing_document.content == content:
+                # Document with the same title and content already exists
+                serializer = DocumentSerializer(existing_document)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            
+            if existing_document:
+                # Update the existing document with the new content
+                existing_document.content = content
+                existing_document.save()
+                serializer = DocumentSerializer(existing_document)
+                return Response(serializer.data, status=status.HTTP_200_OK)
 
-        serializer = DraftSerializer(draft)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+            draft = Document(user=user, document_type="html", use_case=use_case, title=title, content=content)
+            draft.save()
 
-class DraftRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Draft.objects.all()
-    serializer_class = DraftSerializer
+            serializer = DocumentSerializer(draft)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except UseCase.DoesNotExist as e:
+            print(e)
+            return Response({'error': 'Invalid use case'}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            print(e)
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class DocumentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Document.objects.all()
+    serializer_class = DocumentSerializer
 
 
 class UseCasesList(APIView):
