@@ -50,6 +50,7 @@ RUN echo "DEBUG=${DEBUG}" >> /code/app/.env && \
     echo "SENTIMENT_MODEL_URL=${SENTIMENT_MODEL_URL}" >> /code/app/.env && \
     echo "SENTIMENT_MODEL_TOKEN=${SENTIMENT_MODEL_TOKEN}" >> /code/app/.env && \
     echo "RAPID_API_APP_URL=${RAPID_API_APP_URL}" >> /code/app/.env && \
+    echo "DATABASE_URL=${DATABASE_URL}" >> /code/app/.env && \
     echo "STABLE_DIFFUSION_API_KEY=${STABLE_DIFFUSION_API_KEY}" >> /code/app/.env && \
     echo "OPENAI_API_KEY=${OPENAI_API_KEY}" >> /code/app/.env && \
     echo "OPENAI_ORGANIZATION=${OPENAI_ORGANIZATION}" >> /code/app/.env && \

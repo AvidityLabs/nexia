@@ -1,6 +1,6 @@
 # coding: utf-8
 from .base import *
-
+import dj_database_url
 
 
 INSTALLED_APPS += ['debug_toolbar']
@@ -54,21 +54,9 @@ CACHES = {
 }
 
 # Database Configuration
-DATABASES = {
-    'default': {
-        'ENGINE': 'django_psdb_engine',
-        'NAME': config('DB_NAME'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'OPTIONS': {
-            'ssl': {'ca': BASE_DIR / config('MYSQL_ATTR_SSL_CA')},
-            'charset': 'utf8mb4'
-        }
-    }
-}
-
+DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
+DATABASES['default']["ATOMIC_REQUESTS"] = True
+DATABASES['default']["CONN_MAX_AGE"] = 60
 
 
 
