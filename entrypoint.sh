@@ -11,8 +11,6 @@ then
     echo "MYSQL started"
 fi
 
-# Read the contents of pip-installation.log
-cat pip-installation.log
 
 python manage.py flush --no-input --settings=code/app/core.settings.dev
 
