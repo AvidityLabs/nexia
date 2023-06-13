@@ -1,24 +1,24 @@
 version: '3.8'
 
 services:
-  db:
-    image: mysql:latest
-    restart: always
+  # db:
+  #   image: mysql:latest
+  #   restart: always
     # volumes:
     #   - mysql_data:/var/lib/mysql/data/
-    env_file:
-    - ./.env.dev
-    environment:
-    - MYSQL_DATABASE=nexia
-    - MYSQL_USER=admin
-    - MYSQL_PASSWORD=Pegasus@2010
-    - MYSQL_ROOT_PASSWORD=Pegasus@2010
-    ports:
-    - "3306:3306"
+    # env_file:
+    # - /code/app/.env
+    # environment:
+    # - MYSQL_DATABASE=nexia
+    # - MYSQL_USER=admin
+    # - MYSQL_PASSWORD=Pegasus@2010
+    # - MYSQL_ROOT_PASSWORD=Pegasus@2010
+    # ports:
+    # - "3306:3306"
 
   web:
     build:
-      context: ../../
+      context: .
       dockerfile: docker/dev/python/Dockerfile.dev
     # volumes:
     # - ../../../../app:/app
@@ -27,9 +27,9 @@ services:
     expose:
       - 8000
     env_file:
-      - ./.env.dev
-    depends_on:
-      - db
+      - /code/app/.env
+    # depends_on:
+    #   - db
       # - redis
 
   # nginx:
