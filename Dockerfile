@@ -15,6 +15,7 @@ ENV PYTHONUNBUFFERED 1
 RUN pip install --upgrade pip
 
 
+RUN mkdir -p /app
 # Create directory for the app
 WORKDIR /app
 
