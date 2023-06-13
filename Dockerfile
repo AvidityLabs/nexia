@@ -22,7 +22,7 @@ WORKDIR /app
 COPY ./app /app
 
 # Copy entrypoint.dev.sh and make it executable
-COPY ./docker/dev/python/entrypoint.dev.sh /app/entrypoint.dev.sh
+COPY ./entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.dev.sh
 
 # Install Python dependencies
@@ -78,4 +78,4 @@ RUN echo "DEBUG=${DEBUG}" >> /app/.env.dev && \
 RUN pip install --no-cache-dir -r /app/requirements/dev.txt
 
 # Run entrypoint.dev.sh
-ENTRYPOINT ["/app/entrypoint.dev.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
