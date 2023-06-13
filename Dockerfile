@@ -17,10 +17,12 @@ RUN pip install --upgrade pip
 
 RUN mkdir -p /app
 # Create directory for the app
-WORKDIR /app/
+WORKDIR /app
 
 # Copy project files
-COPY ./app /app/
+COPY ./app /app
+
+RUN echo ${PWD} && ls -lR
 
 # Copy entrypoint.dev.sh and make it executable
 COPY ./entrypoint.sh /app/entrypoint.sh
