@@ -17,10 +17,9 @@ fi
 python manage.py flush --no-input --settings=core.settings.dev
 
 # Check if migrations are needed
-python manage.py makemigrations --dry-run --check --settings=core.settings.dev > /dev/null 2>&1
-MIGRATIONS_NEEDED=$?
+python manage.py makemigrations --dry-run --check --settings=core.settings.dev > /dev/null 2>&1 MIGRATIONS_NEEDED=$?
 
-if [ $MIGRATIONS_NEEDED -eq 0 ]; then
+if [ "$MIGRATIONS_NEEDED" -eq 0 ]; then
     # Migrations needed, apply them
     python manage.py makemigrations --settings=core.settings.dev
     python manage.py migrate --settings=core.settings.dev
