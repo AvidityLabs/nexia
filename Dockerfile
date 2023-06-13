@@ -61,6 +61,7 @@ RUN echo "DEBUG=${DEBUG}" >> /code/app/.env && \
     echo "FIREBASE_TOKEN_URI_AUTH_PROVIDER_X_509_CERT_URL=${FIREBASE_TOKEN_URI_AUTH_PROVIDER_X_509_CERT_URL}" >> /code/app/.env && \
     echo "EMAIL_HOST=${EMAIL_HOST}" >> /code/app/.env && \
     echo "EMAIL_HOST_USER=${EMAIL_HOST_USER}" >> /code/app/.env && \
+    echo "EMAIL_CONFIRMATION_URL=${EMAIL_CONFIRMATION_URL}" >> /code/app/.env && \
     echo "EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}" >> /code/app/.env && \
     echo "MPESA_ENVIRONMENT=${MPESA_ENVIRONMENT}" >> /code/app/.env && \
     echo "MPESA_CONSUMER_KEY=${MPESA_CONSUMER_KEY}" >> /code/app/.env && \
