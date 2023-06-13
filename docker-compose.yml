@@ -1,21 +1,6 @@
 version: '3.8'
 
 services:
-  # db:
-  #   image: mysql:latest
-  #   restart: always
-    # volumes:
-    #   - mysql_data:/var/lib/mysql/data/
-    # env_file:
-    # - /code/app/.env
-    # environment:
-    # - MYSQL_DATABASE=nexia
-    # - MYSQL_USER=admin
-    # - MYSQL_PASSWORD=Pegasus@2010
-    # - MYSQL_ROOT_PASSWORD=Pegasus@2010
-    # ports:
-    # - "3306:3306"
-
   web:
     build:
       context: .
@@ -31,15 +16,6 @@ services:
     # depends_on:
     #   - db
       # - redis
-
-  # nginx:
-  #   build: ./nginx
-  #   # volumes:
-  #   #   - static_volume:/home/app/web/staticfiles
-  #   ports:
-  #     - 1337:80
-  #   depends_on:
-  #     - web
 
   # celery:
   #   build:

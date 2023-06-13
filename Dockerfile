@@ -82,4 +82,4 @@ RUN echo "DEBUG=${DEBUG}" >> /code/app/.env && \
 RUN pip install --no-cache-dir -r /code/app/requirements/dev.txt
 
 # Run entrypoint.dev.sh
-ENTRYPOINT ["/code/app/entrypoint.sh"]
+# ENTRYPOINT ["/code/app/entrypoint.sh"]
