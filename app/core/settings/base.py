@@ -23,8 +23,9 @@ DEBUG = config('DEBUG', cast=bool)
 
 SECRET_KEY = config('SECRET_KEY')
 
+ALLOWED_HOSTS=['*']
 
-ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(",")
+# ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(",")
 
 # Application definition
 INSTALLED_APPS = [

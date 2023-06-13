@@ -5,7 +5,10 @@
 __pycache__
 static
 media
+*.pem
 **/bin
 **/obj
 **/node_modules
+.venv
 .git
+.gitignore

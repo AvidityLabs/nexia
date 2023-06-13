@@ -38,6 +38,6 @@ fi
 # Start the Gunicorn server
 gunicorn core.wsgi:application --bind 0.0.0.0:8000 --env DJANGO_SETTINGS_MODULE=core.settings.dev
 
-unlink /etc/nginx/sites-enabled/default
+# unlink /etc/nginx/sites-enabled/default
 
-nginx -g  'daemon off;'
+# nginx -g  'daemon off;'

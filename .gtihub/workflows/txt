@@ -1,0 +1,69 @@
+name: Deploy to Railway development
+
+on:
+  push:
+    branches: [development]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Railway
+        run: npm i -g @railway/cli
+
+      - name: Create .env.dev file
+        run: |
+          echo "DEBUG=${{ secrets.DEBUG }}" > docker/dev/.env.dev
+          echo "ENV_NAME=${{ secrets.ENV_NAME }}" >> docker/dev/.env.dev
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> docker/dev/.env.dev
+          echo "DJANGO_ALLOWED_HOSTS=${{ secrets.DJANGO_ALLOWED_HOSTS }}" >> docker/dev/.env.dev
+          echo "CELERY_BROKER=${{ secrets.CELERY_BROKER }}" >> docker/dev/.env.dev
+          echo "CELERY_BACKEND=${{ secrets.CELERY_BACKEND }}" >> docker/dev/.env.dev
+          echo "DATABASE=${{ secrets.DATABASE }}" >> docker/dev/.env.dev
+          echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" >> docker/dev/.env.dev
+          echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> docker/dev/.env.dev
+          echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> docker/dev/.env.dev
+          echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" >> docker/dev/.env.dev
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> docker/dev/.env.dev
+          echo "DB_USER=${{ secrets.DB_USER }}" >> docker/dev/.env.dev
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> docker/dev/.env.dev
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> docker/dev/.env.dev
+          echo "DB_PORT=${{ secrets.DB_PORT }}" >> docker/dev/.env.dev
+          echo "MYSQL_ATTR_SSL_CA=${{ secrets.MYSQL_ATTR_SSL_CA }}" >> docker/dev/.env.dev
+          echo "EMOTION_MODEL_TOKEN=${{ secrets.EMOTION_MODEL_TOKEN }}" >> docker/dev/.env.dev
+          echo "EMOTION_MODEL_URL=${{ secrets.EMOTION_MODEL_URL }}" >> docker/dev/.env.dev
+          echo "SENTIMENT_MODEL_URL=${{ secrets.SENTIMENT_MODEL_URL }}" >> docker/dev/.env.dev
+          echo "SENTIMENT_MODEL_TOKEN=${{ secrets.SENTIMENT_MODEL_TOKEN }}" >> docker/dev/.env.dev
+          echo "RAPID_API_APP_URL=${{ secrets.RAPID_API_APP_URL }}" >> docker/dev/.env.dev
+          echo "STABLE_DIFFUSION_API_KEY=${{ secrets.STABLE_DIFFUSION_API_KEY }}" >> docker/dev/.env.dev
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> docker/dev/.env.dev
+          echo "OPENAI_ORGANIZATION=${{ secrets.OPENAI_ORGANIZATION }}" >> docker/dev/.env.dev
+          echo "REDIS_URL=${{ secrets.REDIS_URL }}" >> docker/dev/.env.dev
+          echo "SOCIAL_SECRET=${{ secrets.SOCIAL_SECRET }}" >> docker/dev/.env.dev
+          echo "FIREBASE_CLIENT_ID=${{ secrets.FIREBASE_CLIENT_ID }}" >> docker/dev/.env.dev
+          echo "FIREBASE_AUTH_URI=${{ secrets.FIREBASE_AUTH_URI }}" >> docker/dev/.env.dev
+          echo "FIREBASE_TOKEN_URI=${{ secrets.FIREBASE_TOKEN_URI }}" >> docker/dev/.env.dev
+          echo "FIREBASE_TOKEN_URI_AUTH_PROVIDER_X_509_CERT_URL=${{ secrets.FIREBASE_TOKEN_URI_AUTH_PROVIDER_X_509_CERT_URL }}" >> docker/dev/.env.dev
+          echo "EMAIL_HOST=${{ secrets.EMAIL_HOST }}" >> docker/dev/.env.dev
+          echo "EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}" >> docker/dev/.env.dev
+          echo "EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}" >> docker/dev/.env.dev
+          echo "MPESA_ENVIRONMENT=${{ secrets.MPESA_ENVIRONMENT }}" >> docker/dev/.env.dev
+          echo "MPESA_CONSUMER_KEY=${{ secrets.MPESA_CONSUMER_KEY }}" >> docker/dev/.env.dev
+          echo "MPESA_CONSUMER_SECRET=${{ secrets.MPESA_CONSUMER_SECRET }}" >> docker/dev/.env.dev
+          echo "MPESA_SHORTCODE=${{ secrets.MPESA_SHORTCODE }}" >> docker/dev/.env.dev
+          echo "MPESA_EXPRESS_SHORTCODE=${{ secrets.MPESA_EXPRESS_SHORTCODE }}" >> docker/dev/.env.dev
+          echo "MPESA_SHORTCODE_TYPE=${{ secrets.MPESA_SHORTCODE_TYPE }}" >> docker/dev/.env.dev
+          echo "MPESA_PASSKEY=${{ secrets.MPESA_PASSKEY }}" >> docker/dev/.env.dev
+          echo "MPESA_INITIATOR_USERNAME=${{ secrets.MPESA_INITIATOR_USERNAME }}" >> docker/dev/.env.dev
+          echo "MPESA_INITIATOR_SECURITY_CREDENTIAL=${{ secrets.MPESA_INITIATOR_SECURITY_CREDENTIAL }}" >> docker/dev/.env.dev
+          echo "RAILWAY_DOCKERFILE_PATH=${{ secrets.RAILWAY_DOCKERFILE_PATH }}" >> docker/dev/.env.dev
+          # Add more environment variables and secrets as needed
+
+      - name: Deploy
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
