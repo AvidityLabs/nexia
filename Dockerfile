@@ -55,6 +55,7 @@ RUN echo "DEBUG=${DEBUG}" >> /code/app/.env && \
     echo "OPENAI_ORGANIZATION=${OPENAI_ORGANIZATION}" >> /code/app/.env && \
     echo "REDIS_URL=${REDIS_URL}" >> /code/app/.env && \
     echo "SOCIAL_SECRET=${SOCIAL_SECRET}" >> /code/app/.env && \
+    echo "EMAIL_FROM=${EMAIL_FROM}" >> /code/app/.env && \
     echo "FIREBASE_CLIENT_ID=${FIREBASE_CLIENT_ID}" >> /code/app/.env && \
     echo "FIREBASE_AUTH_URI=${FIREBASE_AUTH_URI}" >> /code/app/.env && \
     echo "FIREBASE_TOKEN_URI=${FIREBASE_TOKEN_URI}" >> /code/app/.env && \
