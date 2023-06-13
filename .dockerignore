@@ -12,3 +12,8 @@ media
 .venv
 .git
 .gitignore
+
+**/*
+!docker-images
+!configs
+!main
