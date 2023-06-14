@@ -5,10 +5,19 @@ build:
 	make manage-createsuperuser
 
 docker-build-prod:
-	docker-compose -f docker-compose.prod.yml up -d --build
+	docker-compose -f docker/dev/python/docker-compose.prod.yml up -d --build
 
-docker-build-dev:
-	docker-compose -f docker-compose.dev.yml up -d --build
+dev-build:
+	docker-compose -f docker/dev/docker-compose.dev.yml build 
+
+dev-run:
+	docker-compose -f docker/dev/docker-compose.dev.yml up
+
+dev-stop:
+	docker-compose -f docker/dev/docker-compose.dev.yml down
+
+stop:
+	docker kill $(docker ps -q)
 
 run:
 	docker-compose up

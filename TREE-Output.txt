@@ -1,0 +1,17 @@
+
++---.vscode
++---app
+|   +---api/
+|   +---core
+|   |   +---settings/
+|   |   |   
+|   +---requirements/
+|   +---static/
+|   |   
+|   +---staticfiles/
++---docker
+|   +---dev
+|   |   \---python
+|   \---prod
+|       \---python
+\---scripts

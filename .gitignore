@@ -5,6 +5,7 @@ __pycache__
 __pycache__
 *.cpython-37.*
 *.py[cod]
+*.pem
 *$py.class
 
 # C extensions

@@ -1,4 +1,4 @@
-web: gunicorn core.wsgi --log-file -
-release: bash release.sh
-beat: celery -A core.celeryapp:app beat -S redbeat.RedBeatScheduler  --loglevel=DEBUG --pidfile /tmp/celerybeat.pid
-worker: celery -A core.celeryapp:app  worker -Q default -n core.%%h --without-gossip --without-mingle --without-heartbeat --loglevel=INFO --max-memory-per-child=512000 --concurrency=1
+
+web: gunicorn core.wsgi:application --bind 0.0.0.0:8000 --env DJANGO_SETTINGS_MODULE=core.settings.dev
+# release: bash release.sh
+# worker: celery -A core worker --loglevel=info
