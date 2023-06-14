@@ -1,6 +1,6 @@
 python manage.py makemigrations --settings=core.settings.dev
 python manage.py migrate --settings=core.settings.dev
-django-admin createsuperuser --username=admin --email=admin@example.com --noinput --settings=core.settings.dev
+python manage.py createsuperuser --username=admin --email=admin@example.com --noinput --settings=core.settings.dev
 
 #!/bin/sh
 
