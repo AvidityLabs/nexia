@@ -1,7 +1,7 @@
 python manage.py makemigrations --settings=core.settings.dev
 python manage.py migrate --settings=core.settings.dev
 python manage.py createsuperuser --username=admin --email=admin@example.com --noinput --settings=core.settings.dev
-
+# This worked to create super user not the re release: commnand in procfile
 #!/bin/sh
 
 # echo "Waiting for PostgreSQL..."
