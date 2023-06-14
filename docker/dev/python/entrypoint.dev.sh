@@ -1,18 +1,18 @@
 #!/bin/sh
 
-if [ "$DATABASE" = "mysql" ]
-then
-    echo "Waiting for mysql..."
+# if [ "$DATABASE" = "mysql" ]
+# then
+#     echo "Waiting for mysql..."
 
-    while ! nc -z $DB_HOST $DB_PORT; do
-        sleep 0.1
-    done
+#     while ! nc -z $DB_HOST $DB_PORT; do
+#         sleep 0.1
+#     done
 
-    echo "MYSQL started"
-fi
+#     echo "MYSQL started"
+# fi
 
 # Read the contents of pip-installation.log
-cat pip-installation.log
+# cat pip-installation.log
 
 python manage.py flush --no-input --settings=core.settings.dev
 
@@ -38,6 +38,6 @@ fi
 # Start the Gunicorn server
 gunicorn core.wsgi:application --bind 0.0.0.0:8000 --env DJANGO_SETTINGS_MODULE=core.settings.dev
 
-unlink /etc/nginx/sites-enabled/default
+# unlink /etc/nginx/sites-enabled/default
 
-nginx -g  'daemon off;'
+# nginx -g  'daemon off;'

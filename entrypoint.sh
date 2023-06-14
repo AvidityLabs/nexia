@@ -13,9 +13,9 @@
 # cat pip-installation.log
 
 # python manage.py flush --no-input --settings=core.settings.dev
-# python manage.py makemigrations --settings=core.settings.dev
-# python manage.py migrate --settings=core.settings.dev
-# python manage.py createsuperuser --username=admin --email=admin@example.com --password=123# --noinput --settings=core.settings.dev
+python manage.py makemigrations --settings=core.settings.dev
+python manage.py migrate --settings=core.settings.dev
+python manage.py createsuperuser --username=admin --email=admin@example.com --password=123# --noinput --settings=core.settings.dev
 # Check if migrations are needed
 # python manage.py makemigrations --dry-run --check --settings=core.settings.dev > /dev/null 2>&1 MIGRATIONS_NEEDED=$?
 
