@@ -11,8 +11,7 @@ PAYPAL_TEST = True
 
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:4200',
-    # 'http://127.0.0.1:3000'
+    'https://andika.pro',
 ]
 
 CORS_ALLOW_METHODS = [
@@ -23,7 +22,6 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
-CORS_ALLOW_HEADERS = ['*']
 
 CORS_ALLOW_HEADERS = [
     'Accept',
