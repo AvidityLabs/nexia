@@ -1,90 +1,90 @@
 from enum import Enum
-
+#TODO: move this to usecases
 class UseCase(Enum):
-    YoutubeIdea = "/youtube/video_idea"
-    YoutubeVideoDescription = "/youtube/video_description"
-    YoutubeChannelDescription = "/youtube/channel_description"
-    BlogIdeaAndOutline = "/blog/idea_and_outline"
-    TestimonialAndReview = "/testimonials/testimonial_and_review"
-    TagLineAndHeadline = "/tagline_and_headline"
-    StoryPlots = "/story/plots"
-    SongLyrics = "/song/lyrics"
-    SmsAndNotifications = "/sms_and_notifications"
-    EmailSubjectLine = "/email/subject_line"
-    JobDescription = "/job/description"
-    CoverLetter = "/cover_letter"
-    ProfileBio = "/profile/bio"
-    ReplyToReviewsAndMessages = "/reply_to_reviews_and_messages"
-    GrammarCorrection = "/grammar_correction"
-    BusinessIdea = "/business/idea"
-    BusinessIdeaPitch = "/business/idea_pitch"
-    Citation = "/citation"
-    CopywritingFrameworkAIDA = "/copywriting/framework_aida"
-    GoogleSearchAd = "/google/search_ad"
-    InterviewQuestions = "/interview/questions"
-    KeywordsExtractor = "/keywords/extractor"
-    LandingPage = "/landing_page"
-    ParaphraseText = "/paraphrase/text"
-    PostAndCaptionIdea = "/post_and_caption/idea"
-    ProductDescriptionWithBulletPoints = "/product_description_with_bullet_points"
-    ProductDescription = "/product_description"
-    SeoMetaTitle = "/seo/meta_title"
-    GenerateCallToAction = "/generate/call_to_action"
-    GenerateBrandName = "/generate/brand_name"
-    GenerateQuestionAnswer = "/generate/question_answer"
-    SocialMediaAd = "/social_media/ad"
-    GenerateLandingPageCopy = "/generate/landing_page_copy"
-    GenerateFacebookAd = "/generate/facebook_ad"
-    GenerateInstagramCaption = "/generate/instagram_caption"
-    GeneratePodcastIdea = "/generate/podcast_idea"
-    GeneratePodcastTitle = "/generate/podcast_title"
-    GeneratePresentation = "/generate/presentation"
-    GeneratePressRelease = "/generate/press_release"
-    GenerateVideoScript = "/generate/video_script"
-    GenerateWebsiteCopy = "/generate/website_copy"
-    GenerateNewsletterIdea = "/generate/newsletter_idea"
-    GenerateNewsletterTitle = "/generate/newsletter_title"
-    GenerateSalesCopy = "/generate/sales_copy"
-    GenerateCourseTitle = "/generate/course_title"
-    GenerateCourseSubtitle = "/generate/course_subtitle"
-    GenerateCourseDescription = "/generate/course_description"
-    GenerateCourseLectureTitles = "/generate/course_lecture_titles"
-    GenerateCourseQuizQuestions = "/generate/course_quiz_questions"
-    GenerateCourseExercises = "/generate/course_exercises"
-    GenerateCourseArticles = "/generate/course_articles"
-    SummarizeText = "/summarize/text"
-    AdCopy = "/ad/copy"
-    EmailBody = "/email/body"
-    EmailToneAdjustment = "/email/tone_adjustment"
-    SocialMediaPost = "/social_media/post"
-    SocialMediaAdGenerator = "/social_media/ad_generator"
-    GoogleSearchAdsGenerator = "/google/search_ads_generator"
-    Email = "/email"
+    YoutubeIdea = "youtube_video_idea"
+    YoutubeVideoDescription = "youtube_video_description"
+    YoutubeChannelDescription = "youtube_channel_description"
+    BlogIdeaAndOutline = "blog_idea_and_outline"
+    TestimonialAndReview = "testimonials_testimonial_and_review"
+    TagLineAndHeadline = "tagline_and_headline"
+    StoryPlots = "story_plots"
+    SongLyrics = "song_lyrics"
+    SmsAndNotifications = "sms_and_notifications"
+    EmailSubjectLine = "email_subject_line"
+    JobDescription = "job_description"
+    CoverLetter = "cover_letter"
+    ProfileBio = "profile_bio"
+    ReplyToReviewsAndMessages = "reply_to_reviews_and_messages"
+    GrammarCorrection = "grammar_correction"
+    BusinessIdea = "business_idea"
+    BusinessIdeaPitch = "business_idea_pitch"
+    Citation = "citation"
+    CopywritingFrameworkAIDA = "copywriting_framework_aida"
+    GoogleSearchAd = "google_search_ad"
+    InterviewQuestions = "interview_questions"
+    KeywordsExtractor = "keywords_extractor"
+    LandingPage = "landing_page"
+    ParaphraseText = "paraphrase_text"
+    PostAndCaptionIdea = "post_and_caption_idea"
+    ProductDescriptionWithBulletPoints = "product_description_with_bullet_points"
+    ProductDescription = "product_description"
+    SeoMetaTitle = "seo_meta_title"
+    GenerateCallToAction = "generate_call_to_action"
+    GenerateBrandName = "generate_brand_name"
+    GenerateQuestionAnswer = "generate_question_answer"
+    SocialMediaAd = "social_media_ad"
+    GenerateLandingPageCopy = "generate_landing_page_copy"
+    GenerateFacebookAd = "generate_facebook_ad"
+    GenerateInstagramCaption = "generate_instagram_caption"
+    GeneratePodcastIdea = "generate_podcast_idea"
+    GeneratePodcastTitle = "generate_podcast_title"
+    GeneratePresentation = "generate_presentation"
+    GeneratePressRelease = "generate_press_release"
+    GenerateVideoScript = "generate_video_script"
+    GenerateWebsiteCopy = "generate_website_copy"
+    GenerateNewsletterIdea = "generate_newsletter_idea"
+    GenerateNewsletterTitle = "generate_newsletter_title"
+    GenerateSalesCopy = "generate_sales_copy"
+    GenerateCourseTitle = "generate_course_title"
+    GenerateCourseSubtitle = "generate_course_subtitle"
+    GenerateCourseDescription = "generate_course_description"
+    GenerateCourseLectureTitles = "generate_course_lecture_titles"
+    GenerateCourseQuizQuestions = "generate_course_quiz_questions"
+    GenerateCourseExercises = "generate_course_exercises"
+    GenerateCourseArticles = "generate_course_articles"
+    SummarizeText = "summarize_text"
+    AdCopy = "ad_copy"
+    EmailBody = "email_body"
+    EmailToneAdjustment = "email_tone_adjustment"
+    SocialMediaPost = "social_media_post"
+    SocialMediaAdGenerator = "social_media_ad_generator"
+    GoogleSearchAdsGenerator = "google_search_ads_generator"
+    Email = "email"
 
 
 use_cases = [
     {
         'title': 'Youtube Idea',
         'description': 'Generate ideas for YouTube videos.',
-        'navigateTo': '/youtube/video_idea',
+        'navigateTo': 'youtube_video_idea',
         'category': 'youtube'
     },
     {
         'title': 'Youtube Description',
         'description': 'Create descriptions for YouTube videos.',
-        'navigateTo': '/youtube/video_description',
+        'navigateTo': 'youtube_video_description',
         'category': 'youtube'
     },
     {
         'title': 'Youtube Channel Description',
         'description': 'Write descriptions for YouTube channels.',
-        'navigateTo': 'youtube/channel_description',
+        'navigateTo': 'youtube_channel_description',
         'category': 'youtube'
     },
     {
         'title': 'Testimonial and Review',
         'description': 'Generate testimonials and reviews.',
-        'navigateTo': '/testimonials/testimonial_and_review"',
+        'navigateTo': 'testimonials_testimonial_and_review',
         'category': 'Testimonials and Reviews'
     },    {
         'title': 'Tagline and Headline',
@@ -120,7 +120,7 @@ use_cases = [
         'title': 'Job Description',
         'description': 'Write descriptions for job postings.',
         'navigateTo': UseCase.JobDescription.value,
-        'category': 'Job-related'
+        'category': 'Job related'
     },
     {
         'title': 'Blog Idea and Outline',
@@ -132,7 +132,7 @@ use_cases = [
         'title': 'Cover Letter',
         'description': 'Create cover letters for job applications.',
         'navigateTo': UseCase.CoverLetter.value,
-        'category': 'Job-related'
+        'category': 'Job related'
     },
     {
         'title': 'Profile Bio',
@@ -281,127 +281,127 @@ use_cases = [
         {
         "title": "GeneratePresentation",
         "description": "Generate engaging and visually appealing presentations for various purposes.",
-        "navigateTo": "/generate-presentation",
+        "navigateTo": "generate_presentation",
         "category": "Presentation"
     },
     {
         "title": "GeneratePressRelease",
         "description": "Craft professional press releases to announce important news or events.",
-        "navigateTo": "/generate-press-release",
+        "navigateTo": "generate_press_release",
         "category": "Press Release"
     },
     {
         "title": "GenerateVideoScript",
         "description": "Create compelling scripts for videos, including commercials, tutorials, or presentations.",
-        "navigateTo": "/generate-video-script",
+        "navigateTo": "generate_video_script",
         "category": "Video Script"
     },
     {
         "title": "GenerateWebsiteCopy",
         "description": "Generate persuasive and informative copy for website pages and sections.",
-        "navigateTo": "/generate-website-copy",
+        "navigateTo": "generate_website_copy",
         "category": "Website"
     },
     {
         "title": "GenerateNewsletterIdea",
         "description": "Get creative ideas and inspiration for your newsletters.",
-        "navigateTo": "/generate-newsletter-idea",
+        "navigateTo": "generate_newsletter_idea",
         "category": "Newsletter"
     },
     {
         "title": "GenerateNewsletterTitle",
-        "description": "Generate catchy and attention-grabbing titles for your newsletters.",
-        "navigateTo": "/generate-newsletter-title",
+        "description": "Generate catchy and attention_grabbing titles for your newsletters.",
+        "navigateTo": "generate_newsletter_title",
         "category": "Newsletter"
     },
     {
         "title": "GenerateSalesCopy",
         "description": "Create persuasive and compelling sales copy for marketing campaigns.",
-        "navigateTo": "/generate-sales-copy",
+        "navigateTo": "generate_sales_copy",
         "category": "Sales Copy"
     },
     {
         "title": "GenerateCourseTitle",
         "description": "Generate catchy and informative titles for your online courses.",
-        "navigateTo": "/generate-course-title",
+        "navigateTo": "generate_course_title",
         "category": "Course"
     },
     {
         "title": "GenerateCourseSubtitle",
         "description": "Craft engaging and descriptive subtitles for your online course modules.",
-        "navigateTo": "/generate-course-subtitle",
+        "navigateTo": "generate_course_subtitle",
         "category": "Course"
     },
     {
         "title": "GenerateCourseDescription",
         "description": "Write compelling descriptions to effectively communicate the value of your online course.",
-        "navigateTo": "/generate-course-description",
+        "navigateTo": "generate_course_description",
         "category": "Course"
     },
     {
         "title": "GenerateCourseLectureTitles",
         "description": "Generate clear and informative titles for the lectures in your online course.",
-        "navigateTo": "/generate-course-lecture-titles",
+        "navigateTo": "generate_course_lecture_titles",
         "category": "Course"
     },
     {
         "title": "GenerateCourseQuizQuestions",
         "description": "Create engaging quiz questions to test the knowledge of your online course participants.",
-        "navigateTo": "/generate-course-quiz-questions",
+        "navigateTo": "generate_course_quiz_questions",
         "category": "Course"
     },
     {
         "title": "GenerateCourseExercises",
         "description": "Generate practical exercises to reinforce learning in your online course.",
-        "navigateTo": "/generate-course-exercises",
+        "navigateTo": "generate_course_exercises",
         "category": "Course"
     },
     {
         "title": "GenerateCourseArticles",
         "description": "Generate informative articles as supplementary material for your online course.",
-        "navigateTo": "/generate-course-articles",
+        "navigateTo": "generate_course_articles",
         "category": "Course"
     },
     {
         "title": "SummarizeText",
         "description": "Summarize long pieces of text into concise and meaningful summaries.",
-        "navigateTo": "/summarize-text",
+        "navigateTo": "summarize_text",
         "category": "Text Summarization"
     },
         {
         "title": "AdCopy",
         "description": "Create compelling and persuasive copy for advertisements in various mediums.",
-        "navigateTo": "/ad-copy",
+        "navigateTo": "ad_copy",
         "category": "Ad Copy"
     },
     {
         "title": "EmailBody",
         "description": "Craft effective and engaging bodies for email communications.",
-        "navigateTo": "/email-body",
+        "navigateTo": "email_body",
         "category": "Email Body"
     },
     {
         "title": "EmailToneAdjustment",
         "description": "Adjust the tone and style of email messages to match the desired intent or audience.",
-        "navigateTo": "/email-tone-adjustment",
+        "navigateTo": "email_tone_adjustment",
         "category": "Email Tone Adjustment"
     },
     {
         "title": "SocialMediaPost",
-        "description": "Create engaging and attention-grabbing posts for social media platforms.",
-        "navigateTo": "/social-media-post",
+        "description": "Create engaging and attention_grabbing posts for social media platforms.",
+        "navigateTo": "social_media_post",
         "category": "Social Media Post"
     },
     {
         "title": "SocialMediaAdGenerator",
         "description": "Generate effective and compelling advertisements for social media platforms.",
-        "navigateTo": "/social-media-ad-generator",
+        "navigateTo": "social_media_ad_generator",
         "category": "Social Media Ad Generator"
     },
     {
         "title": "GoogleSearchAdsGenerator",
         "description": "Generate ads specifically designed for Google search engine results.",
-        "navigateTo": "/google-search-ads-generator",
+        "navigateTo": "google_search_ads_generator",
         "category": "Google Search Ads Generator"
     }
 ]
