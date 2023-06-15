@@ -417,12 +417,14 @@ class ChatGPTCompletionView(APIView):
 
         try:
             from usecases.models import UseCase
-            usecase= UseCase.objects.get(navigateTo=request.data.get('payload')['usecase'])
+            usecase= UseCase.objects.filter(navigateTo=request.data.get('payload')['usecase'])
+            if not usecase.exists():
+                return Response({'error': 'Use case not found'}, status=status.HTTP_400_BAD_REQUEST)
             response = usecase.promptExecute(request.data.get('payload'))
             # response = promptExecute(request.data.get('payload')['usecase'], request.data.get('payload'))
             # response = ''
             if response is None:
-                return Response({'error': f'>>Unable to communicate with gpt model'}, status=400)
+                return Response({'error': 'Unable to communicate with the GPT model'}, status=status.HTTP_400_BAD_REQUEST)
 
             prompt_tokens = response.usage.prompt_tokens
             completion_tokens = response.usage.completion_tokens
