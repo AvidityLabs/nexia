@@ -18,7 +18,7 @@ services:
 
   web:
     build:
-      context: .
+      context: ../../
       dockerfile: docker/dev/python/Dockerfile.dev
     # volumes:
     # - ../../../../app:/app

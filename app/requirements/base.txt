@@ -20,7 +20,6 @@ google-api-python-client==2.86.0
 oauthlib==3.2.2
 firebase-admin==6.1.0
 django-paypal==2.0
-mysqlclient==2.1.0
 flower==1.2.0
 boto3==1.21.8
 python-decouple==3.8
