@@ -420,7 +420,7 @@ class ChatGPTCompletionView(APIView):
             usecase= UseCase.objects.filter(navigateTo=request.data.get('payload')['usecase'])
             if not usecase.exists():
                 return Response({'error': 'Use case not found'}, status=status.HTTP_400_BAD_REQUEST)
-            response = usecase.promptExecute(request.data.get('payload'))
+            response = usecase[0].promptExecute(request.data.get('payload'))
             # response = promptExecute(request.data.get('payload')['usecase'], request.data.get('payload'))
             # response = ''
             if response is None:
