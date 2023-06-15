@@ -84,7 +84,7 @@ use_cases = [
     {
         'title': 'Testimonial and Review',
         'description': 'Generate testimonials and reviews.',
-        'navigateTo': 'testimonials_testimonial_and_review"',
+        'navigateTo': 'testimonials_testimonial_and_review',
         'category': 'Testimonials and Reviews'
     },    {
         'title': 'Tagline and Headline',
