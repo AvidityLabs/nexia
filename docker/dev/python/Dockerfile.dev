@@ -3,9 +3,8 @@ FROM python:3.8-slim
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y gcc && \
-    apt-get install -y default-libmysqlclient-dev && \
-    apt-get install -y netcat
+apt-get install -y gcc && \
+apt-get install -y libpq-dev
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -14,21 +13,23 @@ ENV PYTHONUNBUFFERED 1
 # Upgrade pip
 RUN pip install --upgrade pip
 
-# Create directory for the app
-WORKDIR /app
+RUN ls
 
-# Copy project files
-COPY ./app /app
+# # Create directory for the app
+# WORKDIR /app
 
-# Copy entrypoint.dev.sh and make it executable
-COPY ./docker/dev/python/entrypoint.dev.sh /app/entrypoint.dev.sh
-RUN chmod +x /app/entrypoint.dev.sh
+# # Copy project files
+# COPY ./app /app
 
-# Install Python dependencies
-COPY ./app/requirements /app/requirements
+# # Copy entrypoint.dev.sh and make it executable
+# COPY ./docker/dev/python/entrypoint.dev.sh /app/entrypoint.dev.sh
+# RUN chmod +x /app/entrypoint.dev.sh
 
-# Output pip installation log to console
-RUN pip install --no-cache-dir -r /app/requirements/dev.txt
+# # Install Python dependencies
+# COPY ./app/requirements /app/requirements
 
-# Run entrypoint.dev.sh
-ENTRYPOINT ["/app/entrypoint.dev.sh"]
+# # Output pip installation log to console
+# RUN pip install --no-cache-dir -r /app/requirements/dev.txt
+
+# # Run entrypoint.dev.sh
+# ENTRYPOINT ["/app/entrypoint.dev.sh"]
