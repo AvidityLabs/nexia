@@ -11,7 +11,7 @@ class UseCase(Enum):
     SongLyrics = "song_lyrics"
     SmsAndNotifications = "sms_and_notifications"
     EmailSubjectLine = "email_subject_line"
-    JobDescription = "job description"
+    JobDescription = "job_description"
     CoverLetter = "cover_letter"
     ProfileBio = "profile_bio"
     ReplyToReviewsAndMessages = "reply_to_reviews_and_messages"
