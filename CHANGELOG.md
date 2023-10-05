@@ -9,6 +9,7 @@ As the new version is released, it will replace the Unreleased section while cre
 ----------------------------------------------------------------------
 
 ### Added
+- Bulk Insert usecases
 
 ### Changed
 
