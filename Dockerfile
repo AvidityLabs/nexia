@@ -4,8 +4,9 @@ FROM python:3.8-slim
 # Install system dependencies
 RUN apt-get update && \
 apt-get install -y gcc && \
-apt-get install -y libpq-dev
-
+apt-get install -y libpq-dev && \
+apt-get install pkg-config            
+#pkg-config is to fix mysql issue
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
