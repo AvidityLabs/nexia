@@ -3,20 +3,8 @@ FROM python:3.8-slim
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y gcc default-libmysqlclient-dev pkg-config && \
+    apt-get install -y gcc default-libmysqlclient-dev && \
     rm -rf /var/lib/apt/lists/*
-
-# Discover the actual paths to MySQL client include and lib directories
-RUN mysql_config --cflags > /tmp/mysqlclient_cflags.txt
-RUN mysql_config --libs > /tmp/mysqlclient_ldflags.txt
-
-# Read the discovered paths and store them in variables
-RUN MYSQLCLIENT_CFLAGS=$(cat /tmp/mysqlclient_cflags.txt) && \
-    MYSQLCLIENT_LDFLAGS=$(cat /tmp/mysqlclient_ldflags.txt)
-
-# Set the environment variables using the ENV directive
-ENV MYSQLCLIENT_CFLAGS=$MYSQLCLIENT_CFLAGS
-ENV MYSQLCLIENT_LDFLAGS=$MYSQLCLIENT_LDFLAGS
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
