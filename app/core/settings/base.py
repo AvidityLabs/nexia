@@ -25,6 +25,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(",")
 
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',

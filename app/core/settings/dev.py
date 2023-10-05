@@ -53,10 +53,22 @@ CACHES = {
 }
 
 # Database Configuration
-DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
+# Check if the DATABASE_URL environment variable is set and not empty
+if 'DATABASE_URL' in os.environ and os.environ['DATABASE_URL']:
+    # Use the configured database URL
+    DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+else:
+    # Use SQLite as a fallback if DATABASE_URL is not set or empty
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+# Enable atomic requests and set connection max age
 DATABASES['default']["ATOMIC_REQUESTS"] = True
 DATABASES['default']["CONN_MAX_AGE"] = 60
-
 
 
 
