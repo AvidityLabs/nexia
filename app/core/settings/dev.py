@@ -53,33 +53,33 @@ CACHES = {
 }
 
 # Database Configuration
-# # Check if the DATABASE_URL environment variable is set and not empty
+# Check if the DATABASE_URL environment variable is set and not empty
 # if 'DATABASE_URL' in os.environ and os.environ['DATABASE_URL']:
 #     # Use the configured database URL
 #     DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
 # else:
 #     # Use SQLite as a fallback if DATABASE_URL is not set or empty
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django_psdb_engine',
-        'NAME': os.environ.get('DB_NAME'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'OPTIONS': {'ssl': {'ca': os.environ.get('MYSQL_ATTR_SSL_CA')}, 'charset': 'utf8mb4'}
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django_psdb_engine',
+#         'NAME': os.environ.get('DB_NAME'),
+#         'HOST': os.environ.get('DB_HOST'),
+#         'PORT': os.environ.get('DB_PORT'),
+#         'USER': os.environ.get('DB_USER'),
+#         'PASSWORD': os.environ.get('DB_PASSWORD'),
+#         'OPTIONS': {'ssl': {'ca': os.environ.get('MYSQL_ATTR_SSL_CA')}, 'charset': 'utf8mb4'}
+#     }
+# }
 # Enable atomic requests and set connection max age
-DATABASES['default']["ATOMIC_REQUESTS"] = True
-DATABASES['default']["CONN_MAX_AGE"] = 60
+# DATABASES['default']["ATOMIC_REQUESTS"] = True
+# DATABASES['default']["CONN_MAX_AGE"] = 60
 
 
 
