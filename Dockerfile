@@ -2,9 +2,8 @@
 FROM python:3.8-slim
 
 # Install system dependencies
-# Update package list and install necessary packages
 RUN apt-get update && \
-    apt-get install -y gcc musl-dev libmariadbclient-dev && \
+    apt-get install -y gcc libmysqlclient-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Set environment variables
