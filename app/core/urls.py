@@ -24,11 +24,12 @@ def trigger_error(request):
     division_by_zero = 1 / 0
     
 urlpatterns = [
-    path('admin/', admin.site.urls), 
+    path('admin/', admin.site.urls),
     path('api/v1/', include(('core.api_v1_urls', 'apiv1'), namespace='apiv1')),# All endpoints 
     # OpenAPI 3 documentation with Swagger UI
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
     path("docs/", SpectacularSwaggerView.as_view(template_name="swagger-ui.html", url_name="schema"),name="swagger-ui",),
+    path('api/v2/usecases/', include(('usecases.urls', 'usecases_v1'), namespace='usecases_v1')),# All endpoints 
 ]
 
 if bool(settings.DEBUG):

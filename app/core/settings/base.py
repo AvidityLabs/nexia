@@ -13,6 +13,10 @@ from pathlib import Path
 import os
 from decouple import config
 
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,6 +27,7 @@ DEBUG = config('DEBUG', cast=bool)
 
 SECRET_KEY = config('SECRET_KEY')
 
+#TODO Apparently this is not being reused on other settings
 ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(",")
 
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
