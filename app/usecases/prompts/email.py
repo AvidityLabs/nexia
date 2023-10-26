@@ -1,20 +1,78 @@
+
+
+import os
+import json
+from langchain.llms import OpenAI
+from langchain.prompts.chat import ChatPromptTemplate
+from langchain.chat_models import ChatOpenAI
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from api.utilities.openai.utils import completion
+ 
+from dotenv import load_dotenv
+load_dotenv()
+ 
+
+os.environ['OPENAI_API_KEY'] = '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'
+
+
+llm = ChatOpenAI(streaming=True, callbacks=[StreamingStdOutCallbackHandler()], model_name='gpt-3.5-turbo', temperature=0)
 
 
 def generateEmail(payload: any):
-    prompt = f"""
-    Perform the following actions:\
-    1 - Generate an email based on the information provided in the text delimited by triple backticks.\
-    Text: ```{payload.get('text')}```
-
-    Language: ```{payload.get('language')}```\
-    Tone: ```{payload.get('tone')}```
-
-    Provide the result in HTML format.
+    # Define the PromptTemplate
+    
+    # Define a template string
+    template_string = """
+    Perform the following actions:
+    1. Generate an email based on the text that is delimited by triple backticks into a style that is {style}. text: ```{text}```\
+    2. Output the result must be in HTML format excluding backticks.
     """
-    return completion(prompt)
+    
+    
+    # Create a prompt template using above template string
+    prompt_template = ChatPromptTemplate.from_template(template_string)
+    
+    
+    customer_style = f"{payload.get('language')} in a {payload.get('tone')} tone"
+    
+
+    # customer_message will generate the prompt and it will be passed into the llm to get a response. 
+    customer_messages = prompt_template.format_messages(
+                        style=customer_style,
+                        text=payload.get('email_content'))
+
+    # Call the LLM to translate to the style of the customer message. 
+    response = llm(customer_messages)
 
 
+    return response
+    # email_prompt_template = PromptTemplate(
+    #     input_variables=["subject", "recipient", "content", "tone", "format", "language"],
+    #     template="Generate an email with the following details:\n"
+    #             "- Subject: {subject}\n"
+    #             "- Recipient: {recipient}\n"
+    #             "- Content: {content}\n"
+    #             "- Tone: {tone}\n"
+    #             "- Format: {format}\n"
+    #             "- Language: {language}\n"
+    # )
+
+
+    # prompt = email_prompt_template.from_template(email_prompt_template)
+
+    # chat_prompt = ChatPromptTemplate.from_messages([
+    # ("system", "You are a world-class email generation model."),
+    # ("human", prompt)
+    # ])
+
+    
+    # chain = LLMChain(
+    #     prompt=chat_prompt,
+    #     llm=llm  # You should define gpt_turbo or your language model here
+    # )
+
+
+    # print(chain)
 
 def generateEmailSubjectLine(payload):
     pass

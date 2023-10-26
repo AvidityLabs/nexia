@@ -1,4 +1,4 @@
-Django==3.2.18
+Django==4.0.0
 djangorestframework==3.14.0
 django-cors-headers==3.14.0
 django-environ==0.9.0
@@ -24,4 +24,4 @@ django-paypal==2.0
 flower==1.2.0
 boto3==1.21.8
 python-decouple==3.8
-
+langchain==0.0.323

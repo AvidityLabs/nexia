@@ -51,6 +51,8 @@ SECURE_HSTS_SECONDS = 31536000  # 1 year in seconds
 
 # CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']
 
+
+ALLOWED_HOSTS = ['*'] #TODO fix this
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',

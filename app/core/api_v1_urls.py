@@ -50,7 +50,7 @@ path('stk-push/success', payments_views.STKPushAPIView.as_view(), name='test_stk
 path('business-payment/success', payments_views.business_payment_success, name='test_business_payment_success'),
 path('salary-payment/success', payments_views.salary_payment_success, name='test_salary_payment_success'),
 path('promotion-payment/success', payments_views.promotion_payment_success, name='test_promotion_payment_success'),
-path('bulk_create_usecases', usecase_views.BulkInsertUsecases.as_view(), name='test_promotion_payment_success'),
+path('  ', usecase_views.BulkInsertUsecases.as_view(), name='test_promotion_payment_success'),
  
 # {% url 'api:flavors' flavor.uuid %}
 # path(

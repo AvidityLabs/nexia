@@ -43,7 +43,7 @@ from api.utilities.tokens import update_token_usage
 from api.utilities.openai.utils import completion, edit
 from api.utilities.hugging_face.tokenizer import calculate_tokens
 from api.utilities.jwt_helper import decode_jwt_token
-from api.utilities.data import TONES
+from api.utilities.tones_list import TONES
 # from api.prompts.repository import promptExecute
 from api.serializers import (
     UserRegisterSerializer,
@@ -53,7 +53,7 @@ from api.serializers import (
     TextToImageSerializer,
     TextToVideoSerializer
 )
-
+from usecases.serializers import UseCaseSerializer
 
 logger = logging.getLogger(__name__)
 ERROR_MSG = 'Oops, something went wrong. If this issue persists, please contact our customer support team at aviditylabs@hotmail.com for assistance. We apologize for the inconvenience and appreciate your patience as we work to resolve the issue.'
@@ -586,7 +586,7 @@ class CreateToneAPIView(APIView):
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-@method_decorator(cache_page(CACHE_TTL), name='dispatch')
+# @method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class ToneListView(generics.ListAPIView):
     serializer_class = ToneSerializer
     permission_classes = [IsAuthenticated,]
@@ -594,7 +594,12 @@ class ToneListView(generics.ListAPIView):
 
 
     def get_queryset(self):
-        queryset = Tone.objects.filter(created_by=self.request.user.id)
+        queryset = Tone.objects.all()
+        # Create tones if they dont exist
+        #TDODO AUTOMATE THIS 
+        # if len(queryset)==0:
+        #     Tone.objects.bulk_create([Tone(name=t) for t in TONES])
+                
         # Instruction.objects.filter(user_id=self.request.user.id)
         # Get the search query parameter from the request
         search_query = self.request.query_params.get('q')
@@ -602,6 +607,7 @@ class ToneListView(generics.ListAPIView):
         if search_query:
             queryset = queryset.filter(name__icontains=search_query)
         return queryset
+    
 @method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class ToneRetrieveView(generics.RetrieveAPIView):
     serializer_class = ToneSerializer
@@ -840,9 +846,5 @@ class DocumentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class UseCasesList(APIView):
-
-    def get(self,request):
-        from api.data import use_cases
-        import json 
-
-        return Response(use_cases, status=200)
+    queryset = UseCase.objects.all()
+    serializer_class = UseCaseSerializer
