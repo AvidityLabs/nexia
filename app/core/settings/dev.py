@@ -8,7 +8,7 @@ INSTALLED_APPS += ['debug_toolbar']
 PAYPAL_TEST = True
 # SECURITY WARNING: keep the secret key used in production secret!
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'https://andika.pro',
