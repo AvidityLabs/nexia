@@ -847,4 +847,21 @@ class DocumentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 
 class UseCasesList(APIView):
     queryset = UseCase.objects.all()
-    serializer_class = UseCaseSerializer
+
+    def get(self, request):
+       #Only limit to thses features at the moment 
+        current_features = [
+        "youtube_video_description",
+        "grammar_correction"
+        "social_media_post",
+        "summarize_text",
+        "generate_video_script"
+        ]
+    
+        # Filter UseCase objects where navigateTo is in current_features
+        filtered_usecases = self.queryset.filter(navigateTo__in=current_features)
+
+        # Serialize the filtered UseCase objects
+        serializer = UseCaseSerializer(filtered_usecases, many=True)
+
+        return Response(serializer.data)
