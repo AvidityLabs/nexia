@@ -1,8 +1,5 @@
-from api.utilities.openai.utils import completion
-from api.utilities.langchain.config import openai_wrapper
 from langchain.prompts.chat import ChatPromptTemplate
-from api.utilities.openai.utils import completion
-from api.utilities.langchain.config import openai_wrapper
+
 
 
 def generateYoutubeChannelDescription(payload):

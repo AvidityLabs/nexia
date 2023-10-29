@@ -861,7 +861,7 @@ class UseCasesList(APIView):
         "grammar_correction"
         "social_media_post",
         "summarize_text",
-        "generate_video_script"
+        "generate_youtube_video_script"
         ]
     
         # Filter UseCase objects where navigateTo is in current_features

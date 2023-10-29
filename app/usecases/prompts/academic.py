@@ -1,4 +1,6 @@
 from api.utilities.openai.utils import completion
+from langchain.prompts.chat import ChatPromptTemplate
+
 
 def generateCourseTitle(payload):
     prompt = f"""
@@ -216,20 +218,22 @@ def generateCourseArticles(payload):
 
 
 def generateSummarizeText(payload):
-    prompt = f"""
-    Perform the following actions:
-    1 - Summarize the given text in the language specified in the text delimited by angle brackets, with a tone that is specified in the text delimited by tripple dashes\
-    2 - Identify the main ideas and key points.\
-    3 - The summary should be concise and convey the overall message of the text.\
-    4 - Include any important details or information that is relevant to the topic.\
-    5 - Indicate the text length reduction rate you used while summarizing the text.\
-    6 - rovide a title that accurately represents the content of the summarized text.\
-    5 - Output the result in HTML format 
-    
-    Text:
-    <{payload.get('language')}>
+    template_string = """You are a help assistant that summarizes text with the text style that is translated into {language} in a {tone} and is formatted into HTML format. Here is the given text  Text: {text} :
 
-    Text:
-    ---{payload.get('tone')}---
     """
-    return completion(prompt)
+    
+    human_template = "{text}"
+
+    chat_prompt = ChatPromptTemplate.from_messages([
+        ("system", template_string),
+        ("human", human_template),
+    ])
+
+    formatted_messages = chat_prompt.format_messages(
+        language=payload.get('language'),
+        tone=payload.get('tone'),
+        text=payload.get('text')
+    )
+
+    return formatted_messages
+
