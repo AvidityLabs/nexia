@@ -412,7 +412,7 @@ class ChatGPTCompletionView(APIView):
 
     def post(self, request, format=None):
         # NOTE CODE TO VALIDATE TOKEN 
-        # validate_token_usage(request.user)
+        validate_token_usage(request.user)
 
         # text_serializer = AnyPayloadSerializer(data=request.data)
  
@@ -423,8 +423,6 @@ class ChatGPTCompletionView(APIView):
             if not usecase.exists():
                 return Response({'error': 'Use case not found'}, status=status.HTTP_400_BAD_REQUEST)
             response = usecase[0].promptExecute(request.data.get('payload'))
-            # print(response)
-            # response = promptExecute(request.data.get('payload')['usecase'], request.data.get('payload'))
 
             if response is None:
                 return Response({'error': 'Unable to communicate with the GPT model'}, status=status.HTTP_400_BAD_REQUEST)
