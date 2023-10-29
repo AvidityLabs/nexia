@@ -25,7 +25,7 @@ class OpenAIWrapper:
                 token_usage = {
                     "total_tokens": cb.total_tokens,
                     "prompt_tokens": cb.prompt_tokens,
-                    "completion_tokens": cb.prompt_tokens,
+                    "completion_tokens": cb.completion_tokens,
                     "total_cost": cb.total_cost
                 }
             return {
