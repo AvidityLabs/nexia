@@ -411,18 +411,21 @@ class ChatGPTCompletionView(APIView):
     renderer_classes = (APIJSONRenderer,)
 
     def post(self, request, format=None):
+        # NOTE CODE TO VALIDATE TOKEN 
         validate_token_usage(request.user)
 
-        text_serializer = AnyPayloadSerializer(data=request.data)
-
+        # text_serializer = AnyPayloadSerializer(data=request.data)
+ 
         try:
             from usecases.models import UseCase
             usecase= UseCase.objects.filter(navigateTo=request.data.get('payload')['usecase'])
+
             if not usecase.exists():
                 return Response({'error': 'Use case not found'}, status=status.HTTP_400_BAD_REQUEST)
             response = usecase[0].promptExecute(request.data.get('payload'))
+            # print(response)
             # response = promptExecute(request.data.get('payload')['usecase'], request.data.get('payload'))
-            # response = ''
+
             if response is None:
                 return Response({'error': 'Unable to communicate with the GPT model'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -430,19 +433,23 @@ class ChatGPTCompletionView(APIView):
             completion_tokens = response['token_usage']['completion_tokens']
             total_tokens = response['token_usage']['total_tokens']
 
-            # # # Track token usage
+            # # # # Track token usage
             user = request.user
+            
 
             result = {
-                "result": response['kwargs']['content'].choices[0].message,
+                "result": {
+                    "content": response['res']['kwargs']['content'],
+                    "role": ''
+                },
                 "prompt_tokens": response['token_usage']['prompt_tokens'],
                 "completion_tokens": response['token_usage']['completion_tokens'],
                 "total_tokens_used": response['token_usage']['total_tokens']
             }
-            # Assuming user and num_tokens are defined update token usage use background tasks
+            # # Assuming user and num_tokens are defined update token usage use background tasks
             update_token_usage(user, prompt_tokens,
                                 completion_tokens, total_tokens)
-            return Response(data=result, status=200)
+            return Response(result, status=200)
         except Exception as e:
             print(e)
             logger.error(f"An error occurred @api/gpt/completion/: {e}")

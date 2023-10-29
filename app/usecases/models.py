@@ -62,15 +62,20 @@ class UseCase(models.Model):
         else:
             raise ValueError(f"No function found for use case: {self.function_name}")
         
-    # NEW OPTION    
+    # NEW OPTION  With models  
     # def do_query(self, **variables):
     #     input_vars = self.prompt.as_dict().get("variables")
     #     template = self.prompt.template
     #     prompt = PromptTemplate(input_variables=input_vars, template=template)
     #     res = openai_wrapper.get_response(prompt)
     #     return res
+    
+    def do_query(self, prompt):
+        res = openai_wrapper.get_response(prompt)
+        return res
       
     # Previous option  
     def promptExecute(self, payload):
         prompt = self.getPrompt(payload)
-        return completion(prompt)
+        # print(prompt)
+        return self.do_query(prompt)

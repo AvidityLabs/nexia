@@ -19,18 +19,25 @@ class OpenAIWrapper:
         self.llm = ChatOpenAI(api_key=api_key, model_name=model)
 
     def get_response(self, prompt):
-        token_usage = None
-        with get_openai_callback() as cb:  # Replace this part with your actual context manager code from langchain
-            res = self.llm(prompt)
-            token_usage = {
-                "total_tokens": cb.total_tokens,
-                "prompt_tokens": cb.prompt_tokens,
-                "total_cost": cb.total_cost
+        try:
+            with get_openai_callback() as cb:
+                res = self.llm(prompt)
+                token_usage = {
+                    "total_tokens": cb.total_tokens,
+                    "prompt_tokens": cb.prompt_tokens,
+                    "completion_tokens": cb.prompt_tokens,
+                    "total_cost": cb.total_cost
+                }
+            return {
+                "res": res.to_json(),
+                "token_usage": token_usage
             }
-        return {
-            "res": res.to_json(),
-            "token_usage": token_usage
-        }
+        except Exception as e:
+            return {
+                "error": str(e),
+                "res": None,
+                "token_usage": None
+            }
 
 
 # Usage
