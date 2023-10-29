@@ -13,7 +13,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_WHITELIST = [
     'https://andika.pro',
     'http://localhost:4200',
-    'andika.applikuapp.com'
+    'https:/andika.applikuapp.com'
 ]
 
 CORS_ALLOW_METHODS = [
