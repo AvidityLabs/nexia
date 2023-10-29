@@ -218,7 +218,7 @@ def generateCourseArticles(payload):
 
 
 def generateSummarizeText(payload):
-    template_string = """You are a help assistant that summarizes text with the text style that is translated into {language} in a {tone} and is formatted into HTML format. Here is the given text  Text: {text} :
+    template_string = """You are a help assistant that summarizes a given text with the text style that is translated into {language} in a {tone} and is formatted into HTML format. Here is the given text {text} :
 
     """
     
