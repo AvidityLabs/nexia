@@ -21,7 +21,7 @@ from usecases.prompts.youtube import *
 from usecases.prompts.podcast import *
 
 usecase_func_dict = {
-        "youtube_video_idea": generateYouTubeVideoIdea,
+        "generate_youtube_video_script": generateYouTubeVideoScript,
         "youtube_video_description": generateYoutubeVideoDescription,
         "youtube_channel_description": generateYoutubeChannelDescription,
         "blog_idea_and_outline": generateBlogIdeaAndOutline,

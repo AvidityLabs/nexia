@@ -77,19 +77,25 @@ def generateYoutubeVideoDescription(payload):
     return formatted_messages
 
 
-def generateYouTubeVideoIdea(payload):
-    prompt = f"""
-    Perform the following actions:
-    1 - Generate a YouTube video idea based on the provided information.
-    2 - The video should be in the {payload['language']} language with a {payload['tone']} tone.
-    3 - Consider the target audience and their interests when generating the idea.
-    4 - Ensure the idea is engaging, informative, and aligned with the channel's theme.
-    5 - Output the generated video idea in HTML format.
-
-    Information:
-    Channel Name: {payload['channelName']}
-    Channel Theme: {payload['channelTheme']}
-    Previous Video Topics: {payload['previousVideoTopics']}
+def generateYouTubeVideoScript(payload):
+    template_string = """
+    You are a help assistant that generates a youtube video script with the text style that is translated into {language} in a {tone} and is formatted into HTML format. Based on the following Text:
+    
+    
+    Text: {text}
     """
+    
+    human_template = "{text}"
 
-    return prompt
+    chat_prompt = ChatPromptTemplate.from_messages([
+        ("system", template_string),
+        ("human", human_template),
+    ])
+    
+    formatted_messages = chat_prompt.format_messages(
+        language=payload.get('language'),
+        tone=payload.get('tone'),
+        text=payload.get('videoDescription')
+    )
+
+    return formatted_messages
