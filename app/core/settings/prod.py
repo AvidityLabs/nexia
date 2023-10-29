@@ -56,7 +56,8 @@ ALLOWED_HOSTS = ['*'] #TODO fix this
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
-    'https:/andika.applikuapp.com'
+    'https://andika.pro',
+    # 'https:/andika.applikuapp.com'
     # 'http://127.0.0.1:3000'
 ]
 
