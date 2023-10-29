@@ -41,23 +41,14 @@ def generateYoutubeChannelDescription(payload):
 
 
 def generateYoutubeVideoDescription(payload):
-    template_string ="""
-    Perform the following actions:
-    1 - Generate a YouTube video description based on the following text delimited by triple backticks in {language} language, with a tone that is {tone}.\
-
-    2 - Include a brief summary of the video content, highlighting the key points and main takeaways.\
-
-    3 - Include relevant keywords and hashtags to optimize the video for search engines.\
-
-    4 - Use persuasive language to encourage viewers to watch the video and to subscribe to your channel.\
-
-    5 - Include a call-to-action, such as asking viewers to leave a comment or to check out a related video or website.\
-
-    6 - Output the result in HTML format.
+    template_string = """
+    Generate a YouTube video description in {language} language with a {tone} tone. 
+    Include a brief summary of the video content, keywords, and a call-to-action. 
+    Output in HTML format.
 
     Text: {text}
     """
-
+    
     human_template = "{text}"
 
     chat_prompt = ChatPromptTemplate.from_messages([
@@ -68,7 +59,7 @@ def generateYoutubeVideoDescription(payload):
     formatted_messages = chat_prompt.format_messages(
         language=payload.get('language'),
         tone=payload.get('tone'),
-        text=payload.get('email_content')
+        text=payload.get('videoDescription')
     )
     
     return formatted_messages
