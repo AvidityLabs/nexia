@@ -3,7 +3,7 @@ from langchain.llms import OpenAI
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.output_parsers.json import SimpleJsonOutputParser
 from api.utilities.openai.utils import completion
-
+from langchain.callbacks import get_openai_callback
 from dotenv import load_dotenv
 from langchain.chat_models import ChatOpenAI
 # from tiktoken import Tokenizer  # Import Tokenizer for counting tokens
@@ -37,9 +37,17 @@ def generateEmail(payload: any):
         tone=payload.get('tone'),
         text=payload.get('email_content')
     )
-
-    # Use llm.predict() to generate the response
-    response = llm(formatted_messages)
+    
+    res = None
+    token_usage = None
+    with get_openai_callback() as cb:
+        res = llm(formatted_messages)
+        token_usage = {
+                "total_tokens": cb.total_tokens,
+                "prompt_tokens": cb.prompt_tokens,
+                "total_cost": cb.total_cost
+        }
+        
 
     # # Count tokens in the input
     # input_tokens = count_tokens(formatted_messages)
@@ -53,8 +61,11 @@ def generateEmail(payload: any):
     # print(formatted_messages)
     # print("Completion:")
     # print(response)
-    
-    return response
+    data = {
+        "token_useage": token_usage,
+        "response": res.to_json()
+    }
+    return data
 
 
 def generateEmailSubjectLine(payload):
