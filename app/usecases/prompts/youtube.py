@@ -1,4 +1,9 @@
 from api.utilities.openai.utils import completion
+from api.utilities.langchain.config import openai_wrapper
+
+
+
+
 
 
 def generateYoutubeChannelDescription(payload):
@@ -13,7 +18,7 @@ def generateYoutubeChannelDescription(payload):
     Text:
     ```{payload.channelDescription}```       
     """
-    return completion(prompt)
+    return openai_wrapper.get_response(prompt)
 
 
 def generateYoutubeVideoDescription(payload):
@@ -32,9 +37,9 @@ def generateYoutubeVideoDescription(payload):
     6 - Output the result in HTML format.
 
     Text:
-    ```{payload.get('videoTitle')}```
+    ```{payload.get('videoDescription')}```
     """
-    return completion
+    return openai_wrapper.get_response(prompt)
 
 
 def generateYouTubeVideoIdea(payload):

@@ -426,21 +426,22 @@ class ChatGPTCompletionView(APIView):
             if response is None:
                 return Response({'error': 'Unable to communicate with the GPT model'}, status=status.HTTP_400_BAD_REQUEST)
 
-            prompt_tokens = response.usage.prompt_tokens
-            completion_tokens = response.usage.completion_tokens
-            total_tokens = response.usage.total_tokens
+            prompt_tokens = response['token_usage']['prompt_tokens']
+            completion_tokens = response['token_usage']['completion_tokens']
+            total_tokens = response['token_usage']['total_tokens']
 
             # # # Track token usage
             user = request.user
-            # Assuming user and num_tokens are defined update token usage
+
+            result = {
+                "result": response['kwargs']['content'].choices[0].message,
+                "prompt_tokens": response['token_usage']['prompt_tokens'],
+                "completion_tokens": response['token_usage']['completion_tokens'],
+                "total_tokens_used": response['token_usage']['total_tokens']
+            }
+            # Assuming user and num_tokens are defined update token usage use background tasks
             update_token_usage(user, prompt_tokens,
                                 completion_tokens, total_tokens)
-            result = {
-                "result": response.choices[0].message,
-                "prompt_tokens": prompt_tokens,
-                "completion_tokens": completion_tokens,
-                "total_tokens_used": total_tokens,
-            }
             return Response(data=result, status=200)
         except Exception as e:
             print(e)

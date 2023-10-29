@@ -1,0 +1,44 @@
+import os
+from langchain.llms import OpenAI
+from langchain.prompts.chat import ChatPromptTemplate
+from langchain.output_parsers.json import SimpleJsonOutputParser
+from api.utilities.openai.utils import completion
+from langchain.callbacks import get_openai_callback
+from dotenv import load_dotenv
+from langchain.chat_models import ChatOpenAI
+# from tiktoken import Tokenizer  # Import Tokenizer for counting tokens
+
+load_dotenv()
+
+os.environ['OPENAI_API_KEY'] = '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'
+
+
+#OpenAI Config
+class OpenAIWrapper:
+    def __init__(self, api_key, model):
+        self.llm = ChatOpenAI(api_key=api_key, model_name=model)
+
+    def get_response(self, prompt):
+        token_usage = None
+        with get_openai_callback() as cb:  # Replace this part with your actual context manager code from langchain
+            res = self.llm(prompt)
+            token_usage = {
+                "total_tokens": cb.total_tokens,
+                "prompt_tokens": cb.prompt_tokens,
+                "total_cost": cb.total_cost
+            }
+        return {
+            "res": res.to_json(),
+            "token_usage": token_usage
+        }
+
+
+# Usage
+api_key = os.getenv('OPENAI_API_KEY')
+model = "gpt-3.5-turbo"
+
+openai_wrapper = OpenAIWrapper(api_key, model)
+
+
+
+

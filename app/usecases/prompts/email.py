@@ -1,23 +1,9 @@
-import os
-from langchain.llms import OpenAI
 from langchain.prompts.chat import ChatPromptTemplate
-from langchain.output_parsers.json import SimpleJsonOutputParser
 from api.utilities.openai.utils import completion
-from langchain.callbacks import get_openai_callback
-from dotenv import load_dotenv
-from langchain.chat_models import ChatOpenAI
-# from tiktoken import Tokenizer  # Import Tokenizer for counting tokens
+from api.utilities.langchain.config import openai_wrapper
 
-load_dotenv()
 
-os.environ['OPENAI_API_KEY'] = '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'
 
-llm = ChatOpenAI(api_key=os.getenv('OPENAI_API_KEY'), model="gpt-3.5-turbo")
-
-# def count_tokens(text):
-#     tokenizer = Tokenizer()
-#     tokens = tokenizer.count_tokens(text)
-#     return tokens
 
 def generateEmail(payload: any):
     # Define the PromptTemplate
@@ -38,34 +24,8 @@ def generateEmail(payload: any):
         text=payload.get('email_content')
     )
     
-    res = None
-    token_usage = None
-    with get_openai_callback() as cb:
-        res = llm(formatted_messages)
-        token_usage = {
-                "total_tokens": cb.total_tokens,
-                "prompt_tokens": cb.prompt_tokens,
-                "total_cost": cb.total_cost
-        }
-        
 
-    # # Count tokens in the input
-    # input_tokens = count_tokens(formatted_messages)
-    
-    # # Count tokens in the completion
-    # response_tokens = count_tokens(response)
-
-    # print("Input Tokens:", input_tokens)
-    # print("Completion Tokens:", response_tokens)
-    # print("Input Text:")
-    # print(formatted_messages)
-    # print("Completion:")
-    # print(response)
-    data = {
-        "token_useage": token_usage,
-        "response": res.to_json()
-    }
-    return data
+    return formatted_messages
 
 
 def generateEmailSubjectLine(payload):

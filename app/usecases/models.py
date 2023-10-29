@@ -22,9 +22,10 @@ from usecases.prompts.youtube import *
 from usecases.prompts.podcast import *
 
 from api.utilities.openai.utils import completion
+from llm.models import *
 
-
-
+from api.utilities.langchain.config import openai_wrapper
+from langchain.prompts import PromptTemplate
 class UseCaseCategory(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
 
@@ -39,6 +40,7 @@ class UseCase(models.Model):
     description = models.TextField(blank=True, null=True)
     navigateTo = models.CharField(max_length=255, blank=True, null=True)
     category = models.ForeignKey(UseCaseCategory, on_delete=models.CASCADE, blank=True, null=True)
+    # prompt = models.ForeignKey(Prompt, on_delete=models.CASCADE, null=True,blank=True)
 
     def __str__(self):
         return self.title
@@ -47,6 +49,7 @@ class UseCase(models.Model):
     # Load the use case URLs and function names from the database or a configuration file
         return  usecase_func_dict.get(function_name)
     #TODO: Add logger
+    
     def getPrompt(self, payload):
         function = self.get_usecase_function_by_name(self.navigateTo)
         if function:
@@ -59,6 +62,15 @@ class UseCase(models.Model):
         else:
             raise ValueError(f"No function found for use case: {self.function_name}")
         
+    # NEW OPTION    
+    # def do_query(self, **variables):
+    #     input_vars = self.prompt.as_dict().get("variables")
+    #     template = self.prompt.template
+    #     prompt = PromptTemplate(input_variables=input_vars, template=template)
+    #     res = openai_wrapper.get_response(prompt)
+    #     return res
+      
+    # Previous option  
     def promptExecute(self, payload):
         prompt = self.getPrompt(payload)
         return completion(prompt)
