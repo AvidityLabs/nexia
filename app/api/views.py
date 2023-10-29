@@ -412,7 +412,7 @@ class ChatGPTCompletionView(APIView):
 
     def post(self, request, format=None):
         # NOTE CODE TO VALIDATE TOKEN 
-        validate_token_usage(request.user)
+        # validate_token_usage(request.user)
 
         # text_serializer = AnyPayloadSerializer(data=request.data)
  

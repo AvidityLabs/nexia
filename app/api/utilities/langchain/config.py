@@ -15,8 +15,8 @@ os.environ['OPENAI_API_KEY'] = 'sk-8HRpuPCPtqROrQR8VYxqT3BlbkFJlhdfMXiLyvk6xNtpD
 
 #OpenAI Config
 class OpenAIWrapper:
-    def __init__(self, api_key, model):
-        self.llm = ChatOpenAI(api_key=api_key, model_name=model)
+    def __init__(self, model_name, model_kwargs=None):
+        self.llm = ChatOpenAI(**model_kwargs)
 
     def get_response(self, prompt):
         try:
@@ -39,13 +39,13 @@ class OpenAIWrapper:
                 "token_usage": None
             }
 
-
 # Usage
-api_key = os.getenv('OPENAI_API_KEY')
-model = "gpt-3.5-turbo"
+model_name = "gpt-3.5-turbo"
+model_kwargs = {
+    "api_key": os.getenv('OPENAI_API_KEY')
+}
 
-openai_wrapper = OpenAIWrapper(api_key, model)
-
+openai_wrapper = OpenAIWrapper(model_name, model_kwargs)
 
 
 
