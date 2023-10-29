@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'django_filters',
     'cloudinary',
-    "paypal.standard.ipn"
+    'paypal.standard.ipn',
+    'llm.apps.LlmConfig',
 ]
 
 MIDDLEWARE = [

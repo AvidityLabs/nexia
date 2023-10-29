@@ -25,6 +25,7 @@ def trigger_error(request):
     
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('llm/v1/', include(('llm.urls', 'llmv1'), namespace='lmmv1')),# All endpoints 
     path('api/v1/', include(('core.api_v1_urls', 'apiv1'), namespace='apiv1')),# All endpoints 
     # OpenAPI 3 documentation with Swagger UI
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
