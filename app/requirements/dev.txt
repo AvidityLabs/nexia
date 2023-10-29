@@ -5,5 +5,3 @@ django_debug_toolbar==3.8.1
 colorama==0.4.6
 locust==2.15.1
 python-dotenv==1.0.0
-
-
